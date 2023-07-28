@@ -13,4 +13,10 @@ add_executable(CS163_Group9 main.cpp
         source/draw/MainMenu.h
         source/core/Api.cpp
         source/core/Api.h
+        source/core/Dict.cpp
+        source/core/Dict.h
+        source/core/Word.cpp
+        source/core/Word.h
+        source/core/Quiz.cpp
+        source/core/Quiz.h
 )
