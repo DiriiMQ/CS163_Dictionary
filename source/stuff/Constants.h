@@ -11,6 +11,14 @@ namespace Constants {
         VI_EN,
         En_En
     };
+
+    namespace Screen {
+        constexpr int SCREEN_WIDTH = 1366;
+        constexpr int SCREEN_HEIGHT = 768;
+        constexpr int FRAMES_PER_SECOND = 30;
+
+        constexpr char NAME[] = "CS163 Group 9";
+    };
 } // Constants
 
 #endif //CS163_GROUP9_CONSTANTS_H
