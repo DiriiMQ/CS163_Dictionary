@@ -37,4 +37,7 @@
 # Release folder
 *release/
 
+# Build folder
+*build/
+
 .idea
