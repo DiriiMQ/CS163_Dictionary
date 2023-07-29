@@ -17,6 +17,9 @@ void Window::run() {
         // update here
 
         // draw here
+        std::wstring a = L"bé mai cute quó";
+        std::string b = Utils::WStringToUTF8(a);
+        DrawText(b.c_str(), 190, 200, 20, LIGHTGRAY);
 
         EndDrawing();
     }
