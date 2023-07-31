@@ -34,21 +34,22 @@ endif()
 include_directories(${CMAKE_SOURCE_DIR}/source ${CMAKE_SOURCE_DIR}/external)
 
 add_executable(CS163_Group9 main.cpp
-        external/raygui.h
+#        external/raygui.h
         source/Window.cpp
-        source/Window.h
-        source/stuff/Constants.h
+#        source/Window.h
+#        source/stuff/Constants.h
         source/draw/MainMenu.cpp
-        source/draw/MainMenu.h
+#        source/draw/MainMenu.h
         source/core/Api.cpp
-        source/core/Api.h
+#        source/core/Api.h
         source/core/Dict.cpp
-        source/core/Dict.h
+#        source/core/Dict.h
         source/core/Word.cpp
-        source/core/Word.h
+#        source/core/Word.h
         source/core/Quiz.cpp
-        source/core/Quiz.h
-        source/stuff/Utils.h
+#        source/core/Quiz.h
+#        source/stuff/Utils.h
+#        source/_raygui.h
 )
 
 target_link_libraries(${PROJECT_NAME} raylib)
