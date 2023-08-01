@@ -6,14 +6,23 @@
 #define CS163_GROUP9_WINDOW_H
 
 #include "raylib.h"
+#include "raygui.h"
 #include "stuff/Constants.h"
 #include "stuff/Utils.h"
 
 class Window {
+private:
+    char text[256] = "";
+
+    void handleEvents();
+    void update();
+    void draw(int& currentclick);
+
 public:
     Window();
 
     void run();
+
 };
 
 #endif //CS163_GROUP9_WINDOW_H
