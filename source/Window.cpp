@@ -157,16 +157,25 @@ void Window::updateTextbox()
 }
 void Window::drawTextbox(Rectangle textBox)
 {
-
     SetTargetFPS(30);
-    if (mouseOnText)
-        DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, RED);
+
+    int i = 0;
+    if (strlen(name) <= 35)
+        DrawText(name, (int)textBox.x + 50, (int)textBox.y + 33, 30, MAROON);
     else
-        DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, DARKGRAY);
+    {
 
-    DrawText(name, (int)textBox.x + 50, (int)textBox.y + 33, 30, MAROON);
+        int last = strlen(name) - 1;
 
-    DrawText(TextFormat("INPUT CHARS: %i/%i", letterCount, MAX_INPUT_CHARS), 315, 250, 20, DARKGRAY);
+        for (int i = 0; i < 35; i++)
+        {
+            ot[i] = name[last - 35 + i];
+        }
+        ot[35] = '\0';
+        DrawText(ot, (int)textBox.x + 50, (int)textBox.y + 33, 30, MAROON);
+    }
+
+    //DrawText(TextFormat("INPUT CHARS: %i/%i", letterCount, MAX_INPUT_CHARS), 315, 250, 20, DARKGRAY);
 
     if (mouseOnText || tmp)
     {
@@ -174,11 +183,20 @@ void Window::drawTextbox(Rectangle textBox)
         {
             // Draw blinking underscore char
             if (((framesCounter / 20) % 2) == 0)
-                DrawText("|", (int)textBox.x + 50 + MeasureText(name, 30), (int)textBox.y + 32, 30, MAROON);
+            {
+                if (strlen(name) <= 35)
+                    DrawText("|", (int)textBox.x + 50 + MeasureText(name, 30), (int)textBox.y + 32, 30, MAROON);
+                else
+                    DrawText("|", (int)textBox.x + 50 + MeasureText(ot, 30), (int)textBox.y + 32, 30, MAROON);
+            }
         }
         else
-            DrawText("Press BACKSPACE to delete chars...", 230, 300, 20, GRAY);
+        {
+            DrawText("Press BACKSPACE to delete chars...", 230, 300, 30, GRAY);
+        }
+
     }
+
 
 
 }

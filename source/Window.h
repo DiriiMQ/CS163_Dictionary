@@ -14,12 +14,14 @@ class Window {
 private:
     char text[256] = "";
     //button parameter
+    //text box 
     char name[256 + 1] = "\0";      // NOTE: One extra space required for null terminator char '\0'
     int letterCount = 0;
     int MAX_INPUT_CHARS = 256;
     bool mouseOnText = false;
     int framesCounter = 0;
     bool tmp = 0;
+    char ot[35 + 1];                // Text box only print 35 chars
     Rectangle textBox = { 100, 140, 700, 60 };
 
     //update function
