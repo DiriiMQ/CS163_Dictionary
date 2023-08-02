@@ -28,10 +28,11 @@ void Window::run() {
         Texture test = LoadTextureFromImage(im);
         DrawTexture(test, 0, 0, WHITE);
         //
-        this->drawline();
+       
         this->drawTextbox(textBox);
         //unload here
-
+        //Menu
+        menu();
         EndDrawing();
         UnloadTexture(test);
         UnloadImage(im);
@@ -229,5 +230,53 @@ void Window::drawBackGround()
     DrawTexture(test, 0, 0, WHITE);
 }
 
+void Window::menu()
+{
+    if (CheckCollisionPointRec(GetMousePosition(), Edit) && IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
+    {
+        //Function Edit
+        DrawText("Edit", 750, 400, 50, RED);
+    }
+    if (CheckCollisionPointRec(GetMousePosition(), SwitchDataSet) && IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
+    {
+        //Function SwitchDataSet
+        DrawText("SwitchDataSet", 750, 400, 50, RED);
+    }
+    if (CheckCollisionPointRec(GetMousePosition(), Quiz) && IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
+    {
+        //Function Quiz
+        DrawText("Quiz", 750, 400, 50, RED);
+    }
+    if (CheckCollisionPointRec(GetMousePosition(), SearchWord) && IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
+    {
+        //Function SearchWord
+        DrawText("SearchWord", 750, 400, 50, RED);
 
+    }
+    if (CheckCollisionPointRec(GetMousePosition(), SearchDef) && IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
+    {
+        //Function SearchDef
+        DrawText("SearchDef", 750, 400, 50, RED);
+    }
+    if (CheckCollisionPointRec(GetMousePosition(), Favourite) && IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
+    {
+        //Function Favourite
+        DrawText("Favourite", 750, 400, 50, RED);
+    }
+    if (CheckCollisionPointRec(GetMousePosition(), RemoveWord) && IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
+    {
+        //Function RemoveWord
+        DrawText("RemoveWord", 750, 400, 50, RED);
+    }
+    if (CheckCollisionPointRec(GetMousePosition(), AddWord) && IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
+    {
+        //Function AddWord
+        DrawText("AddWord", 750, 400, 50, RED);
+    }
+    if (CheckCollisionPointRec(GetMousePosition(), ResetDict) && IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
+    {
+        //Function ResetDict
+        DrawText("ResetDict", 750, 400, 50, RED);
+    }
+}
 
