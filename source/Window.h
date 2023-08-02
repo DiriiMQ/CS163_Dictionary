@@ -13,10 +13,26 @@
 class Window {
 private:
     char text[256] = "";
+    //button parameter
+    char name[256 + 1] = "\0";      // NOTE: One extra space required for null terminator char '\0'
+    int letterCount = 0;
+    int MAX_INPUT_CHARS = 256;
+    bool mouseOnText = false;
+    int framesCounter = 0;
+    bool tmp = 0;
+    Rectangle textBox = { 100, 140, 700, 60 };
 
+    //update function
     void handleEvents();
     void update();
+    void updateTextbox();
+    //draw function
     void draw(int& currentclick);
+    void drawTextbox(Rectangle textBox);
+    void drawline();
+    void drawBackGround();
+    //unload function
+   
 
 public:
     Window();
