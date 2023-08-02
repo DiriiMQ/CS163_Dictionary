@@ -23,7 +23,17 @@ private:
     bool tmp = 0;
     char ot[35 + 1];                // Text box only print 35 chars
     Rectangle textBox = { 100, 140, 700, 60 };
-
+    //Button_Coordinate
+    Rectangle Description = { 100,250,700,400 };
+    Rectangle Edit = { 650,600,100,40 };
+    Rectangle SwitchDataSet = { 920,160,130,50 };
+    Rectangle Quiz = { 1110,160,130,50 };
+    Rectangle SearchWord = { 920,300,350,50 };
+    Rectangle SearchDef = { 980,300,350,50 };
+    Rectangle Favourite = { 1040,300,350,50 };
+    Rectangle RemoveWord = { 1100,300,350,50 };
+    Rectangle AddWord = { 1160,300,350,50 };
+    Rectangle ResetDict = { 1100,690,230,50 };
     //update function
     void handleEvents();
     void update();
