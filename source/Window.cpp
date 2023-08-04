@@ -24,7 +24,7 @@ void Window::run() {
        // this->draw(currentclick);
       //  this->drawBackGround();
         //tmp
-        Image im = LoadImage("C:/Users/HP/OneDrive/Desktop/UI_Clone/source/Dictionary_UI_UX.png");
+        Image im = LoadImage("C:/Users/HP/OneDrive/Desktop/UI_Clone/Image_UI/Dictionary_UI_UX .png");
         Texture test = LoadTextureFromImage(im);
         DrawTexture(test, 0, 0, WHITE);
         //
@@ -158,11 +158,12 @@ void Window::updateTextbox()
 }
 void Window::drawTextbox(Rectangle textBox)
 {
+
     SetTargetFPS(30);
 
     int i = 0;
     if (strlen(name) <= 35)
-        DrawText(name, (int)textBox.x + 50, (int)textBox.y + 33, 30, MAROON);
+        DrawText(name, (int)textBox.x + 55, (int)textBox.y + 20, 30, BLACK);
     else
     {
 
@@ -170,13 +171,13 @@ void Window::drawTextbox(Rectangle textBox)
 
         for (int i = 0; i < 35; i++)
         {
-            ot[i] = name[last - 35 + i];
+            ot[i] = name[last - 34 + i];
         }
         ot[35] = '\0';
-        DrawText(ot, (int)textBox.x + 50, (int)textBox.y + 33, 30, MAROON);
+        DrawText(ot, (int)textBox.x + 55, (int)textBox.y + 20, 30, BLACK);
     }
 
-    //DrawText(TextFormat("INPUT CHARS: %i/%i", letterCount, MAX_INPUT_CHARS), 315, 250, 20, DARKGRAY);
+    DrawText(TextFormat("INPUT CHARS: %i/%i", letterCount, MAX_INPUT_CHARS), 315, 250, 20, DARKGRAY);
 
     if (mouseOnText || tmp)
     {
@@ -186,9 +187,9 @@ void Window::drawTextbox(Rectangle textBox)
             if (((framesCounter / 20) % 2) == 0)
             {
                 if (strlen(name) <= 35)
-                    DrawText("|", (int)textBox.x + 50 + MeasureText(name, 30), (int)textBox.y + 32, 30, MAROON);
+                    DrawText("|", (int)textBox.x + 55 + MeasureText(name, 30), (int)textBox.y + 22, 30, BLACK);
                 else
-                    DrawText("|", (int)textBox.x + 50 + MeasureText(ot, 30), (int)textBox.y + 32, 30, MAROON);
+                    DrawText("|", (int)textBox.x + 55 + MeasureText(ot, 30), (int)textBox.y + 22, 30, BLACK);
             }
         }
         else
@@ -197,7 +198,6 @@ void Window::drawTextbox(Rectangle textBox)
         }
 
     }
-
 
 
 }
