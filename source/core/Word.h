@@ -8,7 +8,7 @@
 
 class Word {
 public:
-
+    
 };
 
 
