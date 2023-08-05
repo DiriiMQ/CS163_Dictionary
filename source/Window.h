@@ -26,6 +26,13 @@ private:
     char ot[35 + 1];                // Text box only print 35 chars
     int currentclick = -1;
 
+    Texture background;
+    Button menuButtons[3],
+            operationButtons[3],
+            resetButton;
+    int activeMenu, activeOperation;
+
+
     Button test;
     SearchBox searchBox;
     //Button_Coordinate
@@ -37,26 +44,11 @@ private:
     //Option 
     Rectangle SwitchDataSet = { 920,160,150,40 };
     Rectangle Quiz = { 1110,160,130,50 };
-    // Search Group
-    Rectangle SearchWord = { 926,345.3,337.5,54.4 };
-    Rectangle SearchDef = { 926,431.9,337.5,54.4 };
-    Rectangle Favourite = { 926,517.5,337.5,54.4 };
-    //Change Struct
-    Rectangle Edit = { 758.6,690.8,81.8,49 };
-    Rectangle RemoveWord = { 498.6,693.2,133.7,49 };
-    Rectangle AddWord = { 650.3,693.2,86.1,49 };
-    Rectangle ResetDict = { 1096.9,678.5,230.4,63.3 };
+
     //update function
     void updateTextbox();
     //draw function
-    void draw(int& currentclick);
     void drawTextbox(Rectangle textBox);
-    void drawline();
-    void drawBackGround();
-
-
-    //unload function
-   
 
 public:
     Window();
@@ -67,9 +59,10 @@ public:
     void handleEvents();
     void update();
 
+    void reset();
+
     void menu();
     void run();
-    
 };
 
 #endif //CS163_GROUP9_WINDOW_H
