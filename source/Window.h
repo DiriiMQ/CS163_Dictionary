@@ -22,7 +22,7 @@ private:
     int framesCounter = 0;
     bool tmp = 0;
     char ot[35 + 1];                // Text box only print 35 chars
-  
+    int currentclick = -1;
     //Button_Coordinate
      //Box and Des
     Rectangle Star = { 721.3 ,278.4 ,47.5 ,45.2 };

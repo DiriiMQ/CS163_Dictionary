@@ -15,29 +15,22 @@ void Window::run() {
 
     while (!WindowShouldClose()) {
         BeginDrawing();
-        //  ClearBackground(RAYWHITE);
-
+        ClearBackground(RAYWHITE);
+        // draw here
+        Image im = LoadImage(Constants::Directories::DMQ::BG);
+        Texture test = LoadTextureFromImage(im);
+        DrawTexture(test, 0, 0, WHITE);
+        this->drawTextbox(textBox);
+        this->draw(currentclick);
+        //unload here
+        //Menu
+        menu();
+        // this->draw();
           // update here
           //this->update();
         this->updateTextbox();
         // update here
         this->update();
-
-        // draw here
-       // this->draw(currentclick);
-      //  this->drawBackGround();
-        //tmp
-        Image im = LoadImage(Constants::Directories::DMQ::BG);
-        Texture test = LoadTextureFromImage(im);
-        DrawTexture(test, 0, 0, WHITE);
-        //
-       
-        this->drawTextbox(textBox);
-        //unload here
-        //Menu
-        menu();
-       // this->draw();
-
         EndDrawing();
         UnloadTexture(test);
         UnloadImage(im);
@@ -58,18 +51,19 @@ void Window::update() {
 
 void Window::draw(int& currentclick) {
     // Draw a Unicode text, we need to use a chararray so we should convert a from wstring to utf8
-    std::wstring a = L"bé Chi cute quó";
-    std::string b = Utils::WStringToUTF8(a);
-    DrawText(b.c_str(), 190, 200, 20, LIGHTGRAY);
+  /*  std::wstring a = L"bé Chi cute quó";
+    std::string b = Utils::WStringToUTF8(a);*/
+    //  DrawText(b.c_str(), 190, 200, 20, LIGHTGRAY);
 
-    // Draw the button
-    Rectangle rec[5];
+      // Draw the button
+    Rectangle rec[3];
     // int currentclick = -1;
     int currentmouse = -1;
-    for (int i = 0; i < 5; i++)
+    rec[0] = { 926,345.3,337.5,54.4 };
+    rec[1] = { 926,431.9,337.5,54.4 };
+    rec[2] = { 926,517.5,337.5,54.4 };
+    for (int i = 0; i < 3; i++)
     {
-        rec[i] = { 1100, 200.0f + 90 * i, 200, 80 };
-        DrawRectangleRec(rec[i], WHITE);
         if (CheckCollisionPointRec(GetMousePosition(), rec[i]))
         {
             // Code to be executed when the button is clicked
@@ -79,36 +73,75 @@ void Window::draw(int& currentclick) {
                 if (currentclick != i) {
                     //Code to be executed when the button is clicked
                     currentclick = i;
-                    // Replace this with your desired functionality
-                    printf("Button ");
-                    std::cout << i + 1;
-                    printf(" clicked!\n");
+                    //DrawText(TextFormat(std::to_string(currentclick).c_str))
                 }
                 else
                     currentclick = -1;
             }
         }
     }
-    for (int i = 0; i < 5; i++)
+    switch (currentclick)
     {
-        DrawText("Slot", (int)(rec[i].x + rec[i].width / 2 - MeasureText("Slot" + 1, 10) / 2), (int)rec[i].y + 11, 10, ((i == currentclick) || (i == currentmouse)) ? DARKBLUE : DARKGRAY);
-    }
-    if (currentclick != -1)
+    case 0:
     {
-        DrawRectangleRec(rec[currentclick], SKYBLUE);
-        DrawText("Clicked", (int)(rec[currentclick].x + rec[currentclick].width / 2 - MeasureText("Slot" + 1, 10) / 2), (int)rec[currentclick].y + 11, 10, WHITE);
+        Image i = LoadImage(Constants::Directories::DMQ::SearchWord);
+        Texture2D tex = LoadTextureFromImage(i);
+        DrawTexture(tex, 926, 345.3, GRAY);
+        break;
     }
-    if (currentmouse != -1)
+    case 1:
     {
-        DrawRectangleRec(rec[currentmouse], SKYBLUE);
-        DrawText("Slot", (int)(rec[currentmouse].x + rec[currentmouse].width / 2 - MeasureText("Slot" + 1, 10) / 2), (int)rec[currentmouse].y + 11, 10, RED);
+        Image i = LoadImage(Constants::Directories::DMQ::SearchDef);
+        Texture2D tex = LoadTextureFromImage(i);
+        DrawTexture(tex, 926, 431.9, GRAY);
+        break;
     }
+    case 2:
+    {
+        Image i = LoadImage(Constants::Directories::DMQ::Favourite);
+        Texture2D tex = LoadTextureFromImage(i);
+        DrawTexture(tex, 926, 517.5, GRAY);
+        break;
+    }
+    default:
+        break;
+    }
+
+
+
+    switch (currentmouse)
+    {
+    case 0:
+    {
+        Image i = LoadImage(Constants::Directories::DMQ::SearchWord);
+        Texture2D tex = LoadTextureFromImage(i);
+        DrawTexture(tex, 926, 345.3, LIGHTGRAY);
+        break;
+    }
+    case 1:
+    {
+        Image i = LoadImage(Constants::Directories::DMQ::SearchDef);
+        Texture2D tex = LoadTextureFromImage(i);
+        DrawTexture(tex, 926, 431.9, LIGHTGRAY);
+        break;
+    }
+    case 2:
+    {
+        Image i = LoadImage(Constants::Directories::DMQ::Favourite);
+        Texture2D tex = LoadTextureFromImage(i);
+        DrawTexture(tex, 926, 517.5, LIGHTGRAY);
+        break;
+    }
+    default:
+        break;
+    }
+
     // Draw the text input box
     // NOTE: We pass a pointer to the text array and the max characters allowed
     // text is declared as a private member of the Window class
    // GuiTextBox({ 10, 100, 500, 200 }, text, 256, true);
-    Rectangle textBox = { 1366 / 2.0f - 100, 180, 225, 50 };
-    printf("%s\n", text);
+   /* Rectangle textBox = { 1366 / 2.0f - 100, 180, 225, 50 };
+    printf("%s\n", text);*/
     //////// Text box test
 
 }
