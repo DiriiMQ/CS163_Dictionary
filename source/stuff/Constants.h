@@ -22,7 +22,10 @@ namespace Constants {
 
     namespace Directories {
         namespace DMQ {
-            constexpr char BG[] = "../assets/components/Image_UI/Dictionary_UI_UX .png";
+            constexpr char BG[] = "../../../assets/components/Image_UI/Dictionary_UI_UX .png";
+            constexpr char SearchWord[] = "../../../assets/components/Image_UI/SearchWord.png";
+            constexpr char SearchDef[] = "../../../assets/components/Image_UI/SearchDef.png";
+            constexpr char Favourite[] = "../../../assets/components/Image_UI/Favourite.png";
         }
     };
 } // Constants
