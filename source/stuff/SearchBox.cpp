@@ -10,8 +10,12 @@ SearchBox::SearchBox( int fontSize,  Rectangle rectangle) {
 	this->fontSize = fontSize;
 	this->rectangle = rectangle;
     this->framecount = 0;
+    this->blank = LoadImage(Constants::Directories::DMQ::Blank);
+    this->texture = LoadTextureFromImage(blank);
+    this-> mouse = 0;
+    this->currentClick = -1;
+    this->currentMouse = -1;
 }
-
 void SearchBox::draw() {
     if (islessthan35())
         DrawText(rawText.c_str(), (int)rectangle.x + 55, (int)rectangle.y + 20, 30, BLACK);
@@ -34,8 +38,13 @@ void SearchBox::draw() {
         else
             DrawText("Press BACKSPACE to delete chars...", 230, 300, 30, GRAY);
     }
-}
+    //List for Suggest
+    if (rawText.length() > 0)
+        List(10);
+    //List for History
+    //      List(10,History)
 
+}
 void SearchBox::handleEvents() {
     
    
@@ -66,7 +75,6 @@ void SearchBox::handleEvents() {
         framecount++;
     else framecount = 0;
 }
-
 void SearchBox::update() {
     if(strlen(rawText.c_str()) > 35)
     {
@@ -79,8 +87,8 @@ void SearchBox::update() {
         }
         text[35] = '\0';
     }
+    UpdtList(10);
 }
-
 bool SearchBox::mouseonText()
 {
     if (CheckCollisionPointRec(GetMousePosition(), rectangle))
@@ -89,7 +97,6 @@ bool SearchBox::mouseonText()
     }
     return 0;
 }
-
 bool SearchBox::isClicked()
 {
     if (CheckCollisionPointRec(GetMousePosition(), rectangle) && IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
@@ -101,11 +108,64 @@ bool SearchBox::isClicked()
     }
     return 0;
 }
-
 bool SearchBox::islessthan35()
 {
     if (rawText.length() <= 35)
         return true;
     return false;
+}
+
+void SearchBox::List(int num)
+{
+    //test
+    const char* name[] = { "1HelloQuang","2HelloQuang","3HelloQuang","4HelloQuang","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20" };
+
+    Rectangle sourceRect = { 0, 0,  texture.width, texture.height / 2};
+    for (int j = 0; j < num; j++)
+    {
+        DrawTextureRec(texture, sourceRect, { 92.5, (float)(155.3 + (66.1 / 2) * (j + 2)) }, WHITE);
+        //if((int) (j-i) >=0)
+        // name[i] : obj of List
+        DrawText(name[j - mouse], 95, 155.3 + 66.1 / 2 * (j + 2), 20, BLACK);
+    }
+    if(currentMouse!=-1)
+    {
+        DrawTextureRec(texture, sourceRect, { 92.5, (float)(155.3 + (66.1 / 2) * (currentMouse + 2)) }, LIGHTGRAY);
+        DrawText(name[currentMouse - mouse], 95, 155.3 + 66.1 / 2 * (currentMouse + 2), 20, BLACK);
+    }
+    if (currentClick != -1)
+    {
+        DrawText(name[currentClick - mouse], 95, 155.3 + 66.1 / 2 * (currentClick + 2), 20, BLACK);
+        DrawTextureRec(texture, sourceRect, { 92.5, (float)(155.3 + (66.1 / 2) * (currentClick + 2)) }, GRAY);
+    }
+    DrawRectangleLines(92.5, 155.3 + 66.1, 690.7, +66.1 / 2 * num, BLACK);
+}
+
+void SearchBox::UpdtList(int num)
+{
+    if (GetMouseWheelMove() > 0 && mouse < 0)   // scroll up
+        mouse += 1;
+    else if (GetMouseWheelMove() < 0 && mouse > -num) //scroll down
+        mouse -= 1;
+    /////////
+    for (int i = 0; i < 10; i++)
+    {
+        if (CheckCollisionPointRec(GetMousePosition(), { 92.5, (float)(155.3 + (66.1 / 2) * (i + 2)), 690.7, 66.1/2 }))
+        {
+            // Code to be executed when the button is clicked
+            currentMouse = i;
+            if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
+            {
+                if (currentClick != i) {
+                    //Code to be executed when the button is clicked
+                    currentClick = i;
+                    //DrawText(TextFormat(std::to_string(currentclick).c_str))
+                }
+                else
+                    currentClick = -1;
+            }
+        }
+    }
+    /////////
 }
 

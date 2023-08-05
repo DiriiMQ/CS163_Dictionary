@@ -7,7 +7,7 @@
 
 #include "raylib.h"
 #include "raygui.h"
-
+#include "Constants.h"
 #include <string>
 
 class SearchBox {
@@ -19,7 +19,11 @@ private:
     std::string imgPath;
     Rectangle rectangle;
     int framecount;
-
+    Image blank;
+    Texture texture;
+    int mouse;
+    int currentClick;
+    int currentMouse;
 public:
     SearchBox() = default;
     SearchBox( int fontSize, Rectangle rectangle);
@@ -30,7 +34,10 @@ public:
     bool mouseonText();
     bool isClicked();
     bool islessthan35();
-   // int isCluck();
+    //List
+    void List(int num);
+    void UpdtList(int num);
+   
 };
 
 

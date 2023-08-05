@@ -55,6 +55,32 @@ void Window::draw(int& currentclick) {
             }
         }
     }
+    switch (currentmouse)
+    {
+    case 0:
+    {
+        Image i = LoadImage(Constants::Directories::DMQ::SearchWord);
+        Texture2D tex = LoadTextureFromImage(i);
+        DrawTexture(tex, 926, 345.3, LIGHTGRAY);
+        break;
+    }
+    case 1:
+    {
+        Image i = LoadImage(Constants::Directories::DMQ::SearchDef);
+        Texture2D tex = LoadTextureFromImage(i);
+        DrawTexture(tex, 926, 431.9, LIGHTGRAY);
+        break;
+    }
+    case 2:
+    {
+        Image i = LoadImage(Constants::Directories::DMQ::Favourite);
+        Texture2D tex = LoadTextureFromImage(i);
+        DrawTexture(tex, 926, 517.5, LIGHTGRAY);
+        break;
+    }
+    default:
+        break;
+    }
     switch (currentclick)
     {
         case 0:
@@ -84,32 +110,7 @@ void Window::draw(int& currentclick) {
 
 
 
-    switch (currentmouse)
-    {
-        case 0:
-        {
-            Image i = LoadImage(Constants::Directories::DMQ::SearchWord);
-            Texture2D tex = LoadTextureFromImage(i);
-            DrawTexture(tex, 926, 345.3, LIGHTGRAY);
-            break;
-        }
-        case 1:
-        {
-            Image i = LoadImage(Constants::Directories::DMQ::SearchDef);
-            Texture2D tex = LoadTextureFromImage(i);
-            DrawTexture(tex, 926, 431.9, LIGHTGRAY);
-            break;
-        }
-        case 2:
-        {
-            Image i = LoadImage(Constants::Directories::DMQ::Favourite);
-            Texture2D tex = LoadTextureFromImage(i);
-            DrawTexture(tex, 926, 517.5, LIGHTGRAY);
-            break;
-        }
-        default:
-            break;
-    }
+   
 
     // Draw the text input box
     // NOTE: We pass a pointer to the text array and the max characters allowed
@@ -228,7 +229,6 @@ void Window::drawTextbox(Rectangle textBox)
 
 
 }
-
 void Window::drawline()
 {
 

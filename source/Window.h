@@ -30,10 +30,10 @@ private:
     SearchBox searchBox;
     //Button_Coordinate
      //Box and Des
-    Rectangle Star = { 721.3 ,278.4 ,47.5 ,45.2 };
+    Rectangle Star = { 792.1 ,276.6 ,47.5 ,45.2 };
     Rectangle Find = { 110,170.7,30.2,30.2 };
     Rectangle textBox = { 92.5, 155.3, 690.7, 66.1 };
-    Rectangle Description = { 92.5,259,690.7,399.3 };
+    Rectangle Description = { 47,259,810,420 };
     //Option 
     Rectangle SwitchDataSet = { 920,160,150,40 };
     Rectangle Quiz = { 1110,160,130,50 };
@@ -42,9 +42,9 @@ private:
     Rectangle SearchDef = { 926,431.9,337.5,54.4 };
     Rectangle Favourite = { 926,517.5,337.5,54.4 };
     //Change Struct
-    Rectangle Edit = { 636.3,591.2,113.7,44.3 };
-    Rectangle RemoveWord = { 343.3,591.2,135.6,44.3 };
-    Rectangle AddWord = { 512.7,591.2,89.8,44.3 };
+    Rectangle Edit = { 758.6,690.8,81.8,49 };
+    Rectangle RemoveWord = { 498.6,693.2,133.7,49 };
+    Rectangle AddWord = { 650.3,693.2,86.1,49 };
     Rectangle ResetDict = { 1096.9,678.5,230.4,63.3 };
     //update function
     void updateTextbox();
