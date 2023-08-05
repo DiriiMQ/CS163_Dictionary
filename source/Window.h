@@ -12,11 +12,11 @@
 
 class Window {
 private:
+//    Font font;
     char text[256] = "";
 
-    void handleEvents();
+    void drawHandleEvents();
     void update();
-    void draw();
 
 public:
     Window();

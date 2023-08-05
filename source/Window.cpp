@@ -7,6 +7,7 @@
 Window::Window() {
     InitWindow(Constants::Screen::SCREEN_WIDTH, Constants::Screen::SCREEN_HEIGHT, Constants::Screen::NAME);
     SetTargetFPS(Constants::Screen::FRAMES_PER_SECOND);
+//    GuiSetFont(Font("/assets/fonts/Roboto-Regular.ttf"));
 }
 
 void Window::run() {
@@ -17,26 +18,27 @@ void Window::run() {
         // update here
         this->update();
 
-        // draw here
-        this->draw();
-
         EndDrawing();
     }
     CloseWindow();
 }
 
-void Window::handleEvents() {
+void Window::drawHandleEvents() {
+     // draw stuff of raygui or raylib here
+     // after that get the events and handle them
+
 
 }
 
 void Window::update() {
-    this->handleEvents();
+    this->drawHandleEvents();
 
     // update any texture here
 
 }
 
-void Window::draw() {
+//void Window::draw() {
+    /*
     // Draw a Unicode text, we need to use a chararray so we should convert a from wstring to utf8
     std::wstring a = L"bé mai cute quó";
     std::string b = Utils::WStringToUTF8(a);
@@ -54,6 +56,7 @@ void Window::draw() {
     // Draw the text input box
     // NOTE: We pass a pointer to the text array and the max characters allowed
     // text is declared as a private member of the Window class
-    GuiTextBox((Rectangle){ 10, 100, 200, 60 }, text, 256, true);
+    GuiTextBox((Rectangle){ 10, 100, 200, 60 }, text, 10, true);
     printf("%s\n", text);
-}
+    */
+//}

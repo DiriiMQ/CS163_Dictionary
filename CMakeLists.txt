@@ -50,6 +50,8 @@ add_executable(CS163_Group9 main.cpp
         source/core/Quiz.h
         source/stuff/Utils.h
         source/_raygui.h
+        source/draw/BaseScene.cpp
+        source/draw/BaseScene.h
 )
 
 target_link_libraries(${PROJECT_NAME} raylib)
