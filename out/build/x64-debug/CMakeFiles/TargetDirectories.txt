@@ -1,0 +1,5 @@
+C:/Users/HP/OneDrive/Desktop/Lab_CS163/ConsoleApplication1/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/Users/HP/OneDrive/Desktop/Lab_CS163/ConsoleApplication1/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/HP/OneDrive/Desktop/Lab_CS163/ConsoleApplication1/out/build/x64-debug/CMake01/CMakeFiles/CMake01.dir
+C:/Users/HP/OneDrive/Desktop/Lab_CS163/ConsoleApplication1/out/build/x64-debug/CMake01/CMakeFiles/edit_cache.dir
+C:/Users/HP/OneDrive/Desktop/Lab_CS163/ConsoleApplication1/out/build/x64-debug/CMake01/CMakeFiles/rebuild_cache.dir

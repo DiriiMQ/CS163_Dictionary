@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Users/HP/OneDrive/Desktop/Lab_CS163/ConsoleApplication1/out/build/x64-debug/CMake01/CMakeFiles/CMake01.dir/embed.manifest"
