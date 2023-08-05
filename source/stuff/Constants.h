@@ -5,6 +5,10 @@
 #ifndef CS163_GROUP9_CONSTANTS_H
 #define CS163_GROUP9_CONSTANTS_H
 
+#include "raylib.h"
+
+#define TRANSPARENT CLITERAL(Color) {0, 0, 0, 0}
+
 namespace Constants {
     enum class TypeDict {
         EN_VI,

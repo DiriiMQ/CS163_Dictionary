@@ -25,6 +25,7 @@ private:
     char ot[35 + 1];                // Text box only print 35 chars
     int currentclick = -1;
 
+    Texture background;
     Button test;
 
     //Button_Coordinate

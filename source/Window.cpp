@@ -15,7 +15,6 @@ Window::Window() {
 void Window::run() {
     while (!WindowShouldClose()) {
         BeginDrawing();
-        ClearBackground(RAYWHITE);
 
         this->draw();
         this->update();
@@ -131,6 +130,10 @@ void Window::update() {
 
     this->test.update();
 
+    if (this->test.isClicked()) {
+        std::cout << "Clicked" << std::endl;
+    }
+
     menu();
     this->updateTextbox();
 }
@@ -186,9 +189,6 @@ void Window::updateTextbox()
 }
 void Window::drawTextbox(Rectangle textBox)
 {
-
-    SetTargetFPS(30);
-
     int i = 0;
     if (strlen(name) <= 35)
         DrawText(name, (int)textBox.x + 55, (int)textBox.y + 20, 30, BLACK);
@@ -310,16 +310,17 @@ void Window::menu()
 }
 
 void Window::draw() {
-    this->test.draw();
+    DrawTexture(background, 0, 0, WHITE);
 
     // draw here
-    Image im = LoadImage(Constants::Directories::DMQ::BG);
-    Texture test = LoadTextureFromImage(im);
-    DrawTexture(test, 0, 0, WHITE);
     this->drawTextbox(textBox);
     this->draw(currentclick);
+
+    this->test.draw();
 }
 
 void Window::init() {
-    this->test = Button("test", 10, RED, { 10, 10, 100, 100 });
+    this->background = LoadTextureFromImage(LoadImage(Constants::Directories::DMQ::BG));
+
+    this->test = Button("test", 30, BLUE, { 1000, 300, 200, 40 });
 }

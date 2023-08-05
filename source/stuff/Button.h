@@ -7,16 +7,23 @@
 
 #include "raylib.h"
 #include "raygui.h"
+#include "Constants.h"
 
 #include <string>
 
 class Button {
 private:
+    static constexpr int DPI = 500;
+    static constexpr float CORNER_RADIUS = 0.3;
+
     std::string text;
+    Vector2 positionText;
     int fontSize;
 
     Color color, colorBG;
     Rectangle rectangle;
+
+    bool pressing = false, clicked = false, isChosen = false;
 
 public:
     Button() = default;
@@ -26,7 +33,9 @@ public:
     void handleEvents();
     void update();
 
-    bool isClicked();
+    [[nodiscard]] bool isClicked() const;
+
+    void setChosen(bool isChosen);
 };
 
 
