@@ -26,10 +26,24 @@ void Window::run() {
 }
 
 void Window::handleEvents() {
+    for (int i = 0; i < 3; ++i) {
+        this->menuButtons[i].handleEvents();
+        this->operationButtons[i].handleEvents();
+    }
+
+    this->resetButton.handleEvents();
 }
 
 void Window::draw() {
     DrawTexture(background, 0, 0, WHITE);
+
+    for (int i = 0; i < 3; ++i) {
+        this->menuButtons[i].draw();
+
+        if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE)
+            this->operationButtons[i].draw();
+    }
+    this->resetButton.draw();
 
     // draw here
     this->drawTextbox(textBox);
@@ -37,9 +51,52 @@ void Window::draw() {
 
 
 void Window::update() {
+    std::cout << "Active menu: " << this->activeMenu << std::endl;
+    std::cout << "Active operation: " << this->activeOperation << std::endl;
     this->handleEvents();
 
-    menu();
+    for (int i = 0; i < 3; ++i) {
+        this->menuButtons[i].update();
+
+        if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE)
+            this->operationButtons[i].update();
+    }
+    this->resetButton.update();
+
+    for (int i = 0; i < 3; ++i) {
+        if (this->menuButtons[i].isClicked()) {
+            std::cout << "Menu button " << i << " is clicked" << std::endl;
+            this->menuButtons[i].setChosen(true);
+            this->activeMenu = i;
+            for (int j = 0; j < 3; ++j) {
+                if (j != i) {
+                    this->menuButtons[j].setChosen(false);
+                }
+            }
+            break;
+        }
+    }
+
+    if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE)
+        for (int i = 0; i < 3; ++i) {
+            if (this->operationButtons[i].isClicked()) {
+                std::cout << "Operation button " << i << " is clicked" << std::endl;
+                this->operationButtons[i].setChosen(true);
+                this->activeOperation = i;
+                for (int j = 0; j < 3; ++j) {
+                    if (j != i) {
+                        this->operationButtons[j].setChosen(false);
+                    }
+                }
+                break;
+            }
+        }
+
+    if (this->resetButton.isClicked()) {
+        this->reset();
+    }
+
+//    menu();
     this->updateTextbox();
 }
 
@@ -188,9 +245,41 @@ void Window::menu()
 void Window::init() {
     this->background = LoadTextureFromImage(LoadImage(Constants::Directories::DMQ::BG));
 
-    for (int i = (int)Constants::Screen::menuBtn::WORD; i != Constants::Screen::menuBtn::WORD) {
+    for (int i = (int)Constants::Screen::menuBtn::WORD; i != (int)Constants::Screen::menuBtn::NONE; ++i) {
         this->menuButtons[i] = Button(
-                Constants
-                )
+                Constants::Screen::NAME_MENU_BTN[i],
+                20,
+                BLUE,
+                Constants::Screen::RECT_MENU_BTN[i]
+                );
     }
+
+    for (int i = (int)Constants::Screen::operationBtn::REMOVE; i != (int)Constants::Screen::operationBtn::NONE; ++i) {
+        this->operationButtons[i] = Button(
+                Constants::Screen::NAME_OPERATION_BTN[i],
+                20,
+                BLUE,
+                Constants::Screen::RECT_OPERATION_BTN[i]
+                );
+    }
+
+    this->resetButton = Button(
+            Constants::Screen::NAME_RESET_BTN,
+            20,
+            BLUE,
+            Constants::Screen::RECT_RESET_BTN
+            );
+
+    this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
+    this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
+}
+
+void Window::reset() {
+    for (int i = 0; i < 3; ++i) {
+        this->menuButtons[i].setChosen(false);
+        this->operationButtons[i].setChosen(false);
+    }
+    this->resetButton.setChosen(false);
+    this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
+    this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
 }

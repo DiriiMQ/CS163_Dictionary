@@ -29,6 +29,8 @@ private:
     Button menuButtons[3],
             operationButtons[3],
             resetButton;
+    int activeMenu, activeOperation;
+
 
     //Button_Coordinate
      //Box and Des
@@ -63,9 +65,10 @@ public:
     void handleEvents();
     void update();
 
+    void reset();
+
     void menu();
     void run();
-    
 };
 
 #endif //CS163_GROUP9_WINDOW_H

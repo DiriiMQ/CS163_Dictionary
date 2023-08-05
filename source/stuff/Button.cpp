@@ -56,11 +56,12 @@ void Button::draw() {
 
 void Button::handleEvents() {
     this->clicked = false;
+    this->colorBG = TRANSPARENT;
 
     if (CheckCollisionPointRec(GetMousePosition(), this->rectangle)) {
         this->colorBG = LIGHTGRAY;
 
-        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+        if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
             this->pressing = true;
             this->colorBG = GRAY;
         } else if (this->pressing) {
@@ -74,7 +75,7 @@ void Button::handleEvents() {
 
 void Button::update() {
     if (this->isChosen)
-        this->color = GRAY;
+        this->colorBG = GRAY;
 }
 
 bool Button::isClicked() const {

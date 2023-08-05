@@ -27,6 +27,7 @@ namespace Constants {
             WORD,
             DEFINITION,
             FAVOURITE,
+            NONE
         };
 
         constexpr char NAME_MENU_BTN[][20] = {
@@ -43,7 +44,8 @@ namespace Constants {
         enum class operationBtn {
             REMOVE,
             ADD,
-            EDIT
+            EDIT,
+            NONE
         };
 
         constexpr char NAME_OPERATION_BTN[][20] = {
@@ -54,9 +56,12 @@ namespace Constants {
 
         constexpr Rectangle RECT_OPERATION_BTN[] = {
                 { 636.3,591.2,113.7,44.3 },
-                { 343.3,591.2,135.6,44.3 },
+                { 512.7,591.2,89.8,44.3 },
                 { 343.3,591.2,135.6,44.3 }
         };
+
+        constexpr char NAME_RESET_BTN[] = "Reset";
+        constexpr Rectangle RECT_RESET_BTN = { 1096.9,678.5,230.4,63.3 };
     };
 
     namespace Directories {
