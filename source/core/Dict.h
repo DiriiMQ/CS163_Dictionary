@@ -7,10 +7,12 @@
 
 #include <vector>
 #include "Word.h"
+#include "Trie.h"
 
 class Dict {
 public:
     std::vector<Word> words;
+    Trie<int> Map;
 };
 
 

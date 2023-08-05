@@ -3,6 +3,8 @@
 //
 
 #include "Api.h"
+#include "Dict.h"
+#include "Word.h"
 
 Dicts::Dicts() {
 
@@ -29,10 +31,13 @@ Word ApiWord::getWord(Constants::TypeDict typeDict, std::string word) {
 }
 
 void ApiWord::addWord(Constants::TypeDict typeDict, Word word) {
-
+    Dict& dictionary = dicts.dicts[static_cast<int>(typeDict)];
+    dictionary.words.push_back(word);
+    dictionary.Map[word.word] = dictionary.words.size()-1;
 }
 
 bool ApiWord::removeWord(Constants::TypeDict typeDict, std::string word) {
+    
     return false;
 }
 
