@@ -8,7 +8,6 @@
 Window::Window() {
     InitWindow(Constants::Screen::SCREEN_WIDTH, Constants::Screen::SCREEN_HEIGHT, Constants::Screen::NAME);
     SetTargetFPS(Constants::Screen::FRAMES_PER_SECOND);
-
     this->init();
 }
 
@@ -124,15 +123,15 @@ void Window::draw(int& currentclick) {
 
 void Window::handleEvents() {
     this->test.handleEvents();
+    this->searchBox.handleEvents();
 }
 
 void Window::update() {
     this->handleEvents();
-
     this->test.update();
-
+    this->searchBox.update();
     menu();
-    this->updateTextbox();
+    //this->updateTextbox();
 }
 
 void Window::updateTextbox()
@@ -311,15 +310,16 @@ void Window::menu()
 
 void Window::draw() {
     this->test.draw();
-
     // draw here
     Image im = LoadImage(Constants::Directories::DMQ::BG);
     Texture test = LoadTextureFromImage(im);
     DrawTexture(test, 0, 0, WHITE);
-    this->drawTextbox(textBox);
+   // this->drawTextbox(textBox);
     this->draw(currentclick);
+    this->searchBox.draw();
 }
 
 void Window::init() {
     this->test = Button("test", 10, RED, { 10, 10, 100, 100 });
+    this->searchBox = SearchBox(20, { 92.5, 155.3, 690.7, 66.1 });
 }

@@ -10,6 +10,7 @@
 #include "stuff/Constants.h"
 #include "stuff/Utils.h"
 #include "stuff/Button.h"
+#include "stuff/SearchBox.h"
 
 class Window {
 private:
@@ -26,7 +27,7 @@ private:
     int currentclick = -1;
 
     Button test;
-
+    SearchBox searchBox;
     //Button_Coordinate
      //Box and Des
     Rectangle Star = { 721.3 ,278.4 ,47.5 ,45.2 };

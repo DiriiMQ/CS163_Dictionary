@@ -12,19 +12,25 @@
 
 class SearchBox {
 private:
+    static const int MAX_LENGTH = 256;
+
     std::string text, rawText;
     int fontSize;
-
     std::string imgPath;
     Rectangle rectangle;
+    int framecount;
 
 public:
     SearchBox() = default;
-    SearchBox(std::string text, int fontSize, std::string imgPath, Rectangle rectangle);
+    SearchBox( int fontSize, Rectangle rectangle);
 
     void draw();
     void handleEvents();
     void update();
+    bool mouseonText();
+    bool isClicked();
+    bool islessthan35();
+   // int isCluck();
 };
 
 
