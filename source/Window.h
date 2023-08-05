@@ -9,6 +9,7 @@
 #include "raygui.h"
 #include "stuff/Constants.h"
 #include "stuff/Utils.h"
+#include "stuff/Button.h"
 
 class Window {
 private:
@@ -23,6 +24,9 @@ private:
     bool tmp = 0;
     char ot[35 + 1];                // Text box only print 35 chars
     int currentclick = -1;
+
+    Button test;
+
     //Button_Coordinate
      //Box and Des
     Rectangle Star = { 721.3 ,278.4 ,47.5 ,45.2 };
@@ -42,19 +46,26 @@ private:
     Rectangle AddWord = { 512.7,591.2,89.8,44.3 };
     Rectangle ResetDict = { 1096.9,678.5,230.4,63.3 };
     //update function
-    void handleEvents();
-    void update();
     void updateTextbox();
     //draw function
     void draw(int& currentclick);
     void drawTextbox(Rectangle textBox);
     void drawline();
     void drawBackGround();
+
+
     //unload function
    
 
 public:
     Window();
+    void init();
+
+    // main
+    void draw();
+    void handleEvents();
+    void update();
+
     void menu();
     void run();
     

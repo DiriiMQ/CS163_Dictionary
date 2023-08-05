@@ -52,6 +52,8 @@ add_executable(CS163_Group9 main.cpp
         source/_raygui.h
         source/stuff/Button.cpp
         source/stuff/Button.h
+        source/stuff/SearchBox.cpp
+        source/stuff/SearchBox.h
 )
 
 target_link_libraries(${PROJECT_NAME} raylib)

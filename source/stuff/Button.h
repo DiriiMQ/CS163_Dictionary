@@ -8,8 +8,25 @@
 #include "raylib.h"
 #include "raygui.h"
 
-class Button {
+#include <string>
 
+class Button {
+private:
+    std::string text;
+    int fontSize;
+
+    Color color, colorBG;
+    Rectangle rectangle;
+
+public:
+    Button() = default;
+    Button(std::string text, int fontSize, Color color, Rectangle rectangle);
+
+    void draw();
+    void handleEvents();
+    void update();
+
+    bool isClicked();
 };
 
 
