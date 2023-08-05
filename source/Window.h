@@ -26,7 +26,9 @@ private:
     int currentclick = -1;
 
     Texture background;
-    Button test;
+    Button menuButtons[3],
+            operationButtons[3],
+            resetButton;
 
     //Button_Coordinate
      //Box and Des
@@ -46,17 +48,11 @@ private:
     Rectangle RemoveWord = { 343.3,591.2,135.6,44.3 };
     Rectangle AddWord = { 512.7,591.2,89.8,44.3 };
     Rectangle ResetDict = { 1096.9,678.5,230.4,63.3 };
+
     //update function
     void updateTextbox();
     //draw function
-    void draw(int& currentclick);
     void drawTextbox(Rectangle textBox);
-    void drawline();
-    void drawBackGround();
-
-
-    //unload function
-   
 
 public:
     Window();
