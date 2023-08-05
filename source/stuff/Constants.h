@@ -22,7 +22,7 @@ namespace Constants {
 
     namespace Directories {
         namespace DMQ {
-            constexpr char BG[] = "../../../assets/components/Image_UI/Dictionary_UI_UX .png";
+            constexpr char BG[] = "../assets/components/Image_UI/Dictionary_UI_UX .png";
         }
     };
 } // Constants
