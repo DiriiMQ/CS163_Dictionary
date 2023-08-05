@@ -10,6 +10,7 @@
 #include "stuff/Constants.h"
 #include "stuff/Utils.h"
 #include "stuff/Button.h"
+#include "stuff/SearchBox.h"
 
 class Window {
 private:
@@ -32,12 +33,14 @@ private:
     int activeMenu, activeOperation;
 
 
+    Button test;
+    SearchBox searchBox;
     //Button_Coordinate
      //Box and Des
-    Rectangle Star = { 721.3 ,278.4 ,47.5 ,45.2 };
+    Rectangle Star = { 792.1 ,276.6 ,47.5 ,45.2 };
     Rectangle Find = { 110,170.7,30.2,30.2 };
     Rectangle textBox = { 92.5, 155.3, 690.7, 66.1 };
-    Rectangle Description = { 92.5,259,690.7,399.3 };
+    Rectangle Description = { 47,259,810,420 };
     //Option 
     Rectangle SwitchDataSet = { 920,160,150,40 };
     Rectangle Quiz = { 1110,160,130,50 };

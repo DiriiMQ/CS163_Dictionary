@@ -55,9 +55,9 @@ namespace Constants {
         };
 
         constexpr Rectangle RECT_OPERATION_BTN[] = {
-                { 636.3,591.2,113.7,44.3 },
-                { 512.7,591.2,89.8,44.3 },
-                { 343.3,591.2,135.6,44.3 }
+                { 498.6,693.2,133.7,49 },
+                { 650.3, 693.2, 86.1, 49 },
+                { 758.6,690.8,81.8,49 }
         };
 
         constexpr char NAME_RESET_BTN[] = "Reset";
@@ -66,10 +66,11 @@ namespace Constants {
 
     namespace Directories {
         namespace DMQ {
-            constexpr char BG[] = "../assets/components/Image_UI/BackGr.png";
-            constexpr char SearchWord[] = "../assets/components/Image_UI/SearchWord.png";
-            constexpr char SearchDef[] = "../assets/components/Image_UI/SearchDef.png";
-            constexpr char Favourite[] = "../assets/components/Image_UI/Favourite.png";
+            constexpr char BG[] = "../../../assets/components/Image_UI/BackGr.png";
+            constexpr char SearchWord[] = "../../..//assets/components/Image_UI/SearchWord.png";
+            constexpr char SearchDef[] = "../../../assets/components/Image_UI/SearchDef.png";
+            constexpr char Favourite[] = "../../..//assets/components/Image_UI/Favourite.png";
+            constexpr char Blank[] = "../../../assets/components/Image_UI/Blank.png";
         }
     };
 } // Constants
