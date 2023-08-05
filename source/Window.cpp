@@ -36,7 +36,7 @@ void Window::run() {
         //unload here
         //Menu
         menu();
-        this->draw();
+       // this->draw();
 
         EndDrawing();
         UnloadTexture(test);
@@ -284,37 +284,24 @@ void Window::menu()
         DrawText("ResetDict", 750, 400, 50, RED);
     }
 }
-
-
-void Window::handleEvents() {
-
-}
-
-void Window::update() {
-    this->handleEvents();
-
-    // update any texture here
-
-}
-
-void Window::draw() {
-    // Draw a Unicode text, we need to use a chararray so we should convert a from wstring to utf8
-    std::wstring a = L"bé mai cute quó";
-    std::string b = Utils::WStringToUTF8(a);
-    DrawText(b.c_str(), 190, 200, 20, LIGHTGRAY);
-
-    // Draw the button
-    Rectangle rec{10, 10, 200, 80};
-    if (GuiButton(rec, "Click me!"))
-    {
-        // Code to be executed when the button is clicked
-        // Replace this with your desired functionality
-        printf("Button clicked!\n");
-    }
-
-    // Draw the text input box
-    // NOTE: We pass a pointer to the text array and the max characters allowed
-    // text is declared as a private member of the Window class
-    GuiTextBox((Rectangle){ 10, 100, 200, 60 }, text, 256, true);
-    printf("%s\n", text);
-}
+//void Window::draw() {
+//    // Draw a Unicode text, we need to use a chararray so we should convert a from wstring to utf8
+//    std::wstring a = L"bé mai cute quó";
+//    std::string b = Utils::WStringToUTF8(a);
+//    DrawText(b.c_str(), 190, 200, 20, LIGHTGRAY);
+//
+//    // Draw the button
+//    Rectangle rec{10, 10, 200, 80};
+//    if (GuiButton(rec, "Click me!"))
+//    {
+//        // Code to be executed when the button is clicked
+//        // Replace this with your desired functionality
+//        printf("Button clicked!\n");
+//    }
+//
+//    // Draw the text input box
+//    // NOTE: We pass a pointer to the text array and the max characters allowed
+//    // text is declared as a private member of the Window class
+//    GuiTextBox((Rectangle){ 10, 100, 200, 60 }, text, 256, true);
+//    printf("%s\n", text);
+//}
