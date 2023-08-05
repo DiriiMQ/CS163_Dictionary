@@ -9,6 +9,7 @@
 #include "raygui.h"
 #include "Constants.h"
 #include <string>
+#include <cstring>
 
 class SearchBox {
 private:
@@ -31,12 +32,12 @@ public:
     void draw();
     void handleEvents();
     void update();
-    bool mouseonText();
+    bool mouseOnText();
     bool isClicked();
-    bool islessthan35();
+    bool isLessThan35();
     //List
-    void List(int num);
-    void UpdtList(int num);
+    void list(int num);
+    void updateList(int num);
    
 };
 

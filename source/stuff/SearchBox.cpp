@@ -17,19 +17,19 @@ SearchBox::SearchBox( int fontSize,  Rectangle rectangle) {
     this->currentMouse = -1;
 }
 void SearchBox::draw() {
-    if (islessthan35())
+    if (isLessThan35())
         DrawText(rawText.c_str(), (int)rectangle.x + 55, (int)rectangle.y + 20, 30, BLACK);
     else
         DrawText(text.c_str(), (int)rectangle.x + 55, (int)rectangle.y + 20, 30, BLACK);
    // DrawText(TextFormat("INPUT CHARS: %i/%i",rawText.length(), MAX_LENGTH), 315, 250, 20, DARKGRAY);
-    if (mouseonText() || isClicked())
+    if (mouseOnText() || isClicked())
     {
         if (rawText.length() < MAX_LENGTH)
         {
             // Draw blinking underscore char
             if ((framecount/10) %2==0)
             {
-                if (islessthan35())
+                if (isLessThan35())
                     DrawText("|", (int)rectangle.x + 55 + MeasureText(rawText.c_str(), 30), (int)rectangle.y + 22, 30, BLACK);
                 else
                     DrawText("|", (int)rectangle.x + 55 + MeasureText(text.c_str(), 30), (int)rectangle.y + 22, 30, BLACK);
@@ -40,16 +40,11 @@ void SearchBox::draw() {
     }
     //List for Suggest
     if (rawText.length() > 0)
-        List(10);
-    //List for History
-    //      List(10,History)
-
+        list(10);
 }
 void SearchBox::handleEvents() {
-    
-   
     // else tmp = 0;
-    if (mouseonText() || isClicked())
+    if (mouseOnText() || isClicked())
     {
         // Set the window's cursor to the I-Beam
         SetMouseCursor(MOUSE_CURSOR_IBEAM);
@@ -71,7 +66,7 @@ void SearchBox::handleEvents() {
         }
     }
     else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
-    if (mouseonText())
+    if (mouseOnText())
         framecount++;
     else framecount = 0;
 }
@@ -87,9 +82,9 @@ void SearchBox::update() {
         }
         text[35] = '\0';
     }
-    UpdtList(10);
+    updateList(10);
 }
-bool SearchBox::mouseonText()
+bool SearchBox::mouseOnText()
 {
     if (CheckCollisionPointRec(GetMousePosition(), rectangle))
     {
@@ -108,19 +103,19 @@ bool SearchBox::isClicked()
     }
     return 0;
 }
-bool SearchBox::islessthan35()
+bool SearchBox::isLessThan35()
 {
     if (rawText.length() <= 35)
         return true;
     return false;
 }
 
-void SearchBox::List(int num)
+void SearchBox::list(int num)
 {
     //test
     const char* name[] = { "1HelloQuang","2HelloQuang","3HelloQuang","4HelloQuang","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20" };
 
-    Rectangle sourceRect = { 0, 0,  texture.width, texture.height / 2};
+    Rectangle sourceRect = { 0, 0,  static_cast<float>(texture.width), static_cast<float>(texture.height / 2)};
     for (int j = 0; j < num; j++)
     {
         DrawTextureRec(texture, sourceRect, { 92.5, (float)(155.3 + (66.1 / 2) * (j + 2)) }, WHITE);
@@ -141,13 +136,13 @@ void SearchBox::List(int num)
     DrawRectangleLines(92.5, 155.3 + 66.1, 690.7, +66.1 / 2 * num, BLACK);
 }
 
-void SearchBox::UpdtList(int num)
+void SearchBox::updateList(int num)
 {
     if (GetMouseWheelMove() > 0 && mouse < 0)   // scroll up
         mouse += 1;
     else if (GetMouseWheelMove() < 0 && mouse > -num) //scroll down
         mouse -= 1;
-    /////////
+
     for (int i = 0; i < 10; i++)
     {
         if (CheckCollisionPointRec(GetMousePosition(), { 92.5, (float)(155.3 + (66.1 / 2) * (i + 2)), 690.7, 66.1/2 }))
@@ -166,6 +161,5 @@ void SearchBox::UpdtList(int num)
             }
         }
     }
-    /////////
 }
 
