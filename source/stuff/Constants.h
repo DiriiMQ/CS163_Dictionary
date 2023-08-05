@@ -19,6 +19,12 @@ namespace Constants {
 
         constexpr char NAME[] = "CS163 Group 9";
     };
+
+    namespace Directories {
+        namespace DMQ {
+            constexpr char BG[] = "../../../assets/components/Image_UI/Dictionary_UI_UX .png";
+        }
+    };
 } // Constants
 
 #endif //CS163_GROUP9_CONSTANTS_H

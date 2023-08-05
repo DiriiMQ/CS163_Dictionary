@@ -27,7 +27,7 @@ void Window::run() {
        // this->draw(currentclick);
       //  this->drawBackGround();
         //tmp
-        Image im = LoadImage("C:/Users/HP/OneDrive/Desktop/UI_Clone/Image_UI/Dictionary_UI_UX .png");
+        Image im = LoadImage(Constants::Directories::DMQ::BG);
         Texture test = LoadTextureFromImage(im);
         DrawTexture(test, 0, 0, WHITE);
         //
