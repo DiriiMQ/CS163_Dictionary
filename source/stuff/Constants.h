@@ -66,11 +66,11 @@ namespace Constants {
 
     namespace Directories {
         namespace DMQ {
-            constexpr char BG[] = "../../../assets/components/Image_UI/BackGr.png";
-            constexpr char SearchWord[] = "../../..//assets/components/Image_UI/SearchWord.png";
-            constexpr char SearchDef[] = "../../../assets/components/Image_UI/SearchDef.png";
-            constexpr char Favourite[] = "../../..//assets/components/Image_UI/Favourite.png";
-            constexpr char Blank[] = "../../../assets/components/Image_UI/Blank.png";
+            constexpr char BG[] = "../assets/components/Image_UI/BackGr.png";
+            constexpr char SearchWord[] = "../assets/components/Image_UI/SearchWord.png";
+            constexpr char SearchDef[] = "../assets/components/Image_UI/SearchDef.png";
+            constexpr char Favourite[] = "../assets/components/Image_UI/Favourite.png";
+            constexpr char Blank[] = "../assets/components/Image_UI/Blank.png";
         }
     };
 } // Constants

@@ -9,6 +9,7 @@
 #include "raygui.h"
 #include "Constants.h"
 #include <string>
+#include <cstring>
 
 class SearchBox {
 private:
