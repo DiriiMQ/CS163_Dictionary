@@ -8,37 +8,37 @@
 #include "raylib.h"
 #include "raygui.h"
 #include "Constants.h"
-
 #include <string>
 #include <cstring>
-#include <algorithm>
-#include <iostream>
 
 class SearchBox {
 private:
     static const int MAX_LENGTH = 256;
-    static const int MAX_VISIBLE = 41;
 
-    Texture textureBlank;
-    Rectangle position;
-
-    int fontSize, frameCount;
-    Font font;
     std::string text, rawText;
-
-    bool isActivated, isFlicked;
-
+    int fontSize;
+    std::string imgPath;
+    Rectangle rectangle;
+    int framecount;
+    Image blank;
+    Texture texture;
+    int mouse;
+    int currentClick;
+    int currentMouse;
 public:
     SearchBox() = default;
-    SearchBox(int fontSize, Rectangle position);
+    SearchBox( int fontSize, Rectangle rectangle);
 
     void draw();
     void handleEvents();
     void update();
-
-    void updateText();
-
-    void reset();
+    bool mouseOnText();
+    bool isClicked();
+    bool isLessThan35();
+    //List
+    void list(int num);
+    void updateList(int num);
+   
 };
 
 

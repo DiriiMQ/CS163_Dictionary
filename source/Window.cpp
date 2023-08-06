@@ -9,7 +9,42 @@
 Window::Window() {
     InitWindow(Constants::Screen::SCREEN_WIDTH, Constants::Screen::SCREEN_HEIGHT, Constants::Screen::NAME);
     SetTargetFPS(Constants::Screen::FRAMES_PER_SECOND);
+//    this->font = LoadFont(Constants::Screen::FONT);
+//    GuiSetFont(this->font);
+
     this->init();
+}
+
+void Window::init() {
+    this->background = LoadTextureFromImage(LoadImage(Constants::Directories::DMQ::BG));
+    this->searchBox = SearchBox(30, { 92.5, 155.3, 690.7, 66.1 });
+    for (int i = (int)Constants::Screen::menuBtn::WORD; i != (int)Constants::Screen::menuBtn::NONE; ++i) {
+        this->menuButtons[i] = Button(
+                Constants::Screen::NAME_MENU_BTN[i],
+                20,
+                BLUE,
+                Constants::Screen::RECT_MENU_BTN[i]
+        );
+    }
+
+    for (int i = (int)Constants::Screen::operationBtn::REMOVE; i != (int)Constants::Screen::operationBtn::NONE; ++i) {
+        this->operationButtons[i] = Button(
+                Constants::Screen::NAME_OPERATION_BTN[i],
+                20,
+                BLUE,
+                Constants::Screen::RECT_OPERATION_BTN[i]
+        );
+    }
+
+    this->resetButton = Button(
+            Constants::Screen::NAME_RESET_BTN,
+            20,
+            BLUE,
+            Constants::Screen::RECT_RESET_BTN
+    );
+
+    this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
+    this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
 }
 
 void Window::run() {
@@ -24,15 +59,6 @@ void Window::run() {
     CloseWindow();
 }
 
-void Window::handleEvents() {
-    for (int i = 0; i < 3; ++i) {
-        this->menuButtons[i].handleEvents();
-        this->operationButtons[i].handleEvents();
-    }
-    this->resetButton.handleEvents();
-    this->searchBox.handleEvents();
-}
-
 void Window::draw() {
     DrawTexture(background, 0, 0, WHITE);
     for (int i = 0; i < 3; ++i) {
@@ -45,10 +71,18 @@ void Window::draw() {
     this->searchBox.draw();
 }
 
+void Window::handleEvents() {
+    for (int i = 0; i < 3; ++i) {
+        this->menuButtons[i].handleEvents();
+        this->operationButtons[i].handleEvents();
+    }
+    this->resetButton.handleEvents();
+    this->searchBox.handleEvents();
+}
 
 void Window::update() {
-    std::cout << "Active menu: " << this->activeMenu << std::endl;
-    std::cout << "Active operation: " << this->activeOperation << std::endl;
+//    std::cout << "Active menu: " << this->activeMenu << std::endl;
+//    std::cout << "Active operation: " << this->activeOperation << std::endl;
     this->handleEvents();
 
     for (int i = 0; i < 3; ++i) {
@@ -61,7 +95,7 @@ void Window::update() {
 
     for (int i = 0; i < 3; ++i) {
         if (this->menuButtons[i].isClicked()) {
-            std::cout << "Menu button " << i << " is clicked" << std::endl;
+            std::cout << "LOG: Menu button " << i << " is clicked" << std::endl;
             this->menuButtons[i].setChosen(true);
             this->activeMenu = i;
             for (int j = 0; j < 3; ++j) {
@@ -76,7 +110,7 @@ void Window::update() {
     if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE)
         for (int i = 0; i < 3; ++i) {
             if (this->operationButtons[i].isClicked()) {
-                std::cout << "Operation button " << i << " is clicked" << std::endl;
+                std::cout << "LOG: Operation button " << i << " is clicked" << std::endl;
                 this->operationButtons[i].setChosen(true);
                 this->activeOperation = i;
                 for (int j = 0; j < 3; ++j) {
@@ -96,43 +130,14 @@ void Window::update() {
     }
 
 }
-void Window::init() {
-    this->background = LoadTextureFromImage(LoadImage(Constants::Directories::DMQ::BG));
-    this->searchBox = SearchBox(20, { 92.5, 155.3, 690.7, 66.1 });
-    for (int i = (int)Constants::Screen::menuBtn::WORD; i != (int)Constants::Screen::menuBtn::NONE; ++i) {
-        this->menuButtons[i] = Button(
-            Constants::Screen::NAME_MENU_BTN[i],
-            20,
-            BLUE,
-            Constants::Screen::RECT_MENU_BTN[i]
-        );
-    }
 
-    for (int i = (int)Constants::Screen::operationBtn::REMOVE; i != (int)Constants::Screen::operationBtn::NONE; ++i) {
-        this->operationButtons[i] = Button(
-            Constants::Screen::NAME_OPERATION_BTN[i],
-            20,
-            BLUE,
-            Constants::Screen::RECT_OPERATION_BTN[i]
-        );
-    }
-
-    this->resetButton = Button(
-        Constants::Screen::NAME_RESET_BTN,
-        20,
-        BLUE,
-        Constants::Screen::RECT_RESET_BTN
-    );
-
-    this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
-    this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
-}
 void Window::reset() {
     for (int i = 0; i < 3; ++i) {
         this->menuButtons[i].setChosen(false);
         this->operationButtons[i].setChosen(false);
     }
     this->resetButton.setChosen(false);
+    this->searchBox.reset();
     this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
     this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
 }
