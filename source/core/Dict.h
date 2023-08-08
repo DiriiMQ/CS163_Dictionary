@@ -13,6 +13,8 @@ class Dict {
 public:
     std::vector<Word> words;
     Trie<int> Map;
+    vector<wstring> FavouriteList;
+    vector<wstring> HistoryList;
 };
 
 
