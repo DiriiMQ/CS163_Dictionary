@@ -17,7 +17,7 @@
 class SearchBox {
 private:
     static const int MAX_LENGTH = 256;
-    static const int MAX_VISIBLE = 41;
+    static const int MAX_VISIBLE = 36;
 
     Texture textureBlank;
     Rectangle position;

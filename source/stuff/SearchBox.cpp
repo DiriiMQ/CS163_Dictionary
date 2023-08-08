@@ -12,18 +12,25 @@ SearchBox::SearchBox(int fontSize, Rectangle position) {
     this->textureBlank = LoadTextureFromImage(LoadImage(Constants::Directories::DMQ::Blank));
     this->isActivated = this->isFlicked = false;
 
-    this->font = LoadFont(Constants::Screen::FONT);
+    this->font = LoadFontEx(
+            Constants::Screen::FONT,
+            32,
+            nullptr,
+            40000
+            );
 }
 
 void SearchBox::draw() {
 //    DrawTexture(this->textureBlank, this->position.x, this->position.y, WHITE);
     std::cout << "LOG: Text: " << this->text << '\n';
+//    this->font = GetFontDefault();
     DrawTextEx(this->font,
                this->text.c_str(),
                {this->position.x + 55, this->position.y + 20},
                this->fontSize,
-               0,
+               1,
                BLACK);
+
 }
 
 void SearchBox::handleEvents() {
@@ -38,15 +45,27 @@ void SearchBox::handleEvents() {
     if (this->isActivated) {
         if (IsKeyPressed(KEY_BACKSPACE)) {
             if (this->rawText.length() > 0) {
-                this->rawText.pop_back();
+//                this->rawText.pop_back();
+                int prevCodepointSize = 0;
+                GetCodepointPrevious(this->rawText.c_str() + this->rawText.length(), &prevCodepointSize);
+
+                while (prevCodepointSize--) {
+                    this->rawText.pop_back();
+                }
             }
         } else if (IsKeyPressed(KEY_ENTER)) {
             this->isActivated = false;
         } else {
             if (this->rawText.length() < MAX_LENGTH) {
-                auto c = (char)GetCharPressed();
-                if (c != '\0')
-                    this->rawText += c;
+                // NOTE: This handle is followed by instructions of Raygui
+                int codepoint = GetCharPressed(), codepointSize = 0;
+                if (codepoint != 0) {
+                    const char *charEncoded = CodepointToUTF8(codepoint, &codepointSize);
+
+                    for (int i = 0; i < codepointSize; i++) {
+                        this->rawText += charEncoded[i];
+                    }
+                }
             }
         }
     }
@@ -73,5 +92,12 @@ void SearchBox::reset() {
 }
 
 void SearchBox::updateText() {
-    this->text = this->rawText.substr(std::max((int)this->rawText.length() - MAX_VISIBLE, 0), MAX_VISIBLE);
+//    this->text = this->rawText.substr(std::max((int)this->rawText.length() - MAX_VISIBLE, 0), MAX_VISIBLE);
+    int codepointSize = 0, totalCodepointSize = 0, charCounter = 0, last = (int)this->rawText.length();
+    const char *raw = this->rawText.c_str();
+    for (; last && charCounter < MAX_VISIBLE; last -= codepointSize, totalCodepointSize += codepointSize, charCounter++) {
+        codepointSize = 0;
+        GetCodepointPrevious(raw + last, &codepointSize);
+    }
+    this->text = this->rawText.substr(last, totalCodepointSize);
 }
