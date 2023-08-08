@@ -62,7 +62,7 @@ bool ApiWord::removeWord(Constants::TypeDict typeDict, std::wstring word) {
     }
     return false;
 }
-
+// how to edit
 void ApiWord::editWord(Constants::TypeDict typeDict, Word &word, int index, std::wstring newDefinition) {
 
 }

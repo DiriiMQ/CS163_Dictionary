@@ -17,7 +17,7 @@ public:
     Dict dicts[3]; // use Constants::TypeDict to index
     Dicts(); // load Dicts
 };
-
+//dicts -> MainDictionary
 class BaseApi {
 protected:
     Dicts& MainDictionary;
