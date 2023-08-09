@@ -23,7 +23,6 @@ SuggestionLine::SuggestionLine(std::string text, std::string def, Font *font, Re
 }
 
 void SuggestionLine::draw() {
-//    DrawRectangleRec(this->rectangle, RED);
     this->button.draw();
     DrawTextEx(*this->font,
                this->textDraw.c_str(),

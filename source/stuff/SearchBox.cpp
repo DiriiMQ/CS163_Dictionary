@@ -13,18 +13,6 @@ SearchBox::SearchBox(int fontSize, Rectangle position, Font* font) {
     this->isActivated = this->isFlicked = false;
     this->font = font;
 
-    this->test = SuggestionLine(
-            "test",
-            "test",
-            font,
-            {
-                this->position.x + 10,
-                this->position.y + 65,
-                static_cast<float>(this->textureBlank.width) - 20,
-                static_cast<float>(textureBlank.height / 2.0)
-            }
-            );
-
     this->rectangleSuggest = {
             this->position.x + 10,
             this->position.y + 65,
@@ -34,9 +22,6 @@ SearchBox::SearchBox(int fontSize, Rectangle position, Font* font) {
 }
 
 void SearchBox::draw() {
-//    DrawTexture(this->textureBlank, this->position.x, this->position.y, WHITE);
-//    std::cout << "LOG: Text: " << this->text << '\n';
-//    this->font = GetFontDefault();
     DrawTextEx(*this->font,
                this->text.c_str(),
                {this->position.x + 55, this->position.y + 20},
@@ -64,7 +49,7 @@ void SearchBox::handleEvents() {
                 this->currentId--;
             }
         }
-//        this->test.handleEvents();
+
         for (auto &i : this->suggestList) {
             i.handleEvents();
         }
@@ -88,7 +73,6 @@ void SearchBox::handleEvents() {
     if (this->isActivated) {
         if (IsKeyPressed(KEY_BACKSPACE)) {
             if (this->rawText.length() > 0) {
-//                this->rawText.pop_back();
                 int prevCodepointSize = 0;
                 GetCodepointPrevious(this->rawText.c_str() + this->rawText.length(), &prevCodepointSize);
 
@@ -128,7 +112,6 @@ void SearchBox::update() {
     }
 
     if (this->isActivated) {
-//        this->test.update();
         for (int i = 0; i < this->suggestList.size(); ++i) {
             this->suggestList[i].setText(this->suggestListText[i + this->currentId].first);
             this->suggestList[i].setDefinition(this->suggestListText[i + this->currentId].second);
@@ -151,7 +134,6 @@ void SearchBox::reset() {
 }
 
 void SearchBox::updateText() {
-//    this->text = this->rawText.substr(std::max((int)this->rawText.length() - MAX_VISIBLE, 0), MAX_VISIBLE);
     int codepointSize = 0, totalCodepointSize = 0, charCounter = 0, last = (int)this->rawText.length();
     const char *raw = this->rawText.c_str();
     for (; last && charCounter < MAX_VISIBLE; last -= codepointSize, totalCodepointSize += codepointSize, charCounter++) {

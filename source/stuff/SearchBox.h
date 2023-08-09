@@ -31,8 +31,6 @@ private:
     Font* font;
     std::string text, rawText;
 
-    SuggestionLine test;
-
     // original suggest rectangle
     Rectangle rectangleSuggest;
     int currentId = 0;
