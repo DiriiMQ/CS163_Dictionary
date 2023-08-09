@@ -51,6 +51,9 @@ public:
     ValueType search(const wstring& searchedWord);
     bool empty() const ;
     const pair < wstring, const ValueType& > getRandom() const ;
+    // 0 mean no word found with that key
+    //-1 mean no word found with that key but there are words that start with that key
+    // 1 mean there is a word with that key
     int getAutoComplete(wstring &key, vector < wstring > &result);
 };
 #include "Trie.cpp"
