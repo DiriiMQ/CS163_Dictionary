@@ -5,6 +5,8 @@
 #include <vector>
 #include <set>
 #include "Map.hpp"
+#include <time.h>
+#include <cstdlib>
 using namespace std;
 //mapping a wstring to a ValueType using trie
 template < typename ValueType >
@@ -25,6 +27,8 @@ private:
     int WordCount = 0;
     void removeHelper(TrieNode < ValueType > *current);
     void getAllConstRefHelper(TrieNode < ValueType > *current , wstring &key , vector < pair < const wstring , const ValueType& > > &result) const ;
+    void getAutoCompleteList(TrieNode < ValueType > *current , wstring &key , vector < wstring > &result);
+    int getAutoCompleteHelper(wstring &key , TrieNode < ValueType > *root , vector < wstring > &result);
     void insert(const wstring &key);
 public:
     int size() const ;
@@ -43,10 +47,11 @@ public:
     // return vector chứa tất cả các cặp <key, value> trong trie
     vector < pair < wstring , ValueType > > getAll() const ;
     const vector < pair < const wstring, const ValueType& > > getAllConstRef() const ;
-    // nhập vào 1 key, return value (definition ở dạng set <wstring>) và lưu từ đó vô search history nếu tìm successfully)
+    // nhập vào 1 key, return value (definition ở dạng set <wstring>))
     ValueType search(const wstring& searchedWord);
     bool empty() const ;
     const pair < wstring, const ValueType& > getRandom() const ;
+    int getAutoComplete(wstring &key, vector < wstring > &result);
 };
 #include "Trie.cpp"
 #endif //TRIE_H

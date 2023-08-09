@@ -14,8 +14,8 @@ enum class QuizResponse {
 
 class Quiz {
 public:
-    Word word;
-    std::vector<Word> options; // 4 options
+    Word *word;
+    std::vector<Word*> options; // 4 options
 };
 
 

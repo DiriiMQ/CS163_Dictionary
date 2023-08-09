@@ -5,7 +5,7 @@
 #include "Api.h"
 #include "Dict.h"
 #include "Word.h"
-
+//Add data to each dicts[index], vector and Trie - Sĩ
 Dicts::Dicts() {
 
 }
@@ -26,7 +26,7 @@ bool ApiFavorite::removeFavorite(Constants::TypeDict typeDict, std::wstring word
     }
     return false;
 }
-//?
+// why vector<Dict>?//
 std::vector<Dict> ApiFavorite::getFavorite(Constants::TypeDict typeDict) {
     return std::vector<Dict>();
 }
@@ -62,21 +62,25 @@ bool ApiWord::removeWord(Constants::TypeDict typeDict, std::wstring word) {
     }
     return false;
 }
-// how to edit
+// how to edit, Sĩ
 void ApiWord::editWord(Constants::TypeDict typeDict, Word &word, int index, std::wstring newDefinition) {
 
 }
 
 Word ApiWord::getRandomWord(Constants::TypeDict typeDict) {
+    srand(time(0));
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     pair<wstring,int> WordRand = dictionary.Map.getRandom();
     return dictionary.words[WordRand.second];
 }
 
-std::vector<Word> ApiSearch::getAutoCompleteListForWord(Constants::TypeDict typeDict, std::wstring word) {
-    return std::vector<Word>();
+std::vector<wstring> ApiSearch::getAutoCompleteListForWord(Constants::TypeDict typeDict, std::wstring word) {
+    vector<wstring> AutoCompleteList;
+    Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
+    dictionary.Map.getAutoComplete(word, AutoCompleteList);
+    return move(AutoCompleteList);
 }
-
+//
 std::vector<Word> ApiSearch::getAutoCompleteListForDefinition(Constants::TypeDict typeDict, std::wstring definition) {
     return std::vector<Word>();
 }
@@ -86,13 +90,26 @@ std::vector<wstring> ApiSearch::getHistory(Constants::TypeDict typeDict) {
 }
 
 Quiz ApiQuiz::getQuiz(Constants::TypeDict typeDict) {
+    srand(time(0));
+    Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
+    quiz.options.clear();
+    for (int i=0; i<4; i++){
+        unsigned int temp = 0;
+        for (int i = 0; i < 4; ++i){
+            temp = (temp << 8) | (rand() % 256);
+        }
+        quiz.options.push_back(&dictionary.words[temp % dictionary.words.size()]);
+    }    
+    int temp = rand() % 4;
+    quiz.word = quiz.options[temp];
     return Quiz();
 }
-
+//Í it the right way to use "response"?
 bool ApiQuiz::submitQuiz(Constants::TypeDict typeDict, QuizResponse response) {
+    if (quiz.options[static_cast<int>(response)] == quiz.word) return true;
     return false;
 }
-
+//Sĩ
 void Api::resetDict(Constants::TypeDict typeDict) {
 
 }

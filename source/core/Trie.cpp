@@ -236,5 +236,40 @@ const pair < wstring, const ValueType& > Trie < ValueType > :: getRandom() const
     }
     return make_pair(key , std::cref(current->value));
 }
+template < typename ValueType >
+void Trie < ValueType > ::getAutoCompleteList(TrieNode < ValueType > *current , wstring &key , vector < wstring > &result) {
+    if (current->isEndOfWord) {
+        result.push_back(key);
+    }
+    auto children = current->children.getAll();
+    for (auto &child : children) {
+        key.push_back(child.first);
+        getAutoCompleteList(child.second , key , result);
+        key.pop_back();
+    }
+}
+template < typename ValueType >
+int Trie < ValueType > ::getAutoCompleteHelper(wstring &key , TrieNode < ValueType > *root , vector < wstring > &result) {
+    TrieNode < ValueType > *current = root;
+    for (auto &c : key) {
+        if (!current->children.find(c)) {
+            return 0;
+        }
+        current = current->children[c];
+    }
+    if (current->children.root==nullptr) {
+        if (current->isEndOfWord) {
+            result.push_back(key);
+            return 1;
+        } 
+        return -1;
+    }
+    getAutoCompleteList(current , key, result);
+    return 1;
+}
+template < typename ValueType >
+int Trie < ValueType > ::getAutoComplete(wstring &key, vector < wstring > &result){
+    return getAutoCompleteHelper(key , root , result);
+}
 
 #endif //STRINGMAPPING_CPP

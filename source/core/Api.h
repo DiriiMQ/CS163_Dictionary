@@ -51,7 +51,7 @@ class ApiSearch : public BaseApi {
 public:
     explicit ApiSearch(Dicts& dicts) : BaseApi(dicts) {};
 
-    std::vector<Word> getAutoCompleteListForWord(Constants::TypeDict typeDict, std::wstring word);
+    std::vector<wstring> getAutoCompleteListForWord(Constants::TypeDict typeDict, std::wstring word);
     std::vector<Word> getAutoCompleteListForDefinition(Constants::TypeDict typeDict, std::wstring definition);
 
     std::vector<wstring> getHistory(Constants::TypeDict typeDict);
