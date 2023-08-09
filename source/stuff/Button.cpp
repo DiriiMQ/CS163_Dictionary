@@ -94,3 +94,60 @@ void Button::setIsSuggest() {
 bool Button::isPressing() const {
     return this->pressing;
 }
+// Button for Image
+ButtonImage::ButtonImage(std::vector<std::string> path, Rectangle rectangle)
+{
+    this->path = path;
+    this->rectangle = rectangle;
+    this->numpath = path.size();
+    this->tmpPath = 0;
+    this->color = WHITE;
+    for (int i = 0; i < numpath; i++)
+    {
+        Texture tmp = LoadTextureFromImage(LoadImage(path[i].c_str()));
+        this->texture.push_back(tmp);
+    }
+}
+
+void ButtonImage::draw() {
+    DrawTexture(texture[tmpPath], rectangle.x, rectangle.y, color);
+}
+
+void ButtonImage::handleEvents() {
+    this->clicked = false;
+    if (CheckCollisionPointRec(GetMousePosition(), this->rectangle)) {
+
+        if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
+            this->pressing = true;
+
+        }
+        else if (this->pressing) {
+            this->pressing = false;
+            this->clicked = true;
+        }
+    }
+    else {
+        this->pressing = false;
+    }
+}
+
+void ButtonImage::update() {
+    if (this->isClicked())
+    {
+        this->tmpPath = (this->tmpPath + 1) % numpath;
+    }
+}
+
+bool ButtonImage::isClicked() const {
+    return this->clicked;
+}
+
+int ButtonImage::getClicked()
+{
+    return tmpPath;
+}
+
+bool ButtonImage::isPressing() const {
+    return this->pressing;
+}
+

@@ -9,7 +9,7 @@
 #include "raygui.h"
 #include "SuggestionLine.h"
 #include "Constants.h"
-
+#include <vector>
 #include <string>
 #include <cstring>
 #include <algorithm>
@@ -53,6 +53,7 @@ public:
 
     void reset();
 };
+void formatString(std::string s, int size, int fontSize, std::vector <std::string>& result);
 
 
 #endif //CS163_GROUP9_SEARCHBOX_H
