@@ -26,7 +26,7 @@ private:
     char ot[35 + 1];                // Text box only print 35 chars
     int currentclick = -1;
 
-//    Font font;
+    Font font;
     Texture background;
     Button menuButtons[3],
             operationButtons[3],

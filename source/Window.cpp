@@ -17,7 +17,13 @@ Window::Window() {
 
 void Window::init() {
     this->background = LoadTextureFromImage(LoadImage(Constants::Directories::DMQ::BG));
-    this->searchBox = SearchBox(30, { 92.5, 155.3, 690.7, 66.1 });
+    this->font = LoadFontEx(
+            Constants::Screen::FONT,
+            32,
+            nullptr,
+            40000
+    );
+    this->searchBox = SearchBox(30, { 92.5, 155.3, 690.7, 66.1 }, &font);
     for (int i = (int)Constants::Screen::menuBtn::WORD; i != (int)Constants::Screen::menuBtn::NONE; ++i) {
         this->menuButtons[i] = Button(
                 Constants::Screen::NAME_MENU_BTN[i],
@@ -26,6 +32,19 @@ void Window::init() {
                 Constants::Screen::RECT_MENU_BTN[i]
         );
     }
+
+    std::vector<std::pair<std::string, std::string>> list;
+
+    for (int i = 1; i <= 20; ++i) {
+        list.emplace_back(
+                        "test" + std::to_string(i),
+                        "def" + std::to_string(i)
+        );
+    }
+
+    this->searchBox.setList(
+            list
+    );
 
     for (int i = (int)Constants::Screen::operationBtn::REMOVE; i != (int)Constants::Screen::operationBtn::NONE; ++i) {
         this->operationButtons[i] = Button(

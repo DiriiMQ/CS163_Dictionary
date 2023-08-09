@@ -4,36 +4,79 @@
 
 #include "SearchBox.h"
 
-SearchBox::SearchBox(int fontSize, Rectangle position) {
+SearchBox::SearchBox(int fontSize, Rectangle position, Font* font) {
     this->text = this->rawText = "";
     this->fontSize = fontSize;
     this->position = position;
     this->frameCount = 0;
     this->textureBlank = LoadTextureFromImage(LoadImage(Constants::Directories::DMQ::Blank));
     this->isActivated = this->isFlicked = false;
+    this->font = font;
 
-    this->font = LoadFontEx(
-            Constants::Screen::FONT,
-            32,
-            nullptr,
-            40000
+    this->test = SuggestionLine(
+            "test",
+            "test",
+            font,
+            {
+                this->position.x + 10,
+                this->position.y + 65,
+                static_cast<float>(this->textureBlank.width) - 20,
+                static_cast<float>(textureBlank.height / 2.0)
+            }
             );
+
+    this->rectangleSuggest = {
+            this->position.x + 10,
+            this->position.y + 65,
+            static_cast<float>(this->textureBlank.width) - 20,
+            static_cast<float>(textureBlank.height / 2.0)
+    };
 }
 
 void SearchBox::draw() {
 //    DrawTexture(this->textureBlank, this->position.x, this->position.y, WHITE);
-    std::cout << "LOG: Text: " << this->text << '\n';
+//    std::cout << "LOG: Text: " << this->text << '\n';
 //    this->font = GetFontDefault();
-    DrawTextEx(this->font,
+    DrawTextEx(*this->font,
                this->text.c_str(),
                {this->position.x + 55, this->position.y + 20},
                this->fontSize,
                1,
                BLACK);
 
+    if (this->isActivated) {
+//        this->test.draw();
+        for (auto &i : this->suggestList) {
+            i.draw();
+        }
+    }
 }
 
 void SearchBox::handleEvents() {
+    if (this->isActivated) {
+        if (GetMouseWheelMove() < 0) {
+            if (this->currentId + 1 <= this->suggestListText.size() - MAX_SUGGESTIONS) {
+                this->currentId++;
+            }
+        }
+        if (GetMouseWheelMove() > 0) {
+            if (this->currentId - 1 >= 0) {
+                this->currentId--;
+            }
+        }
+//        this->test.handleEvents();
+        for (auto &i : this->suggestList) {
+            i.handleEvents();
+        }
+
+        for (int i = 0; i < this->suggestList.size(); i++) {
+            if (this->suggestList[i].getClicked()) {
+                std::cout << "LOG: SearchBox: Option " << i + this->currentId <<  " is clicked\n";
+                break;
+            }
+        }
+    }
+
     if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
         if (CheckCollisionPointRec(GetMousePosition(), this->position)) {
             this->isActivated = true;
@@ -80,8 +123,20 @@ void SearchBox::update() {
             this->isFlicked = !this->isFlicked;
     }
 
-    if (this->isFlicked) {
+    if (this->isFlicked && this->isActivated) {
         this->text += '|';
+    }
+
+    if (this->isActivated) {
+//        this->test.update();
+        for (int i = 0; i < this->suggestList.size(); ++i) {
+            this->suggestList[i].setText(this->suggestListText[i + this->currentId].first);
+            this->suggestList[i].setDefinition(this->suggestListText[i + this->currentId].second);
+        }
+
+        for (auto &i : this->suggestList) {
+            i.update();
+        }
     }
 }
 
@@ -89,6 +144,10 @@ void SearchBox::reset() {
     this->text = this->rawText = "";
     this->isActivated = this->isFlicked = false;
     this->frameCount = 0;
+
+    this->suggestListText.clear();
+    this->suggestList.clear();
+    this->currentId = 0;
 }
 
 void SearchBox::updateText() {
@@ -100,4 +159,24 @@ void SearchBox::updateText() {
         GetCodepointPrevious(raw + last, &codepointSize);
     }
     this->text = this->rawText.substr(last, totalCodepointSize);
+}
+
+void SearchBox::setList(std::vector<std::pair<std::string, std::string>> list) {
+    this->suggestListText = std::move(list);
+    int n = std::min(
+            (int)this->suggestListText.size(),
+            MAX_SUGGESTIONS
+    );
+    this->suggestList.clear();
+    Rectangle rec = this->rectangleSuggest;
+    for (int i = 0; i < n; i++) {
+        this->suggestList.emplace_back(
+                this->suggestListText[i].first,
+                this->suggestListText[i].second,
+                this->font,
+                rec
+        );
+        rec.y += rec.height;
+    }
+    this->currentId = 0;
 }

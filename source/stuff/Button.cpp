@@ -32,7 +32,7 @@ void Button::draw() {
                 this->rectangle.width - 2,
                 this->rectangle.height - 2
                 },
-            CORNER_RADIUS,
+            this->isSuggest ? 0 : CORNER_RADIUS,
             DPI,
             3,
             this->color
@@ -56,7 +56,7 @@ void Button::draw() {
 
 void Button::handleEvents() {
     this->clicked = false;
-    this->colorBG = TRANSPARENT;
+    this->colorBG = isSuggest ? WHITE : TRANSPARENT;
 
     if (CheckCollisionPointRec(GetMousePosition(), this->rectangle)) {
         this->colorBG = LIGHTGRAY;
@@ -69,7 +69,8 @@ void Button::handleEvents() {
             this->clicked = true;
         }
     } else {
-        this->colorBG = TRANSPARENT;
+        this->colorBG = isSuggest ? WHITE : TRANSPARENT;
+        this->pressing = false;
     }
 }
 
@@ -84,4 +85,12 @@ bool Button::isClicked() const {
 
 void Button::setChosen(bool _isChosen) {
     this->isChosen = _isChosen;
+}
+
+void Button::setIsSuggest() {
+    this->isSuggest = true;
+}
+
+bool Button::isPressing() const {
+    return this->pressing;
 }
