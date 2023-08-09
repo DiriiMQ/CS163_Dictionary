@@ -52,6 +52,7 @@ add_executable(CS163_Group9 main.cpp
         source/core/Trie.cpp
         source/core/Trie.h
         source/core/Map.hpp
+        source/core/CompareString.h
 )
 
 target_link_libraries(${PROJECT_NAME} raylib)

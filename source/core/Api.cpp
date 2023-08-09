@@ -5,6 +5,7 @@
 #include "Api.h"
 #include "Dict.h"
 #include "Word.h"
+#include "CompareString.h"
 //Add data to each dicts[index], vector and Trie - Sĩ
 Dicts::Dicts() {
 
@@ -80,8 +81,9 @@ std::vector<wstring> ApiSearch::getAutoCompleteListForWord(Constants::TypeDict t
     dictionary.Map.getAutoComplete(word, AutoCompleteList);
     return move(AutoCompleteList);
 }
-//
+//What is definition?
 std::vector<Word> ApiSearch::getAutoCompleteListForDefinition(Constants::TypeDict typeDict, std::wstring definition) {
+    Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     return std::vector<Word>();
 }
 //edit word -> string
@@ -104,7 +106,7 @@ Quiz ApiQuiz::getQuiz(Constants::TypeDict typeDict) {
     quiz.word = quiz.options[temp];
     return Quiz();
 }
-//Í it the right way to use "response"?
+//Is it the right way to use "response"?
 bool ApiQuiz::submitQuiz(Constants::TypeDict typeDict, QuizResponse response) {
     if (quiz.options[static_cast<int>(response)] == quiz.word) return true;
     return false;

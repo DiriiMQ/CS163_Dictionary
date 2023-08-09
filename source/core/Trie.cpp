@@ -244,7 +244,7 @@ void Trie < ValueType > ::getAutoCompleteList(TrieNode < ValueType > *current , 
     auto children = current->children.getAll();
     for (auto &child : children) {
         key.push_back(child.first);
-        getAutoCompleteList(child.second , key , result);
+        getAutoCompleteList(child.second, key, result);
         key.pop_back();
     }
 }
@@ -264,12 +264,12 @@ int Trie < ValueType > ::getAutoCompleteHelper(wstring &key , TrieNode < ValueTy
         } 
         return -1;
     }
-    getAutoCompleteList(current , key, result);
+    getAutoCompleteList(current, key, result);
     return 1;
 }
 template < typename ValueType >
 int Trie < ValueType > ::getAutoComplete(wstring &key, vector < wstring > &result){
-    return getAutoCompleteHelper(key , root , result);
+    return getAutoCompleteHelper(key, root, result);
 }
 
 #endif //STRINGMAPPING_CPP
