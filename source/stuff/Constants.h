@@ -62,6 +62,8 @@ namespace Constants {
 
         constexpr char NAME_RESET_BTN[] = "Reset";
         constexpr Rectangle RECT_RESET_BTN = { 1096.9,678.5,230.4,63.3 };
+
+        constexpr char FONT[] = "../assets/fonts/OpenSans.ttf";
     };
 
     namespace Directories {

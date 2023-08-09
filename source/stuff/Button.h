@@ -10,6 +10,7 @@
 #include "Constants.h"
 
 #include <string>
+#include <iostream>
 
 class Button {
 private:
@@ -23,6 +24,7 @@ private:
     Color color, colorBG;
     Rectangle rectangle;
 
+    bool isSuggest = false;
     bool pressing = false, clicked = false, isChosen = false;
 
 public:
@@ -34,8 +36,10 @@ public:
     void update();
 
     [[nodiscard]] bool isClicked() const;
+    [[nodiscard]] bool isPressing() const;
 
     void setChosen(bool isChosen);
+    void setIsSuggest();
 };
 
 
