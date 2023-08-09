@@ -269,6 +269,9 @@ int Trie < ValueType > ::getAutoCompleteHelper(wstring &key , TrieNode < ValueTy
 }
 template < typename ValueType >
 int Trie < ValueType > ::getAutoComplete(wstring &key, vector < wstring > &result){
+    // 0 mean no word found with that key
+    //-1 mean no word found with that key but there are words that start with that key
+    // 1 mean there is a word with that key
     return getAutoCompleteHelper(key , root , result);
 }
 
