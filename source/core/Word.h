@@ -16,34 +16,33 @@ public:
 struct Definition {
     wstring meaning;
     vector<wstring> examples;
+    Definition() : meaning(), examples() {
+        
+    }
 };
 struct Type {
     wstring type;
     vector<Definition> definition;
     wstring phrase;
+    Type() : type(), definition(), phrase() {
+       
+    }
 };
 
-struct WordAV {
+struct Word {
     wstring word;
     wstring pronounce;
     vector<Type> worddef;
-    vector<wstring> sideexplain;
-    vector<wstring> engdef;
+    int dicttype=0;
+    // 1 for AV
+    // 2 for AA
+    // 3 for VA
+
+    // with AA: only concentrate on wstring word and definition meaning
+    // same with VA
+    
+
 };
-struct WordAA {
-    wstring word;
-    vector<wstring> definition;
-};
-struct WordVA {
-    wstring word;
-    wstring definition;
-};
-struct Word {
-    vector<WordAV> Vdic;
-    vector<WordAA> Edic;
-    vector<WordVA> VEdic;
-};
-vector<WordAV> readAVdictionary(const string& filename);
 
 
 #endif //CS163_GROUP9_WORD_H
