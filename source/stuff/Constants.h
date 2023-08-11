@@ -62,14 +62,16 @@ namespace Constants {
 
         constexpr char NAME_RESET_BTN[] = "Reset";
         constexpr Rectangle RECT_RESET_BTN = { 1096.9,678.5,230.4,63.3 };
+
+        constexpr char FONT[] = "../../../assets/fonts/OpenSans.ttf";
     };
 
     namespace Directories {
         namespace DMQ {
             constexpr char BG[] = "../../../assets/components/Image_UI/BackGr.png";
-            constexpr char SearchWord[] = "../../..//assets/components/Image_UI/SearchWord.png";
+            constexpr char SearchWord[] = "../../../assets/components/Image_UI/SearchWord.png";
             constexpr char SearchDef[] = "../../../assets/components/Image_UI/SearchDef.png";
-            constexpr char Favourite[] = "../../..//assets/components/Image_UI/Favourite.png";
+            constexpr char Favourite[] = "../../../assets/components/Image_UI/Favourite.png";
             constexpr char Blank[] = "../../../assets/components/Image_UI/Blank.png";
         }
     };
