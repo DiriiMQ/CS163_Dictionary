@@ -14,20 +14,14 @@
 
 class Window {
 private:
-    char text[256] = "";
-    //button parameter
-    //text box 
-    char name[256 + 1] = "\0";      // NOTE: One extra space required for null terminator char '\0'
-    int letterCount = 0;
-    int MAX_INPUT_CHARS = 256;
-    bool mouseOnText = false;
-    int framesCounter = 0;
-    bool tmp = 0;
-    char ot[35 + 1];                // Text box only print 35 chars
-    int currentclick = -1;
+    static constexpr float CORNER_RADIUS = 0.1f;
+
+    // FOR TESTING
+//    std::string testLarge;
 
     Font font;
     Texture background;
+    Rectangle mainInfoBG;
     Button menuButtons[3],
             operationButtons[3],
             resetButton;
@@ -47,9 +41,9 @@ private:
     Rectangle Quiz = { 1110,160,130,50 };
 
     //update function
-    void updateTextbox();
+//    void updateTextbox();
     //draw function
-    void drawTextbox(Rectangle textBox);
+//    void drawTextbox(Rectangle textBox);
 
 public:
     Window();
@@ -62,7 +56,7 @@ public:
 
     void reset();
 
-    void menu();
+//    void menu();
     void run();
 };
 

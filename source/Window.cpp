@@ -9,8 +9,6 @@
 Window::Window() {
     InitWindow(Constants::Screen::SCREEN_WIDTH, Constants::Screen::SCREEN_HEIGHT, Constants::Screen::NAME);
     SetTargetFPS(Constants::Screen::FRAMES_PER_SECOND);
-//    this->font = LoadFont(Constants::Screen::FONT);
-//    GuiSetFont(this->font);
 
     this->init();
 }
@@ -64,6 +62,8 @@ void Window::init() {
 
     this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
     this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
+
+    this->mainInfoBG = { 47,259,810,420};
 }
 
 void Window::run() {
@@ -83,11 +83,21 @@ void Window::draw() {
     for (int i = 0; i < 3; ++i) {
         this->menuButtons[i].draw();
 
-        if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE)
+        if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
             this->operationButtons[i].draw();
+            DrawRectangleRounded(this->mainInfoBG, CORNER_RADIUS, 0,WHITE);
+        }
     }
     this->resetButton.draw();
     this->searchBox.draw();
+
+//    std::vector<std::string> lines;
+//    Utils::formatString(this->testLarge, 200, 20, lines);
+//    float space = 0;
+//    for (auto &i : lines) {
+//        DrawTextEx(font, i.c_str(), {500, 500 + space}, 20, 1, BLACK);
+//        space += 25;
+//    }
 }
 
 void Window::handleEvents() {
