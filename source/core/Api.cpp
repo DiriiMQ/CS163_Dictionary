@@ -104,7 +104,7 @@ Quiz ApiQuiz::getQuiz(Constants::TypeDict typeDict) {
     }    
     int temp = rand() % 4;
     quiz.word = quiz.options[temp];
-    return Quiz();
+    return quiz;
 }
 //Is it the right way to use "response"?
 bool ApiQuiz::submitQuiz(Constants::TypeDict typeDict, QuizResponse response) {
