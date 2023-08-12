@@ -17,22 +17,26 @@ public:
     Dict dicts[3]; // use Constants::TypeDict to index
     Dicts(); // load Dicts
 };
-
+//dicts -> MainDictionary
 class BaseApi {
 protected:
-    Dicts& dicts;
+    Dicts& MainDictionary;
+
 
 public:
-    explicit BaseApi(Dicts& dicts) : dicts(dicts) {};
+    explicit BaseApi(Dicts& dicts) : MainDictionary(dicts) {};
+
 };
 
 class ApiFavorite : public BaseApi {
 public:
     explicit ApiFavorite(Dicts& dicts) : BaseApi(dicts) {};
 
-    void addFavorite(Constants::TypeDict typeDict, std::string word);
-    bool removeFavorite(Constants::TypeDict typeDict, std::string word); // return true if success, false if not found
-    std::vector<Dict> getFavorite(Constants::TypeDict typeDict);
+
+    void addFavorite(Constants::TypeDict typeDict, std::wstring word);
+    bool removeFavorite(Constants::TypeDict typeDict, std::wstring word); // return true if success, false if not found
+    std::vector<wstring> getFavorite(Constants::TypeDict typeDict);
+
     void resetFavorite(Constants::TypeDict typeDict);
 };
 
@@ -40,10 +44,12 @@ class ApiWord : public BaseApi {
 public:
     explicit ApiWord(Dicts& dicts) : BaseApi(dicts) {};
 
-    Word getWord(Constants::TypeDict typeDict, std::string word);
+
+    Word getWord(Constants::TypeDict typeDict, std::wstring word);
+
     void addWord(Constants::TypeDict typeDict, Word word);
-    bool removeWord(Constants::TypeDict typeDict, std::string word); // return true if success, false if not found
-    void editWord(Constants::TypeDict typeDict, std::string word, std::string newDefinition);
+    bool removeWord(Constants::TypeDict typeDict, std::wstring word); // return true if success, false if not found
+    void editWord(Constants::TypeDict typeDict, Word &word, int index, std::wstring newDefinition);
     Word getRandomWord(Constants::TypeDict typeDict);
 };
 
@@ -51,10 +57,11 @@ class ApiSearch : public BaseApi {
 public:
     explicit ApiSearch(Dicts& dicts) : BaseApi(dicts) {};
 
-    std::vector<Word> getAutoCompleteListForWord(Constants::TypeDict typeDict, std::string word);
-    std::vector<Word> getAutoCompleteListForDefinition(Constants::TypeDict typeDict, std::string definition);
 
-    std::vector<Word> getHistory(Constants::TypeDict typeDict);
+    std::vector<wstring> getAutoCompleteListForWord(Constants::TypeDict typeDict, std::wstring word);
+    std::vector<Word> getAutoCompleteListForDefinition(Constants::TypeDict typeDict, std::wstring definition);
+
+    std::vector<wstring> getHistory(Constants::TypeDict typeDict);
 };
 
 class ApiQuiz :  public BaseApi {
