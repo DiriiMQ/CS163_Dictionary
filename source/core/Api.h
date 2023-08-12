@@ -22,17 +22,21 @@ class BaseApi {
 protected:
     Dicts& MainDictionary;
 
+
 public:
     explicit BaseApi(Dicts& dicts) : MainDictionary(dicts) {};
+
 };
 
 class ApiFavorite : public BaseApi {
 public:
     explicit ApiFavorite(Dicts& dicts) : BaseApi(dicts) {};
 
+
     void addFavorite(Constants::TypeDict typeDict, std::wstring word);
     bool removeFavorite(Constants::TypeDict typeDict, std::wstring word); // return true if success, false if not found
     std::vector<wstring> getFavorite(Constants::TypeDict typeDict);
+
     void resetFavorite(Constants::TypeDict typeDict);
 };
 
@@ -40,7 +44,9 @@ class ApiWord : public BaseApi {
 public:
     explicit ApiWord(Dicts& dicts) : BaseApi(dicts) {};
 
+
     Word getWord(Constants::TypeDict typeDict, std::wstring word);
+
     void addWord(Constants::TypeDict typeDict, Word word);
     bool removeWord(Constants::TypeDict typeDict, std::wstring word); // return true if success, false if not found
     void editWord(Constants::TypeDict typeDict, Word &word, int index, std::wstring newDefinition);
@@ -50,6 +56,7 @@ public:
 class ApiSearch : public BaseApi {
 public:
     explicit ApiSearch(Dicts& dicts) : BaseApi(dicts) {};
+
 
     std::vector<wstring> getAutoCompleteListForWord(Constants::TypeDict typeDict, std::wstring word);
     std::vector<Word> getAutoCompleteListForDefinition(Constants::TypeDict typeDict, std::wstring definition);
