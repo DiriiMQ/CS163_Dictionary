@@ -32,7 +32,7 @@ public:
 
     void addFavorite(Constants::TypeDict typeDict, std::wstring word);
     bool removeFavorite(Constants::TypeDict typeDict, std::wstring word); // return true if success, false if not found
-    std::vector<Dict> getFavorite(Constants::TypeDict typeDict);
+    std::vector<wstring> getFavorite(Constants::TypeDict typeDict);
     void resetFavorite(Constants::TypeDict typeDict);
 };
 
