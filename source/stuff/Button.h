@@ -42,35 +42,6 @@ public:
     void setChosen(bool isChosen);
     void setIsSuggest();
 };
-class ButtonImage
-{
-private:
-    static constexpr int DPI = 500;
-    static constexpr float CORNER_RADIUS = 0.3;
-
-    std::vector <std::string> path;
-    int numpath;
-    int tmpPath;
-
-    Rectangle rectangle;
-    Color color;
-
-    bool isSuggest = false;
-    bool pressing = false, clicked = false;
-
-    std::vector <Texture> texture;
-
-public:
-    ButtonImage(std::vector <std::string> path, Rectangle rectangle);
-
-    void draw();
-    void handleEvents();
-    void update();
-
-    [[nodiscard]] bool isClicked() const;
-    [[nodiscard]] bool isPressing() const;
-    int getClicked();
-};
 
 class ButtonImage
 {
@@ -95,15 +66,17 @@ private:
 
 public:
     ButtonImage(std::vector <std::string> path, std::vector <std::string> pathPress, Rectangle rectangle);
-
+    ButtonImage() = default;
     void draw();
     void handleEvents();
     void update();
-
+    void changeIndex();
+    void changePosition(Rectangle change);
     [[nodiscard]] bool isClicked() const;
     [[nodiscard]] bool isPressing() const;
     int getClicked();
 };
+
 
 
 #endif //CS163_GROUP9_BUTTON_H

@@ -137,6 +137,7 @@ void ButtonImage::handleEvents() {
         this->pressing = false;
         this->isSuggest = false;
     }
+
 }
 
 void ButtonImage::update() {
@@ -144,6 +145,16 @@ void ButtonImage::update() {
     {
         this->tmpPath = (this->tmpPath + 1) % numpath;
     }
+}
+
+void ButtonImage::changeIndex()
+{
+    tmpPath = (tmpPath + 1) % numpath;
+}
+
+void ButtonImage::changePosition(Rectangle change)
+{
+    this->rectangle = change;
 }
 
 bool ButtonImage::isClicked() const {

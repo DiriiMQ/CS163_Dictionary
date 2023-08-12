@@ -6,6 +6,9 @@
 #define CS163_GROUP9_CONSTANTS_H
 
 #include "raylib.h"
+#include <vector>
+#include <string>
+#include <array>
 
 #define TRANSPARENT CLITERAL(Color) {0, 0, 0, 0}
 
@@ -73,6 +76,31 @@ namespace Constants {
             constexpr char SearchDef[] = "../../../assets/components/Image_UI/SearchDef.png";
             constexpr char Favourite[] = "../../../assets/components/Image_UI/Favourite.png";
             constexpr char Blank[] = "../../../assets/components/Image_UI/Blank.png";
+            // std::vector<std::string> switchDataVector(switchDataArray.begin(), switchDataArray.end());
+            constexpr std::array<std::string_view, 3>  switchData = {
+                "../../../assets/components/Image_UI/ENtoEN.png",
+                "../../../assets/components/Image_UI/ENtoVI.png",
+                "../../../assets/components/Image_UI/VItoEN.png"
+            };
+            constexpr std::array<std::string_view, 2>  Star = {
+                 "../../../assets/components/Image_UI/Star.png",
+                 "../../../assets/components/Image_UI/StarFavourite.png"
+             };
+            constexpr std::array<std::string_view, 3>  switchDataPress = {
+               "../../../assets/components/Image_UI/ENtoENPress.png",
+               "../../../assets/components/Image_UI/ENtoVIPress.png",
+               "../../../assets/components/Image_UI/VItoENPress.png"
+             };
+            constexpr std::array<std::string_view, 2>  StarPress = {
+                 "../../../assets/components/Image_UI/StarPress.png",
+                 "../../../assets/components/Image_UI/StarFavouritePress.png"
+             };
+            constexpr std::array<std::string_view, 1>  Quizz = {
+                "../../../assets/components/Image_UI/Quizz.png"
+            };
+            constexpr std::array<std::string_view, 1>  QuizzPress = {
+               "../../../assets/components/Image_UI/QuizzPress.png"
+            };
         }
     };
 } // Constants
