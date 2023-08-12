@@ -93,7 +93,7 @@ void Api::resetDict(Constants::TypeDict typeDict) {
     vector<Word> ddictionary;
     readbinaryfile(ddictionary, filename);
     string newfilename;
-    size_t lastSlashPos = filename.find_last_of("/");
+    size_t lastSlashPos = filename.find_last_of("\\");
     if (lastSlashPos != std::string::npos) {
 
         string path = filename.substr(0, lastSlashPos + 1);
