@@ -71,7 +71,8 @@ void SearchBox::handleEvents() {
     else framecount = 0;
 }
 void SearchBox::update() {
-    if(strlen(rawText.c_str()) > 35)
+    // if(strlen(rawText.c_str()) > 35)
+    if(rawText.length() > 35)
     {
         text.resize(35);
         int last = rawText.length() - 1;

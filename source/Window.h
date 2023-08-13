@@ -11,6 +11,7 @@
 #include "stuff/Utils.h"
 #include "stuff/Button.h"
 #include "stuff/SearchBox.h"
+#include "stuff/FrameBoard.h"
 
 class Window {
 private:
@@ -18,6 +19,8 @@ private:
 
     // FOR TESTING
 //    std::string testLarge;
+    std::vector<std::string> testLines;
+    // END TESTING
 
     Font font;
     Texture background;
@@ -30,6 +33,7 @@ private:
 
     Button test;
     SearchBox searchBox;
+    FrameBoard frameBoard;
     //Button_Coordinate
      //Box and Des
     Rectangle Star = { 792.1 ,276.6 ,47.5 ,45.2 };

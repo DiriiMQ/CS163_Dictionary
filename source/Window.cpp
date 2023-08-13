@@ -64,6 +64,31 @@ void Window::init() {
     this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
 
     this->mainInfoBG = { 47,259,810,420};
+
+    this->frameBoard = FrameBoard(
+            {
+                this->mainInfoBG.x + 10,
+                this->mainInfoBG.y + 10,
+                this->mainInfoBG.width - 20,
+                this->mainInfoBG.height - 20
+                },
+            &this->font
+            );
+
+    for (int i = 0; i < 10; ++i) {
+        this->testLines.emplace_back("hihi dcm DMQ test abc xyd dcm tetehs dfdj fdf dfd fwd ewwf wefef efewf xwfew xfewz hihi dcm DMQ test abc xyd dcm tetehs dfdj fdf dfd fwd ewwf wefef efewf xwfew xfewz hihi dcm DMQ test abc xyd dcm tetehs dfdj fdf dfd fwd ewwf wefef efewf xwfew xfewz hihi dcm DMQ test abc xyd dcm tetehs dfdj fdf dfd fwd ewwf wefef efewf xwfew xfewz hihi dcm DMQ test abc xyd dcm tetehs dfdj fdf dfd fwd ewwf wefef efewf xwfew xfewz hihi dcm DMQ test abc xyd dcm tetehs dfdj fdf dfd fwd ewwf wefef efewf xwfew xfewz");
+    }
+
+    std::vector<std::pair<std::string, std::string*>> _list;
+
+    for (int i = 0; i < 10; ++i) {
+        _list.emplace_back(
+                "xest " + std::to_string(i) + ": ",
+                &this->testLines[i]
+        );
+    }
+
+    this->frameBoard.setBlocks(_list);
 }
 
 void Window::run() {
@@ -86,6 +111,7 @@ void Window::draw() {
         if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
             this->operationButtons[i].draw();
             DrawRectangleRounded(this->mainInfoBG, CORNER_RADIUS, 0,WHITE);
+            this->frameBoard.draw();
         }
     }
     this->resetButton.draw();
@@ -107,6 +133,7 @@ void Window::handleEvents() {
     }
     this->resetButton.handleEvents();
     this->searchBox.handleEvents();
+    this->frameBoard.handleEvents();
 }
 
 void Window::update() {
@@ -136,7 +163,7 @@ void Window::update() {
         }
     }
 
-    if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE)
+    if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
         for (int i = 0; i < 3; ++i) {
             if (this->operationButtons[i].isClicked()) {
                 std::cout << "LOG: Operation button " << i << " is clicked" << std::endl;
@@ -150,6 +177,8 @@ void Window::update() {
                 break;
             }
         }
+        this->frameBoard.update();
+    }
 
     //Search Box
     this->searchBox.update();
@@ -157,7 +186,6 @@ void Window::update() {
     if (this->resetButton.isClicked()) {
         this->reset();
     }
-
 }
 
 void Window::reset() {
