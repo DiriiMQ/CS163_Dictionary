@@ -3,8 +3,6 @@
 //
 
 #include "Window.h"
-#include <iostream>
-#include <cstring>
 
 Window::Window() {
     InitWindow(Constants::Screen::SCREEN_WIDTH, Constants::Screen::SCREEN_HEIGHT, Constants::Screen::NAME);
@@ -89,6 +87,7 @@ void Window::init() {
     }
 
     this->frameBoard.setBlocks(_list);
+    this->frameBoard.setEditLines({0, 3, 5});
 }
 
 void Window::run() {
@@ -195,6 +194,7 @@ void Window::reset() {
     }
     this->resetButton.setChosen(false);
     this->searchBox.reset();
+    this->frameBoard.reset();
     this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
     this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
 }

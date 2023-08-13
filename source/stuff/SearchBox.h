@@ -33,7 +33,7 @@ private:
 
     // original suggest rectangle
     Rectangle rectangleSuggest;
-    int currentId = 0;
+    int currentId = 0, choseId = -1;
     std::vector<SuggestionLine> suggestList;
     std::vector<std::pair<std::string, std::string>> suggestListText;
 
@@ -50,6 +50,7 @@ public:
     void updateText();
 
     void setList(std::vector<std::pair<std::string, std::string>> list);
+    int getChoseId();
 
     void reset();
 };

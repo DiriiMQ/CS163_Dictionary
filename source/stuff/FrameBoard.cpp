@@ -10,6 +10,9 @@ void Line::draw() {
 //    std::cout << "LOG: FrameBoard: Line: maxY: " << maxY << "\n";
 //    std::cout << "LOG: FrameBoard: Line: maxLen: " << maxLen << "\n";
 //    std::cout << "LOG: FrameBoard: Line: getEndY(): " << getEndY() << "\n";
+//    std::cout << "LOG: FrameBoard: Line: isClicked: " << isClicked << "\n";
+//    std::cout << "LOG: FrameBoard: Line: isEditable: " << isEditable << "\n";
+
     for (int i = current; i <= this->last; i++) {
         DrawTextEx(*this->font,
                    this->buffers[i].c_str(),
@@ -21,12 +24,60 @@ void Line::draw() {
 }
 
 void Line::handleEvents() {
+    if (this->current < 0 or this->current >= this->buffers.size()) return;
+    Rectangle region = {
+            this->pos.x,
+            this->pos.y,
+            (float)this->maxLen,
+            (float)(last - current + 1) * (FONT_SIZE + LINE_SPACE)
+    };
 
+    if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+        if (CheckCollisionPointRec(GetMousePosition(), region)) {
+            this->isClicked = true;
+        } else {
+            this->isClicked = false;
+        }
+    }
+
+    if (this->isClicked && this->isEditable) {
+        if (IsKeyPressed(KEY_BACKSPACE)) {
+            if (this->content->length() > 0) {
+                int prevCodepointSize = 0;
+                GetCodepointPrevious(this->content->c_str() + this->content->length(), &prevCodepointSize);
+
+                while (prevCodepointSize--) {
+                    this->content->pop_back();
+                }
+            }
+        } else if (IsKeyPressed(KEY_ENTER)) {
+            this->isClicked = false;
+        } else {
+            // NOTE: This handle is followed by instructions of Raygui
+            int codepoint = GetCharPressed(), codepointSize = 0;
+            if (codepoint != 0) {
+                const char *charEncoded = CodepointToUTF8(codepoint, &codepointSize);
+
+                for (int i = 0; i < codepointSize; i++) {
+                    this->content->push_back(charEncoded[i]);
+                }
+            }
+        }
+    }
 }
 
 void Line::update() {
     this->updateBuffers();
     this->getEndY();
+
+    if (++frameCount == Constants::Screen::FRAMES_PER_SECOND / 2) {
+        frameCount = 0;
+        this->isFlicked = !this->isFlicked;
+    }
+
+    if (this->isEditable && this->isClicked && this->isFlicked) {
+        this->buffers.back() += '|';
+    }
 }
 
 void Line::setEditable(bool _isEditable) {
@@ -98,6 +149,7 @@ FrameBoard::FrameBoard(Rectangle infoFrame, Font *font) {
 }
 
 void FrameBoard::draw() {
+    if (this->blocks.empty()) return;
     std::cout << "LOG: FrameBoard: currentBlock: " << currentBlock << "\n";
     for (auto& i : this->blocks) {
         i.draw();
@@ -105,31 +157,41 @@ void FrameBoard::draw() {
 }
 
 void FrameBoard::handleEvents() {
+    if (this->blocks.empty()) return;
+    for (auto& i : this->blocks) {
+        i.handleEvents();
+    }
+
     if (CheckCollisionPointRec(GetMousePosition(), this->infoFrame)) {
         if (GetMouseWheelMove() < 0) {
-            this->blocks[this->currentBlock].nextCurr();
-            if (!this->blocks[this->currentBlock].isValidCurr()) {
-                this->currentBlock++;
-                if (this->currentBlock >= this->blocks.size()) {
-                    this->currentBlock = (int) this->blocks.size() - 1;
-                    this->blocks[this->currentBlock].setEnd();
-                } else this->blocks[this->currentBlock].setStart();
+            for (int i = 0; i < 2; ++i) {
+                this->blocks[this->currentBlock].nextCurr();
+                if (!this->blocks[this->currentBlock].isValidCurr()) {
+                    this->currentBlock++;
+                    if (this->currentBlock >= this->blocks.size()) {
+                        this->currentBlock = (int) this->blocks.size() - 1;
+                        this->blocks[this->currentBlock].setEnd();
+                    } else this->blocks[this->currentBlock].setStart();
+                }
             }
         }
         if (GetMouseWheelMove() > 0) {
-            this->blocks[this->currentBlock].prevCurr();
-            if (!this->blocks[this->currentBlock].isValidCurr()) {
-                this->currentBlock--;
-                if (this->currentBlock < 0) {
-                    this->currentBlock = 0;
-                    this->blocks[this->currentBlock].setStart();
-                } else this->blocks[this->currentBlock].setEnd();
+            for (int i = 0; i < 2; ++i) {
+                this->blocks[this->currentBlock].prevCurr();
+                if (!this->blocks[this->currentBlock].isValidCurr()) {
+                    this->currentBlock--;
+                    if (this->currentBlock < 0) {
+                        this->currentBlock = 0;
+                        this->blocks[this->currentBlock].setStart();
+                    } else this->blocks[this->currentBlock].setEnd();
+                }
             }
         }
     }
 }
 
 void FrameBoard::update() {
+    if (this->blocks.empty()) return;
     for (int i = 0; i < currentBlock; ++i)
         this->blocks[i].setOutRange();
     this->blocks[this->currentBlock].setPos({this->infoFrame.x, this->infoFrame.y});
@@ -147,13 +209,15 @@ void FrameBoard::update() {
     }
 }
 
-void FrameBoard::setEdit(bool editMode) {
-    // Update blocks
-
+void FrameBoard::setEditLines(std::vector<int> lines) {
+    for (auto &i : lines) {
+        assert(i >= 0 && i < this->blocks.size());
+        this->blocks[i].setEditable(true);
+    }
 }
 
 void FrameBoard::setBlocks(std::vector<std::pair<std::string, std::string*>> _blocks) {
-    this->blocks.clear();
+    this->reset();
     for (auto& i : _blocks) {
         this->blocks.push_back(Line(
                 this->font,
@@ -176,4 +240,10 @@ void FrameBoard::setBlocks(std::vector<std::pair<std::string, std::string*>> _bl
             this->blocks[i].setOutRange();
         }
     }
+}
+
+void FrameBoard::reset() {
+    this->blocks.clear();
+    this->currentBlock = 0;
+    this->editMode = this->isActive = false;
 }

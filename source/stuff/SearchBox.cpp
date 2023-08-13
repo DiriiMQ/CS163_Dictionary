@@ -56,7 +56,8 @@ void SearchBox::handleEvents() {
 
         for (int i = 0; i < this->suggestList.size(); i++) {
             if (this->suggestList[i].getClicked()) {
-                std::cout << "LOG: SearchBox: Option " << i + this->currentId <<  " is clicked\n";
+//                std::cout << "LOG: SearchBox: Option " << i + this->currentId <<  " is clicked\n";
+                this->choseId = i + this->currentId;
                 break;
             }
         }
@@ -131,6 +132,7 @@ void SearchBox::reset() {
     this->suggestListText.clear();
     this->suggestList.clear();
     this->currentId = 0;
+    this->choseId = -1;
 }
 
 void SearchBox::updateText() {
@@ -161,4 +163,10 @@ void SearchBox::setList(std::vector<std::pair<std::string, std::string>> list) {
         rec.y += rec.height;
     }
     this->currentId = 0;
+}
+
+int SearchBox::getChoseId() {
+    int temp = this->choseId;
+    this->choseId = -1;
+    return temp;
 }

@@ -8,10 +8,12 @@
 #include "raylib.h"
 #include "raygui.h"
 #include "stuff/Utils.h"
+#include "stuff/Constants.h"
 
 #include <string>
 #include <vector>
 #include <iostream>
+#include <cassert>
 
 class Line {
 public:
@@ -22,12 +24,12 @@ public:
     std::string prefix;
     std::string* content;
 
-    bool isEditable;
+    bool isEditable = false, isClicked = false, isFlicked = false;
 
     Font *font;
     Vector2 pos;
     std::vector<std::string> buffers;
-    int current = 0, last = 0, maxLen;
+    int current = 0, last = 0, maxLen, frameCount = 0;
     float maxY;
 
     explicit Line(Font *font, Vector2 _pos, float _maxY, int _mxLen, std::string prefix,
@@ -75,7 +77,9 @@ public:
     void handleEvents();
     void update();
 
-    void setEdit(bool editMode);
+    void reset();
+
+    void setEditLines(std::vector<int> lines);
     void setBlocks(std::vector<std::pair<std::string, std::string*>> blocks);
 };
 
