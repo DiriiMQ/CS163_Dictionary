@@ -4,14 +4,15 @@
 
 #ifndef CS163_GROUP9_WORD_H
 #define CS163_GROUP9_WORD_H
-#include <bits/stdc++.h>
-
+//#include <bits/stdc++.h>
+#include <fstream>
+#include <string>
 #include <vector>
 using namespace std;
-class Word {
-public:
-    
-};
+//class Word {
+//public:
+//    
+//};
 
 struct Definition {
     wstring meaning;
