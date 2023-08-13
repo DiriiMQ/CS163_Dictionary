@@ -4,9 +4,7 @@
 
 #include "Api.h"
 
-Dicts::Dicts() {
 
-}
 
 void ApiFavorite::addFavorite(Constants::TypeDict typeDict, std::string word) {
 
@@ -103,4 +101,29 @@ void Api::resetDict(Constants::TypeDict typeDict) {
     }
 
     writetobinaryfile(ddictionary, newfilename);
+}
+Dicts::Dicts() {
+    string filename2 = "G:\\year1\\Semester 2\\Cs162\\Group project\\CS163_Group9\\assets\\data\\Anh-Anh.dat";
+    string filename = "G:\\year1\\Semester 2\\Cs162\\Group project\\CS163_Group9\\assets\\data\\Anh_Viet.dat";
+    string filename3 = "G:\\year1\\Semester 2\\Cs162\\Group project\\CS163_Group9\\assets\\data\\Viet_Anh.dat";
+
+
+    vector<Word> Vdictionary;
+
+    readbinaryfile(Vdictionary, filename);
+
+
+    ApiWord apiWord(*this);
+    for (size_t i = 0; i < Vdictionary.size(); i++) {
+        apiWord.addWord(Constants::TypeDict::EN_VI, Vdictionary[i]);
+    }
+    vector<Word> EEdictionary;
+    readbinaryfile(EEdictionary, filename);
+    for (size_t i = 0; i < EEdictionary.size(); i++) {
+        apiWord.addWord(Constants::TypeDict::En_En, EEdictionary[i]);
+    }
+    vector<Word>VEdictionary;
+    for (size_t i = 0; i < VEdictionary.size(); i++) {
+        apiWord.addWord(Constants::TypeDict::VI_EN, VEdictionary[i]);
+    }
 }
