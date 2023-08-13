@@ -3,7 +3,7 @@
 //
 
 #include "Api.h"
-
+#include "Word.h"
 
 
 void ApiFavorite::addFavorite(Constants::TypeDict typeDict, std::string word) {
