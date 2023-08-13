@@ -55,6 +55,7 @@ public:
     //-1 mean no word found with that key but there are words that start with that key
     // 1 mean there is a word with that key
     int getAutoComplete(wstring &key, vector < wstring > &result);
+    void clear();
 };
 #include "Trie.cpp"
 #endif //TRIE_H

@@ -22,6 +22,11 @@ template < typename ValueType >
 Trie < ValueType > ::~Trie() {
     removeHelper(root);
 }
+template < typename ValueType >
+void Trie < ValueType > ::clear() {
+    removeHelper(root);
+    WordCount = 0;
+}
 
 template < typename ValueType >
 Trie < ValueType > &Trie < ValueType > ::operator = (const Trie &other) {

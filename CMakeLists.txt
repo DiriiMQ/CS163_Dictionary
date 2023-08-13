@@ -60,5 +60,5 @@ add_executable(CS163_Group9 main.cpp
         source/stuff/SearchBox.h
         source/stuff/SuggestionLine.cpp
         source/stuff/SuggestionLine.h
-
+)
 target_link_libraries(${PROJECT_NAME} raylib)
