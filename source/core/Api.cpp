@@ -8,7 +8,29 @@
 #include "CompareString.h"
 //Add data to each dicts[index], vector and Trie - Sĩ
 Dicts::Dicts() {
+    string filename2 = "assets\\data\\Anh-Anh.dat";
+    string filename = "assets\\data\\Anh_Viet.dat";
+    string filename3 = "assets\\data\\Viet_Anh.dat";
 
+
+    vector<Word> Vdictionary;
+
+    readbinaryfile(Vdictionary, filename);
+
+
+    ApiWord apiWord(*this);
+    for (size_t i = 0; i < Vdictionary.size(); i++) {
+        apiWord.addWord(Constants::TypeDict::EN_VI, Vdictionary[i]);
+    }
+    vector<Word> EEdictionary;
+    readbinaryfile(EEdictionary, filename);
+    for (size_t i = 0; i < EEdictionary.size(); i++) {
+        apiWord.addWord(Constants::TypeDict::En_En, EEdictionary[i]);
+    }
+    vector<Word>VEdictionary;
+    for (size_t i = 0; i < VEdictionary.size(); i++) {
+        apiWord.addWord(Constants::TypeDict::VI_EN, VEdictionary[i]);
+    }
 }
 
 void ApiFavorite::addFavorite(Constants::TypeDict typeDict, std::wstring word) {
@@ -64,8 +86,21 @@ bool ApiWord::removeWord(Constants::TypeDict typeDict, std::wstring word) {
     return false;
 }
 // how to edit, Sĩ
-void ApiWord::editWord(Constants::TypeDict typeDict, Word &word, int index, std::wstring newDefinition) {
+void ApiWord::editWord(Constants::TypeDict typeDict, Word& word, int index, Word& replace) {
+    Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
+    dictionary.words[index].worddef = replace.worddef;
+    string filename;
+    if (typeDict == Constants::TypeDict::VI_EN) {
+        filename = "assets\\data\\Anh_Vietfix.dat";
+    }
+    else if (typeDict == Constants::TypeDict::En_En) {
+        filename = "assets\\data\\Anh_Anhfix.dat";
+    }
+    else {
+        filename = "assets\\data\\Viet_Anhfix.dat";
 
+    }
+    writetobinaryfile(dictionary.words, filename);
 }
 
 Word ApiWord::getRandomWord(Constants::TypeDict typeDict) {
@@ -113,5 +148,37 @@ bool ApiQuiz::submitQuiz(Constants::TypeDict typeDict, QuizResponse response) {
 }
 //Sĩ
 void Api::resetDict(Constants::TypeDict typeDict) {
+    Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
+    
+    string filename;
+    if (typeDict == Constants::TypeDict::VI_EN) {
+        filename = "assets\\data\\Anh_Viet.dat";
+    }
+    else if (typeDict == Constants::TypeDict::En_En) {
+        filename = "assets\\data\\Anh_Anh.dat";
+    }
+    else {
+        filename = "assets\\data\\Viet_Anh.dat";
+    }
+    vector<Word> ddictionary;
+    readbinaryfile(ddictionary, filename);
+    string newfilename;
+    size_t lastSlashPos = filename.find_last_of("\\");
+    if (lastSlashPos != std::string::npos) {
 
+        string path = filename.substr(0, lastSlashPos + 1);
+        string newFilename = "Anh_Vietfix.dat";
+
+       newfilename = path + newFilename;
+    }
+
+    writetobinaryfile(ddictionary, newfilename);
+    dictionary.words.clear();
+    dictionary.Map.clear();
+    dictionary.FavouriteList.clear();
+    dictionary.HistoryList.clear();
+    for (size_t i = 0; i < ddictionary.size(); i++) {
+        dictionary.Map[ddictionary[i].word] = i;
+    }
+    dictionary.words = move(ddictionary);
 }

@@ -63,5 +63,4 @@ add_executable(CS163_Group9 main.cpp
         source/draw/Favorite.cpp
         source/draw/Favorite.h
 )
-
 target_link_libraries(${PROJECT_NAME} raylib)

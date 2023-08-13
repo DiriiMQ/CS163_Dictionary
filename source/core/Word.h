@@ -4,16 +4,10 @@
 
 #ifndef CS163_GROUP9_WORD_H
 #define CS163_GROUP9_WORD_H
-//#include <bits/stdc++.h>
-#include <fstream>
 #include <string>
+#include <fstream>
 #include <vector>
 using namespace std;
-//class Word {
-//public:
-//    
-//};
-
 struct Definition {
     wstring meaning;
     vector<wstring> examples;
@@ -45,5 +39,8 @@ struct Word {
 
 };
 
-
+void writeStringVectorToFile(const std::vector<std::wstring>& strings, std::ofstream& outputFile);
+vector<wstring> readStringVectorFromFile(vector<wstring>& strings, ifstream& inputFile);
+void writetobinaryfile(vector<Word>Vdictionary, const string &filename);
+void readbinaryfile(vector<Word>& Vdictionary, const string &filename);
 #endif //CS163_GROUP9_WORD_H
