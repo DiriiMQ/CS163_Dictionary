@@ -31,8 +31,8 @@ vector<wstring> readStringVectorFromFile(vector<wstring>& strings, ifstream& inp
     }
     return strings;
 }
-void writetobinaryfile(vector<Word>Vdictionary) {
-    ofstream wfout("G:\\year1\\Semester 2\\Cs162\\Group project\\CS163_Group9\\assets\\data\\Viet_Anh.dat", ios::out | ios::binary);
+void writetobinaryfile(vector<Word>Vdictionary,string filename) {
+    ofstream wfout(filename, ios::out | ios::binary);
     size_t dic_size = Vdictionary.size();
     wfout.write(reinterpret_cast<const char*> (&dic_size), sizeof(size_t));
     for (const Word wordd : Vdictionary) {
@@ -78,19 +78,20 @@ void writetobinaryfile(vector<Word>Vdictionary) {
 
     wfout.close();
 }
-void readbinaryfile(vector<Word> &Vdictionary) {
-    ifstream wfin("G:\\year1\\Semester 2\\Cs162\\Group project\\CS163_Group9\\assets\\data\\Viet_Anh.dat", ios::binary | ios::in);
-    
+
+void readbinaryfile(vector<Word>& Vdictionary, const string& filename) {
+    ifstream wfin(filename, ios::binary | ios::in);
+
     size_t dic_size;
     wfin.read(reinterpret_cast<char*> (&dic_size), sizeof(size_t));
-    for (size_t i = 0; i < dic_size;i++) {
-        size_t word_size ;
+    for (size_t i = 0; i < dic_size; i++) {
+        size_t word_size;
         wstring word;
-        Word wordd ;
+        Word wordd;
         wfin.read(reinterpret_cast<char*>(&word_size), sizeof(size_t));
         wordd.word.resize(word_size);
         wfin.read(reinterpret_cast<char*>(&wordd.word[0]), word_size * sizeof(wchar_t));
-        
+
         // pronounce
         size_t pronounce_size;
         wfin.read(reinterpret_cast<char*>(&pronounce_size), sizeof(size_t));
@@ -99,27 +100,27 @@ void readbinaryfile(vector<Word> &Vdictionary) {
 
 
         //word def vector
-        size_t def_size ;
+        size_t def_size;
         wfin.read(reinterpret_cast<char*> (&def_size), sizeof(size_t));
-        
-        for (size_t j = 0; j < def_size;j++) {
-            Type def ;
-            size_t type_size ;
+
+        for (size_t j = 0; j < def_size; j++) {
+            Type def;
+            size_t type_size;
             wfin.read(reinterpret_cast<char*> (&type_size), sizeof(size_t));
             def.type.resize(type_size);
             wfin.read(reinterpret_cast<char*>(&def.type[0]), type_size * sizeof(wchar_t));
 
             // definition
-            size_t defi_size ;
+            size_t defi_size;
             wfin.read(reinterpret_cast<char*> (&defi_size), sizeof(size_t));
-          
-            for (int z = 0; z < defi_size;z++) {
-                size_t meaning_size ;
-                Definition defi ;
+
+            for (int z = 0; z < defi_size; z++) {
+                size_t meaning_size;
+                Definition defi;
                 wfin.read(reinterpret_cast<char*> (&meaning_size), sizeof(size_t));
                 defi.meaning.resize(meaning_size);
                 wfin.read(reinterpret_cast<char*>(&defi.meaning[0]), meaning_size * sizeof(wchar_t));
-                defi.examples= readStringVectorFromFile(defi.examples, wfin);
+                defi.examples = readStringVectorFromFile(defi.examples, wfin);
 
                 def.definition.push_back(defi);
             }

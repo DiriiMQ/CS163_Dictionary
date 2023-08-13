@@ -7,7 +7,7 @@
 
 #include <string>
 #include <vector>
-
+#include "Word.h"
 #include "Dict.h"
 #include "Quiz.h"
 #include "stuff/Constants.h"
