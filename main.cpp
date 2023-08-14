@@ -4,12 +4,15 @@
 #include <core/Dict.h>
 
 int main() {
-    Dict dict = Dict();
-   int n = dict.words.size();
-   cout << n;
+  
+   
    /* Window  window;
     if (n > 0)
     window.run();*/
+   Dict d;
+   wcout << d.words[100].word;
+
+
     
     return 0;
 }

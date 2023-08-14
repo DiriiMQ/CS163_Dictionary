@@ -4,6 +4,7 @@
 #ifndef WORD_CPP
 #define WORD_CPP
 #include "Word.h"
+#include <iostream>
 void writeStringVectorToFile(const std::vector<std::wstring>& strings, std::ofstream& outputFile) {
     size_t vectorSize = strings.size();
     outputFile.write(reinterpret_cast<const char*>(&vectorSize), sizeof(size_t));
@@ -86,6 +87,7 @@ void readbinaryfile(vector<Word>& Vdictionary, const string &filename) {
     size_t dic_size;
     wfin.read(reinterpret_cast<char*> (&dic_size), sizeof(size_t));
     for (size_t i = 0; i < dic_size; i++) {
+        std::cout << 999 << endl;
         size_t word_size;
         wstring word;
         Word wordd;

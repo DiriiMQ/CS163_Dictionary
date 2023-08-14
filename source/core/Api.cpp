@@ -7,31 +7,6 @@
 #include "Word.h"
 #include "CompareString.h"
 //Add data to each dicts[index], vector and Trie - Sĩ
-Dicts::Dicts() {
-    string filename2 = "assets\\data\\Anh-Anh.dat";
-    string filename = "assets\\data\\Anh_Viet.dat";
-    string filename3 = "assets\\data\\Viet_Anh.dat";
-
-
-    vector<Word> Vdictionary;
-
-    readbinaryfile(Vdictionary, filename);
-
-
-    ApiWord apiWord(*this);
-    for (size_t i = 0; i < Vdictionary.size(); i++) {
-        apiWord.addWord(Constants::TypeDict::EN_VI, Vdictionary[i]);
-    }
-    vector<Word> EEdictionary;
-    readbinaryfile(EEdictionary, filename);
-    for (size_t i = 0; i < EEdictionary.size(); i++) {
-        apiWord.addWord(Constants::TypeDict::En_En, EEdictionary[i]);
-    }
-    vector<Word>VEdictionary;
-    for (size_t i = 0; i < VEdictionary.size(); i++) {
-        apiWord.addWord(Constants::TypeDict::VI_EN, VEdictionary[i]);
-    }
-}
 
 void ApiFavorite::addFavorite(Constants::TypeDict typeDict, std::wstring word) {
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
@@ -181,4 +156,29 @@ void Api::resetDict(Constants::TypeDict typeDict) {
         dictionary.Map[ddictionary[i].word] = i;
     }
     dictionary.words = move(ddictionary);
+}
+Dicts::Dicts() {
+    string filename2 = "../../../assets/data/Anh-Anh.dat";
+    string filename = "C:/Users/HP/OneDrive/Desktop/DMQ_branch/CS163_Group9/assets/data/Anh_Viet.dat";
+    string filename3 = "../../../assets/data/Viet_Anh.dat";
+
+
+    vector<Word> Vdictionary;
+
+    readbinaryfile(Vdictionary, filename);
+
+
+    ApiWord apiWord(*this);
+    for (size_t i = 0; i < Vdictionary.size(); i++) {
+        apiWord.addWord(Constants::TypeDict::EN_VI, Vdictionary[i]);
+    }
+    vector<Word> EEdictionary;
+    readbinaryfile(EEdictionary, filename);
+    for (size_t i = 0; i < EEdictionary.size(); i++) {
+        apiWord.addWord(Constants::TypeDict::En_En, EEdictionary[i]);
+    }
+    vector<Word>VEdictionary;
+    for (size_t i = 0; i < VEdictionary.size(); i++) {
+        apiWord.addWord(Constants::TypeDict::VI_EN, VEdictionary[i]);
+    }
 }
