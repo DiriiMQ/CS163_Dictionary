@@ -80,11 +80,16 @@ void writetobinaryfile(vector<Word>Vdictionary, const string &filename){
     wfout.close();
 }
 
-void readbinaryfile(vector<Word>& Vdictionary, const string &filename) {
+void readbinaryfile(vector<Word>& Vdictionary,const string&filename) {
     ifstream wfin(filename, ios::binary | ios::in);
-
+    if (!wfin) {
+        
+        return;
+ 
+    }
     size_t dic_size;
     wfin.read(reinterpret_cast<char*> (&dic_size), sizeof(size_t));
+
     for (size_t i = 0; i < dic_size; i++) {
         size_t word_size;
         wstring word;
@@ -100,41 +105,55 @@ void readbinaryfile(vector<Word>& Vdictionary, const string &filename) {
         wfin.read(reinterpret_cast<char*>(&wordd.pronounce[0]), pronounce_size * sizeof(wchar_t));
 
 
+
         //word def vector
-        size_t def_size;
-        wfin.read(reinterpret_cast<char*> (&def_size), sizeof(size_t));
+        wfin.read(reinterpret_cast<char*>(&wordd.IsType), sizeof(bool));
+        if (wordd.IsType) {
+            size_t def_size;
+            wfin.read(reinterpret_cast<char*> (&def_size), sizeof(size_t));
 
-        for (size_t j = 0; j < def_size; j++) {
-            Type def;
-            size_t type_size;
-            wfin.read(reinterpret_cast<char*> (&type_size), sizeof(size_t));
-            def.type.resize(type_size);
-            wfin.read(reinterpret_cast<char*>(&def.type[0]), type_size * sizeof(wchar_t));
+            for (size_t j = 0; j < def_size; j++) {
+                Type def;
 
-            // definition
-            size_t defi_size;
-            wfin.read(reinterpret_cast<char*> (&defi_size), sizeof(size_t));
+                
+                if (wordd.IsType) {
+                    size_t type_size;
+                    wfin.read(reinterpret_cast<char*> (&type_size), sizeof(size_t));
+                    def.type.resize(type_size);
+                    wfin.read(reinterpret_cast<char*>(&def.type[0]), type_size * sizeof(wchar_t));
 
-            for (int z = 0; z < defi_size; z++) {
-                size_t meaning_size;
-                Definition defi;
-                wfin.read(reinterpret_cast<char*> (&meaning_size), sizeof(size_t));
-                defi.meaning.resize(meaning_size);
-                wfin.read(reinterpret_cast<char*>(&defi.meaning[0]), meaning_size * sizeof(wchar_t));
-                defi.examples = readStringVectorFromFile(defi.examples, wfin);
+                    // definition
+                    wfin.read(reinterpret_cast<char*>(&def.Isdefinition), sizeof(bool));
+                    if (def.Isdefinition) {
+                        size_t defi_size;
+                        wfin.read(reinterpret_cast<char*> (&defi_size), sizeof(size_t));
 
-                def.definition.push_back(defi);
+                        for (int z = 0; z < defi_size; z++) {
+                            size_t meaning_size;
+                            Definition defi;
+                            wfin.read(reinterpret_cast<char*> (&meaning_size), sizeof(size_t));
+                            defi.meaning.resize(meaning_size);
+                            wfin.read(reinterpret_cast<char*>(&defi.meaning[0]), meaning_size * sizeof(wchar_t));
+
+                            wfin.read(reinterpret_cast<char*>(&defi.Isexample), sizeof(bool));
+                            if (defi.Isexample)
+                                defi.examples = readStringVectorFromFile(defi.examples, wfin);
+
+                            def.definition.push_back(defi);
+                        }
+                        size_t phrase_size;
+                        wfin.read(reinterpret_cast<char*> (&phrase_size), sizeof(size_t));
+                        def.phrase.resize(phrase_size);
+                        wfin.read(reinterpret_cast<char*>(&def.phrase[0]), phrase_size * sizeof(wchar_t));
+
+                        wordd.worddef.push_back(def);
+                    }
+                }
             }
-            size_t phrase_size;
-            wfin.read(reinterpret_cast<char*> (&phrase_size), sizeof(size_t));
-            def.phrase.resize(phrase_size);
-            wfin.read(reinterpret_cast<char*>(&def.phrase[0]), phrase_size * sizeof(wchar_t));
 
-            wordd.worddef.push_back(def);
+
+            Vdictionary.push_back(wordd);
         }
-
-
-        Vdictionary.push_back(wordd);
     }
 
 

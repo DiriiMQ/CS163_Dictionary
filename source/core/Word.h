@@ -11,16 +11,21 @@ using namespace std;
 struct Definition {
     wstring meaning;
     vector<wstring> examples;
-    Definition() : meaning(), examples() {
-        
+    bool Isexample;
+    Definition() {
+        meaning = L"Null";
+        Isexample = false;
     }
 };
 struct Type {
     wstring type;
     vector<Definition> definition;
     wstring phrase;
-    Type() : type(), definition(), phrase() {
-       
+    bool Isdefinition;
+    Type() {
+        type = L"Null";
+        phrase = L"Null";
+        Isdefinition = false;
     }
 };
 
@@ -28,20 +33,13 @@ struct Word {
     wstring word;
     wstring pronounce;
     vector<Type> worddef;
-    int dicttype=0;
-    Word() : word(L"NULLL"), pronounce(), worddef(), dicttype() {
-        
+    bool IsType;
+    Word() {
+        pronounce = L"Null";
+        IsType = false;
     }
-    bool isNull() {
-        return word == L"NULLL";
-    }
-    // 1 for AV
-    // 2 for AA
-    // 3 for VA
 
-    // with AA: only concentrate on wstring word and definition meaning
-    // same with VA
-    
+
 
 };
 
