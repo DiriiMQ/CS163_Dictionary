@@ -12,6 +12,7 @@
 #include "stuff/Button.h"
 #include "stuff/SearchBox.h"
 #include "stuff/FrameBoard.h"
+#include "core/Api.h"
 
 class Window {
 private:
@@ -22,6 +23,7 @@ private:
     std::vector<std::string> testLines;
     // END TESTING
 
+    Api *api;
     Font font;
     Texture background;
     Rectangle mainInfoBG;
@@ -39,7 +41,7 @@ private:
     FrameBoard frameBoard;
 
     // For Add
-    std::string wordAdd;
+    std::string wordAdd, definitionAdd;
 
     //Button_Coordinate
      //Box and Des
@@ -57,7 +59,7 @@ private:
 //    void drawTextbox(Rectangle textBox);
 
 public:
-    Window();
+    Window(Api *api);
     void init();
 
     // main

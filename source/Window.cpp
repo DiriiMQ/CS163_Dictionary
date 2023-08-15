@@ -4,10 +4,11 @@
 
 #include "Window.h"
 
-Window::Window() {
+Window::Window(Api *api) {
     InitWindow(Constants::Screen::SCREEN_WIDTH, Constants::Screen::SCREEN_HEIGHT, Constants::Screen::NAME);
     SetTargetFPS(Constants::Screen::FRAMES_PER_SECOND);
 
+    this->api = api;
     this->init();
 }
 
@@ -116,7 +117,7 @@ void Window::draw() {
     }
 
     if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
-        DrawRectangleRec(this->mainInfoBG, WHITE);
+        DrawRectangleRounded(this->mainInfoBG, CORNER_RADIUS, 0, WHITE);
         this->frameBoard.draw();
 
         if (this->activeMenu != (int)Constants::Screen::menuBtn::FAVOURITE) {
@@ -129,6 +130,7 @@ void Window::draw() {
             }
         } else {
             // Draw favourite from DMQ
+            this->saveButton.draw();
         }
     }
 
@@ -162,6 +164,7 @@ void Window::handleEvents() {
             }
         } else {
             // Handle favourite from DMQ
+            this->saveButton.handleEvents();
         }
     }
 }
@@ -185,7 +188,10 @@ void Window::update() {
                 if (j != i) {
                     this->menuButtons[j].setChosen(false);
                 }
+                this->operationButtons[j].setChosen(false);
+                this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
             }
+            this->frameBoard.reset();
             break;
         }
     }
@@ -195,7 +201,12 @@ void Window::update() {
             this->updateModeNonFavorite();
         } else {
             // Update favourite from DMQ
+            this->saveButton.update();
 
+            if (this->saveButton.isClicked()) {
+//                this->saveFrameBoard();
+
+            }
         }
         this->frameBoard.update();
     }
@@ -241,6 +252,7 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
     for (int i = 0; i < 3; ++i) {
         if (this->operationButtons[i].isClicked()) {
             std::cout << "LOG: Operation button " << i << " is clicked" << std::endl;
+            this->frameBoard.reset();
             if (i == (int)Constants::Screen::operationBtn::ADD) {
                 this->frameBoard.setBlocks({{"Word: ", &this->wordAdd}});
                 this->frameBoard.setEditLines({0});

@@ -1,8 +1,11 @@
 #include "Window.h"
 #include "_raygui.h"
+#include "core/Api.h"
 
 int main() {
-    Window window;
+    Dicts dicts;
+    Api api(dicts);
+    Window window(&api);
     window.run();
     return 0;
 }
