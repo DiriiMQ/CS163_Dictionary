@@ -4,17 +4,15 @@
 
 #include "Favorite.h"
 
-Favourite::Favourite(Font* font, Dicts d, int tmpmode)
+Favourite::Favourite(Font* font, int tmpmode)
 {
     this->position = { 47,259,810,420 };
     this->fontSize = 25;
-      this->font = font;
+    this->font = font;
     this->frameCount = 0;
     this->currentClick = -1;
     this->currentMouse = -1;
     this->mouse = 0;
-    std::vector<bool> b(18, 0);
-    this->index_un = b;
     for (int i = 0; i < 20; i++)
     {
         std::vector <std::string> pathh(2);
@@ -26,10 +24,15 @@ Favourite::Favourite(Font* font, Dicts d, int tmpmode)
         Starr[i] = ButtonImage(pathh, pathhPress, { 791.3 ,(float)278.4 + 45 * i ,47.5 ,45.2 });
     }
     this->tmpmode = tmpmode;
-    this->FavouriteList[0] = d.dicts[0].FavouriteList;
+    /*this->FavouriteList[0] = d.dicts[0].FavouriteList;
     this->FavouriteList[1] = d.dicts[1].FavouriteList;
     this->FavouriteList[2] = d.dicts[2].FavouriteList;
-    this->size = FavouriteList[tmpmode].size();
+    this->size = FavouriteList[tmpmode].size();*/
+   
+    this->size = 20; //must change
+    this->index_unFavourite.resize(this->size);
+    for (int i = 0; i < this->size; i++)
+        index_unFavourite[i] = false;
 }
 void Favourite::draw()
 {
@@ -37,7 +40,7 @@ void Favourite::draw()
     {
         Starr[j - mouse].changePosition({ 791.3 ,(float)278.4 + 45 * j ,47.5 ,45.2 });
         Starr[j - mouse].draw();
-        DrawText(Utils::WStringToUTF8(FavouriteList[tmpmode][j - mouse]).c_str(), position.x + 25, position.y + 15 + 45 * j, fontSize, BLACK);
+       // DrawTextEx(*font, Utils::WStringToUTF8(FavouriteList[tmpmode][j - mouse]).c_str(), { position.x + 25, position.y + 15 + 45 * j }, fontSize,SPACING, BLACK);
         Starr[j - mouse].changePosition({ 791.3 ,(float)278.4 + 45 * (j - mouse) ,47.5 ,45.2 });
     }
     if (currentMouse != -1)
@@ -62,6 +65,10 @@ void Favourite::handleEvents()
         Starr[j - mouse].changePosition({ 791.3 ,(float)278.4 + 45 * j ,47.5 ,45.2 });
         Starr[j - mouse].handleEvents();
         Starr[j - mouse].update();
+     /*  if (Starr[j - mouse].getClicked() % 2 == 1)
+            index_unFavourite[j - mouse] = 1;
+        else
+            index_unFavourite[j - mouse] = 0;*/
         Starr[j - mouse].changePosition({ 791.3 ,(float)278.4 + 45 * (j - mouse) ,47.5 ,45.2 });
     }
     if (GetMouseWheelMove() > 0 && mouse < 0)   // scroll up
@@ -90,6 +97,21 @@ void Favourite::handleEvents()
 }
 void Favourite::update()
 {
+   
+}
+void Favourite::removeWhenSave()
+{
+    vector<wstring> unlike;
+    for (int i = 0; i < index_unFavourite.size(); i++)
+    {
+        if (index_unFavourite[i])
+            unlike.push_back(FavouriteList[tmpmode][i]);
+    }
+    for (int i = 0; i < unlike.size(); i++)
+    {
+        //remove function
+        //ApiFavorite::removeFavorite((Constants::TypeDict)tmpmode,unlike[i]);
+    }
 }
 void Favourite::reset()
 {

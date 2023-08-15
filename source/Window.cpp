@@ -66,8 +66,9 @@ void Window::init() {
     this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
 }
 
-void Window::run(Dicts d) {
-    Favourite f = Favourite(&font,d,2);
+void Window::run() {
+   Favourite f = Favourite(&font,1);
+    //DrawTexture(LoadTextureFromImage)
     while (!WindowShouldClose()) {
         BeginDrawing();
         this->draw();

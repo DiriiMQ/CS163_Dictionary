@@ -62,9 +62,8 @@ public:
     void update();
 
     void reset();
-
     void menu();
-    void run(Dicts d);
+    void run();
 };
 
 #endif //CS163_GROUP9_WINDOW_H

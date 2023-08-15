@@ -17,7 +17,7 @@ Dicts::Dicts() {
     readbinaryfile(Vdictionary, filename);
     ApiWord apiWord(*this);
     for (size_t i = 0; i < Vdictionary.size(); i++) {
-        cout << 9 << endl;
+       wcout << 9 << endl;
         apiWord.addWord(Constants::TypeDict::EN_VI, Vdictionary[i]);
     }
    
