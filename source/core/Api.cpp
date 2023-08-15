@@ -14,28 +14,26 @@ Dicts::Dicts() {
 
 
     vector<Word> Vdictionary;
-
     readbinaryfile(Vdictionary, filename);
-
-
     ApiWord apiWord(*this);
     for (size_t i = 0; i < Vdictionary.size(); i++) {
         cout << 9 << endl;
         apiWord.addWord(Constants::TypeDict::EN_VI, Vdictionary[i]);
     }
+   
     vector<Word> EEdictionary;
-    readbinaryfile(EEdictionary, filename);
+    readbinaryfile(EEdictionary, filename3);
     for (size_t i = 0; i < EEdictionary.size(); i++) {
-        cout << 9 << endl;
-        apiWord.addWord(Constants::TypeDict::En_En, EEdictionary[i]);
+        apiWord.addWord(Constants::TypeDict::VI_EN, EEdictionary[i]);
     }
+    
     vector<Word>VEdictionary;
+    readbinaryfile(VEdictionary, filename2);
     for (size_t i = 0; i < VEdictionary.size(); i++) {
-        cout << 9 << endl;
-        apiWord.addWord(Constants::TypeDict::VI_EN, VEdictionary[i]);
+        apiWord.addWord(Constants::TypeDict::En_En, VEdictionary[i]);
     }
+    
 }
-
 void ApiFavorite::addFavorite(Constants::TypeDict typeDict, std::wstring word) {
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     dictionary.FavouriteList.push_back(word);
