@@ -30,6 +30,12 @@ struct Word {
     wstring pronounce;
     vector<Type> worddef;
     int dicttype=0;
+    Word() : word(L"NULLL"), pronounce(), worddef(), dicttype() {
+        
+    }
+    bool isNull() {
+        return word == L"NULLL";
+    }
     // 1 for AV
     // 2 for AA
     // 3 for VA
