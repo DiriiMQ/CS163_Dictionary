@@ -125,7 +125,7 @@ void Window::draw() {
                 operationButton.draw();
             }
             this->searchBox.draw();
-            if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD or this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
+            if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
                 this->saveButton.draw();
             }
         } else {
@@ -159,7 +159,7 @@ void Window::handleEvents() {
             }
             this->searchBox.handleEvents();
 
-            if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD or this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
+            if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
                 this->saveButton.handleEvents();
             }
         } else {
@@ -241,7 +241,7 @@ void Window::updateOperationButtons() {
 void Window::updateModeNonFavorite() { // Update for Search Mode
     for (auto &operationButton: this->operationButtons)
         operationButton.update();
-    if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD or this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
+    if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
         this->saveButton.update();
 
         if (this->saveButton.isClicked()) {

@@ -5,7 +5,7 @@
 #include "FrameBoard.h"
 
 void Line::draw() {
-    if (this->current < 0 or this->current >= this->buffers.size()) return;
+    if (this->current < 0 || this->current >= this->buffers.size()) return;
 //    std::cout << "LOG: FrameBoard: Line: last: " << last << "\n";
 //    std::cout << "LOG: FrameBoard: Line: maxY: " << maxY << "\n";
 //    std::cout << "LOG: FrameBoard: Line: maxLen: " << maxLen << "\n";
@@ -24,7 +24,7 @@ void Line::draw() {
 }
 
 void Line::handleEvents() {
-    if (this->current < 0 or this->current >= this->buffers.size()) return;
+    if (this->current < 0 || this->current >= this->buffers.size()) return;
     Rectangle region = {
             this->pos.x,
             this->pos.y,
@@ -105,7 +105,7 @@ bool Line::isValidCurr() const {
 }
 
 float Line::getEndY() {
-    if (current < 0 or current >= this->buffers.size()) return 100000.0; // INFINITY
+    if (current < 0 || current >= this->buffers.size()) return 100000.0; // INFINITY
     float size = this->pos.y;
     this->last = this->current;
     for (int i = this->current; i < this->buffers.size(); i++) {
