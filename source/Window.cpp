@@ -30,18 +30,7 @@ void Window::init() {
         );
     }
 
-//    std::vector<std::pair<std::string, std::string>> list;
 
-//    for (int i = 1; i <= 20; ++i) {
-//        list.emplace_back(
-//                        "test" + std::to_string(i),
-//                        "def" + std::to_string(i)
-//        );
-//    }
-//
-//    this->searchBox.setList(
-//            list
-//    );
 
     for (int i = (int)Constants::Screen::operationBtn::REMOVE; i != (int)Constants::Screen::operationBtn::NONE; ++i) {
         this->operationButtons[i] = Button(
@@ -80,22 +69,8 @@ void Window::init() {
                 },
             &this->font
             );
-
-//    for (int i = 0; i < 10; ++i) {
-//        this->testLines.emplace_back("hihi dcm DMQ test abc xyd dcm tetehs dfdj fdf dfd fwd ewwf wefef efewf xwfew xfewz hihi dcm DMQ test abc xyd dcm tetehs dfdj fdf dfd fwd ewwf wefef efewf xwfew xfewz hihi dcm DMQ test abc xyd dcm tetehs dfdj fdf dfd fwd ewwf wefef efewf xwfew xfewz hihi dcm DMQ test abc xyd dcm tetehs dfdj fdf dfd fwd ewwf wefef efewf xwfew xfewz hihi dcm DMQ test abc xyd dcm tetehs dfdj fdf dfd fwd ewwf wefef efewf xwfew xfewz hihi dcm DMQ test abc xyd dcm tetehs dfdj fdf dfd fwd ewwf wefef efewf xwfew xfewz");
-//    }
-//
-//    std::vector<std::pair<std::string, std::string*>> _list;
-//
-//    for (int i = 0; i < 10; ++i) {
-//        _list.emplace_back(
-//                "xest " + std::to_string(i) + ": ",
-//                &this->testLines[i]
-//        );
-//    }
-//
-//    this->frameBoard.setBlocks(_list);
-//    this->frameBoard.setEditLines({0, 3, 5});
+    // For init Favourite
+    this->favourite = Favourite(&font,(int) currentDict);
 }
 
 void Window::run() {
@@ -130,6 +105,7 @@ void Window::draw() {
             }
         } else {
             // Draw favourite from DMQ
+            this->favourite.draw();
             this->saveButton.draw();
         }
     }
@@ -164,6 +140,7 @@ void Window::handleEvents() {
             }
         } else {
             // Handle favourite from DMQ
+            this->favourite.handleEvents();
             this->saveButton.handleEvents();
         }
     }
@@ -201,11 +178,14 @@ void Window::update() {
             this->updateModeNonFavorite();
         } else {
             // Update favourite from DMQ
-            this->saveButton.update();
+            this->favourite.update();
+            
 
+            this->saveButton.update();
             if (this->saveButton.isClicked()) {
 //                this->saveFrameBoard();
-
+                this->favourite.removeWhenSave();
+                this->favourite.update();
             }
         }
         this->frameBoard.update();

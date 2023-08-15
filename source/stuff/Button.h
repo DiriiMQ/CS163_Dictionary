@@ -48,6 +48,8 @@ private:
     static constexpr float CORNER_RADIUS = 0.3;
 
     std::vector <std::string> path;
+    std::vector <std::string> pathPress;
+
     int numpath;
     int tmpPath;
 
@@ -58,14 +60,16 @@ private:
     bool pressing = false, clicked = false;
 
     std::vector <Texture> texture;
+    std::vector <Texture> texturePress;
 
 public:
-    ButtonImage(std::vector <std::string> path, Rectangle rectangle);
-
+    ButtonImage(std::vector <std::string> path, std::vector <std::string> pathPress, Rectangle rectangle);
+    ButtonImage() = default;
     void draw();
     void handleEvents();
     void update();
-
+    void changeIndex();
+    void changePosition(Rectangle change);
     [[nodiscard]] bool isClicked() const;
     [[nodiscard]] bool isPressing() const;
     int getClicked();

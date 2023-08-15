@@ -13,6 +13,7 @@
 #include "stuff/SearchBox.h"
 #include "stuff/FrameBoard.h"
 #include "core/Api.h"
+#include <draw/Favorite.h>
 
 class Window {
 private:
@@ -23,6 +24,7 @@ private:
     std::vector<std::string> testLines;
     // END TESTING
 
+    Constants::TypeDict currentDict;
     Api *api;
     Font font;
     Texture background;
@@ -33,8 +35,6 @@ private:
             resetButton;
     int activeMenu, activeOperation;
 
-
-    Button test;
     SearchBox searchBox;
     std::string currentSearch;
     std::vector<std::pair<std::string, std::string>> suggestListText;
@@ -42,6 +42,9 @@ private:
 
     // For Add
     std::string wordAdd, definitionAdd;
+
+    // For Favourite
+    Favourite favourite;
 
     //Button_Coordinate
      //Box and Des
