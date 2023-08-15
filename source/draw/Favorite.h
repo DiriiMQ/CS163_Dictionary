@@ -11,6 +11,8 @@
 #include "stuff/Button.h"
 #include <vector>
 #include "stuff/Constants.h"
+#include "core/Api.h"
+#include "stuff/Utils.h"
 class Favourite {
 private:
     static constexpr int MAX_LENGTH = 810;
@@ -23,15 +25,13 @@ private:
      // Change by struct Favourite
     int mouse;
     int size;
-    /*  std::vector<SuggestionLine> suggestList;
-      std::vector<std::pair<std::string, std::string>> suggestListText;*/
-
+    vector<wstring> FavouriteList[3];
+    int tmpmode;
     ButtonImage Starr[20];
 
 public:
 
-  Favourite(Font* font);
-    // Favourite(Font* font);
+  Favourite(Font* font, Dicts d,int tmpmode);
     void draw();
     void handleEvents();
     void update();

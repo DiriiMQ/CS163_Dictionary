@@ -87,7 +87,7 @@ void readbinaryfile(vector<Word>& Vdictionary, const string &filename) {
     size_t dic_size;
     wfin.read(reinterpret_cast<char*> (&dic_size), sizeof(size_t));
     for (size_t i = 0; i < dic_size; i++) {
-        std::cout << 999 << endl;
+       
         size_t word_size;
         wstring word;
         Word wordd;

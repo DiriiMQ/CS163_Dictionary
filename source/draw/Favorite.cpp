@@ -4,7 +4,7 @@
 
 #include "Favorite.h"
 
-Favourite::Favourite(Font* font)
+Favourite::Favourite(Font* font, Dicts d, int tmpmode)
 {
     this->position = { 47,259,810,420 };
     this->fontSize = 25;
@@ -25,19 +25,19 @@ Favourite::Favourite(Font* font)
         pathhPress[0] = Constants::Directories::DMQ::StarPress[1];
         Starr[i] = ButtonImage(pathh, pathhPress, { 791.3 ,(float)278.4 + 45 * i ,47.5 ,45.2 });
     }
-    this->size = 20;
+    this->tmpmode = tmpmode;
+    this->FavouriteList[0] = d.dicts[0].FavouriteList;
+    this->FavouriteList[1] = d.dicts[1].FavouriteList;
+    this->FavouriteList[2] = d.dicts[2].FavouriteList;
+    this->size = FavouriteList[tmpmode].size();
 }
 void Favourite::draw()
 {
-    const char* name[] = { "1HelloQuang","2HelloQuang","3HelloQuang","4HelloQuang","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20" };
-    // name[i] : obj of List
-   // Rectangle sourceRect = { 0, 0,  texture.width, texture.height / 2 };
-
     for (int j = 0; j < MAX_SUGGESTIONS; j++)
     {
         Starr[j - mouse].changePosition({ 791.3 ,(float)278.4 + 45 * j ,47.5 ,45.2 });
         Starr[j - mouse].draw();
-        DrawText(name[j - mouse], position.x + 25, position.y + 15 + 45 * j, fontSize, BLACK);
+        DrawText(Utils::WStringToUTF8(FavouriteList[tmpmode][j - mouse]).c_str(), position.x + 25, position.y + 15 + 45 * j, fontSize, BLACK);
         Starr[j - mouse].changePosition({ 791.3 ,(float)278.4 + 45 * (j - mouse) ,47.5 ,45.2 });
     }
     if (currentMouse != -1)

@@ -66,13 +66,14 @@ void Window::init() {
     this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
 }
 
-void Window::run() {
+void Window::run(Dicts d) {
+    Favourite f = Favourite(&font,d,2);
     while (!WindowShouldClose()) {
         BeginDrawing();
-
         this->draw();
         this->update();
-
+        f.draw();
+        f.handleEvents();
         EndDrawing();
     }
     CloseWindow();

@@ -11,6 +11,7 @@
 #include "stuff/Utils.h"
 #include "stuff/Button.h"
 #include "stuff/SearchBox.h"
+#include "draw/Favorite.h"
 
 class Window {
 private:
@@ -63,7 +64,7 @@ public:
     void reset();
 
     void menu();
-    void run();
+    void run(Dicts d);
 };
 
 #endif //CS163_GROUP9_WINDOW_H
