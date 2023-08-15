@@ -9,6 +9,7 @@
 #include "raygui.h"
 #include "SuggestionLine.h"
 #include "Constants.h"
+
 #include <vector>
 #include <string>
 #include <cstring>
@@ -51,6 +52,7 @@ public:
 
     void setList(std::vector<std::pair<std::string, std::string>> list);
     int getChoseId();
+    std::string getText();
 
     void reset();
 };

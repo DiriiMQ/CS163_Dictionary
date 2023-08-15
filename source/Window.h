@@ -27,13 +27,20 @@ private:
     Rectangle mainInfoBG;
     Button menuButtons[3],
             operationButtons[3],
+            saveButton,
             resetButton;
     int activeMenu, activeOperation;
 
 
     Button test;
     SearchBox searchBox;
+    std::string currentSearch;
+    std::vector<std::pair<std::string, std::string>> suggestListText;
     FrameBoard frameBoard;
+
+    // For Add
+    std::string wordAdd;
+
     //Button_Coordinate
      //Box and Des
     Rectangle Star = { 792.1 ,276.6 ,47.5 ,45.2 };
@@ -57,6 +64,11 @@ public:
     void draw();
     void handleEvents();
     void update();
+
+    void updateOperationButtons();
+    void updateModeNonFavorite();
+
+    void saveFrameBoard();
 
     void reset();
 

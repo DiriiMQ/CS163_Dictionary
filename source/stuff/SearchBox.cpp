@@ -170,3 +170,7 @@ int SearchBox::getChoseId() {
     this->choseId = -1;
     return temp;
 }
+
+std::string SearchBox::getText() {
+    return this->rawText;
+}

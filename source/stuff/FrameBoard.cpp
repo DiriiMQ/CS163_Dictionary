@@ -150,7 +150,7 @@ FrameBoard::FrameBoard(Rectangle infoFrame, Font *font) {
 
 void FrameBoard::draw() {
     if (this->blocks.empty()) return;
-    std::cout << "LOG: FrameBoard: currentBlock: " << currentBlock << "\n";
+//    std::cout << "LOG: FrameBoard: currentBlock: " << currentBlock << "\n";
     for (auto& i : this->blocks) {
         i.draw();
     }

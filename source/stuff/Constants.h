@@ -57,8 +57,12 @@ namespace Constants {
         constexpr Rectangle RECT_OPERATION_BTN[] = {
                 { 498.6,693.2,133.7,49 },
                 { 650.3, 693.2, 86.1, 49 },
-                { 758.6,690.8,81.8,49 }
+                { 758.6,693.2,81.8,49 }
         };
+
+        // the save button next to the operation buttons to the left
+        constexpr char NAME_SAVE_BTN[] = "Save";
+        constexpr Rectangle RECT_SAVE_BTN = { 398.8,693.2,81.8,49 };
 
         constexpr char NAME_RESET_BTN[] = "Reset";
         constexpr Rectangle RECT_RESET_BTN = { 1096.9,678.5,230.4,63.3 };
