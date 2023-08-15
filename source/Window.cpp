@@ -254,8 +254,11 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
             std::cout << "LOG: Operation button " << i << " is clicked" << std::endl;
             this->frameBoard.reset();
             if (i == (int)Constants::Screen::operationBtn::ADD) {
-                this->frameBoard.setBlocks({{"Word: ", &this->wordAdd}});
-                this->frameBoard.setEditLines({0});
+                this->frameBoard.setBlocks({
+                    {"Word: ", &this->wordAdd},
+                    {"Definition: ", &this->definitionAdd}
+                });
+                this->frameBoard.setEditLines({0, 1});
             } else if (i == (int)Constants::Screen::operationBtn::EDIT) {
                 // set perm edit
 
