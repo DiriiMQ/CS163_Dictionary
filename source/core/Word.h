@@ -8,7 +8,6 @@
 #include <fstream>
 #include <vector>
 using namespace std;
-
 struct Definition {
     wstring meaning;
     vector<wstring> examples;
