@@ -9,27 +9,26 @@
 //Add data to each dicts[index], vector and Trie - Sĩ
 Dicts::Dicts() {
     string filename2 = "assets\\data\\Anh-Anh.dat";
-    string filename = "asset/data/Anh_Viet.dat";
+    string filename = "asset\\data\\Anh_Viet.dat";
     string filename3 = "assets\\data\\Viet_Anh.dat";
   
 
-    vector<Word> Vdictionary;
-    readbinaryfile(Vdictionary, filename);
-    ApiWord apiWord(*this);
-    for (size_t i = 0; i < Vdictionary.size(); i++) {
-        apiWord.addWord(Constants::TypeDict::EN_VI, Vdictionary[i]);
+    readbinaryfile(dicts[0].words, filename);
+ 
+    for (int i = 0; i < dicts[0].words.size(); i++) {
+        dicts[0].Map[dicts[0].words[i].word] = i;
     }
    
-    vector<Word> EEdictionary;
-    readbinaryfile(EEdictionary, filename3);
-    for (size_t i = 0; i < EEdictionary.size(); i++) {
-        apiWord.addWord(Constants::TypeDict::VI_EN, EEdictionary[i]);
+    
+    readbinaryfile(dicts[1].words, filename2);
+    for (int i = 0; i < dicts[1].words.size(); i++) {
+        dicts[1].Map[dicts[1].words[i].word] = i;
     }
     
-    vector<Word>VEdictionary;
-    readbinaryfile(VEdictionary, filename2);
-    for (size_t i = 0; i < VEdictionary.size(); i++) {
-        apiWord.addWord(Constants::TypeDict::En_En, VEdictionary[i]);
+   
+    readbinaryfile(dicts[2].words, filename3);
+    for (int i = 0; i < dicts[2].words.size(); i++) {
+        dicts[2].Map[dicts[2].words[i].word] = i;
     }
     
 }
