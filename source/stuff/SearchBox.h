@@ -9,6 +9,7 @@
 #include "raygui.h"
 #include "SuggestionLine.h"
 #include "Constants.h"
+#include "Utils.h"
 
 #include <vector>
 #include <string>
@@ -24,6 +25,7 @@ private:
     static constexpr int MAX_LENGTH = 256;
     static constexpr int MAX_VISIBLE = 36;
     static constexpr int MAX_SUGGESTIONS = 10;
+    static constexpr int MAX_LENGTH_PIXEL = 600;
 
     Texture textureBlank;
     Rectangle position;

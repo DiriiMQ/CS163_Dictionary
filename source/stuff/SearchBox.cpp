@@ -138,7 +138,13 @@ void SearchBox::reset() {
 void SearchBox::updateText() {
     int codepointSize = 0, totalCodepointSize = 0, charCounter = 0, last = (int)this->rawText.length();
     const char *raw = this->rawText.c_str();
-    for (; last && charCounter < MAX_VISIBLE; last -= codepointSize, totalCodepointSize += codepointSize, charCounter++) {
+    std::vector<std::string> result;
+    for (; last; last -= codepointSize, totalCodepointSize += codepointSize, charCounter++) {
+        result.clear();
+        Utils::formatString(this->font, 1, this->rawText.substr(last, totalCodepointSize), MAX_LENGTH_PIXEL, this->fontSize, result);
+        if (result.size() > 1) {
+            break;
+        }
         codepointSize = 0;
         GetCodepointPrevious(raw + last, &codepointSize);
     }
