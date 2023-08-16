@@ -7,28 +7,106 @@
 #include "Word.h"
 #include "CompareString.h"
 //Add data to each dicts[index], vector and Trie - Sĩ
+void MakeDef(const int &id, Dict& dicts){
+    for (int j=0; j<dicts.words[id].worddef.size(); j++){
+            for (int k=0; k<dicts.words[id].worddef[j].definition.size(); k++){
+                wistringstream ss(dicts.words[id].worddef[j].definition[k].meaning);
+                wstring token;
+                while (ss >> token){
+                    if (!dicts.WordsOfDef.find(token)){
+                        Trie<int> temp;
+                        dicts.WordsOfDef[token] = move(temp);
+                    }
+                    Trie<int> *temp = &(dicts.WordsOfDef[token]);
+                    if (!(*temp).find(dicts.words[id].word)){
+                        (*temp)[dicts.words[id].word] = 1;
+                    }
+                    else (*temp)[dicts.words[id].word] += 1;
+                }
+            }
+        }
+}
 Dicts::Dicts() {
-    string filename2 = "assets\\data\\Anh-Anh.dat";
-    string filename = "asset\\data\\Anh_Viet.dat";
-    string filename3 = "assets\\data\\Viet_Anh.dat";
+    string filename2 = "data\\Anh_Anh.dat";
+    string filename = "data\\Anh_Viet.dat";
+    string filename3 = "data\\Viet_Anh.dat";
   
 
     readbinaryfile(dicts[0].words, filename);
- 
-    for (int i = 0; i < dicts[0].words.size(); i++) {
+    for (int i = 0; i < dicts[0].words.size(); i+=5) {
         dicts[0].Map[dicts[0].words[i].word] = i;
+        MakeDef(i, dicts[0]);
+        /*//Push word by word from def to trie
+        for (int j=0; j<dicts[0].words[i].worddef.size(); j++){
+            for (int k=0; k<dicts[0].words[i].worddef[j].definition.size(); k++){
+                wistringstream ss(dicts[0].words[i].worddef[j].definition[k].meaning);
+                wstring token;
+                while (ss >> token){
+                    if (!dicts[0].WordsOfDef.find(token)){
+                        Trie<int> temp;
+                        dicts[0].WordsOfDef[token] = move(temp);
+                    }
+                    Trie<int> *temp = &(dicts[0].WordsOfDef[token]);
+                    if (!(*temp).find(dicts[0].words[i].word)){
+                        (*temp)[dicts[0].words[i].word] = 1;
+                    }
+                    else (*temp)[dicts[0].words[i].word] += 1;
+                }
+
+            }
+        }*/
     }
-   
     
     readbinaryfile(dicts[1].words, filename2);
-    for (int i = 0; i < dicts[1].words.size(); i++) {
+    for (int i = 0; i < dicts[1].words.size(); i+=5) {
         dicts[1].Map[dicts[1].words[i].word] = i;
+        MakeDef(i, dicts[1]);
+        /*//Push word by word from def to trie
+        for (int j=0; j<dicts[1].words[i].worddef.size(); j++){
+            for (int k=0; k<dicts[1].words[i].worddef[j].definition.size(); k++){
+                wistringstream ss(dicts[1].words[i].worddef[j].definition[k].meaning);
+                wstring token;
+                while (ss >> token){
+                    if (!dicts[1].WordsOfDef.find(token)){
+                        Trie<int> temp;
+                        dicts[1].WordsOfDef[token] = move(temp);
+                    }
+                    Trie<int> *temp = &(dicts[1].WordsOfDef[token]);
+                    if (!(*temp).find(dicts[1].words[i].word)){
+                        (*temp)[dicts[1].words[i].word] = 1;
+                    }
+                    else (*temp)[dicts[1].words[i].word] += 1;
+                }
+
+            }
+        }*/
+
     }
     
    
     readbinaryfile(dicts[2].words, filename3);
     for (int i = 0; i < dicts[2].words.size(); i++) {
         dicts[2].Map[dicts[2].words[i].word] = i;
+        MakeDef(i, dicts[2]);
+        /*//Push word by word from def to trie
+        for (int j=0; j<dicts[2].words[i].worddef.size(); j++){
+            for (int k=0; k<dicts[2].words[i].worddef[j].definition.size(); k++){
+                wistringstream ss(dicts[2].words[i].worddef[j].definition[k].meaning);
+                wstring token;
+                while (ss >> token){
+                    if (!dicts[2].WordsOfDef.find(token)){
+                        Trie<int> temp;
+                        dicts[2].WordsOfDef[token] = move(temp);
+                    }
+                    Trie<int> *temp = &(dicts[2].WordsOfDef[token]);
+                    if (!(*temp).find(dicts[2].words[i].word)){
+                        (*temp)[dicts[2].words[i].word] = 1;
+                    }
+                    else (*temp)[dicts[2].words[i].word] += 1;
+                }
+
+            }
+        }*/
     }
     
 }
@@ -90,13 +168,13 @@ void ApiWord::editWord(Constants::TypeDict typeDict, Word& word, int index, Word
     dictionary.words[index].worddef = replace.worddef;
     string filename;
     if (typeDict == Constants::TypeDict::VI_EN) {
-        filename = "assets\\data\\Anh_Vietfix.dat";
+        filename = "data\\Anh_Vietfix.dat";
     }
     else if (typeDict == Constants::TypeDict::En_En) {
-        filename = "assets\\data\\Anh_Anhfix.dat";
+        filename = "data\\Anh_Anhfix.dat";
     }
     else {
-        filename = "assets\\data\\Viet_Anhfix.dat";
+        filename = "data\\Viet_Anhfix.dat";
 
     }
     writetobinaryfile(dictionary.words, filename);
@@ -151,13 +229,13 @@ void Api::resetDict(Constants::TypeDict typeDict) {
     
     string filename;
     if (typeDict == Constants::TypeDict::VI_EN) {
-        filename = "assets\\data\\Anh_Viet.dat";
+        filename = "data\\Anh_Viet.dat";
     }
     else if (typeDict == Constants::TypeDict::En_En) {
-        filename = "assets\\data\\Anh_Anh.dat";
+        filename = "data\\Anh_Anh.dat";
     }
     else {
-        filename = "assets\\data\\Viet_Anh.dat";
+        filename = "data\\Viet_Anh.dat";
     }
     vector<Word> ddictionary;
     readbinaryfile(ddictionary, filename);

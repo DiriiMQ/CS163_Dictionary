@@ -15,6 +15,7 @@ public:
     Trie<int> Map;
     vector<wstring> FavouriteList;
     vector<wstring> HistoryList;
+    Trie<Trie<int>> WordsOfDef;
 };
 
 
