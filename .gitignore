@@ -31,7 +31,11 @@
 *.out
 *.app
 
+# Debug files
 .vs/
+
+# vscode folder
+.vscode/
 
 # Debug folder
 *debug/
