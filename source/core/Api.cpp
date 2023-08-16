@@ -8,9 +8,9 @@
 #include "CompareString.h"
 //Add data to each dicts[index], vector and Trie - Sĩ
 Dicts::Dicts() {
-    string filename2 = "assets\\data\\Anh-Anh.dat";
-    string filename = "asset\\data\\Anh_Viet.dat";
-    string filename3 = "assets\\data\\Viet_Anh.dat";
+   string filename2 = "../assets/data/Anh_Anh.dat";
+    string filename = "../assets/data/Anh_Viet.dat";
+    string filename3 = "../assets/data/Viet_Anh.dat";
   
 
     readbinaryfile(dicts[0].words, filename);
