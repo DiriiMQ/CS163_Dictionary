@@ -179,22 +179,44 @@ std::vector<wstring> ApiSearch::getHistory(Constants::TypeDict typeDict) {
     return MainDictionary.dicts[static_cast<int>(typeDict)].HistoryList;
 }
 
-Quiz ApiQuiz::getQuiz(Constants::TypeDict typeDict) {
+Quiz ApiQuiz::getQuiz(Constants::TypeDict typeDict, bool IsAskWordToDef) {
     srand(time(0));
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
+    const int MAX_LENGTH_OF_QUESTION = 50;
+    const int MAX_LENGTH_OF_ANSWER = 50;
     quiz.options.clear();
     for (int i=0; i<4; i++){
-        unsigned int temp = 0;
-        for (int i = 0; i < 4; ++i){
-            temp = (temp << 8) | (rand() % 256);
+        while (1){
+            unsigned int temp = 0;
+            for (int i = 0; i < 4; ++i){
+                temp = (temp << 8) | (rand() % 256);
+            }
+            Word *cur = &dictionary.words[temp % dictionary.words.size()];
+            int Min_Length_Of_Definition = 100000;
+            for (int j=0; j<cur->worddef.size(); j++){
+                for (int k=0; k<cur->worddef[j].definition.size(); k++){
+                    if (Min_Length_Of_Definition > cur->worddef[j].definition[k].meaning.size()){
+                        Min_Length_Of_Definition = cur->worddef[j].definition[k].meaning.size();
+                    }
+                }
+            }
+            if (IsAskWordToDef){
+                if (cur->word.size()<MAX_LENGTH_OF_QUESTION && Min_Length_Of_Definition<MAX_LENGTH_OF_ANSWER){
+                    quiz.options.push_back(cur);
+                    break;
+                }
+            } else {
+                if (cur->word.size()<MAX_LENGTH_OF_ANSWER && Min_Length_Of_Definition<MAX_LENGTH_OF_QUESTION){
+                    quiz.options.push_back(cur);
+                    break;
+                }
+            }
         }
-        quiz.options.push_back(&dictionary.words[temp % dictionary.words.size()]);
     }    
     int temp = rand() % 4;
     quiz.word = quiz.options[temp];
     return quiz;
 }
-//Is it the right way to use "response"?
 bool ApiQuiz::submitQuiz(Constants::TypeDict typeDict, QuizResponse response) {
     if (quiz.options[static_cast<int>(response)] == quiz.word) return true;
     return false;
