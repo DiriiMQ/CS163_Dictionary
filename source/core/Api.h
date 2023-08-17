@@ -16,6 +16,7 @@ class Dicts {
 public:
     Dict dicts[3]; // use Constants::TypeDict to index
     Dicts(); // load Dicts
+    ~Dicts(); // save Dicts
 };
 //dicts -> MainDictionary
 class BaseApi {

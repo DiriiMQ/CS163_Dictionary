@@ -13,13 +13,19 @@ int main() {
     //window.run();
     Dicts dicts;
     Api api(dicts);
-    std::cout << dicts.dicts[0].Map.size() << std::endl;
-    std::cout << dicts.dicts[1].Map.size() << std::endl;
-    int cnt=10;
-    while (cnt--){
-        Word cur = api.apiWord.getRandomWord(Constants::TypeDict::EN_VI);
-        wcout << cur.word << endl;
-    }
-    std::wcout << L"load in " << 1.0*clock()/CLOCKS_PER_SEC << std::endl;
+    wcout << dicts.dicts[0].words.size() << endl;
+    wcout << dicts.dicts[1].words.size() << endl;
+    wcout << dicts.dicts[2].words.size() << endl;
+    /*Word cur;
+    Definition def;
+    def.meaning = L"Siêu đẹp trai";
+    Type type;
+    type.definition.push_back(def);
+    cur.worddef.push_back(type);
+    cur.word = L"Nghianeee";
+    wcout << cur.word << endl;
+    wcout << cur.worddef[0].definition[0].meaning << endl;
+    api.apiWord.addWord(Constants::TypeDict::EN_VI, cur);*/
+    wcout << L"load in " << 1.0*clock()/CLOCKS_PER_SEC << endl;
     return 0;
 }
