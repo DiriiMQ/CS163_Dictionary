@@ -12,7 +12,9 @@ int main() {
     wcout<<dicts.dicts[0].words.size()<<endl;
     wcout << dicts.dicts[0].Map.size() << endl;
     wcout<<dicts.dicts[1].words.size()<<endl;
+    wcout << dicts.dicts[1].Map.size() << endl;
     wcout<<dicts.dicts[2].words.size()<<endl;
+    wcout << dicts.dicts[2].Map.size() << endl;
     wcout << "load in " << 1.0*clock()/CLOCKS_PER_SEC << "s" << endl;
    // wcout<<dicts.dicts[0].words[1].word;
     return 0;
