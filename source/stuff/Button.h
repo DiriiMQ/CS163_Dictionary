@@ -11,6 +11,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <vector>
 
 class Button {
 private:
@@ -41,6 +42,7 @@ public:
     void setChosen(bool isChosen);
     void setIsSuggest();
 };
+
 class ButtonImage
 {
 private:
@@ -74,6 +76,7 @@ public:
     [[nodiscard]] bool isPressing() const;
     int getClicked();
 };
+
 
 
 #endif //CS163_GROUP9_BUTTON_H

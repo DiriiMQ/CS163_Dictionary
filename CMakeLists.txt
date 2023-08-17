@@ -49,6 +49,10 @@ add_executable(CS163_Group9 main.cpp
         source/core/Quiz.cpp
         source/core/Quiz.h
         source/stuff/Utils.h
+        source/core/Trie.cpp
+        source/core/Trie.h
+        source/core/Map.hpp
+        source/core/CompareString.h
         source/_raygui.h
         source/stuff/Button.cpp
         source/stuff/Button.h
@@ -61,5 +65,4 @@ add_executable(CS163_Group9 main.cpp
         source/draw/Favorite.cpp
         source/draw/Favorite.h
 )
-
 target_link_libraries(${PROJECT_NAME} raylib)

@@ -156,4 +156,3 @@ int Favourite::getClicked()
     return -1;
 }
 
-

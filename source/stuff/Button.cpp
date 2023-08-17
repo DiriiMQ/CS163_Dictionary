@@ -86,7 +86,6 @@ bool Button::isClicked() const {
 void Button::setChosen(bool _isChosen) {
     this->isChosen = _isChosen;
 }
-
 void Button::setIsSuggest() {
     this->isSuggest = true;
 }

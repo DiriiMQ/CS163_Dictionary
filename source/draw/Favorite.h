@@ -4,7 +4,6 @@
 
 #ifndef CS163_GROUP9_FAVORITE_H
 #define CS163_GROUP9_FAVORITE_H
-
 #include "raylib.h"
 #include "raygui.h"
 #include "stuff/Constants.h"

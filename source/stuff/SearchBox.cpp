@@ -30,7 +30,6 @@ void SearchBox::draw() {
                BLACK);
 
     if (this->isActivated) {
-//        this->test.draw();
         for (auto &i : this->suggestList) {
             i.draw();
         }
