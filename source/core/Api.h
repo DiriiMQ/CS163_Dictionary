@@ -49,7 +49,7 @@ public:
     Word getWord(Constants::TypeDict typeDict, std::wstring word);
     void addWord(Constants::TypeDict typeDict, Word word);
     bool removeWord(Constants::TypeDict typeDict, std::wstring word); // return true if success, false if not found
-    void editWord(Constants::TypeDict typeDict, Word& word, int index, Word& replace);
+    void editWord(Constants::TypeDict typeDict, Word& replace);
     Word getRandomWord(Constants::TypeDict typeDict);
 };
 
