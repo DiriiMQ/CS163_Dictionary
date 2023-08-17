@@ -43,6 +43,9 @@ private:
     // For Add
     std::string wordAdd, definitionAdd;
 
+    // For Search and Edit
+    Word currentWord;
+
     // For Favourite
     Favourite favourite;
 
@@ -55,11 +58,6 @@ private:
     //Option 
     Rectangle SwitchDataSet = { 920,160,150,40 };
     Rectangle Quiz = { 1110,160,130,50 };
-
-    //update function
-//    void updateTextbox();
-    //draw function
-//    void drawTextbox(Rectangle textBox);
 
 public:
     Window(Api *api);
@@ -77,7 +75,6 @@ public:
 
     void reset();
 
-//    void menu();
     void run();
 };
 

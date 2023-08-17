@@ -111,14 +111,6 @@ void Window::draw() {
     }
 
     this->resetButton.draw();
-
-//    std::vector<std::string> lines;
-//    Utils::formatString(this->testLarge, 200, 20, lines);
-//    float space = 0;
-//    for (auto &i : lines) {
-//        DrawTextEx(font, i.c_str(), {500, 500 + space}, 20, 1, BLACK);
-//        space += 25;
-//    }
 }
 
 void Window::handleEvents() {

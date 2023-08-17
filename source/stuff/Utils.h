@@ -16,6 +16,13 @@ namespace Utils {
         return converter.to_bytes(wstr);
     }
 
+    
+    static std::wstring UTF8ToWString(const std::string &str) {
+        std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+        std::wstring wstr = converter.from_bytes(str);
+        return wstr;
+    }
+
     static void formatString(Font *font, float spacing, std::string s, float size, float fontSize, std::vector <std::string>& result)
     {
         std::string currentLines, currentWord;

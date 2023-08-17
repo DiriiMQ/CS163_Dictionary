@@ -81,6 +81,26 @@ void SearchBox::handleEvents() {
                     this->rawText.pop_back();
                 }
             }
+        } else if (IsKeyPressed(KEY_DELETE)) {
+            if (this->rawText.length() > 0) {
+                int prevCodepointSize = 0;
+
+                GetCodepointPrevious(this->rawText.c_str() + this->rawText.length(), &prevCodepointSize);
+
+                if (this->rawText.length() > prevCodepointSize) {
+                    int doublePrevSize = 0;
+                    GetCodepointPrevious(this->rawText.c_str() + this->rawText.length() - prevCodepointSize, &doublePrevSize);
+
+                    int sumSize = prevCodepointSize + doublePrevSize;
+                    for (int i = 0; i < prevCodepointSize; i++) {
+                        this->rawText[this->rawText.length() - sumSize + i] = this->rawText[this->rawText.length() - prevCodepointSize + i];
+                    }
+                    while (doublePrevSize--) {
+                        this->rawText.pop_back();
+                    }
+                }
+
+            }
         } else if (IsKeyPressed(KEY_ENTER)) {
             this->isActivated = false;
         } else {
@@ -89,6 +109,17 @@ void SearchBox::handleEvents() {
                 int codepoint = GetCharPressed(), codepointSize = 0;
                 if (codepoint != 0) {
                     const char *charEncoded = CodepointToUTF8(codepoint, &codepointSize);
+
+                    if (codepointSize > 1) {
+                        if (this->rawText.length() > 0) {
+                            int prevCodepointSize = 0;
+                            GetCodepointPrevious(this->rawText.c_str() + this->rawText.length(), &prevCodepointSize);
+
+                            while (prevCodepointSize--) {
+                                this->rawText.pop_back();
+                            }
+                        }           
+                    }
 
                     for (int i = 0; i < codepointSize; i++) {
                         this->rawText += charEncoded[i];
@@ -138,7 +169,13 @@ void SearchBox::reset() {
 void SearchBox::updateText() {
     int codepointSize = 0, totalCodepointSize = 0, charCounter = 0, last = (int)this->rawText.length();
     const char *raw = this->rawText.c_str();
-    for (; last && charCounter < MAX_VISIBLE; last -= codepointSize, totalCodepointSize += codepointSize, charCounter++) {
+    std::vector<std::string> result;
+    for (; last; last -= codepointSize, totalCodepointSize += codepointSize, charCounter++) {
+        result.clear();
+        Utils::formatString(this->font, 1, this->rawText.substr(last, totalCodepointSize), MAX_LENGTH_PIXEL, this->fontSize, result);
+        if (result.size() > 1) {
+            break;
+        }
         codepointSize = 0;
         GetCodepointPrevious(raw + last, &codepointSize);
     }

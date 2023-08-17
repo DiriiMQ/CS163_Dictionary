@@ -50,13 +50,45 @@ void Line::handleEvents() {
                     this->content->pop_back();
                 }
             }
+        } else if (IsKeyPressed(KEY_DELETE)) {
+            if (this->content->length() > 0) {
+                int prevCodepointSize = 0;
+
+                GetCodepointPrevious(this->content->c_str() + this->content->length(), &prevCodepointSize);
+
+                if (this->content->length() > prevCodepointSize) {
+                    int doublePrevSize = 0;
+                    GetCodepointPrevious(this->content->c_str() + this->content->length() - prevCodepointSize, &doublePrevSize);
+
+                    int sumSize = prevCodepointSize + doublePrevSize;
+                    for (int i = 0; i < prevCodepointSize; i++) {
+                        this->content->at(this->content->length() - sumSize + i) = (*this->content)[this->content->length() - prevCodepointSize + i];
+                    }
+                    while (doublePrevSize--) {
+                        this->content->pop_back();
+                    }
+                }
+
+            }
         } else if (IsKeyPressed(KEY_ENTER)) {
             this->isClicked = false;
         } else {
             // NOTE: This handle is followed by instructions of Raygui
             int codepoint = GetCharPressed(), codepointSize = 0;
+
             if (codepoint != 0) {
                 const char *charEncoded = CodepointToUTF8(codepoint, &codepointSize);
+
+                if (codepointSize > 1) {
+                    if (this->content->length() > 0) {
+                        int prevCodepointSize = 0;
+                        GetCodepointPrevious(this->content->c_str() + this->content->length(), &prevCodepointSize);
+
+                        while (prevCodepointSize--) {
+                            this->content->pop_back();
+                        }
+                    }
+                }
 
                 for (int i = 0; i < codepointSize; i++) {
                     this->content->push_back(charEncoded[i]);
