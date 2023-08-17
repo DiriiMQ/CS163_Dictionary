@@ -275,33 +275,37 @@ void Api::resetDict(Constants::TypeDict typeDict) {
     
     string filename;
     if (typeDict == Constants::TypeDict::VI_EN) {
-        filename = "data\\Anh_Viet.dat";
+        filename = "data\\Anh_Viet_Original.dat";
     }
     else if (typeDict == Constants::TypeDict::En_En) {
-        filename = "data\\Anh_Anh.dat";
+        filename = "data\\Anh_Anh_Original.dat";
     }
     else {
-        filename = "data\\Viet_Anh.dat";
+        filename = "data\\Viet_Anh_Original.dat";
     }
     vector<Word> ddictionary;
     readbinaryfile(ddictionary, filename);
     string newfilename;
-    size_t lastSlashPos = filename.find_last_of("\\");
-    if (lastSlashPos != std::string::npos) {
-
-        string path = filename.substr(0, lastSlashPos + 1);
-        string newFilename = "Anh_Vietfix.dat";
-
-       newfilename = path + newFilename;
+    if (typeDict == Constants::TypeDict::VI_EN) {
+        newfilename = "data\\Anh_Viet.dat";
     }
-
+    else if (typeDict == Constants::TypeDict::En_En) {
+        newfilename = "data\\Anh_Anh.dat";
+    }
+    else {
+        newfilename = "data\\Viet_Anh.dat";
+    }
     writetobinaryfile(ddictionary, newfilename);
     dictionary.words.clear();
     dictionary.Map.clear();
     dictionary.FavoriteList.clear();
     dictionary.HistoryList.clear();
+    dictionary.WordsOfDef.clear();
     for (size_t i = 0; i < ddictionary.size(); i++) {
         dictionary.Map[ddictionary[i].word] = i;
+        MakeDef(ddictionary[i],dictionary,1);
     }
+    dictionary.FavoriteList.push_back(L"Null");
+    dictionary.HistoryList.push_back(L"Null");
     dictionary.words = move(ddictionary);
 }
