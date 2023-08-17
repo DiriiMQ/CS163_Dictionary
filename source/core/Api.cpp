@@ -168,6 +168,7 @@ bool ApiFavorite::removeFavorite(Constants::TypeDict typeDict, std::wstring word
     return false;
 }
 std::vector<wstring> ApiFavorite::getFavorite(Constants::TypeDict typeDict) {
+    if (MainDictionary.dicts[static_cast<int>(typeDict)].FavoriteList.size()==1) return vector<wstring>();
     return MainDictionary.dicts[static_cast<int>(typeDict)].FavoriteList;
 }
 
@@ -181,6 +182,7 @@ Word ApiWord::getWord(Constants::TypeDict typeDict, std::wstring word) {
         int index = dictionary.Map[word];
         return dictionary.words[index];
     }
+    dictionary.HistoryList.push_back(word);
     return Word();
 }
 
@@ -255,6 +257,7 @@ std::vector<wstring> ApiSearch::getAutoCompleteListForDefinition(Constants::Type
     return move(result);
 }
 std::vector<wstring> ApiSearch::getHistory(Constants::TypeDict typeDict) {
+    if (MainDictionary.dicts[static_cast<int>(typeDict)].HistoryList.size()==1) return vector<wstring>();
     return MainDictionary.dicts[static_cast<int>(typeDict)].HistoryList;
 }
 
