@@ -183,7 +183,7 @@ Quiz ApiQuiz::getQuiz(Constants::TypeDict typeDict, bool IsAskWordToDef) {
     srand(time(0));
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     const int MAX_LENGTH_OF_QUESTION = 50;
-    const int MAX_LENGTH_OF_ANSWER = 50;
+    const int MAX_LENGTH_OF_ANSWER = 20;
     quiz.options.clear();
     for (int i=0; i<4; i++){
         while (1){
