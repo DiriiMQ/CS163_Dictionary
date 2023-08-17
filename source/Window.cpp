@@ -71,6 +71,7 @@ void Window::init() {
             );
     // For init Favourite
     this->favourite = Favourite(&font,(int) currentDict);
+    this->currentSearch = " ";
 }
 
 void Window::run() {
@@ -280,6 +281,7 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
         std::wcout << "LOG: curWstr: " << curWstr << std::endl;
         this->_wordList.clear();
         if (_searchText.empty()) {
+            std::cout << "LOG: get history" << std::endl;
             this->_wordList = this->api->apiSearch.getHistory(this->currentDict);
         } else {
             if (this->activeMenu == (int)Constants::Screen::menuBtn::WORD)
