@@ -34,15 +34,15 @@ void MakeDef(const Word &curWord, Dict& dicts, int del){
         }
 }
 Dicts::Dicts() {
-     string filename1 = "data\\Anh_Viet.dat";
+    string filename1 = "data\\Anh_Viet.dat";
     string filename1_favorite = "data\\Anh_Viet_favorite.dat";
     string filename1_history = "data\\Anh_Viet_history.dat";
-    string filename2 = "data\\Anh_Anh.dat";
-    string filename2_favorite = "data\\Anh_Anh_favorite.dat";
-    string filename2_history = "data\\Anh_Anh_history.dat";
-    string filename3 = "data\\Viet_Anh.dat";
-    string filename3_favorite = "data\\Viet_Anh_favorite.dat";
-    string filename3_history = "data\\Viet_Anh_history.dat";
+    string filename2 = "data\\Viet_Anh.dat";
+    string filename2_favorite = "data\\Viet_Anh_favorite.dat";
+    string filename2_history = "data\\Viet_Anh_history.dat";
+    string filename3 = "data\\Anh_Anh.dat";
+    string filename3_favorite = "data\\Anh_Anh_favorite.dat";
+    string filename3_history = "data\\Anh_Anh_history.dat";
     ifstream wfin;
 
     readbinaryfile(dicts[0].words, filename1);
@@ -64,6 +64,7 @@ Dicts::Dicts() {
     wfin.close();
     for (int i = 0; i < dicts[0].words.size(); i++) {
         dicts[0].Map[dicts[0].words[i].word] = i;
+        MakeDef(dicts[0].words[i],dicts[0],1);
     }
    
     
@@ -87,6 +88,7 @@ Dicts::Dicts() {
 
     for (int i = 0; i < dicts[1].words.size(); i++) {
         dicts[1].Map[dicts[1].words[i].word] = i;
+        MakeDef(dicts[1].words[i],dicts[1],1);
     }
     
    
@@ -109,6 +111,7 @@ Dicts::Dicts() {
     wfin.close();
     for (int i = 0; i < dicts[2].words.size(); i++) {
         dicts[2].Map[dicts[2].words[i].word] = i;
+        MakeDef(dicts[2].words[i],dicts[2],1);
     }
     
 }
@@ -116,12 +119,12 @@ Dicts::~Dicts(){
     string filename1 = "data\\Anh_Viet.dat";
     string filename1_favorite = "data\\Anh_Viet_favorite.dat";
     string filename1_history = "data\\Anh_Viet_history.dat";
-    string filename2 = "data\\Anh_Anh.dat";
-    string filename2_favorite = "data\\Anh_Anh_favorite.dat";
-    string filename2_history = "data\\Anh_Anh_history.dat";
-    string filename3 = "data\\Viet_Anh.dat";
-    string filename3_favorite = "data\\Viet_Anh_favorite.dat";
-    string filename3_history = "data\\Viet_Anh_history.dat";
+    string filename2 = "data\\Viet_Anh.dat";
+    string filename2_favorite = "data\\Viet_Anh_favorite.dat";
+    string filename2_history = "data\\Viet_Anh_history.dat";
+    string filename3 = "data\\Anh_Anh.dat";
+    string filename3_favorite = "data\\Anh_Anh_favorite.dat";
+    string filename3_history = "data\\Anh_Anh_history.dat";
     writetobinaryfile(dicts[0].words, filename1);
     writetobinaryfile(dicts[1].words, filename2);
     writetobinaryfile(dicts[2].words, filename3);
@@ -146,7 +149,7 @@ Dicts::~Dicts(){
     wfout.open(filename3_history, ios::binary | ios::out);
     writeStringVectorToFile(dicts[2].HistoryList, wfout);
     wfout.close();
-    wcout << "Done" << endl;
+    wcout << "Done in " << 1.0*clock()/CLOCKS_PER_SEC << endl;
 }
 void ApiFavorite::addFavorite(Constants::TypeDict typeDict, std::wstring word) {
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
@@ -206,18 +209,6 @@ void ApiWord::editWord(Constants::TypeDict typeDict, Word& replace) {
     MakeDef(dictionary.words[index],dictionary,-1);
     dictionary.words[index].worddef = replace.worddef;
     MakeDef(dictionary.words[index],dictionary,1);
-    string filename;
-    if (typeDict == Constants::TypeDict::VI_EN) {
-        filename = "data\\Anh_Vietfix.dat";
-    }
-    else if (typeDict == Constants::TypeDict::En_En) {
-        filename = "data\\Anh_Anhfix.dat";
-    }
-    else {
-        filename = "data\\Viet_Anhfix.dat";
-
-    }
-    writetobinaryfile(dictionary.words, filename);
 }
 
 Word ApiWord::getRandomWord(Constants::TypeDict typeDict) {
@@ -263,7 +254,6 @@ std::vector<wstring> ApiSearch::getAutoCompleteListForDefinition(Constants::Type
     }
     return move(result);
 }
-//edit word -> string
 std::vector<wstring> ApiSearch::getHistory(Constants::TypeDict typeDict) {
     return MainDictionary.dicts[static_cast<int>(typeDict)].HistoryList;
 }
@@ -312,9 +302,8 @@ bool ApiQuiz::submitQuiz(Constants::TypeDict typeDict, QuizResponse response) {
 //Sĩ
 void Api::resetDict(Constants::TypeDict typeDict) {
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
-    
     string filename;
-    if (typeDict == Constants::TypeDict::VI_EN) {
+    if (typeDict == Constants::TypeDict::EN_VI) {
         filename = "data\\Anh_Viet_Original.dat";
     }
     else if (typeDict == Constants::TypeDict::En_En) {
@@ -326,7 +315,7 @@ void Api::resetDict(Constants::TypeDict typeDict) {
     vector<Word> ddictionary;
     readbinaryfile(ddictionary, filename);
     string newfilename;
-    if (typeDict == Constants::TypeDict::VI_EN) {
+    if (typeDict == Constants::TypeDict::EN_VI) {
         newfilename = "data\\Anh_Viet.dat";
     }
     else if (typeDict == Constants::TypeDict::En_En) {
@@ -336,15 +325,17 @@ void Api::resetDict(Constants::TypeDict typeDict) {
         newfilename = "data\\Viet_Anh.dat";
     }
     writetobinaryfile(ddictionary, newfilename);
+    
     dictionary.words.clear();
     dictionary.Map.clear();
     dictionary.FavoriteList.clear();
     dictionary.HistoryList.clear();
     dictionary.WordsOfDef.clear();
-    for (size_t i = 0; i < ddictionary.size(); i++) {
+    for (int i = 0; i < ddictionary.size(); i++) {
         dictionary.Map[ddictionary[i].word] = i;
         MakeDef(ddictionary[i],dictionary,1);
     }
+    
     dictionary.FavoriteList.push_back(L"Null");
     dictionary.HistoryList.push_back(L"Null");
     dictionary.words = move(ddictionary);
