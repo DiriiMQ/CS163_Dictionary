@@ -51,6 +51,7 @@ struct Map{
     }
     ~Map(){
         Destructor(root);
+        root = nullptr;
     }
     
     int getHeight(Node *node){
