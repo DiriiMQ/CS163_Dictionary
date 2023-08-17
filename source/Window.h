@@ -25,7 +25,6 @@ private:
     std::vector<std::string> testLines;
     // END TESTING
 
-    Constants::TypeDict currentDict = Constants::TypeDict::EN_VI;
     Api *api;
     Font font;
     Texture background;
@@ -36,11 +35,9 @@ private:
             resetButton;
     int activeMenu, activeOperation;
 
-    SearchBox searchBox;
-    std::string currentSearch;
-    std::vector<std::wstring> _wordList;
-    std::vector<std::pair<std::string, std::string>> suggestListText;
-    FrameBoard frameBoard;
+    // For Quiz & Type of Dict
+    bool isQuizActived = false;
+    Constants::TypeDict currentDict = Constants::TypeDict::EN_VI;
 
     // For Add
     std::string wordAdd, definitionAdd;
@@ -48,6 +45,11 @@ private:
     // For Search and Edit
     Word currentWord;
     std::vector<std::pair<std::string, bool>> lines;
+    SearchBox searchBox;
+    std::string currentSearch;
+    std::vector<std::wstring> _wordList;
+    std::vector<std::pair<std::string, std::string>> suggestListText;
+    FrameBoard frameBoard;
 
     // For Favourite
     Favourite favourite;

@@ -92,6 +92,8 @@ void Window::draw() {
         menuButton.draw();
     }
 
+    // For Quiz & Type of Dict
+
     if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
         DrawRectangleRounded(this->mainInfoBG, CORNER_RADIUS, 0, WHITE);
         this->frameBoard.draw();
@@ -118,6 +120,10 @@ void Window::handleEvents() {
     for (auto & menuButton : this->menuButtons) {
         menuButton.handleEvents();
     }
+
+    // For Quiz & Type of Dict (remember to set this->activeMenu to NONE when click on Quiz)
+
+
     this->resetButton.handleEvents();
 
     if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
@@ -147,6 +153,9 @@ void Window::update() {
     for (auto & menuButton : this->menuButtons) {
         menuButton.update();
     }
+
+    // For Quiz & Type of Dict (remember to set this->activeMenu to NONE when click on Quiz)
+
     this->resetButton.update();
 
     for (int i = 0; i < 3; ++i) {
