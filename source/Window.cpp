@@ -141,6 +141,7 @@ void Window::handleEvents() {
     // For Quiz & Type of Dict 
     this->DataSwitchButton.handleEvents();
     this->QuizButton.handleEvents();
+    currentDict =(Constants::TypeDict) this->DataSwitchButton.getClicked();
 
     this->resetButton.handleEvents();
 
@@ -228,6 +229,9 @@ void Window::reset() {
     this->frameBoard.reset();
     this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
     this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
+    // For Quiz and DataSwitch
+    this->DataSwitchButton.changeIndex(0);
+    this->QuizButton.changeIndex(0);
 }
 
 void Window::updateOperationButtons() {
