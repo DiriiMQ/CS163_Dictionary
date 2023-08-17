@@ -119,13 +119,13 @@ void ApiWord::editWord(Constants::TypeDict typeDict, Word& word, int index, Word
     MakeDef(dictionary.words[index],dictionary,1);
     string filename;
     if (typeDict == Constants::TypeDict::VI_EN) {
-        filename = "data\\Anh_Vietfix.dat";
+        filename = "../assets/data/Anh_Vietfix.dat";
     }
     else if (typeDict == Constants::TypeDict::En_En) {
-        filename = "data\\Anh_Anhfix.dat";
+        filename = "../assets/data/Anh_Anhfix.dat";
     }
     else {
-        filename = "data\\Viet_Anhfix.dat";
+        filename = "../assets/data/Viet_Anhfix.dat";
 
     }
     writetobinaryfile(dictionary.words, filename);

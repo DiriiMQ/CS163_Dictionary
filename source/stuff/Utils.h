@@ -23,8 +23,8 @@ namespace Utils {
         return wstr;
     }
 
-    static void formatString(Font *font, float spacing, std::string s, float size, float fontSize, std::vector <std::string>& result)
-    {
+    static void formatString(Font *font, float spacing, std::string s, float size, float fontSize, std::vector <std::string>& result) {
+        if (s.empty()) return;
         std::string currentLines, currentWord;
         while(s.back() == ' ' || s.back() == '\n') s.pop_back();
         s.push_back('\n');
