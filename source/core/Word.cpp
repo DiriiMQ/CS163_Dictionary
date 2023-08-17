@@ -4,7 +4,8 @@
 #ifndef WORD_CPP
 #define WORD_CPP
 #include "Word.h"
-void writeStringVectorToFile(const std::vector<std::wstring>& strings, std::ofstream& outputFile) {
+#include <iostream>
+void writeStringVectorToFile(const std::vector<std::wstring>& strings, ofstream& outputFile) {
     int vectorSize = strings.size();
     outputFile.write(reinterpret_cast<const char*>(&vectorSize), sizeof(int));
 
@@ -14,9 +15,7 @@ void writeStringVectorToFile(const std::vector<std::wstring>& strings, std::ofst
         outputFile.write(reinterpret_cast<const char*>(str.c_str()), strSize * sizeof(wchar_t));
     }
 }
-vector<wstring> readStringVectorFromFile(vector<wstring>& strings, ifstream& inputFile) {
-
-
+void readStringVectorFromFile(vector<wstring>& strings, ifstream& inputFile) {
     int vectorSize;
     inputFile.read(reinterpret_cast<char*>(&vectorSize), sizeof(int));
 
@@ -27,12 +26,10 @@ vector<wstring> readStringVectorFromFile(vector<wstring>& strings, ifstream& inp
         wstring str;
         str.resize(strSize);
         inputFile.read(reinterpret_cast<char*>(&str[0]), strSize * sizeof(wchar_t));
-
         strings.push_back(str);
     }
-    return strings;
 }
-void writetobinaryfile(vector<Word>Vdictionary,const string& filename) {
+void writetobinaryfile(vector<Word> &Vdictionary,const string& filename) {
     ofstream wfout(filename, ios::out | ios::binary);
     int dic_size = Vdictionary.size();
     wfout.write(reinterpret_cast<const char*> (&dic_size), sizeof(int));
@@ -53,7 +50,6 @@ void writetobinaryfile(vector<Word>Vdictionary,const string& filename) {
         if (wordd.IsType)
         {
            
-
             int def_size = wordd.worddef.size();
             wfout.write(reinterpret_cast<const char*> (&def_size), sizeof(int));
             for (const Type def : wordd.worddef) {
@@ -66,7 +62,6 @@ void writetobinaryfile(vector<Word>Vdictionary,const string& filename) {
                 // definition
                 if (def.Isdefinition)
                 {
-                    
 
                     int defi_size = def.definition.size();
                     wfout.write(reinterpret_cast<const char*> (&defi_size), sizeof(int));
@@ -88,13 +83,7 @@ void writetobinaryfile(vector<Word>Vdictionary,const string& filename) {
             }
         }
 
-
-
     }
-
-
-
-
     wfout.close();
 }
 void readbinaryfile(vector<Word> &Vdictionary,const string&filename) {
@@ -154,7 +143,7 @@ void readbinaryfile(vector<Word> &Vdictionary,const string&filename) {
 
                             wfin.read(reinterpret_cast<char*>(&defi.Isexample), sizeof(bool));
                             if (defi.Isexample)
-                                defi.examples = readStringVectorFromFile(defi.examples, wfin);
+                                readStringVectorFromFile(defi.examples, wfin);
 
                             def.definition.push_back(defi);
                         }

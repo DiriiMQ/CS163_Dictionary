@@ -25,6 +25,7 @@ Trie < ValueType > ::~Trie() {
 template < typename ValueType >
 void Trie < ValueType > ::clear() {
     removeHelper(root);
+    root = new TrieNode < ValueType > ();
     WordCount = 0;
 }
 

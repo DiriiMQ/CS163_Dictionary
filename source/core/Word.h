@@ -43,8 +43,8 @@ struct Word {
 
 };
 
-void writeStringVectorToFile(const std::vector<std::wstring>& strings, std::ofstream& outputFile);
-vector<wstring> readStringVectorFromFile(vector<wstring>& strings, ifstream& inputFile);
-void writetobinaryfile(vector<Word>Vdictionary, const string &filename);
+void writeStringVectorToFile(const std::vector<std::wstring>& strings, ofstream& outputFile);
+void readStringVectorFromFile(vector<wstring>& strings, ifstream& inputFile);
+void writetobinaryfile(vector<Word> &Vdictionary, const string &filename);
 void readbinaryfile(vector<Word>& Vdictionary, const string &filename);
 #endif //CS163_GROUP9_WORD_H
