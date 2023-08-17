@@ -39,7 +39,7 @@ void SearchBox::draw() {
 void SearchBox::handleEvents() {
     if (this->isActivated) {
         if (GetMouseWheelMove() < 0) {
-            if (this->currentId + 1 <= this->suggestListText.size() - MAX_SUGGESTIONS) {
+            if (this->currentId + 1 <= (int)this->suggestListText.size() - MAX_SUGGESTIONS) {
                 this->currentId++;
             }
         }
