@@ -18,13 +18,14 @@
 class Window {
 private:
     static constexpr float CORNER_RADIUS = 0.1f;
+    string REMOVE_NOTICE = "This word has been removed!";
 
     // FOR TESTING
 //    std::string testLarge;
     std::vector<std::string> testLines;
     // END TESTING
 
-    Constants::TypeDict currentDict;
+    Constants::TypeDict currentDict = Constants::TypeDict::EN_VI;
     Api *api;
     Font font;
     Texture background;
@@ -37,6 +38,7 @@ private:
 
     SearchBox searchBox;
     std::string currentSearch;
+    std::vector<std::wstring> _wordList;
     std::vector<std::pair<std::string, std::string>> suggestListText;
     FrameBoard frameBoard;
 
@@ -45,6 +47,7 @@ private:
 
     // For Search and Edit
     Word currentWord;
+    std::vector<std::pair<std::string, bool>> lines;
 
     // For Favourite
     Favourite favourite;
@@ -70,6 +73,8 @@ public:
 
     void updateOperationButtons();
     void updateModeNonFavorite();
+
+    void createLines();
 
     void saveFrameBoard();
 

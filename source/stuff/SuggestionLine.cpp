@@ -43,7 +43,10 @@ void SuggestionLine::handleEvents() {
 }
 
 void SuggestionLine::update() {
-    this->textDraw = this->text + " || " + this->definition;
+    if (this->definition.length() > 0)
+        this->textDraw = this->text + " || " + this->definition;
+    else 
+        this->textDraw = this->text;
     this->button.update();
 }
 

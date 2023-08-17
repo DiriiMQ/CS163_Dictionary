@@ -50,6 +50,7 @@ Favourite::Favourite(Font* font, int tmpmode)
 }
 void Favourite::draw()
 {
+    // if (Starr.empty())
     for (int j = 0; j < MAX_SUGGESTIONS; j++)
     {
         Starr[j - mouse].changePosition({ 791.3 ,(float)278.4 + 45 * j ,47.5 ,45.2 });

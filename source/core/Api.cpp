@@ -34,9 +34,9 @@ void MakeDef(const Word &curWord, Dict& dicts, int del){
         }
 }
 Dicts::Dicts() {
-    string filename2 = "data\\Anh_Anh.dat";
-    string filename = "data\\Anh_Viet.dat";
-    string filename3 = "data\\Viet_Anh.dat";
+    string filename2 = "../assets/data/Anh_Anh.dat";
+    string filename = "../assets/data/Anh_Viet.dat";
+    string filename3 = "../assets/data/Viet_Anh.dat";
   
 
     readbinaryfile(dicts[0].words, filename);
@@ -142,6 +142,7 @@ std::vector<wstring> ApiSearch::getAutoCompleteListForWord(Constants::TypeDict t
     vector<wstring> AutoCompleteList;
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     dictionary.Map.getAutoComplete(word, AutoCompleteList);
+    std::cout << "LOG: Api: ApiSearch: size of AutoCompleteList: " << AutoCompleteList.size() << std::endl;
     return move(AutoCompleteList);
 }
 std::vector<wstring> ApiSearch::getAutoCompleteListForDefinition(Constants::TypeDict typeDict, std::wstring definition) {

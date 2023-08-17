@@ -233,9 +233,26 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
                 this->frameBoard.setEditLines({0, 1});
             } else if (i == (int)Constants::Screen::operationBtn::EDIT) {
                 // set perm edit
+                std::vector<std::pair<std::string, std::string*>> _blocks;
+                for (auto &i : this->lines) {
+                    _blocks.emplace_back("", &i.first);
+                }
+                this->frameBoard.setBlocks(_blocks);
+
+                std::vector<int> editLines;
+                for (int j = 0; j < this->lines.size(); ++j) {
+                    if (this->lines[j].second) {
+                        editLines.push_back(j);
+                    }
+                }
+                this->frameBoard.setEditLines(editLines);
 
             } else if (i == (int)Constants::Screen::operationBtn::REMOVE) {
-
+                this->frameBoard.setBlocks({
+                    {"", &this->REMOVE_NOTICE}
+                });
+                this->api->apiWord.removeWord(this->currentDict, this->currentWord.word);
+                this->currentWord = Word();
             }
             this->operationButtons[i].setChosen(true);
             this->activeOperation = i;
@@ -258,16 +275,26 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
         std::cout << "LOG: Search text: " << _searchText << std::endl;
 
         // call Api and update list
-        static int cnt = 0;
         std::vector<std::pair<std::string, std::string>> &_list = this->suggestListText;
+        std::wstring curWstr = Utils::UTF8ToWString(_searchText);
+        std::wcout << "LOG: curWstr: " << curWstr << std::endl;
+        this->_wordList.clear();
+        if (_searchText.empty()) {
+            this->_wordList = this->api->apiSearch.getHistory(this->currentDict);
+        } else {
+            if (this->activeMenu == (int)Constants::Screen::menuBtn::WORD)
+                this->_wordList = this->api->apiSearch.getAutoCompleteListForWord(this->currentDict, curWstr);
+            if (this->activeMenu == (int)Constants::Screen::menuBtn::DEFINITION)
+                this->_wordList = this->api->apiSearch.getAutoCompleteListForDefinition(this->currentDict, curWstr);
+        }
+        std::cout << "LOG: size of _wordList: " << _wordList.size() << std::endl;
         _list.clear();
-        for (int i = 0 + cnt; i < 10 + cnt; ++i) {
+        for (auto i : _wordList) {
             _list.emplace_back(
-                    "test " + std::to_string(i) + ": ",
-                    "def " + std::to_string(i)
+                    Utils::WStringToUTF8(i),
+                    ""
             );
         }
-        ++cnt;
 
         this->searchBox.setList(_list);
     }
@@ -277,12 +304,102 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
     if (choice != -1) {
         std::cout << "LOG: Search box choice: " << choice << std::endl;
         // get tu list ra lay result show nguoc ra frameBoard
-
+        this->frameBoard.reset();
+        this->currentWord = this->api->apiWord.getWord(this->currentDict, this->_wordList[choice]);
+        std::wcout << "LOG: currentWord: " << this->currentWord.word << std::endl;
+        this->createLines();
     }
 
     this->updateOperationButtons();
 }
 
+void Window::createLines() {
+    this->lines.clear();
+
+    Word &cur = this->currentWord;
+    this->lines.push_back({
+        Utils::WStringToUTF8(cur.word) + (cur.pronounce != L"Null" ? ("  /" + Utils::WStringToUTF8(cur.pronounce) + "/") : ""), 
+        false
+    });
+
+    for (auto &i : cur.worddef) {
+        this->lines.push_back({"________", false});
+        if (i.type != L"Null")
+            this->lines.push_back({Utils::WStringToUTF8(i.type), true});
+        
+        for (auto &j : i.definition) {
+            this->lines.push_back({Utils::WStringToUTF8(j.meaning), true});
+            if (j.Isexample) {
+                for (auto &k : j.examples) {
+                    this->lines.push_back({Utils::WStringToUTF8(k), true});
+                }
+            }
+        }
+
+        if (i.phrase != L"Null")
+            this->lines.push_back({Utils::WStringToUTF8(i.phrase), true});
+    }
+
+    std::vector<std::pair<std::string, std::string*>> _blocks;
+    for (auto &i : this->lines) {
+        _blocks.emplace_back("", &i.first);
+    }
+    this->frameBoard.setBlocks(_blocks);
+}
+
 void Window::saveFrameBoard() {
     std::cout << "LOG: Save frame board" << std::endl;
+    if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD) {
+        std::cout << "LOG: WordAdd: " << this->wordAdd << std::endl;
+        std::cout << "LOG: DefinitionAdd: " << this->definitionAdd << std::endl;
+        Word newWord;
+        newWord.word = Utils::UTF8ToWString(this->wordAdd);
+        newWord.worddef.resize(1);
+        newWord.worddef[0].definition.resize(1);
+        newWord.worddef[0].definition[0].meaning = Utils::UTF8ToWString(this->definitionAdd);
+
+        this->api->apiWord.addWord(this->currentDict, newWord);
+    }
+    if (this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
+        std::cout << "LOG: Edit" << std::endl;
+        
+        Word &cur = this->currentWord;
+        this->api->apiWord.removeWord(this->currentDict, cur.word);
+        // this->lines.push_back({
+        //     Utils::WStringToUTF8(cur.word) + (cur.pronounce != L"Null" ? ("  /" + Utils::WStringToUTF8(cur.pronounce) + "/") : ""), 
+        //     false
+        // });
+        int counter = 0;
+
+        for (auto &i : cur.worddef) {
+            // this->lines.push_back({"________", false});
+            ++counter;
+
+            if (i.type != L"Null"){
+                // this->lines.push_back({Utils::WStringToUTF8(i.type), true});
+                ++counter;
+                i.type = Utils::UTF8ToWString(this->lines[counter].first);
+            }
+            
+            for (auto &j : i.definition) {
+                // this->lines.push_back({Utils::WStringToUTF8(j.meaning), true});
+                ++counter;
+                j.meaning = Utils::UTF8ToWString(this->lines[counter].first);
+                if (j.Isexample) {
+                    for (auto &k : j.examples) {
+                        // this->lines.push_back({Utils::WStringToUTF8(k), true});
+                        ++counter;
+                        k = Utils::UTF8ToWString(this->lines[counter].first);
+                    }
+                }
+            }
+
+            if (i.phrase != L"Null"){
+                // this->lines.push_back({Utils::WStringToUTF8(i.phrase), true});
+                ++counter;
+                i.phrase = Utils::UTF8ToWString(this->lines[counter].first);
+            }
+        }
+        this->api->apiWord.addWord(this->currentDict, this->currentWord);
+    }
 }
