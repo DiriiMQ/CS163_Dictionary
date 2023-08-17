@@ -26,7 +26,8 @@ namespace Utils {
     static void formatString(Font *font, float spacing, std::string s, float size, float fontSize, std::vector <std::string>& result) {
         if (s.empty()) return;
         std::string currentLines, currentWord;
-        while(s.back() == ' ' || s.back() == '\n') s.pop_back();
+        while(s.size() && (s.back() == ' ' || s.back() == '\n')) s.pop_back();
+        if (s.empty()) return;
         s.push_back('\n');
         for (auto i : s) {
             if (i == '\n') {
