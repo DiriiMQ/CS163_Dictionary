@@ -1,9 +1,14 @@
 #include <iostream>
 #include "core/Api.h"
 // #include "_raygui.h"
+#include "io.h"
+#include "core/Dict.h"
+#include "fcntl.h"
 using namespace std;
 
 int main() {
+    _setmode(_fileno(stdout), _O_U16TEXT);
+    _setmode(_fileno(stdin), _O_U16TEXT);
     // Window  window;
     // window.run();
 
