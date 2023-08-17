@@ -70,7 +70,7 @@ void Window::init() {
             &this->font
             );
     // For init Favourite
-    this->favourite = Favourite(&font,(int) currentDict);
+    this->favourite = Favourite(&font,(int) currentDict,api);
     this->currentSearch = " ";
 }
 
@@ -180,7 +180,7 @@ void Window::update() {
             this->updateModeNonFavorite();
         } else {
             // Update favourite from DMQ
-            this->favourite.update();
+            //  this->favourite.update();
             
 
             this->saveButton.update();

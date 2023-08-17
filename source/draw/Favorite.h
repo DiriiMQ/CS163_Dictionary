@@ -17,7 +17,7 @@
 class Favourite {
 private:
     static constexpr int MAX_LENGTH = 810;
-    static constexpr int MAX_SUGGESTIONS = 9;
+    int MAX_SUGGESTIONS = 9;
     std::vector <bool> index_unFavourite;
     Rectangle position;
     int currentMouse, currentClick;
@@ -27,14 +27,14 @@ private:
     int mouse;
     int size;
     static constexpr int SPACING = 1;
-    std::vector<std::wstring> FavouriteList[3];
+    std::vector<std::wstring> FavouriteList;
     int tmpmode;
     ButtonImage* Starr;
     Api* api;
 
 public:
     Favourite() = default;
-    Favourite(Font* font, int tmpmode); //add api* api parameter
+    Favourite(Font* font, int tmpmode, Api* api); //add api* api parameter
     void draw();
     void handleEvents();
     void update();
