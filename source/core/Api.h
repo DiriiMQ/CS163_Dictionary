@@ -16,6 +16,7 @@ class Dicts {
 public:
     Dict dicts[3]; // use Constants::TypeDict to index
     Dicts(); // load Dicts
+    ~Dicts(); // save Dicts
 };
 //dicts -> MainDictionary
 class BaseApi {
@@ -58,7 +59,7 @@ public:
 
 
     std::vector<wstring> getAutoCompleteListForWord(Constants::TypeDict typeDict, std::wstring word);
-    std::vector<Word> getAutoCompleteListForDefinition(Constants::TypeDict typeDict, std::wstring definition);
+    std::vector<wstring> getAutoCompleteListForDefinition(Constants::TypeDict typeDict, std::wstring definition);
 
     std::vector<wstring> getHistory(Constants::TypeDict typeDict);
 };
@@ -69,7 +70,7 @@ private:
 public:
     explicit ApiQuiz(Dicts& dicts) : BaseApi(dicts) {};
 
-    Quiz getQuiz(Constants::TypeDict typeDict); // random word, then recreate quiz from that word and return it
+    Quiz getQuiz(Constants::TypeDict typeDict, bool IsAskWordToDef);  // random word, then recreate quiz from that word and return it
     bool submitQuiz(Constants::TypeDict typeDict, QuizResponse response); // return true if correct, false if not
 };
 
