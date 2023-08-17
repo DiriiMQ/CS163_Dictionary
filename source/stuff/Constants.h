@@ -80,18 +80,18 @@ namespace Constants {
             constexpr char Favourite[] = "../../../assets/components/Image_UI/Favourite.png";
             constexpr char Blank[] = "../../../assets/components/Image_UI/Blank.png";
             constexpr std::array<std::string_view, 3>  switchData = {
-                "../../../assets/components/Image_UI/ENtoEN.png",
                 "../../../assets/components/Image_UI/ENtoVI.png",
-                "../../../assets/components/Image_UI/VItoEN.png"
+                "../../../assets/components/Image_UI/VItoEN.png",
+                "../../../assets/components/Image_UI/ENtoEN.png"
             };
             constexpr std::array<std::string_view, 2>  Star = {
                  "../../../assets/components/Image_UI/Star.png",
                  "../../../assets/components/Image_UI/StarFavourite.png"
             };
             constexpr std::array<std::string_view, 3>  switchDataPress = {
-               "../../../assets/components/Image_UI/ENtoENPress.png",
                "../../../assets/components/Image_UI/ENtoVIPress.png",
-               "../../../assets/components/Image_UI/VItoENPress.png"
+               "../../../assets/components/Image_UI/VItoENPress.png",
+               "../../../assets/components/Image_UI/ENtoENPress.png"
             };
             constexpr std::array<std::string_view, 2>  StarPress = {
                  "../../../assets/components/Image_UI/StarPress.png",
