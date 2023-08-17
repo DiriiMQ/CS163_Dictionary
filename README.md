@@ -1,13 +1,5 @@
 # CS163_Group9
 
-## How to Build
-```bash
-cmake -S . -B build
-make -C build
-```
-
-## How to Run
-```bash
-cd build
-./{executable}
+- With file name, use "data\\{datasetname}.dat"
+- Copy folder data to folder build, then u can load
 ```

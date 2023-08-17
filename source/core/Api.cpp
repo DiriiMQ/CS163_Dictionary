@@ -132,7 +132,7 @@ void ApiWord::editWord(Constants::TypeDict typeDict, Word& word, int index, Word
 }
 
 Word ApiWord::getRandomWord(Constants::TypeDict typeDict) {
-    srand(time(0));
+    
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     pair<wstring,int> WordRand = dictionary.Map.getRandom();
     return dictionary.words[WordRand.second];
@@ -180,7 +180,6 @@ std::vector<wstring> ApiSearch::getHistory(Constants::TypeDict typeDict) {
 }
 
 Quiz ApiQuiz::getQuiz(Constants::TypeDict typeDict, bool IsAskWordToDef) {
-    srand(time(0));
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     const int MAX_LENGTH_OF_QUESTION = 50;
     const int MAX_LENGTH_OF_ANSWER = 20;
