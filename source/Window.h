@@ -65,7 +65,7 @@ private:
     Rectangle Description = { 47,259,810,420 };
     //Option 
     Rectangle SwitchDataSet = { 920,160,150,40 };
-    Rectangle Quiz = { 1110,160,130,50 };
+    Rectangle Quiz = { 1114.1,160,240.4,56 };
 
 public:
     Window(Api *api);
