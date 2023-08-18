@@ -102,6 +102,10 @@ void Window::draw() {
             for (auto & operationButton : this->operationButtons) {
                 operationButton.draw();
             }
+            if (this->isShowingWord) {
+                // draw star here
+
+            }
             this->searchBox.draw();
             if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
                 this->saveButton.draw();
@@ -132,6 +136,12 @@ void Window::handleEvents() {
             for (auto &operationButton: this->operationButtons) {
                 operationButton.handleEvents();
             }
+
+            if (this->isShowingWord) {
+                // handle star here
+
+            }
+
             this->searchBox.handleEvents();
 
             if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
@@ -163,13 +173,14 @@ void Window::update() {
             std::cout << "LOG: Menu button " << i << " is clicked" << std::endl;
             this->menuButtons[i].setChosen(true);
             this->activeMenu = i;
+            this->isShowingWord = false;
             for (int j = 0; j < 3; ++j) {
                 if (j != i) {
                     this->menuButtons[j].setChosen(false);
                 }
                 this->operationButtons[j].setChosen(false);
-                this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
             }
+            this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
             this->frameBoard.reset();
             break;
         }
@@ -235,6 +246,7 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
         if (this->operationButtons[i].isClicked()) {
             std::cout << "LOG: Operation button " << i << " is clicked" << std::endl;
             this->frameBoard.reset();
+            this->isShowingWord = false;
             if (i == (int)Constants::Screen::operationBtn::ADD) {
                 this->frameBoard.setBlocks({
                     {"Word: ", &this->wordAdd},
@@ -273,6 +285,11 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
             }
             break;
         }
+    }
+
+    // for Star
+    if (this->isShowingWord) {
+
     }
 
     // Search Box
@@ -315,6 +332,7 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
     if (choice != -1) {
         std::cout << "LOG: Search box choice: " << choice << std::endl;
         // get tu list ra lay result show nguoc ra frameBoard
+        this->isShowingWord = true;
         this->frameBoard.reset();
         this->currentWord = this->api->apiWord.getWord(this->currentDict, this->_wordList[choice]);
         std::wcout << "LOG: currentWord: " << this->currentWord.word << std::endl;

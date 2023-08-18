@@ -43,6 +43,7 @@ private:
     std::string wordAdd, definitionAdd;
 
     // For Search and Edit
+    bool isShowingWord = false;
     Word currentWord;
     std::vector<std::pair<std::string, bool>> lines;
     SearchBox searchBox;
