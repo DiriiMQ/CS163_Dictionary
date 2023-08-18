@@ -38,6 +38,8 @@ private:
     // For Quiz & Type of Dict
     bool isQuizActived = false;
     Constants::TypeDict currentDict = Constants::TypeDict::EN_VI;
+    ButtonImage DataSwitchButton, QuizButton;
+
 
     // For Add
     std::string wordAdd, definitionAdd;

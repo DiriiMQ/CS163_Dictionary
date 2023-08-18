@@ -70,7 +70,7 @@ public:
     void draw();
     void handleEvents();
     void update();
-    void changeIndex();
+    void changeIndex(int newindex);
     void changePosition(Rectangle change);
     [[nodiscard]] bool isClicked() const;
     [[nodiscard]] bool isPressing() const;

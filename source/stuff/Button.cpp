@@ -147,9 +147,9 @@ void ButtonImage::update() {
     }
 }
 
-void ButtonImage::changeIndex()
+void ButtonImage::changeIndex(int newindex)
 {
-    tmpPath = (tmpPath + 1) % numpath;
+    tmpPath = newindex;
 }
 
 void ButtonImage::changePosition(Rectangle change)

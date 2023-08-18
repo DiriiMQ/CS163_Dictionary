@@ -72,6 +72,21 @@ void Window::init() {
     // For init Favourite
     this->favourite = Favourite(&font,(int) currentDict,api);
     this->currentSearch = " ";
+
+     this->DataSwitchButton = ButtonImage(std::vector<std::string>(Constants::Directories::DMQ::switchData.begin(),
+        Constants::Directories::DMQ::switchData.end()),
+        std::vector<std::string>(
+            Constants::Directories::DMQ::switchDataPress.begin(),
+            Constants::Directories::DMQ::switchDataPress.end()),
+        SwitchDataSet
+    );
+     this->QuizButton = ButtonImage(std::vector<std::string>(Constants::Directories::DMQ::Quizz.begin(),
+        Constants::Directories::DMQ::Quizz.end()),
+        std::vector<std::string>(
+            Constants::Directories::DMQ::QuizzPress.begin(),
+            Constants::Directories::DMQ::QuizzPress.end()),
+        Quiz
+    );
 }
 
 void Window::run() {
@@ -91,8 +106,6 @@ void Window::draw() {
     for (auto & menuButton : this->menuButtons) {
         menuButton.draw();
     }
-
-    // For Quiz & Type of Dict
 
     if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
         DrawRectangleRounded(this->mainInfoBG, CORNER_RADIUS, 0, WHITE);
@@ -117,6 +130,10 @@ void Window::draw() {
         }
     }
 
+    // For Quiz & Type of Dict
+    this->DataSwitchButton.draw();
+    this->QuizButton.draw();
+
     this->resetButton.draw();
 }
 
@@ -125,8 +142,10 @@ void Window::handleEvents() {
         menuButton.handleEvents();
     }
 
-    // For Quiz & Type of Dict (remember to set this->activeMenu to NONE when click on Quiz)
-
+    // For Quiz & Type of Dict 
+    this->DataSwitchButton.handleEvents();
+    this->QuizButton.handleEvents();
+    currentDict =(Constants::TypeDict) this->DataSwitchButton.getClicked();
 
     this->resetButton.handleEvents();
 
@@ -165,6 +184,8 @@ void Window::update() {
     }
 
     // For Quiz & Type of Dict (remember to set this->activeMenu to NONE when click on Quiz)
+    this->DataSwitchButton.update();
+    this->QuizButton.update();
 
     this->resetButton.update();
 
@@ -219,6 +240,9 @@ void Window::reset() {
     this->frameBoard.reset();
     this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
     this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
+    // For Quiz and DataSwitch
+    this->DataSwitchButton.changeIndex(0);
+    this->QuizButton.changeIndex(0);
 }
 
 void Window::updateOperationButtons() {
