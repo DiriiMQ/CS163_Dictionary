@@ -125,6 +125,9 @@ void Window::draw() {
             this->saveButton.draw();
         }
     }
+    // For Quiz & Type of Dict
+    this->DataSwitchButton.draw();
+    this->QuizButton.draw();
 
     this->resetButton.draw();
 }
