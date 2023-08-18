@@ -51,6 +51,7 @@ public:
     bool removeWord(Constants::TypeDict typeDict, std::wstring word); // return true if success, false if not found
     void editWord(Constants::TypeDict typeDict, Word& replace);
     Word getRandomWord(Constants::TypeDict typeDict);
+    bool isFavorite(Constants::TypeDict typeDict, std::wstring word);
 };
 
 class ApiSearch : public BaseApi {
