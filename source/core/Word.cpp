@@ -32,7 +32,7 @@ void readStringVectorFromFile(vector<wstring>& strings, ifstream& inputFile) {
 void writetobinaryfile(vector<Word> &Vdictionary,const string& filename) {
     ofstream wfout(filename, ios::out | ios::binary);
     int dic_size = Vdictionary.size();
-    wcout<<L"Dic_size"<<dic_size<<endl;
+  
     wfout.write(reinterpret_cast<const char*> (&dic_size), sizeof(int));
     for (const Word wordd : Vdictionary) {
         
@@ -94,7 +94,7 @@ void readbinaryfile(vector<Word> &Vdictionary,const string&filename) {
     }
     int dic_size;
     wfin.read(reinterpret_cast<char*> (&dic_size), sizeof(int));
-    wcout<<L"dic size after read: "<<dic_size<<endl;
+    
     for (int i = 0; i < dic_size;i++) {
         int word_size ;
         wstring word;
@@ -103,7 +103,7 @@ void readbinaryfile(vector<Word> &Vdictionary,const string&filename) {
         wordd.word.resize(word_size);
         
         wfin.read(reinterpret_cast<char*>(&wordd.word[0]), word_size * sizeof(wchar_t));
-        wcout<<wordd.word<<endl;
+       
         // pronounce
         int pronounce_size;
         wfin.read(reinterpret_cast<char*>(&pronounce_size), sizeof(int));
@@ -161,7 +161,7 @@ void readbinaryfile(vector<Word> &Vdictionary,const string&filename) {
 
 
             Vdictionary.push_back(wordd);
-            wcout<<L"Word is: "<<Vdictionary[0].word<<endl;
+           
         }
     }
 
@@ -187,5 +187,16 @@ void Word::setData(std::wstring word, std::wstring definition, std::wstring exam
     def.examples.push_back(example);
     type1.definition.push_back(def);
     this->worddef.push_back(type1);
+}
+
+
+vector<wstring> loadimagepath(vector<Word> dic){
+    vector<wstring> final;
+    for(int i=0;i<dic.size();i++){
+        wstring b= dic[i].word+L".png";
+        final.push_back(b);
+
+    }
+    return final;
 }
 #endif //WORD_CPP

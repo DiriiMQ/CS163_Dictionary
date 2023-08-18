@@ -43,6 +43,8 @@ Dicts::Dicts() {
     string filename3 = "..\\assets\\data\\Anh_Anh.dat";
     string filename3_favorite = "..\\assets\\data\\Anh_Anh_favorite.dat";
     string filename3_history = "..\\assets\\data\\Anh_Anh_history.dat";
+    string filename4 = "..\\assets\\data\\emoji.dat";
+
     ifstream wfin;
 
     readbinaryfile(dicts[0].words, filename1);
@@ -113,7 +115,11 @@ Dicts::Dicts() {
         dicts[2].Map[dicts[2].words[i].word] = i;
         MakeDef(dicts[2].words[i],dicts[2],1);
     }
-    
+    readbinaryfile(dicts[3].words,filename4);
+    for (int i = 0; i < dicts[3].words.size(); i++) {
+        dicts[3].Map[dicts[3].words[i].word] = i;
+        MakeDef(dicts[3].words[i],dicts[3],1);
+    }
 }
 Dicts::~Dicts(){
     string filename1 = "..\\assets\\data\\Anh_Viet.dat";
@@ -125,9 +131,11 @@ Dicts::~Dicts(){
     string filename3 = "..\\assets\\data\\Anh_Anh.dat";
     string filename3_favorite = "..\\assets\\data\\Anh_Anh_favorite.dat";
     string filename3_history = "..\\assets\\data\\Anh_Anh_history.dat";
+    string filename4 = "..\\assets\\data\\emoji.dat";
     writetobinaryfile(dicts[0].words, filename1);
     writetobinaryfile(dicts[1].words, filename2);
     writetobinaryfile(dicts[2].words, filename3);
+    writetobinaryfile(dicts[3].words,filename4);
     ofstream wfout;
     //Save favorite
     wfout.open(filename1_favorite, ios::binary | ios::out);
