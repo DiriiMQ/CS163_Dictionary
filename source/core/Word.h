@@ -39,7 +39,7 @@ struct Word {
         IsType = false;
     }
 
-    // some parameters might be an empty string, so please don't assign if it's empty
+    // some parameters might be empty strings, so please don't assign if it's empty
     void setData(std::wstring type, std::wstring definition, std::wstring example, std::wstring phrase);
 };
 
