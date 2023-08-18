@@ -23,6 +23,7 @@ private:
     // FOR TESTING
 //    std::string testLarge;
     std::vector<std::string> testLines;
+    ButtonQuiz testButtonQuiz;
     // END TESTING
 
     Api *api;
@@ -37,7 +38,7 @@ private:
 
     // For Quiz & Type of Dict
     bool isQuizActived = false;
-    Constants::TypeDict currentDict = Constants::TypeDict::EN_VI;
+    Constants::TypeDict currentDict = (Constants::TypeDict)0;
     ButtonImage DataSwitchButton, QuizButton;
 
 

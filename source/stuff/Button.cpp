@@ -90,6 +90,10 @@ void Button::setIsSuggest() {
     this->isSuggest = true;
 }
 
+void Button::setBG(Color _colorBG) {
+    this->colorBG = _colorBG;
+}
+
 bool Button::isPressing() const {
     return this->pressing;
 }
@@ -168,4 +172,54 @@ int ButtonImage::getClicked()
 
 bool ButtonImage::isPressing() const {
     return this->pressing;
+}
+
+ButtonQuiz::ButtonQuiz(Font *_font, std::string text, int size, Color color, Rectangle rectangle) {
+    this->font = _font;
+    this->fontSize = size;
+    this->info = rectangle;
+    this->initSeparatedAnswer(text);
+
+    this->button = Button("", size, color, rectangle);
+    this->colorBG = WHITE;
+}
+
+void ButtonQuiz::draw() {
+    this->button.draw();
+    DrawTextEx(*this->font, this->rawAnswer.c_str(), this->positionText, this->fontSize, SPACING, BLACK);
+}
+
+void ButtonQuiz::handleEvents() {
+    this->button.handleEvents();
+}
+
+void ButtonQuiz::update() {
+    this->button.update();
+    if (this->colorBG.a != WHITE.a || this->colorBG.r != WHITE.r || this->colorBG.g != WHITE.g || this->colorBG.b != WHITE.b)
+        this->button.setBG(this->colorBG);
+}
+
+bool ButtonQuiz::isClicked() const {
+    return this->button.isClicked();
+}
+
+bool ButtonQuiz::isPressing() const {
+    return this->button.isPressing();
+}
+
+void ButtonQuiz::initSeparatedAnswer(std::string text) {
+    std::vector<std::string> lines;
+    Utils::formatString(this->font, SPACING, text, this->info.width - 2 * MARGIN, this->fontSize, lines);
+    this->rawAnswer = lines[0];
+    for (int i = 1; i < lines.size(); i++)
+        this->rawAnswer += "\n" + lines[i];
+    Vector2 tempSize = MeasureTextEx(*this->font, this->rawAnswer.c_str(), this->fontSize, SPACING);
+    this->positionText = {
+        this->info.x + (this->info.width - tempSize.x) / 2, 
+        this->info.y + (this->info.height - tempSize.y) / 2
+    };
+}
+
+void ButtonQuiz::setStatusAnswer(bool isCorrect) {
+    this->colorBG = isCorrect ? GREEN : RED;
 }

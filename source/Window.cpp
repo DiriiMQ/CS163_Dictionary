@@ -10,6 +10,14 @@ Window::Window(Api *api) {
 
     this->api = api;
     this->init();
+
+    // this->testButtonQuiz = ButtonQuiz(
+    //     &this->font, 
+    //     "abc dcm xyz eheh usb sjsja ud fde eruefue euyhe ekee fif grr wetrt ret ret rtre ret rg t e rg reg rg udu shshs ahahu hwhuw ssus sfs",
+    //     18, 
+    //     BLUE,
+    //     { 50,500,300, 100 }
+    // );
 }
 
 void Window::init() {
@@ -29,8 +37,6 @@ void Window::init() {
                 Constants::Screen::RECT_MENU_BTN[i]
         );
     }
-
-
 
     for (int i = (int)Constants::Screen::operationBtn::REMOVE; i != (int)Constants::Screen::operationBtn::NONE; ++i) {
         this->operationButtons[i] = Button(
@@ -135,6 +141,8 @@ void Window::draw() {
     this->QuizButton.draw();
 
     this->resetButton.draw();
+
+    // this->testButtonQuiz.draw();
 }
 
 void Window::handleEvents() {
@@ -172,6 +180,8 @@ void Window::handleEvents() {
             this->saveButton.handleEvents();
         }
     }
+
+    // this->testButtonQuiz.handleEvents();
 }
 
 void Window::update() {
@@ -228,6 +238,12 @@ void Window::update() {
     if (this->resetButton.isClicked()) {
         this->reset();
     }
+
+//     this->testButtonQuiz.update();
+
+//     if (this->testButtonQuiz.isClicked()) {
+//         this->testButtonQuiz.setStatusAnswer(true);
+//     }
 }
 
 void Window::reset() {
