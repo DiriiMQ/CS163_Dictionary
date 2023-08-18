@@ -70,7 +70,23 @@ void Window::init() {
             &this->font
             );
     // For init Favourite
-    this->favourite = Favourite(&font,(int) currentDict,api);
+    this->favourite = Favourite(&font, (int)currentDict, api);
+    this->currentSearch = " ";
+
+    this->DataSwitchButton = ButtonImage(std::vector<std::string>(Constants::Directories::DMQ::switchData.begin(),
+        Constants::Directories::DMQ::switchData.end()),
+        std::vector<std::string>(
+            Constants::Directories::DMQ::switchDataPress.begin(),
+            Constants::Directories::DMQ::switchDataPress.end()),
+        SwitchDataSet
+    );
+    this->QuizButton = ButtonImage(std::vector<std::string>(Constants::Directories::DMQ::Quizz.begin(),
+        Constants::Directories::DMQ::Quizz.end()),
+        std::vector<std::string>(
+            Constants::Directories::DMQ::QuizzPress.begin(),
+            Constants::Directories::DMQ::QuizzPress.end()),
+        Quiz
+    );
 }
 
 void Window::run() {
