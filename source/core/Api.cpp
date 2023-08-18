@@ -176,6 +176,15 @@ void ApiFavorite::resetFavorite(Constants::TypeDict typeDict) {
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     dictionary.FavoriteList.clear();
 }
+bool ApiWord::isFavorite(Constants::TypeDict typeDict, std::wstring word){
+    Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
+    for (int i = 0; i < dictionary.FavoriteList.size(); i++) {
+        if (dictionary.FavoriteList[i] == word) {
+            return true;
+        }
+    }
+    return false;
+}
 Word ApiWord::getWord(Constants::TypeDict typeDict, std::wstring word) {
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     if (dictionary.Map.find(word)) {
