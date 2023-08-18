@@ -32,10 +32,12 @@ struct Type {
 struct Word {
     wstring word;
     wstring pronounce;
+    string imagePath;
     vector<Type> worddef;
     bool IsType;
     Word() {
         pronounce = L"Null";
+        imagePath = "Null";
         IsType = false;
     }
 
