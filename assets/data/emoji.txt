@@ -1,0 +1,2166 @@
+1f600                                             grinning face
+1f603                                             grinning face with big eyes
+1f604                                             grinning face with smiling eyes
+1f601                                             beaming face with smiling eyes
+1f606                                             grinning squinting face
+1f605                                             grinning face with sweat
+1f923                                             rolling on the floor laughing
+1f602                                             face with tears of joy
+1f642                                             slightly smiling face
+1f643                                             upside-down face
+1f609                                             winking face
+1f60a                                             smiling face with smiling eyes
+1f607                                             smiling face with halo
+1f970                                             smiling face with hearts
+1f60d                                             smiling face with heart-eyes
+1f929                                             star-struck
+1f618                                             face blowing a kiss
+1f617                                             kissing face
+263a-fe0f                                         smiling face
+1f61a                                             kissing face with closed eyes
+1f619                                             kissing face with smiling eyes
+1f60b                                             face savoring food
+1f61b                                             face with tongue
+1f61c                                             winking face with tongue
+1f92a                                             zany face
+1f61d                                             squinting face with tongue
+1f911                                             money-mouth face
+1f917                                             smiling face with open hands
+1f92d                                             face with hand over mouth
+1f92b                                             shushing face
+1f914                                             thinking face
+1f910                                             zipper-mouth face
+1f928                                             face with raised eyebrow
+1f610                                             neutral face
+1f611                                             expressionless face
+1f636                                             face without mouth
+1f60f                                             smirking face
+1f612                                             unamused face
+1f644                                             face with rolling eyes
+1f62c                                             grimacing face
+1f925                                             lying face
+1f60c                                             relieved face
+1f614                                             pensive face
+1f62a                                             sleepy face
+1f924                                             drooling face
+1f634                                             sleeping face
+1f637                                             face with medical mask
+1f912                                             face with thermometer
+1f915                                             face with head-bandage
+1f922                                             nauseated face
+1f92e                                             face vomiting
+1f927                                             sneezing face
+1f975                                             hot face
+1f976                                             cold face
+1f974                                             woozy face
+1f635                                             face with crossed-out eyes
+1f92f                                             exploding head
+1f920                                             cowboy hat face
+1f973                                             partying face
+1f60e                                             smiling face with sunglasses
+1f913                                             nerd face
+1f9d0                                             face with monocle
+1f615                                             confused face
+1f61f                                             worried face
+1f641                                             slightly frowning face
+2639-fe0f                                         frowning face
+1f62e                                             face with open mouth
+1f62f                                             hushed face
+1f632                                             astonished face
+1f633                                             flushed face
+1f97a                                             pleading face
+1f626                                             frowning face with open mouth
+1f627                                             anguished face
+1f628                                             fearful face
+1f630                                             anxious face with sweat
+1f625                                             sad but relieved face
+1f622                                             crying face
+1f62d                                             loudly crying face
+1f631                                             face screaming in fear
+1f616                                             confounded face
+1f623                                             persevering face
+1f61e                                             disappointed face
+1f613                                             downcast face with sweat
+1f629                                             weary face
+1f62b                                             tired face
+1f971                                             yawning face
+1f624                                             face with steam from nose
+1f621                                             enraged face
+1f620                                             angry face
+1f92c                                             face with symbols on mouth
+1f608                                             smiling face with horns
+1f47f                                             angry face with horns
+1f480                                             skull
+2620-fe0f                                         skull and crossbones
+1f4a9                                             pile of poo
+1f921                                             clown face
+1f479                                             ogre
+1f47a                                             goblin
+1f47b                                             ghost
+1f47d                                             alien
+1f47e                                             alien monster
+1f916                                             robot
+1f63a                                             grinning cat
+1f638                                             grinning cat with smiling eyes
+1f639                                             cat with tears of joy
+1f63b                                             smiling cat with heart-eyes
+1f63c                                             cat with wry smile
+1f63d                                             kissing cat
+1f640                                             weary cat
+1f63f                                             crying cat
+1f63e                                             pouting cat
+1f648                                             see-no-evil monkey
+1f649                                             hear-no-evil monkey
+1f64a                                             speak-no-evil monkey
+1f48c                                             love letter
+1f498                                             heart with arrow
+1f49d                                             heart with ribbon
+1f496                                             sparkling heart
+1f497                                             growing heart
+1f493                                             beating heart
+1f49e                                             revolving hearts
+1f495                                             two hearts
+1f49f                                             heart decoration
+2763-fe0f                                         heart exclamation
+1f494                                             broken heart
+2764-fe0f                                         red heart
+1f9e1                                             orange heart
+1f49b                                             yellow heart
+1f49a                                             green heart
+1f499                                             blue heart
+1f49c                                             purple heart
+1f90e                                             brown heart
+1f5a4                                             black heart
+1f90d                                             white heart
+1f48b                                             kiss mark
+1f4af                                             hundred points
+1f4a2                                             anger symbol
+1f4a5                                             collision
+1f4ab                                             dizzy
+1f4a6                                             sweat droplets
+1f4a8                                             dashing away
+1f573-fe0f                                        hole
+1f4ac                                             speech balloon
+1f5e8-fe0f                                        left speech bubble
+1f5ef-fe0f                                        right anger bubble
+1f4ad                                             thought balloon
+1f4a4                                             ZZZ
+1f44b                                             waving hand
+1f44b-1f3fb                                       waving hand: light skin tone
+1f44b-1f3fc                                       waving hand: medium-light skin tone
+1f44b-1f3fd                                       waving hand: medium skin tone
+1f44b-1f3fe                                       waving hand: medium-dark skin tone
+1f44b-1f3ff                                       waving hand: dark skin tone
+1f91a                                             raised back of hand
+1f91a-1f3fb                                       raised back of hand: light skin tone
+1f91a-1f3fc                                       raised back of hand: medium-light skin tone
+1f91a-1f3fd                                       raised back of hand: medium skin tone
+1f91a-1f3fe                                       raised back of hand: medium-dark skin tone
+1f91a-1f3ff                                       raised back of hand: dark skin tone
+1f590-fe0f                                        hand with fingers splayed
+1f590-1f3fb                                       hand with fingers splayed: light skin tone
+1f590-1f3fc                                       hand with fingers splayed: medium-light skin tone
+1f590-1f3fd                                       hand with fingers splayed: medium skin tone
+1f590-1f3fe                                       hand with fingers splayed: medium-dark skin tone
+1f590-1f3ff                                       hand with fingers splayed: dark skin tone
+270b                                              raised hand
+270b-1f3fb                                        raised hand: light skin tone
+270b-1f3fc                                        raised hand: medium-light skin tone
+270b-1f3fd                                        raised hand: medium skin tone
+270b-1f3fe                                        raised hand: medium-dark skin tone
+270b-1f3ff                                        raised hand: dark skin tone
+1f596                                             vulcan salute
+1f596-1f3fb                                       vulcan salute: light skin tone
+1f596-1f3fc                                       vulcan salute: medium-light skin tone
+1f596-1f3fd                                       vulcan salute: medium skin tone
+1f596-1f3fe                                       vulcan salute: medium-dark skin tone
+1f596-1f3ff                                       vulcan salute: dark skin tone
+1f44c                                             OK hand
+1f44c-1f3fb                                       OK hand: light skin tone
+1f44c-1f3fc                                       OK hand: medium-light skin tone
+1f44c-1f3fd                                       OK hand: medium skin tone
+1f44c-1f3fe                                       OK hand: medium-dark skin tone
+1f44c-1f3ff                                       OK hand: dark skin tone
+1f90f                                             pinching hand
+1f90f-1f3fb                                       pinching hand: light skin tone
+1f90f-1f3fc                                       pinching hand: medium-light skin tone
+1f90f-1f3fd                                       pinching hand: medium skin tone
+1f90f-1f3fe                                       pinching hand: medium-dark skin tone
+1f90f-1f3ff                                       pinching hand: dark skin tone
+270c-fe0f                                         victory hand
+270c-1f3fb                                        victory hand: light skin tone
+270c-1f3fc                                        victory hand: medium-light skin tone
+270c-1f3fd                                        victory hand: medium skin tone
+270c-1f3fe                                        victory hand: medium-dark skin tone
+270c-1f3ff                                        victory hand: dark skin tone
+1f91e                                             crossed fingers
+1f91e-1f3fb                                       crossed fingers: light skin tone
+1f91e-1f3fc                                       crossed fingers: medium-light skin tone
+1f91e-1f3fd                                       crossed fingers: medium skin tone
+1f91e-1f3fe                                       crossed fingers: medium-dark skin tone
+1f91e-1f3ff                                       crossed fingers: dark skin tone
+1f91f                                             love-you gesture
+1f91f-1f3fb                                       love-you gesture: light skin tone
+1f91f-1f3fc                                       love-you gesture: medium-light skin tone
+1f91f-1f3fd                                       love-you gesture: medium skin tone
+1f91f-1f3fe                                       love-you gesture: medium-dark skin tone
+1f91f-1f3ff                                       love-you gesture: dark skin tone
+1f918                                             sign of the horns
+1f918-1f3fb                                       sign of the horns: light skin tone
+1f918-1f3fc                                       sign of the horns: medium-light skin tone
+1f918-1f3fd                                       sign of the horns: medium skin tone
+1f918-1f3fe                                       sign of the horns: medium-dark skin tone
+1f918-1f3ff                                       sign of the horns: dark skin tone
+1f919                                             call me hand
+1f919-1f3fb                                       call me hand: light skin tone
+1f919-1f3fc                                       call me hand: medium-light skin tone
+1f919-1f3fd                                       call me hand: medium skin tone
+1f919-1f3fe                                       call me hand: medium-dark skin tone
+1f919-1f3ff                                       call me hand: dark skin tone
+1f448                                             backhand index pointing left
+1f448-1f3fb                                       backhand index pointing left: light skin tone
+1f448-1f3fc                                       backhand index pointing left: medium-light skin tone
+1f448-1f3fd                                       backhand index pointing left: medium skin tone
+1f448-1f3fe                                       backhand index pointing left: medium-dark skin tone
+1f448-1f3ff                                       backhand index pointing left: dark skin tone
+1f449                                             backhand index pointing right
+1f449-1f3fb                                       backhand index pointing right: light skin tone
+1f449-1f3fc                                       backhand index pointing right: medium-light skin tone
+1f449-1f3fd                                       backhand index pointing right: medium skin tone
+1f449-1f3fe                                       backhand index pointing right: medium-dark skin tone
+1f449-1f3ff                                       backhand index pointing right: dark skin tone
+1f446                                             backhand index pointing up
+1f446-1f3fb                                       backhand index pointing up: light skin tone
+1f446-1f3fc                                       backhand index pointing up: medium-light skin tone
+1f446-1f3fd                                       backhand index pointing up: medium skin tone
+1f446-1f3fe                                       backhand index pointing up: medium-dark skin tone
+1f446-1f3ff                                       backhand index pointing up: dark skin tone
+1f595                                             middle finger
+1f595-1f3fb                                       middle finger: light skin tone
+1f595-1f3fc                                       middle finger: medium-light skin tone
+1f595-1f3fd                                       middle finger: medium skin tone
+1f595-1f3fe                                       middle finger: medium-dark skin tone
+1f595-1f3ff                                       middle finger: dark skin tone
+1f447                                             backhand index pointing down
+1f447-1f3fb                                       backhand index pointing down: light skin tone
+1f447-1f3fc                                       backhand index pointing down: medium-light skin tone
+1f447-1f3fd                                       backhand index pointing down: medium skin tone
+1f447-1f3fe                                       backhand index pointing down: medium-dark skin tone
+1f447-1f3ff                                       backhand index pointing down: dark skin tone
+261d-fe0f                                         index pointing up
+261d-1f3fb                                        index pointing up: light skin tone
+261d-1f3fc                                        index pointing up: medium-light skin tone
+261d-1f3fd                                        index pointing up: medium skin tone
+261d-1f3fe                                        index pointing up: medium-dark skin tone
+261d-1f3ff                                        index pointing up: dark skin tone
+1f44d                                             thumbs up
+1f44d-1f3fb                                       thumbs up: light skin tone
+1f44d-1f3fc                                       thumbs up: medium-light skin tone
+1f44d-1f3fd                                       thumbs up: medium skin tone
+1f44d-1f3fe                                       thumbs up: medium-dark skin tone
+1f44d-1f3ff                                       thumbs up: dark skin tone
+1f44e                                             thumbs down
+1f44e-1f3fb                                       thumbs down: light skin tone
+1f44e-1f3fc                                       thumbs down: medium-light skin tone
+1f44e-1f3fd                                       thumbs down: medium skin tone
+1f44e-1f3fe                                       thumbs down: medium-dark skin tone
+1f44e-1f3ff                                       thumbs down: dark skin tone
+270a                                              raised fist
+270a-1f3fb                                        raised fist: light skin tone
+270a-1f3fc                                        raised fist: medium-light skin tone
+270a-1f3fd                                        raised fist: medium skin tone
+270a-1f3fe                                        raised fist: medium-dark skin tone
+270a-1f3ff                                        raised fist: dark skin tone
+1f44a                                             oncoming fist
+1f44a-1f3fb                                       oncoming fist: light skin tone
+1f44a-1f3fc                                       oncoming fist: medium-light skin tone
+1f44a-1f3fd                                       oncoming fist: medium skin tone
+1f44a-1f3fe                                       oncoming fist: medium-dark skin tone
+1f44a-1f3ff                                       oncoming fist: dark skin tone
+1f91b                                             left-facing fist
+1f91b-1f3fb                                       left-facing fist: light skin tone
+1f91b-1f3fc                                       left-facing fist: medium-light skin tone
+1f91b-1f3fd                                       left-facing fist: medium skin tone
+1f91b-1f3fe                                       left-facing fist: medium-dark skin tone
+1f91b-1f3ff                                       left-facing fist: dark skin tone
+1f91c                                             right-facing fist
+1f91c-1f3fb                                       right-facing fist: light skin tone
+1f91c-1f3fc                                       right-facing fist: medium-light skin tone
+1f91c-1f3fd                                       right-facing fist: medium skin tone
+1f91c-1f3fe                                       right-facing fist: medium-dark skin tone
+1f91c-1f3ff                                       right-facing fist: dark skin tone
+1f44f                                             clapping hands
+1f44f-1f3fb                                       clapping hands: light skin tone
+1f44f-1f3fc                                       clapping hands: medium-light skin tone
+1f44f-1f3fd                                       clapping hands: medium skin tone
+1f44f-1f3fe                                       clapping hands: medium-dark skin tone
+1f44f-1f3ff                                       clapping hands: dark skin tone
+1f64c                                             raising hands
+1f64c-1f3fb                                       raising hands: light skin tone
+1f64c-1f3fc                                       raising hands: medium-light skin tone
+1f64c-1f3fd                                       raising hands: medium skin tone
+1f64c-1f3fe                                       raising hands: medium-dark skin tone
+1f64c-1f3ff                                       raising hands: dark skin tone
+1f450                                             open hands
+1f450-1f3fb                                       open hands: light skin tone
+1f450-1f3fc                                       open hands: medium-light skin tone
+1f450-1f3fd                                       open hands: medium skin tone
+1f450-1f3fe                                       open hands: medium-dark skin tone
+1f450-1f3ff                                       open hands: dark skin tone
+1f932                                             palms up together
+1f932-1f3fb                                       palms up together: light skin tone
+1f932-1f3fc                                       palms up together: medium-light skin tone
+1f932-1f3fd                                       palms up together: medium skin tone
+1f932-1f3fe                                       palms up together: medium-dark skin tone
+1f932-1f3ff                                       palms up together: dark skin tone
+1f91d                                             handshake
+1f64f                                             folded hands
+1f64f-1f3fb                                       folded hands: light skin tone
+1f64f-1f3fc                                       folded hands: medium-light skin tone
+1f64f-1f3fd                                       folded hands: medium skin tone
+1f64f-1f3fe                                       folded hands: medium-dark skin tone
+1f64f-1f3ff                                       folded hands: dark skin tone
+270d-fe0f                                         writing hand
+270d-1f3fb                                        writing hand: light skin tone
+270d-1f3fc                                        writing hand: medium-light skin tone
+270d-1f3fd                                        writing hand: medium skin tone
+270d-1f3fe                                        writing hand: medium-dark skin tone
+270d-1f3ff                                        writing hand: dark skin tone
+1f485                                             nail polish
+1f485-1f3fb                                       nail polish: light skin tone
+1f485-1f3fc                                       nail polish: medium-light skin tone
+1f485-1f3fd                                       nail polish: medium skin tone
+1f485-1f3fe                                       nail polish: medium-dark skin tone
+1f485-1f3ff                                       nail polish: dark skin tone
+1f933                                             selfie
+1f933-1f3fb                                       selfie: light skin tone
+1f933-1f3fc                                       selfie: medium-light skin tone
+1f933-1f3fd                                       selfie: medium skin tone
+1f933-1f3fe                                       selfie: medium-dark skin tone
+1f933-1f3ff                                       selfie: dark skin tone
+1f4aa                                             flexed biceps
+1f4aa-1f3fb                                       flexed biceps: light skin tone
+1f4aa-1f3fc                                       flexed biceps: medium-light skin tone
+1f4aa-1f3fd                                       flexed biceps: medium skin tone
+1f4aa-1f3fe                                       flexed biceps: medium-dark skin tone
+1f4aa-1f3ff                                       flexed biceps: dark skin tone
+1f9be                                             mechanical arm
+1f9bf                                             mechanical leg
+1f9b5                                             leg
+1f9b5-1f3fb                                       leg: light skin tone
+1f9b5-1f3fc                                       leg: medium-light skin tone
+1f9b5-1f3fd                                       leg: medium skin tone
+1f9b5-1f3fe                                       leg: medium-dark skin tone
+1f9b5-1f3ff                                       leg: dark skin tone
+1f9b6                                             foot
+1f9b6-1f3fb                                       foot: light skin tone
+1f9b6-1f3fc                                       foot: medium-light skin tone
+1f9b6-1f3fd                                       foot: medium skin tone
+1f9b6-1f3fe                                       foot: medium-dark skin tone
+1f9b6-1f3ff                                       foot: dark skin tone
+1f442                                             ear
+1f442-1f3fb                                       ear: light skin tone
+1f442-1f3fc                                       ear: medium-light skin tone
+1f442-1f3fd                                       ear: medium skin tone
+1f442-1f3fe                                       ear: medium-dark skin tone
+1f442-1f3ff                                       ear: dark skin tone
+1f9bb                                             ear with hearing aid
+1f9bb-1f3fb                                       ear with hearing aid: light skin tone
+1f9bb-1f3fc                                       ear with hearing aid: medium-light skin tone
+1f9bb-1f3fd                                       ear with hearing aid: medium skin tone
+1f9bb-1f3fe                                       ear with hearing aid: medium-dark skin tone
+1f9bb-1f3ff                                       ear with hearing aid: dark skin tone
+1f443                                             nose
+1f443-1f3fb                                       nose: light skin tone
+1f443-1f3fc                                       nose: medium-light skin tone
+1f443-1f3fd                                       nose: medium skin tone
+1f443-1f3fe                                       nose: medium-dark skin tone
+1f443-1f3ff                                       nose: dark skin tone
+1f9e0                                             brain
+1f9b7                                             tooth
+1f9b4                                             bone
+1f440                                             eyes
+1f441-fe0f                                        eye
+1f445                                             tongue
+1f444                                             mouth
+1f476                                             baby
+1f476-1f3fb                                       baby: light skin tone
+1f476-1f3fc                                       baby: medium-light skin tone
+1f476-1f3fd                                       baby: medium skin tone
+1f476-1f3fe                                       baby: medium-dark skin tone
+1f476-1f3ff                                       baby: dark skin tone
+1f9d2                                             child
+1f9d2-1f3fb                                       child: light skin tone
+1f9d2-1f3fc                                       child: medium-light skin tone
+1f9d2-1f3fd                                       child: medium skin tone
+1f9d2-1f3fe                                       child: medium-dark skin tone
+1f9d2-1f3ff                                       child: dark skin tone
+1f466                                             boy
+1f466-1f3fb                                       boy: light skin tone
+1f466-1f3fc                                       boy: medium-light skin tone
+1f466-1f3fd                                       boy: medium skin tone
+1f466-1f3fe                                       boy: medium-dark skin tone
+1f466-1f3ff                                       boy: dark skin tone
+1f467                                             girl
+1f467-1f3fb                                       girl: light skin tone
+1f467-1f3fc                                       girl: medium-light skin tone
+1f467-1f3fd                                       girl: medium skin tone
+1f467-1f3fe                                       girl: medium-dark skin tone
+1f467-1f3ff                                       girl: dark skin tone
+1f9d1                                             person
+1f9d1-1f3fb                                       person: light skin tone
+1f9d1-1f3fc                                       person: medium-light skin tone
+1f9d1-1f3fd                                       person: medium skin tone
+1f9d1-1f3fe                                       person: medium-dark skin tone
+1f9d1-1f3ff                                       person: dark skin tone
+1f471                                             person: blond hair
+1f471-1f3fb                                       person: light skin tone, blond hair
+1f471-1f3fc                                       person: medium-light skin tone, blond hair
+1f471-1f3fd                                       person: medium skin tone, blond hair
+1f471-1f3fe                                       person: medium-dark skin tone, blond hair
+1f471-1f3ff                                       person: dark skin tone, blond hair
+1f468                                             man
+1f468-1f3fb                                       man: light skin tone
+1f468-1f3fc                                       man: medium-light skin tone
+1f468-1f3fd                                       man: medium skin tone
+1f468-1f3fe                                       man: medium-dark skin tone
+1f468-1f3ff                                       man: dark skin tone
+1f9d4                                             person: beard
+1f9d4-1f3fb                                       person: light skin tone, beard
+1f9d4-1f3fc                                       person: medium-light skin tone, beard
+1f9d4-1f3fd                                       person: medium skin tone, beard
+1f9d4-1f3fe                                       person: medium-dark skin tone, beard
+1f9d4-1f3ff                                       person: dark skin tone, beard
+1f469                                             woman
+1f469-1f3fb                                       woman: light skin tone
+1f469-1f3fc                                       woman: medium-light skin tone
+1f469-1f3fd                                       woman: medium skin tone
+1f469-1f3fe                                       woman: medium-dark skin tone
+1f469-1f3ff                                       woman: dark skin tone
+1f471-200d-2640-fe0f                              woman: blond hair
+1f9d3                                             older person
+1f9d3-1f3fb                                       older person: light skin tone
+1f9d3-1f3fc                                       older person: medium-light skin tone
+1f9d3-1f3fd                                       older person: medium skin tone
+1f9d3-1f3fe                                       older person: medium-dark skin tone
+1f9d3-1f3ff                                       older person: dark skin tone
+1f474                                             old man
+1f474-1f3fb                                       old man: light skin tone
+1f474-1f3fc                                       old man: medium-light skin tone
+1f474-1f3fd                                       old man: medium skin tone
+1f474-1f3fe                                       old man: medium-dark skin tone
+1f474-1f3ff                                       old man: dark skin tone
+1f475                                             old woman
+1f475-1f3fb                                       old woman: light skin tone
+1f475-1f3fc                                       old woman: medium-light skin tone
+1f475-1f3fd                                       old woman: medium skin tone
+1f475-1f3fe                                       old woman: medium-dark skin tone
+1f475-1f3ff                                       old woman: dark skin tone
+1f64d                                             person frowning
+1f64d-1f3fb                                       person frowning: light skin tone
+1f64d-1f3fc                                       person frowning: medium-light skin tone
+1f64d-1f3fd                                       person frowning: medium skin tone
+1f64d-1f3fe                                       person frowning: medium-dark skin tone
+1f64d-1f3ff                                       person frowning: dark skin tone
+1f64d-200d-2642-fe0f                              man frowning
+1f64e                                             person pouting
+1f64e-1f3fb                                       person pouting: light skin tone
+1f64e-1f3fc                                       person pouting: medium-light skin tone
+1f64e-1f3fd                                       person pouting: medium skin tone
+1f64e-1f3fe                                       person pouting: medium-dark skin tone
+1f64e-1f3ff                                       person pouting: dark skin tone
+1f64e-200d-2642-fe0f                              man pouting
+1f645                                             person gesturing NO
+1f645-1f3fb                                       person gesturing NO: light skin tone
+1f645-1f3fc                                       person gesturing NO: medium-light skin tone
+1f645-1f3fd                                       person gesturing NO: medium skin tone
+1f645-1f3fe                                       person gesturing NO: medium-dark skin tone
+1f645-1f3ff                                       person gesturing NO: dark skin tone
+1f645-200d-2642-fe0f                              man gesturing NO
+1f646                                             person gesturing OK
+1f646-1f3fb                                       person gesturing OK: light skin tone
+1f646-1f3fc                                       person gesturing OK: medium-light skin tone
+1f646-1f3fd                                       person gesturing OK: medium skin tone
+1f646-1f3fe                                       person gesturing OK: medium-dark skin tone
+1f646-1f3ff                                       person gesturing OK: dark skin tone
+1f646-200d-2642-fe0f                              man gesturing OK
+1f481                                             person tipping hand
+1f481-1f3fb                                       person tipping hand: light skin tone
+1f481-1f3fc                                       person tipping hand: medium-light skin tone
+1f481-1f3fd                                       person tipping hand: medium skin tone
+1f481-1f3fe                                       person tipping hand: medium-dark skin tone
+1f481-1f3ff                                       person tipping hand: dark skin tone
+1f481-200d-2642-fe0f                              man tipping hand
+1f64b                                             person raising hand
+1f64b-1f3fb                                       person raising hand: light skin tone
+1f64b-1f3fc                                       person raising hand: medium-light skin tone
+1f64b-1f3fd                                       person raising hand: medium skin tone
+1f64b-1f3fe                                       person raising hand: medium-dark skin tone
+1f64b-1f3ff                                       person raising hand: dark skin tone
+1f64b-200d-2642-fe0f                              man raising hand
+1f9cf                                             deaf person
+1f9cf-1f3fb                                       deaf person: light skin tone
+1f9cf-1f3fc                                       deaf person: medium-light skin tone
+1f9cf-1f3fd                                       deaf person: medium skin tone
+1f9cf-1f3fe                                       deaf person: medium-dark skin tone
+1f9cf-1f3ff                                       deaf person: dark skin tone
+1f647                                             person bowing
+1f647-1f3fb                                       person bowing: light skin tone
+1f647-1f3fc                                       person bowing: medium-light skin tone
+1f647-1f3fd                                       person bowing: medium skin tone
+1f647-1f3fe                                       person bowing: medium-dark skin tone
+1f647-1f3ff                                       person bowing: dark skin tone
+1f647-200d-2640-fe0f                              woman bowing
+1f926                                             person facepalming
+1f926-1f3fb                                       person facepalming: light skin tone
+1f926-1f3fc                                       person facepalming: medium-light skin tone
+1f926-1f3fd                                       person facepalming: medium skin tone
+1f926-1f3fe                                       person facepalming: medium-dark skin tone
+1f926-1f3ff                                       person facepalming: dark skin tone
+1f926-200d-2642-fe0f                              man facepalming
+1f926-200d-2640-fe0f                              woman facepalming
+1f937                                             person shrugging
+1f937-1f3fb                                       person shrugging: light skin tone
+1f937-1f3fc                                       person shrugging: medium-light skin tone
+1f937-1f3fd                                       person shrugging: medium skin tone
+1f937-1f3fe                                       person shrugging: medium-dark skin tone
+1f937-1f3ff                                       person shrugging: dark skin tone
+1f937-200d-2642-fe0f                              man shrugging
+1f468-200d-2695-fe0f                              man health worker
+1f469-200d-2695-fe0f                              woman health worker
+1f468-200d-1f393                                  man student
+1f469-200d-1f393                                  woman student
+1f468-200d-1f3eb                                  man teacher
+1f469-200d-1f3eb                                  woman teacher
+1f468-200d-2696-fe0f                              man judge
+1f469-200d-2696-fe0f                              woman judge
+1f468-200d-1f33e                                  man farmer
+1f469-200d-1f33e                                  woman farmer
+1f468-200d-1f373                                  man cook
+1f469-200d-1f373                                  woman cook
+1f468-200d-1f527                                  man mechanic
+1f469-200d-1f527                                  woman mechanic
+1f468-200d-1f3ed                                  man factory worker
+1f469-200d-1f3ed                                  woman factory worker
+1f468-200d-1f4bc                                  man office worker
+1f469-200d-1f4bc                                  woman office worker
+1f468-200d-1f52c                                  man scientist
+1f469-200d-1f52c                                  woman scientist
+1f468-200d-1f4bb                                  man technologist
+1f469-200d-1f4bb                                  woman technologist
+1f468-200d-1f3a4                                  man singer
+1f469-200d-1f3a4                                  woman singer
+1f468-200d-1f3a8                                  man artist
+1f469-200d-1f3a8                                  woman artist
+1f468-200d-2708-fe0f                              man pilot
+1f469-200d-2708-fe0f                              woman pilot
+1f468-200d-1f680                                  man astronaut
+1f469-200d-1f680                                  woman astronaut
+1f468-200d-1f692                                  man firefighter
+1f469-200d-1f692                                  woman firefighter
+1f46e                                             police officer
+1f46e-1f3fb                                       police officer: light skin tone
+1f46e-1f3fc                                       police officer: medium-light skin tone
+1f46e-1f3fd                                       police officer: medium skin tone
+1f46e-1f3fe                                       police officer: medium-dark skin tone
+1f46e-1f3ff                                       police officer: dark skin tone
+1f46e-200d-2640-fe0f                              woman police officer
+1f575-fe0f                                        detective
+1f575-1f3fb                                       detective: light skin tone
+1f575-1f3fc                                       detective: medium-light skin tone
+1f575-1f3fd                                       detective: medium skin tone
+1f575-1f3fe                                       detective: medium-dark skin tone
+1f575-1f3ff                                       detective: dark skin tone
+1f575-fe0f-200d-2640-fe0f                         woman detective
+1f482                                             guard
+1f482-1f3fb                                       guard: light skin tone
+1f482-1f3fc                                       guard: medium-light skin tone
+1f482-1f3fd                                       guard: medium skin tone
+1f482-1f3fe                                       guard: medium-dark skin tone
+1f482-1f3ff                                       guard: dark skin tone
+1f482-200d-2640-fe0f                              woman guard
+1f477                                             construction worker
+1f477-1f3fb                                       construction worker: light skin tone
+1f477-1f3fc                                       construction worker: medium-light skin tone
+1f477-1f3fd                                       construction worker: medium skin tone
+1f477-1f3fe                                       construction worker: medium-dark skin tone
+1f477-1f3ff                                       construction worker: dark skin tone
+1f477-200d-2640-fe0f                              woman construction worker
+1f934                                             prince
+1f934-1f3fb                                       prince: light skin tone
+1f934-1f3fc                                       prince: medium-light skin tone
+1f934-1f3fd                                       prince: medium skin tone
+1f934-1f3fe                                       prince: medium-dark skin tone
+1f934-1f3ff                                       prince: dark skin tone
+1f478                                             princess
+1f478-1f3fb                                       princess: light skin tone
+1f478-1f3fc                                       princess: medium-light skin tone
+1f478-1f3fd                                       princess: medium skin tone
+1f478-1f3fe                                       princess: medium-dark skin tone
+1f478-1f3ff                                       princess: dark skin tone
+1f473                                             person wearing turban
+1f473-1f3fb                                       person wearing turban: light skin tone
+1f473-1f3fc                                       person wearing turban: medium-light skin tone
+1f473-1f3fd                                       person wearing turban: medium skin tone
+1f473-1f3fe                                       person wearing turban: medium-dark skin tone
+1f473-1f3ff                                       person wearing turban: dark skin tone
+1f473-200d-2640-fe0f                              woman wearing turban
+1f472                                             person with skullcap
+1f472-1f3fb                                       person with skullcap: light skin tone
+1f472-1f3fc                                       person with skullcap: medium-light skin tone
+1f472-1f3fd                                       person with skullcap: medium skin tone
+1f472-1f3fe                                       person with skullcap: medium-dark skin tone
+1f472-1f3ff                                       person with skullcap: dark skin tone
+1f9d5                                             woman with headscarf
+1f9d5-1f3fb                                       woman with headscarf: light skin tone
+1f9d5-1f3fc                                       woman with headscarf: medium-light skin tone
+1f9d5-1f3fd                                       woman with headscarf: medium skin tone
+1f9d5-1f3fe                                       woman with headscarf: medium-dark skin tone
+1f9d5-1f3ff                                       woman with headscarf: dark skin tone
+1f935                                             person in tuxedo
+1f935-1f3fb                                       person in tuxedo: light skin tone
+1f935-1f3fc                                       person in tuxedo: medium-light skin tone
+1f935-1f3fd                                       person in tuxedo: medium skin tone
+1f935-1f3fe                                       person in tuxedo: medium-dark skin tone
+1f935-1f3ff                                       person in tuxedo: dark skin tone
+1f470                                             person with veil
+1f470-1f3fb                                       person with veil: light skin tone
+1f470-1f3fc                                       person with veil: medium-light skin tone
+1f470-1f3fd                                       person with veil: medium skin tone
+1f470-1f3fe                                       person with veil: medium-dark skin tone
+1f470-1f3ff                                       person with veil: dark skin tone
+1f930                                             pregnant woman
+1f930-1f3fb                                       pregnant woman: light skin tone
+1f930-1f3fc                                       pregnant woman: medium-light skin tone
+1f930-1f3fd                                       pregnant woman: medium skin tone
+1f930-1f3fe                                       pregnant woman: medium-dark skin tone
+1f930-1f3ff                                       pregnant woman: dark skin tone
+1f931                                             breast-feeding
+1f931-1f3fb                                       breast-feeding: light skin tone
+1f931-1f3fc                                       breast-feeding: medium-light skin tone
+1f931-1f3fd                                       breast-feeding: medium skin tone
+1f931-1f3fe                                       breast-feeding: medium-dark skin tone
+1f931-1f3ff                                       breast-feeding: dark skin tone
+1f47c                                             baby angel
+1f47c-1f3fb                                       baby angel: light skin tone
+1f47c-1f3fc                                       baby angel: medium-light skin tone
+1f47c-1f3fd                                       baby angel: medium skin tone
+1f47c-1f3fe                                       baby angel: medium-dark skin tone
+1f47c-1f3ff                                       baby angel: dark skin tone
+1f385                                             Santa Claus
+1f385-1f3fb                                       Santa Claus: light skin tone
+1f385-1f3fc                                       Santa Claus: medium-light skin tone
+1f385-1f3fd                                       Santa Claus: medium skin tone
+1f385-1f3fe                                       Santa Claus: medium-dark skin tone
+1f385-1f3ff                                       Santa Claus: dark skin tone
+1f936                                             Mrs. Claus
+1f936-1f3fb                                       Mrs. Claus: light skin tone
+1f936-1f3fc                                       Mrs. Claus: medium-light skin tone
+1f936-1f3fd                                       Mrs. Claus: medium skin tone
+1f936-1f3fe                                       Mrs. Claus: medium-dark skin tone
+1f936-1f3ff                                       Mrs. Claus: dark skin tone
+1f9b8                                             superhero
+1f9b8-1f3fb                                       superhero: light skin tone
+1f9b8-1f3fc                                       superhero: medium-light skin tone
+1f9b8-1f3fd                                       superhero: medium skin tone
+1f9b8-1f3fe                                       superhero: medium-dark skin tone
+1f9b8-1f3ff                                       superhero: dark skin tone
+1f9b8-200d-2642-fe0f                              man superhero
+1f9b8-200d-2640-fe0f                              woman superhero
+1f9b9                                             supervillain
+1f9b9-1f3fb                                       supervillain: light skin tone
+1f9b9-1f3fc                                       supervillain: medium-light skin tone
+1f9b9-1f3fd                                       supervillain: medium skin tone
+1f9b9-1f3fe                                       supervillain: medium-dark skin tone
+1f9b9-1f3ff                                       supervillain: dark skin tone
+1f9b9-200d-2642-fe0f                              man supervillain
+1f9b9-200d-2640-fe0f                              woman supervillain
+1f9d9                                             mage
+1f9d9-1f3fb                                       mage: light skin tone
+1f9d9-1f3fc                                       mage: medium-light skin tone
+1f9d9-1f3fd                                       mage: medium skin tone
+1f9d9-1f3fe                                       mage: medium-dark skin tone
+1f9d9-1f3ff                                       mage: dark skin tone
+1f9d9-200d-2642-fe0f                              man mage
+1f9d9-200d-2640-fe0f                              woman mage
+1f9da                                             fairy
+1f9da-1f3fb                                       fairy: light skin tone
+1f9da-1f3fc                                       fairy: medium-light skin tone
+1f9da-1f3fd                                       fairy: medium skin tone
+1f9da-1f3fe                                       fairy: medium-dark skin tone
+1f9da-1f3ff                                       fairy: dark skin tone
+1f9da-200d-2642-fe0f                              man fairy
+1f9da-200d-2640-fe0f                              woman fairy
+1f9db                                             vampire
+1f9db-1f3fb                                       vampire: light skin tone
+1f9db-1f3fc                                       vampire: medium-light skin tone
+1f9db-1f3fd                                       vampire: medium skin tone
+1f9db-1f3fe                                       vampire: medium-dark skin tone
+1f9db-1f3ff                                       vampire: dark skin tone
+1f9db-200d-2642-fe0f                              man vampire
+1f9db-200d-2640-fe0f                              woman vampire
+1f9dc                                             merperson
+1f9dc-1f3fb                                       merperson: light skin tone
+1f9dc-1f3fc                                       merperson: medium-light skin tone
+1f9dc-1f3fd                                       merperson: medium skin tone
+1f9dc-1f3fe                                       merperson: medium-dark skin tone
+1f9dc-1f3ff                                       merperson: dark skin tone
+1f9dc-200d-2642-fe0f                              merman
+1f9dc-200d-2640-fe0f                              mermaid
+1f9dd                                             elf
+1f9dd-1f3fb                                       elf: light skin tone
+1f9dd-1f3fc                                       elf: medium-light skin tone
+1f9dd-1f3fd                                       elf: medium skin tone
+1f9dd-1f3fe                                       elf: medium-dark skin tone
+1f9dd-1f3ff                                       elf: dark skin tone
+1f9dd-200d-2642-fe0f                              man elf
+1f9dd-200d-2640-fe0f                              woman elf
+1f9de                                             genie
+1f9de-200d-2642-fe0f                              man genie
+1f9de-200d-2640-fe0f                              woman genie
+1f9df                                             zombie
+1f9df-200d-2642-fe0f                              man zombie
+1f9df-200d-2640-fe0f                              woman zombie
+1f486                                             person getting massage
+1f486-1f3fb                                       person getting massage: light skin tone
+1f486-1f3fc                                       person getting massage: medium-light skin tone
+1f486-1f3fd                                       person getting massage: medium skin tone
+1f486-1f3fe                                       person getting massage: medium-dark skin tone
+1f486-1f3ff                                       person getting massage: dark skin tone
+1f486-200d-2642-fe0f                              man getting massage
+1f487                                             person getting haircut
+1f487-1f3fb                                       person getting haircut: light skin tone
+1f487-1f3fc                                       person getting haircut: medium-light skin tone
+1f487-1f3fd                                       person getting haircut: medium skin tone
+1f487-1f3fe                                       person getting haircut: medium-dark skin tone
+1f487-1f3ff                                       person getting haircut: dark skin tone
+1f487-200d-2642-fe0f                              man getting haircut
+1f6b6                                             person walking
+1f6b6-1f3fb                                       person walking: light skin tone
+1f6b6-1f3fc                                       person walking: medium-light skin tone
+1f6b6-1f3fd                                       person walking: medium skin tone
+1f6b6-1f3fe                                       person walking: medium-dark skin tone
+1f6b6-1f3ff                                       person walking: dark skin tone
+1f6b6-200d-2640-fe0f                              woman walking
+1f9cd                                             person standing
+1f9cd-1f3fb                                       person standing: light skin tone
+1f9cd-1f3fc                                       person standing: medium-light skin tone
+1f9cd-1f3fd                                       person standing: medium skin tone
+1f9cd-1f3fe                                       person standing: medium-dark skin tone
+1f9cd-1f3ff                                       person standing: dark skin tone
+1f9ce                                             person kneeling
+1f9ce-1f3fb                                       person kneeling: light skin tone
+1f9ce-1f3fc                                       person kneeling: medium-light skin tone
+1f9ce-1f3fd                                       person kneeling: medium skin tone
+1f9ce-1f3fe                                       person kneeling: medium-dark skin tone
+1f9ce-1f3ff                                       person kneeling: dark skin tone
+1f3c3                                             person running
+1f3c3-1f3fb                                       person running: light skin tone
+1f3c3-1f3fc                                       person running: medium-light skin tone
+1f3c3-1f3fd                                       person running: medium skin tone
+1f3c3-1f3fe                                       person running: medium-dark skin tone
+1f3c3-1f3ff                                       person running: dark skin tone
+1f3c3-200d-2640-fe0f                              woman running
+1f483                                             woman dancing
+1f483-1f3fb                                       woman dancing: light skin tone
+1f483-1f3fc                                       woman dancing: medium-light skin tone
+1f483-1f3fd                                       woman dancing: medium skin tone
+1f483-1f3fe                                       woman dancing: medium-dark skin tone
+1f483-1f3ff                                       woman dancing: dark skin tone
+1f57a                                             man dancing
+1f57a-1f3fb                                       man dancing: light skin tone
+1f57a-1f3fc                                       man dancing: medium-light skin tone
+1f57a-1f3fd                                       man dancing: medium skin tone
+1f57a-1f3fe                                       man dancing: medium-dark skin tone
+1f57a-1f3ff                                       man dancing: dark skin tone
+1f574-fe0f                                        person in suit levitating
+1f574-1f3fb                                       person in suit levitating: light skin tone
+1f574-1f3fc                                       person in suit levitating: medium-light skin tone
+1f574-1f3fd                                       person in suit levitating: medium skin tone
+1f574-1f3fe                                       person in suit levitating: medium-dark skin tone
+1f574-1f3ff                                       person in suit levitating: dark skin tone
+1f46f                                             people with bunny ears
+1f46f-200d-2642-fe0f                              men with bunny ears
+1f9d6                                             person in steamy room
+1f9d6-1f3fb                                       person in steamy room: light skin tone
+1f9d6-1f3fc                                       person in steamy room: medium-light skin tone
+1f9d6-1f3fd                                       person in steamy room: medium skin tone
+1f9d6-1f3fe                                       person in steamy room: medium-dark skin tone
+1f9d6-1f3ff                                       person in steamy room: dark skin tone
+1f9d6-200d-2642-fe0f                              man in steamy room
+1f9d6-200d-2640-fe0f                              woman in steamy room
+1f9d7                                             person climbing
+1f9d7-1f3fb                                       person climbing: light skin tone
+1f9d7-1f3fc                                       person climbing: medium-light skin tone
+1f9d7-1f3fd                                       person climbing: medium skin tone
+1f9d7-1f3fe                                       person climbing: medium-dark skin tone
+1f9d7-1f3ff                                       person climbing: dark skin tone
+1f9d7-200d-2642-fe0f                              man climbing
+1f9d7-200d-2640-fe0f                              woman climbing
+1f93a                                             person fencing
+1f3c7                                             horse racing
+1f3c7-1f3fb                                       horse racing: light skin tone
+1f3c7-1f3fc                                       horse racing: medium-light skin tone
+1f3c7-1f3fd                                       horse racing: medium skin tone
+1f3c7-1f3fe                                       horse racing: medium-dark skin tone
+1f3c7-1f3ff                                       horse racing: dark skin tone
+26f7-fe0f                                         skier
+1f3c2                                             snowboarder
+1f3c2-1f3fb                                       snowboarder: light skin tone
+1f3c2-1f3fc                                       snowboarder: medium-light skin tone
+1f3c2-1f3fd                                       snowboarder: medium skin tone
+1f3c2-1f3fe                                       snowboarder: medium-dark skin tone
+1f3c2-1f3ff                                       snowboarder: dark skin tone
+1f3cc-fe0f                                        person golfing
+1f3cc-1f3fb                                       person golfing: light skin tone
+1f3cc-1f3fc                                       person golfing: medium-light skin tone
+1f3cc-1f3fd                                       person golfing: medium skin tone
+1f3cc-1f3fe                                       person golfing: medium-dark skin tone
+1f3cc-1f3ff                                       person golfing: dark skin tone
+1f3cc-fe0f-200d-2640-fe0f                         woman golfing
+1f3c4                                             person surfing
+1f3c4-1f3fb                                       person surfing: light skin tone
+1f3c4-1f3fc                                       person surfing: medium-light skin tone
+1f3c4-1f3fd                                       person surfing: medium skin tone
+1f3c4-1f3fe                                       person surfing: medium-dark skin tone
+1f3c4-1f3ff                                       person surfing: dark skin tone
+1f3c4-200d-2640-fe0f                              woman surfing
+1f6a3                                             person rowing boat
+1f6a3-1f3fb                                       person rowing boat: light skin tone
+1f6a3-1f3fc                                       person rowing boat: medium-light skin tone
+1f6a3-1f3fd                                       person rowing boat: medium skin tone
+1f6a3-1f3fe                                       person rowing boat: medium-dark skin tone
+1f6a3-1f3ff                                       person rowing boat: dark skin tone
+1f6a3-200d-2640-fe0f                              woman rowing boat
+1f3ca                                             person swimming
+1f3ca-1f3fb                                       person swimming: light skin tone
+1f3ca-1f3fc                                       person swimming: medium-light skin tone
+1f3ca-1f3fd                                       person swimming: medium skin tone
+1f3ca-1f3fe                                       person swimming: medium-dark skin tone
+1f3ca-1f3ff                                       person swimming: dark skin tone
+1f3ca-200d-2640-fe0f                              woman swimming
+26f9-fe0f                                         person bouncing ball
+26f9-1f3fb                                        person bouncing ball: light skin tone
+26f9-1f3fc                                        person bouncing ball: medium-light skin tone
+26f9-1f3fd                                        person bouncing ball: medium skin tone
+26f9-1f3fe                                        person bouncing ball: medium-dark skin tone
+26f9-1f3ff                                        person bouncing ball: dark skin tone
+26f9-fe0f-200d-2640-fe0f                          woman bouncing ball
+1f3cb-fe0f                                        person lifting weights
+1f3cb-1f3fb                                       person lifting weights: light skin tone
+1f3cb-1f3fc                                       person lifting weights: medium-light skin tone
+1f3cb-1f3fd                                       person lifting weights: medium skin tone
+1f3cb-1f3fe                                       person lifting weights: medium-dark skin tone
+1f3cb-1f3ff                                       person lifting weights: dark skin tone
+1f3cb-fe0f-200d-2640-fe0f                         woman lifting weights
+1f6b4                                             person biking
+1f6b4-1f3fb                                       person biking: light skin tone
+1f6b4-1f3fc                                       person biking: medium-light skin tone
+1f6b4-1f3fd                                       person biking: medium skin tone
+1f6b4-1f3fe                                       person biking: medium-dark skin tone
+1f6b4-1f3ff                                       person biking: dark skin tone
+1f6b4-200d-2640-fe0f                              woman biking
+1f6b5                                             person mountain biking
+1f6b5-1f3fb                                       person mountain biking: light skin tone
+1f6b5-1f3fc                                       person mountain biking: medium-light skin tone
+1f6b5-1f3fd                                       person mountain biking: medium skin tone
+1f6b5-1f3fe                                       person mountain biking: medium-dark skin tone
+1f6b5-1f3ff                                       person mountain biking: dark skin tone
+1f6b5-200d-2640-fe0f                              woman mountain biking
+1f938                                             person cartwheeling
+1f938-1f3fb                                       person cartwheeling: light skin tone
+1f938-1f3fc                                       person cartwheeling: medium-light skin tone
+1f938-1f3fd                                       person cartwheeling: medium skin tone
+1f938-1f3fe                                       person cartwheeling: medium-dark skin tone
+1f938-1f3ff                                       person cartwheeling: dark skin tone
+1f938-200d-2642-fe0f                              man cartwheeling
+1f938-200d-2640-fe0f                              woman cartwheeling
+1f93c                                             people wrestling
+1f93c-200d-2642-fe0f                              men wrestling
+1f93c-200d-2640-fe0f                              women wrestling
+1f93d                                             person playing water polo
+1f93d-1f3fb                                       person playing water polo: light skin tone
+1f93d-1f3fc                                       person playing water polo: medium-light skin tone
+1f93d-1f3fd                                       person playing water polo: medium skin tone
+1f93d-1f3fe                                       person playing water polo: medium-dark skin tone
+1f93d-1f3ff                                       person playing water polo: dark skin tone
+1f93d-200d-2642-fe0f                              man playing water polo
+1f93d-200d-2640-fe0f                              woman playing water polo
+1f93e                                             person playing handball
+1f93e-1f3fb                                       person playing handball: light skin tone
+1f93e-1f3fc                                       person playing handball: medium-light skin tone
+1f93e-1f3fd                                       person playing handball: medium skin tone
+1f93e-1f3fe                                       person playing handball: medium-dark skin tone
+1f93e-1f3ff                                       person playing handball: dark skin tone
+1f93e-200d-2642-fe0f                              man playing handball
+1f93e-200d-2640-fe0f                              woman playing handball
+1f939                                             person juggling
+1f939-1f3fb                                       person juggling: light skin tone
+1f939-1f3fc                                       person juggling: medium-light skin tone
+1f939-1f3fd                                       person juggling: medium skin tone
+1f939-1f3fe                                       person juggling: medium-dark skin tone
+1f939-1f3ff                                       person juggling: dark skin tone
+1f939-200d-2642-fe0f                              man juggling
+1f939-200d-2640-fe0f                              woman juggling
+1f9d8                                             person in lotus position
+1f9d8-1f3fb                                       person in lotus position: light skin tone
+1f9d8-1f3fc                                       person in lotus position: medium-light skin tone
+1f9d8-1f3fd                                       person in lotus position: medium skin tone
+1f9d8-1f3fe                                       person in lotus position: medium-dark skin tone
+1f9d8-1f3ff                                       person in lotus position: dark skin tone
+1f9d8-200d-2642-fe0f                              man in lotus position
+1f9d8-200d-2640-fe0f                              woman in lotus position
+1f6c0                                             person taking bath
+1f6c0-1f3fb                                       person taking bath: light skin tone
+1f6c0-1f3fc                                       person taking bath: medium-light skin tone
+1f6c0-1f3fd                                       person taking bath: medium skin tone
+1f6c0-1f3fe                                       person taking bath: medium-dark skin tone
+1f6c0-1f3ff                                       person taking bath: dark skin tone
+1f6cc                                             person in bed
+1f6cc-1f3fb                                       person in bed: light skin tone
+1f6cc-1f3fc                                       person in bed: medium-light skin tone
+1f6cc-1f3fd                                       person in bed: medium skin tone
+1f6cc-1f3fe                                       person in bed: medium-dark skin tone
+1f6cc-1f3ff                                       person in bed: dark skin tone
+1f46d                                             women holding hands
+1f46d-1f3fb                                       women holding hands: light skin tone
+1f46d-1f3fc                                       women holding hands: medium-light skin tone
+1f46d-1f3fd                                       women holding hands: medium skin tone
+1f46d-1f3fe                                       women holding hands: medium-dark skin tone
+1f46d-1f3ff                                       women holding hands: dark skin tone
+1f46b                                             woman and man holding hands
+1f46b-1f3fb                                       woman and man holding hands: light skin tone
+1f46b-1f3fc                                       woman and man holding hands: medium-light skin tone
+1f46b-1f3fd                                       woman and man holding hands: medium skin tone
+1f46b-1f3fe                                       woman and man holding hands: medium-dark skin tone
+1f46b-1f3ff                                       woman and man holding hands: dark skin tone
+1f46c                                             men holding hands
+1f46c-1f3fb                                       men holding hands: light skin tone
+1f46c-1f3fc                                       men holding hands: medium-light skin tone
+1f46c-1f3fd                                       men holding hands: medium skin tone
+1f46c-1f3fe                                       men holding hands: medium-dark skin tone
+1f46c-1f3ff                                       men holding hands: dark skin tone
+1f48f                                             kiss
+1f48f-1f3fb                                       kiss: light skin tone
+1f48f-1f3fc                                       kiss: medium-light skin tone
+1f48f-1f3fd                                       kiss: medium skin tone
+1f48f-1f3fe                                       kiss: medium-dark skin tone
+1f48f-1f3ff                                       kiss: dark skin tone
+1f468-200d-2764-fe0f-200d-1f48b-200d-1f468        kiss: man, man
+1f469-200d-2764-fe0f-200d-1f48b-200d-1f469        kiss: woman, woman
+1f491                                             couple with heart
+1f491-1f3fb                                       couple with heart: light skin tone
+1f491-1f3fc                                       couple with heart: medium-light skin tone
+1f491-1f3fd                                       couple with heart: medium skin tone
+1f491-1f3fe                                       couple with heart: medium-dark skin tone
+1f491-1f3ff                                       couple with heart: dark skin tone
+1f468-200d-2764-fe0f-200d-1f468                   couple with heart: man, man
+1f469-200d-2764-fe0f-200d-1f469                   couple with heart: woman, woman
+1f46a                                             family
+1f468-200d-1f469-200d-1f467                       family: man, woman, girl
+1f468-200d-1f469-200d-1f467-200d-1f466            family: man, woman, girl, boy
+1f468-200d-1f469-200d-1f466-200d-1f466            family: man, woman, boy, boy
+1f468-200d-1f469-200d-1f467-200d-1f467            family: man, woman, girl, girl
+1f468-200d-1f468-200d-1f466                       family: man, man, boy
+1f468-200d-1f468-200d-1f467                       family: man, man, girl
+1f468-200d-1f468-200d-1f467-200d-1f466            family: man, man, girl, boy
+1f468-200d-1f468-200d-1f466-200d-1f466            family: man, man, boy, boy
+1f468-200d-1f468-200d-1f467-200d-1f467            family: man, man, girl, girl
+1f469-200d-1f469-200d-1f466                       family: woman, woman, boy
+1f469-200d-1f469-200d-1f467                       family: woman, woman, girl
+1f469-200d-1f469-200d-1f467-200d-1f466            family: woman, woman, girl, boy
+1f469-200d-1f469-200d-1f466-200d-1f466            family: woman, woman, boy, boy
+1f469-200d-1f469-200d-1f467-200d-1f467            family: woman, woman, girl, girl
+1f468-200d-1f466                                  family: man, boy
+1f468-200d-1f466-200d-1f466                       family: man, boy, boy
+1f468-200d-1f467                                  family: man, girl
+1f468-200d-1f467-200d-1f466                       family: man, girl, boy
+1f468-200d-1f467-200d-1f467                       family: man, girl, girl
+1f469-200d-1f466                                  family: woman, boy
+1f469-200d-1f466-200d-1f466                       family: woman, boy, boy
+1f469-200d-1f467                                  family: woman, girl
+1f469-200d-1f467-200d-1f466                       family: woman, girl, boy
+1f469-200d-1f467-200d-1f467                       family: woman, girl, girl
+1f5e3-fe0f                                        speaking head
+1f464                                             bust in silhouette
+1f465                                             busts in silhouette
+1f463                                             footprints
+1f435                                             monkey face
+1f412                                             monkey
+1f98d                                             gorilla
+1f9a7                                             orangutan
+1f436                                             dog face
+1f415                                             dog
+1f9ae                                             guide dog
+1f429                                             poodle
+1f43a                                             wolf
+1f98a                                             fox
+1f99d                                             raccoon
+1f431                                             cat face
+1f408                                             cat
+1f981                                             lion
+1f42f                                             tiger face
+1f405                                             tiger
+1f406                                             leopard
+1f434                                             horse face
+1f40e                                             horse
+1f984                                             unicorn
+1f993                                             zebra
+1f98c                                             deer
+1f42e                                             cow face
+1f402                                             ox
+1f403                                             water buffalo
+1f404                                             cow
+1f437                                             pig face
+1f416                                             pig
+1f417                                             boar
+1f43d                                             pig nose
+1f40f                                             ram
+1f411                                             ewe
+1f410                                             goat
+1f42a                                             camel
+1f42b                                             two-hump camel
+1f999                                             llama
+1f992                                             giraffe
+1f418                                             elephant
+1f98f                                             rhinoceros
+1f99b                                             hippopotamus
+1f42d                                             mouse face
+1f401                                             mouse
+1f400                                             rat
+1f439                                             hamster
+1f430                                             rabbit face
+1f407                                             rabbit
+1f43f-fe0f                                        chipmunk
+1f994                                             hedgehog
+1f987                                             bat
+1f43b                                             bear
+1f428                                             koala
+1f43c                                             panda
+1f9a5                                             sloth
+1f9a6                                             otter
+1f9a8                                             skunk
+1f998                                             kangaroo
+1f9a1                                             badger
+1f43e                                             paw prints
+1f983                                             turkey
+1f414                                             chicken
+1f413                                             rooster
+1f423                                             hatching chick
+1f424                                             baby chick
+1f425                                             front-facing baby chick
+1f426                                             bird
+1f427                                             penguin
+1f54a-fe0f                                        dove
+1f985                                             eagle
+1f986                                             duck
+1f9a2                                             swan
+1f989                                             owl
+1f9a9                                             flamingo
+1f99a                                             peacock
+1f99c                                             parrot
+1f438                                             frog
+1f40a                                             crocodile
+1f422                                             turtle
+1f98e                                             lizard
+1f40d                                             snake
+1f432                                             dragon face
+1f409                                             dragon
+1f995                                             sauropod
+1f996                                             T-Rex
+1f433                                             spouting whale
+1f40b                                             whale
+1f42c                                             dolphin
+1f41f                                             fish
+1f420                                             tropical fish
+1f421                                             blowfish
+1f988                                             shark
+1f419                                             octopus
+1f41a                                             spiral shell
+1f40c                                             snail
+1f98b                                             butterfly
+1f41b                                             bug
+1f41c                                             ant
+1f41d                                             honeybee
+1f41e                                             lady beetle
+1f997                                             cricket
+1f577-fe0f                                        spider
+1f578-fe0f                                        spider web
+1f982                                             scorpion
+1f99f                                             mosquito
+1f9a0                                             microbe
+1f490                                             bouquet
+1f338                                             cherry blossom
+1f4ae                                             white flower
+1f3f5-fe0f                                        rosette
+1f339                                             rose
+1f940                                             wilted flower
+1f33a                                             hibiscus
+1f33b                                             sunflower
+1f33c                                             blossom
+1f337                                             tulip
+1f331                                             seedling
+1f332                                             evergreen tree
+1f333                                             deciduous tree
+1f334                                             palm tree
+1f335                                             cactus
+1f33e                                             sheaf of rice
+1f33f                                             herb
+2618-fe0f                                         shamrock
+1f340                                             four leaf clover
+1f341                                             maple leaf
+1f342                                             fallen leaf
+1f343                                             leaf fluttering in wind
+1f344                                             mushroom
+1f347                                             grapes
+1f348                                             melon
+1f349                                             watermelon
+1f34a                                             tangerine
+1f34b                                             lemon
+1f34c                                             banana
+1f34d                                             pineapple
+1f96d                                             mango
+1f34e                                             red apple
+1f34f                                             green apple
+1f350                                             pear
+1f351                                             peach
+1f352                                             cherries
+1f353                                             strawberry
+1f95d                                             kiwi fruit
+1f345                                             tomato
+1f965                                             coconut
+1f951                                             avocado
+1f346                                             eggplant
+1f954                                             potato
+1f955                                             carrot
+1f33d                                             ear of corn
+1f336-fe0f                                        hot pepper
+1f952                                             cucumber
+1f96c                                             leafy green
+1f966                                             broccoli
+1f9c4                                             garlic
+1f9c5                                             onion
+1f95c                                             peanuts
+1f330                                             chestnut
+1f35e                                             bread
+1f950                                             croissant
+1f956                                             baguette bread
+1f968                                             pretzel
+1f96f                                             bagel
+1f95e                                             pancakes
+1f9c7                                             waffle
+1f9c0                                             cheese wedge
+1f356                                             meat on bone
+1f357                                             poultry leg
+1f969                                             cut of meat
+1f953                                             bacon
+1f354                                             hamburger
+1f35f                                             french fries
+1f355                                             pizza
+1f32d                                             hot dog
+1f96a                                             sandwich
+1f32e                                             taco
+1f32f                                             burrito
+1f959                                             stuffed flatbread
+1f9c6                                             falafel
+1f95a                                             egg
+1f373                                             cooking
+1f958                                             shallow pan of food
+1f372                                             pot of food
+1f963                                             bowl with spoon
+1f957                                             green salad
+1f37f                                             popcorn
+1f9c8                                             butter
+1f9c2                                             salt
+1f96b                                             canned food
+1f371                                             bento box
+1f358                                             rice cracker
+1f359                                             rice ball
+1f35a                                             cooked rice
+1f35b                                             curry rice
+1f35c                                             steaming bowl
+1f35d                                             spaghetti
+1f360                                             roasted sweet potato
+1f362                                             oden
+1f363                                             sushi
+1f364                                             fried shrimp
+1f365                                             fish cake with swirl
+1f96e                                             moon cake
+1f361                                             dango
+1f95f                                             dumpling
+1f960                                             fortune cookie
+1f961                                             takeout box
+1f980                                             crab
+1f99e                                             lobster
+1f990                                             shrimp
+1f991                                             squid
+1f9aa                                             oyster
+1f366                                             soft ice cream
+1f367                                             shaved ice
+1f368                                             ice cream
+1f369                                             doughnut
+1f36a                                             cookie
+1f382                                             birthday cake
+1f370                                             shortcake
+1f9c1                                             cupcake
+1f967                                             pie
+1f36b                                             chocolate bar
+1f36c                                             candy
+1f36d                                             lollipop
+1f36e                                             custard
+1f36f                                             honey pot
+1f37c                                             baby bottle
+1f95b                                             glass of milk
+2615                                              hot beverage
+1f375                                             teacup without handle
+1f376                                             sake
+1f37e                                             bottle with popping cork
+1f377                                             wine glass
+1f378                                             cocktail glass
+1f379                                             tropical drink
+1f37a                                             beer mug
+1f37b                                             clinking beer mugs
+1f942                                             clinking glasses
+1f943                                             tumbler glass
+1f964                                             cup with straw
+1f9c3                                             beverage box
+1f9c9                                             mate
+1f9ca                                             ice
+1f962                                             chopsticks
+1f37d-fe0f                                        fork and knife with plate
+1f374                                             fork and knife
+1f944                                             spoon
+1f52a                                             kitchen knife
+1f3fa                                             amphora
+1f30d                                             globe showing Europe-Africa
+1f30e                                             globe showing Americas
+1f30f                                             globe showing Asia-Australia
+1f310                                             globe with meridians
+1f5fa-fe0f                                        world map
+1f5fe                                             map of Japan
+1f9ed                                             compass
+1f3d4-fe0f                                        snow-capped mountain
+26f0-fe0f                                         mountain
+1f30b                                             volcano
+1f5fb                                             mount fuji
+1f3d5-fe0f                                        camping
+1f3d6-fe0f                                        beach with umbrella
+1f3dc-fe0f                                        desert
+1f3dd-fe0f                                        desert island
+1f3de-fe0f                                        national park
+1f3df-fe0f                                        stadium
+1f3db-fe0f                                        classical building
+1f3d7-fe0f                                        building construction
+1f9f1                                             brick
+1f3d8-fe0f                                        houses
+1f3da-fe0f                                        derelict house
+1f3e0                                             house
+1f3e1                                             house with garden
+1f3e2                                             office building
+1f3e3                                             Japanese post office
+1f3e4                                             post office
+1f3e5                                             hospital
+1f3e6                                             bank
+1f3e8                                             hotel
+1f3e9                                             love hotel
+1f3ea                                             convenience store
+1f3eb                                             school
+1f3ec                                             department store
+1f3ed                                             factory
+1f3ef                                             Japanese castle
+1f3f0                                             castle
+1f492                                             wedding
+1f5fc                                             Tokyo tower
+1f5fd                                             Statue of Liberty
+26ea                                              church
+1f54c                                             mosque
+1f6d5                                             hindu temple
+1f54d                                             synagogue
+26e9-fe0f                                         shinto shrine
+1f54b                                             kaaba
+26f2                                              fountain
+26fa                                              tent
+1f301                                             foggy
+1f303                                             night with stars
+1f3d9-fe0f                                        cityscape
+1f304                                             sunrise over mountains
+1f305                                             sunrise
+1f306                                             cityscape at dusk
+1f307                                             sunset
+1f309                                             bridge at night
+2668-fe0f                                         hot springs
+1f3a0                                             carousel horse
+1f3a1                                             ferris wheel
+1f3a2                                             roller coaster
+1f488                                             barber pole
+1f3aa                                             circus tent
+1f682                                             locomotive
+1f683                                             railway car
+1f684                                             high-speed train
+1f685                                             bullet train
+1f686                                             train
+1f687                                             metro
+1f688                                             light rail
+1f689                                             station
+1f68a                                             tram
+1f69d                                             monorail
+1f69e                                             mountain railway
+1f68b                                             tram car
+1f68c                                             bus
+1f68d                                             oncoming bus
+1f68e                                             trolleybus
+1f690                                             minibus
+1f691                                             ambulance
+1f692                                             fire engine
+1f693                                             police car
+1f694                                             oncoming police car
+1f695                                             taxi
+1f696                                             oncoming taxi
+1f697                                             automobile
+1f698                                             oncoming automobile
+1f699                                             sport utility vehicle
+1f69a                                             delivery truck
+1f69b                                             articulated lorry
+1f69c                                             tractor
+1f3ce-fe0f                                        racing car
+1f3cd-fe0f                                        motorcycle
+1f6f5                                             motor scooter
+1f9bd                                             manual wheelchair
+1f9bc                                             motorized wheelchair
+1f6fa                                             auto rickshaw
+1f6b2                                             bicycle
+1f6f4                                             kick scooter
+1f6f9                                             skateboard
+1f68f                                             bus stop
+1f6e3-fe0f                                        motorway
+1f6e4-fe0f                                        railway track
+1f6e2-fe0f                                        oil drum
+26fd                                              fuel pump
+1f6a8                                             police car light
+1f6a5                                             horizontal traffic light
+1f6a6                                             vertical traffic light
+1f6d1                                             stop sign
+1f6a7                                             construction
+2693                                              anchor
+26f5                                              sailboat
+1f6f6                                             canoe
+1f6a4                                             speedboat
+1f6f3-fe0f                                        passenger ship
+26f4-fe0f                                         ferry
+1f6e5-fe0f                                        motor boat
+1f6a2                                             ship
+2708-fe0f                                         airplane
+1f6e9-fe0f                                        small airplane
+1f6eb                                             airplane departure
+1f6ec                                             airplane arrival
+1fa82                                             parachute
+1f4ba                                             seat
+1f681                                             helicopter
+1f69f                                             suspension railway
+1f6a0                                             mountain cableway
+1f6a1                                             aerial tramway
+1f6f0-fe0f                                        satellite
+1f680                                             rocket
+1f6f8                                             flying saucer
+1f6ce-fe0f                                        bellhop bell
+1f9f3                                             luggage
+231b                                              hourglass done
+23f3                                              hourglass not done
+231a                                              watch
+23f0                                              alarm clock
+23f1-fe0f                                         stopwatch
+23f2-fe0f                                         timer clock
+1f570-fe0f                                        mantelpiece clock
+1f311                                             new moon
+1f312                                             waxing crescent moon
+1f313                                             first quarter moon
+1f314                                             waxing gibbous moon
+1f315                                             full moon
+1f316                                             waning gibbous moon
+1f317                                             last quarter moon
+1f318                                             waning crescent moon
+1f319                                             crescent moon
+1f31a                                             new moon face
+1f31b                                             first quarter moon face
+1f31c                                             last quarter moon face
+1f321-fe0f                                        thermometer
+2600-fe0f                                         sun
+1f31d                                             full moon face
+1f31e                                             sun with face
+1fa90                                             ringed planet
+2b50                                              star
+1f31f                                             glowing star
+1f320                                             shooting star
+1f30c                                             milky way
+2601-fe0f                                         cloud
+26c5                                              sun behind cloud
+26c8-fe0f                                         cloud with lightning and rain
+1f324-fe0f                                        sun behind small cloud
+1f325-fe0f                                        sun behind large cloud
+1f326-fe0f                                        sun behind rain cloud
+1f327-fe0f                                        cloud with rain
+1f328-fe0f                                        cloud with snow
+1f329-fe0f                                        cloud with lightning
+1f32a-fe0f                                        tornado
+1f32b-fe0f                                        fog
+1f32c-fe0f                                        wind face
+1f300                                             cyclone
+1f308                                             rainbow
+1f302                                             closed umbrella
+2602-fe0f                                         umbrella
+2614                                              umbrella with rain drops
+26f1-fe0f                                         umbrella on ground
+26a1                                              high voltage
+2744-fe0f                                         snowflake
+2603-fe0f                                         snowman
+26c4                                              snowman without snow
+2604-fe0f                                         comet
+1f525                                             fire
+1f4a7                                             droplet
+1f30a                                             water wave
+1f383                                             jack-o-lantern
+1f384                                             Christmas tree
+1f386                                             fireworks
+1f387                                             sparkler
+1f9e8                                             firecracker
+2728                                              sparkles
+1f388                                             balloon
+1f389                                             party popper
+1f38a                                             confetti ball
+1f38b                                             tanabata tree
+1f38d                                             pine decoration
+1f38e                                             Japanese dolls
+1f38f                                             carp streamer
+1f390                                             wind chime
+1f391                                             moon viewing ceremony
+1f9e7                                             red envelope
+1f380                                             ribbon
+1f381                                             wrapped gift
+1f397-fe0f                                        reminder ribbon
+1f39f-fe0f                                        admission tickets
+1f3ab                                             ticket
+1f396-fe0f                                        military medal
+1f3c6                                             trophy
+1f3c5                                             sports medal
+1f947                                             1st place medal
+1f948                                             2nd place medal
+1f949                                             3rd place medal
+26bd                                              soccer ball
+26be                                              baseball
+1f94e                                             softball
+1f3c0                                             basketball
+1f3d0                                             volleyball
+1f3c8                                             american football
+1f3c9                                             rugby football
+1f3be                                             tennis
+1f94f                                             flying disc
+1f3b3                                             bowling
+1f3cf                                             cricket game
+1f3d1                                             field hockey
+1f3d2                                             ice hockey
+1f94d                                             lacrosse
+1f3d3                                             ping pong
+1f3f8                                             badminton
+1f94a                                             boxing glove
+1f94b                                             martial arts uniform
+1f945                                             goal net
+26f3                                              flag in hole
+26f8-fe0f                                         ice skate
+1f3a3                                             fishing pole
+1f93f                                             diving mask
+1f3bd                                             running shirt
+1f3bf                                             skis
+1f6f7                                             sled
+1f94c                                             curling stone
+1f3af                                             bullseye
+1fa80                                             yo-yo
+1fa81                                             kite
+1f52b                                             water pistol
+1f3b1                                             pool 8 ball
+1f52e                                             crystal ball
+1f3ae                                             video game
+1f579-fe0f                                        joystick
+1f3b0                                             slot machine
+1f3b2                                             game die
+1f9e9                                             puzzle piece
+1f9f8                                             teddy bear
+2660-fe0f                                         spade suit
+2665-fe0f                                         heart suit
+2666-fe0f                                         diamond suit
+2663-fe0f                                         club suit
+265f-fe0f                                         chess pawn
+1f0cf                                             joker
+1f004                                             mahjong red dragon
+1f3b4                                             flower playing cards
+1f3ad                                             performing arts
+1f5bc-fe0f                                        framed picture
+1f3a8                                             artist palette
+1f9f5                                             thread
+1f9f6                                             yarn
+1f453                                             glasses
+1f576-fe0f                                        sunglasses
+1f97d                                             goggles
+1f97c                                             lab coat
+1f9ba                                             safety vest
+1f454                                             necktie
+1f455                                             t-shirt
+1f456                                             jeans
+1f9e3                                             scarf
+1f9e4                                             gloves
+1f9e5                                             coat
+1f9e6                                             socks
+1f457                                             dress
+1f458                                             kimono
+1f97b                                             sari
+1fa71                                             one-piece swimsuit
+1fa72                                             briefs
+1fa73                                             shorts
+1f459                                             bikini
+1f45b                                             purse
+1f45c                                             handbag
+1f45d                                             clutch bag
+1f6cd-fe0f                                        shopping bags
+1f392                                             backpack
+1f45f                                             running shoe
+1f97e                                             hiking boot
+1f97f                                             flat shoe
+1f460                                             high-heeled shoe
+1fa70                                             ballet shoes
+1f451                                             crown
+1f3a9                                             top hat
+1f393                                             graduation cap
+1f9e2                                             billed cap
+1f4ff                                             prayer beads
+1f484                                             lipstick
+1f48d                                             ring
+1f48e                                             gem stone
+1f507                                             muted speaker
+1f508                                             speaker low volume
+1f509                                             speaker medium volume
+1f50a                                             speaker high volume
+1f4e2                                             loudspeaker
+1f4e3                                             megaphone
+1f4ef                                             postal horn
+1f514                                             bell
+1f515                                             bell with slash
+1f3bc                                             musical score
+1f3b5                                             musical note
+1f3b6                                             musical notes
+1f399-fe0f                                        studio microphone
+1f39a-fe0f                                        level slider
+1f39b-fe0f                                        control knobs
+1f3a4                                             microphone
+1f3a7                                             headphone
+1f4fb                                             radio
+1f3b7                                             saxophone
+1f3b8                                             guitar
+1f3b9                                             musical keyboard
+1f3ba                                             trumpet
+1f3bb                                             violin
+1fa95                                             banjo
+1f941                                             drum
+1f4f1                                             mobile phone
+1f4f2                                             mobile phone with arrow
+260e-fe0f                                         telephone
+1f4de                                             telephone receiver
+1f4df                                             pager
+1f4e0                                             fax machine
+1f50b                                             battery
+1f50c                                             electric plug
+1f4bb                                             laptop
+1f5a5-fe0f                                        desktop computer
+1f5a8-fe0f                                        printer
+2328-fe0f                                         keyboard
+1f5b1-fe0f                                        computer mouse
+1f5b2-fe0f                                        trackball
+1f4bd                                             computer disk
+1f4be                                             floppy disk
+1f4bf                                             optical disk
+1f4c0                                             dvd
+1f9ee                                             abacus
+1f3a5                                             movie camera
+1f39e-fe0f                                        film frames
+1f4fd-fe0f                                        film projector
+1f3ac                                             clapper board
+1f4fa                                             television
+1f4f7                                             camera
+1f4f8                                             camera with flash
+1f4f9                                             video camera
+1f4fc                                             videocassette
+1f50d                                             magnifying glass tilted left
+1f50e                                             magnifying glass tilted right
+1f56f-fe0f                                        candle
+1f4a1                                             light bulb
+1f526                                             flashlight
+1f3ee                                             red paper lantern
+1fa94                                             diya lamp
+1f4d4                                             notebook with decorative cover
+1f4d5                                             closed book
+1f4d6                                             open book
+1f4d7                                             green book
+1f4d8                                             blue book
+1f4d9                                             orange book
+1f4da                                             books
+1f4d3                                             notebook
+1f4d2                                             ledger
+1f4c3                                             page with curl
+1f4dc                                             scroll
+1f4c4                                             page facing up
+1f4f0                                             newspaper
+1f5de-fe0f                                        rolled-up newspaper
+1f4d1                                             bookmark tabs
+1f516                                             bookmark
+1f3f7-fe0f                                        label
+1f4b0                                             money bag
+1f4b4                                             yen banknote
+1f4b5                                             dollar banknote
+1f4b6                                             euro banknote
+1f4b7                                             pound banknote
+1f4b8                                             money with wings
+1f4b3                                             credit card
+1f9fe                                             receipt
+1f4b9                                             chart increasing with yen
+2709-fe0f                                         envelope
+1f4e7                                             e-mail
+1f4e8                                             incoming envelope
+1f4e9                                             envelope with arrow
+1f4e4                                             outbox tray
+1f4e5                                             inbox tray
+1f4e6                                             package
+1f4eb                                             closed mailbox with raised flag
+1f4ea                                             closed mailbox with lowered flag
+1f4ec                                             open mailbox with raised flag
+1f4ed                                             open mailbox with lowered flag
+1f4ee                                             postbox
+1f5f3-fe0f                                        ballot box with ballot
+270f-fe0f                                         pencil
+2712-fe0f                                         black nib
+1f58b-fe0f                                        fountain pen
+1f58a-fe0f                                        pen
+1f58c-fe0f                                        paintbrush
+1f58d-fe0f                                        crayon
+1f4dd                                             memo
+1f4bc                                             briefcase
+1f4c1                                             file folder
+1f4c2                                             open file folder
+1f5c2-fe0f                                        card index dividers
+1f4c5                                             calendar
+1f4c6                                             tear-off calendar
+1f5d2-fe0f                                        spiral notepad
+1f5d3-fe0f                                        spiral calendar
+1f4c7                                             card index
+1f4c8                                             chart increasing
+1f4c9                                             chart decreasing
+1f4ca                                             bar chart
+1f4cb                                             clipboard
+1f4cc                                             pushpin
+1f4cd                                             round pushpin
+1f4ce                                             paperclip
+1f587-fe0f                                        linked paperclips
+1f4cf                                             straight ruler
+1f4d0                                             triangular ruler
+2702-fe0f                                         scissors
+1f5c3-fe0f                                        card file box
+1f5c4-fe0f                                        file cabinet
+1f5d1-fe0f                                        wastebasket
+1f512                                             locked
+1f513                                             unlocked
+1f50f                                             locked with pen
+1f510                                             locked with key
+1f511                                             key
+1f5dd-fe0f                                        old key
+1f528                                             hammer
+1fa93                                             axe
+26cf-fe0f                                         pick
+2692-fe0f                                         hammer and pick
+1f6e0-fe0f                                        hammer and wrench
+1f5e1-fe0f                                        dagger
+2694-fe0f                                         crossed swords
+1f4a3                                             bomb
+1f3f9                                             bow and arrow
+1f6e1-fe0f                                        shield
+1f527                                             wrench
+1f529                                             nut and bolt
+2699-fe0f                                         gear
+1f5dc-fe0f                                        clamp
+2696-fe0f                                         balance scale
+1f9af                                             white cane
+1f517                                             link
+26d3-fe0f                                         chains
+1f9f0                                             toolbox
+1f9f2                                             magnet
+2697-fe0f                                         alembic
+1f9ea                                             test tube
+1f9eb                                             petri dish
+1f9ec                                             dna
+1f52c                                             microscope
+1f52d                                             telescope
+1f4e1                                             satellite antenna
+1f489                                             syringe
+1fa78                                             drop of blood
+1f48a                                             pill
+1fa79                                             adhesive bandage
+1fa7a                                             stethoscope
+1f6aa                                             door
+1f6cf-fe0f                                        bed
+1f6cb-fe0f                                        couch and lamp
+1fa91                                             chair
+1f6bd                                             toilet
+1f6bf                                             shower
+1f6c1                                             bathtub
+1fa92                                             razor
+1f9f4                                             lotion bottle
+1f9f7                                             safety pin
+1f9f9                                             broom
+1f9fa                                             basket
+1f9fb                                             roll of paper
+1f9fc                                             soap
+1f9fd                                             sponge
+1f9ef                                             fire extinguisher
+1f6d2                                             shopping cart
+1f6ac                                             cigarette
+26b0-fe0f                                         coffin
+26b1-fe0f                                         funeral urn
+1f9ff                                             nazar amulet
+1f5ff                                             moai
+1f3e7                                             ATM sign
+1f6ae                                             litter in bin sign
+1f6b0                                             potable water
+267f                                              wheelchair symbol
+1f6bb                                             restroom
+1f6bc                                             baby symbol
+1f6be                                             water closet
+1f6c2                                             passport control
+1f6c3                                             customs
+1f6c4                                             baggage claim
+1f6c5                                             left luggage
+26a0-fe0f                                         warning
+1f6b8                                             children crossing
+26d4                                              no entry
+1f6ab                                             prohibited
+1f6b3                                             no bicycles
+1f6ad                                             no smoking
+1f6af                                             no littering
+1f6b1                                             non-potable water
+1f6b7                                             no pedestrians
+1f4f5                                             no mobile phones
+1f51e                                             no one under eighteen
+2622-fe0f                                         radioactive
+2623-fe0f                                         biohazard
+2b06-fe0f                                         up arrow
+2197-fe0f                                         up-right arrow
+27a1-fe0f                                         right arrow
+2198-fe0f                                         down-right arrow
+2b07-fe0f                                         down arrow
+2199-fe0f                                         down-left arrow
+2b05-fe0f                                         left arrow
+2196-fe0f                                         up-left arrow
+2195-fe0f                                         up-down arrow
+2194-fe0f                                         left-right arrow
+21a9-fe0f                                         right arrow curving left
+21aa-fe0f                                         left arrow curving right
+2934-fe0f                                         right arrow curving up
+2935-fe0f                                         right arrow curving down
+1f503                                             clockwise vertical arrows
+1f504                                             counterclockwise arrows button
+1f519                                             BACK arrow
+1f51a                                             END arrow
+1f51b                                             ON! arrow
+1f51c                                             SOON arrow
+1f51d                                             TOP arrow
+1f6d0                                             place of worship
+269b-fe0f                                         atom symbol
+1f549-fe0f                                        om
+2721-fe0f                                         star of David
+2638-fe0f                                         wheel of dharma
+262f-fe0f                                         yin yang
+271d-fe0f                                         latin cross
+2626-fe0f                                         orthodox cross
+262a-fe0f                                         star and crescent
+262e-fe0f                                         peace symbol
+1f54e                                             menorah
+1f52f                                             dotted six-pointed star
+2648                                              Aries
+2649                                              Taurus
+264a                                              Gemini
+264b                                              Cancer
+264c                                              Leo
+264d                                              Virgo
+264e                                              Libra
+264f                                              Scorpio
+2650                                              Sagittarius
+2651                                              Capricorn
+2652                                              Aquarius
+2653                                              Pisces
+26ce                                              Ophiuchus
+1f500                                             shuffle tracks button
+1f501                                             repeat button
+1f502                                             repeat single button
+25b6-fe0f                                         play button
+23e9                                              fast-forward button
+23ed-fe0f                                         next track button
+23ef-fe0f                                         play or pause button
+25c0-fe0f                                         reverse button
+23ea                                              fast reverse button
+23ee-fe0f                                         last track button
+1f53c                                             upwards button
+23eb                                              fast up button
+1f53d                                             downwards button
+23ec                                              fast down button
+23f8-fe0f                                         pause button
+23f9-fe0f                                         stop button
+23fa-fe0f                                         record button
+23cf-fe0f                                         eject button
+1f3a6                                             cinema
+1f505                                             dim button
+1f506                                             bright button
+1f4f6                                             antenna bars
+1f4f3                                             vibration mode
+1f4f4                                             mobile phone off
+2640-fe0f                                         female sign
+2642-fe0f                                         male sign
+26a7-fe0f                                         transgender symbol
+2716-fe0f                                         multiply
+2795                                              plus
+2796                                              minus
+2797                                              divide
+267e-fe0f                                         infinity
+203c-fe0f                                         double exclamation mark
+2049-fe0f                                         exclamation question mark
+2753                                              red question mark
+2754                                              white question mark
+2755                                              white exclamation mark
+2757                                              red exclamation mark
+3030-fe0f                                         wavy dash
+1f4b1                                             currency exchange
+1f4b2                                             heavy dollar sign
+2695-fe0f                                         medical symbol
+267b-fe0f                                         recycling symbol
+269c-fe0f                                         fleur-de-lis
+1f531                                             trident emblem
+1f4db                                             name badge
+1f530                                             Japanese symbol for beginner
+2b55                                              hollow red circle
+2705                                              check mark button
+2611-fe0f                                         check box with check
+2714-fe0f                                         check mark
+274c                                              cross mark
+274e                                              cross mark button
+27b0                                              curly loop
+27bf                                              double curly loop
+303d-fe0f                                         part alternation mark
+2733-fe0f                                         eight-spoked asterisk
+2734-fe0f                                         eight-pointed star
+2747-fe0f                                         sparkle
+2122-fe0f                                         trade mark
+1f520                                             input latin uppercase
+1f521                                             input latin lowercase
+1f522                                             input numbers
+1f523                                             input symbols
+1f524                                             input latin letters
+1f191                                             CL button
+1f192                                             COOL button
+1f193                                             FREE button
+2139-fe0f                                         information
+1f194                                             ID button
+24c2-fe0f                                         circled M
+1f195                                             NEW button
+1f196                                             NG button
+1f197                                             OK button
+1f17f-fe0f                                        P button
+1f198                                             SOS button
+1f199                                             UP! button
+1f19a                                             VS button
+1f534                                             red circle
+1f7e0                                             orange circle
+1f7e1                                             yellow circle
+1f7e2                                             green circle
+1f535                                             blue circle
+1f7e3                                             purple circle
+1f7e4                                             brown circle
+26ab                                              black circle
+26aa                                              white circle
+1f7e5                                             red square
+1f7e7                                             orange square
+1f7e8                                             yellow square
+1f7e9                                             green square
+1f7e6                                             blue square
+1f7ea                                             purple square
+1f7eb                                             brown square
+2b1b                                              black large square
+2b1c                                              white large square
+25fc-fe0f                                         black medium square
+25fb-fe0f                                         white medium square
+25fe                                              black medium-small square
+25fd                                              white medium-small square
+25aa-fe0f                                         black small square
+25ab-fe0f                                         white small square
+1f536                                             large orange diamond
+1f537                                             large blue diamond
+1f538                                             small orange diamond
+1f539                                             small blue diamond
+1f53a                                             red triangle pointed up
+1f53b                                             red triangle pointed down
+1f4a0                                             diamond with a dot
+1f518                                             radio button
+1f533                                             white square button
+1f532                                             black square button
+1f3c1                                             chequered flag
+1f6a9                                             triangular flag
+1f38c                                             crossed flags
+1f3f4                                             black flag
+1f3f3-fe0f                                        white flag
+1f3f3-fe0f-200d-1f308                             rainbow flag
+1f1e6-1f1e8                                       flag: Ascension Island
+1f1e6-1f1e9                                       flag: Andorra
+1f1e6-1f1ea                                       flag: United Arab Emirates
+1f1e6-1f1eb                                       flag: Afghanistan
+1f1e6-1f1ec                                       flag: Antigua & Barbuda
+1f1e6-1f1ee                                       flag: Anguilla
+1f1e6-1f1f1                                       flag: Albania
+1f1e6-1f1f2                                       flag: Armenia
+1f1e6-1f1f4                                       flag: Angola
+1f1e6-1f1f6                                       flag: Antarctica
+1f1e6-1f1f7                                       flag: Argentina
+1f1e6-1f1f8                                       flag: American Samoa
+1f1e6-1f1f9                                       flag: Austria
+1f1e6-1f1fa                                       flag: Australia
+1f1e6-1f1fc                                       flag: Aruba
+1f1e6-1f1ff                                       flag: Azerbaijan
+1f1e7-1f1e6                                       flag: Bosnia & Herzegovina
+1f1e7-1f1e7                                       flag: Barbados
+1f1e7-1f1e9                                       flag: Bangladesh
+1f1e7-1f1ea                                       flag: Belgium
+1f1e7-1f1eb                                       flag: Burkina Faso
+1f1e7-1f1ec                                       flag: Bulgaria
+1f1e7-1f1ed                                       flag: Bahrain
+1f1e7-1f1ee                                       flag: Burundi
+1f1e7-1f1ef                                       flag: Benin
+1f1e7-1f1f2                                       flag: Bermuda
+1f1e7-1f1f3                                       flag: Brunei
+1f1e7-1f1f4                                       flag: Bolivia
+1f1e7-1f1f6                                       flag: Caribbean Netherlands
+1f1e7-1f1f7                                       flag: Brazil
+1f1e7-1f1f8                                       flag: Bahamas
+1f1e7-1f1f9                                       flag: Bhutan
+1f1e7-1f1fb                                       flag: Bouvet Island
+1f1e7-1f1fc                                       flag: Botswana
+1f1e7-1f1fe                                       flag: Belarus
+1f1e7-1f1ff                                       flag: Belize
+1f1e8-1f1e6                                       flag: Canada
+1f1e8-1f1e9                                       flag: Congo - Kinshasa
+1f1e8-1f1eb                                       flag: Central African Republic
+1f1e8-1f1ec                                       flag: Congo - Brazzaville
+1f1e8-1f1ed                                       flag: Switzerland
+1f1e8-1f1f0                                       flag: Cook Islands
+1f1e8-1f1f1                                       flag: Chile
+1f1e8-1f1f2                                       flag: Cameroon
+1f1e8-1f1f3                                       flag: China
+1f1e8-1f1f4                                       flag: Colombia
+1f1e8-1f1f5                                       flag: Clipperton Island
+1f1e8-1f1f7                                       flag: Costa Rica
+1f1e8-1f1fa                                       flag: Cuba
+1f1e8-1f1fb                                       flag: Cape Verde
+1f1e8-1f1fd                                       flag: Christmas Island
+1f1e8-1f1fe                                       flag: Cyprus
+1f1e8-1f1ff                                       flag: Czechia
+1f1e9-1f1ea                                       flag: Germany
+1f1e9-1f1ec                                       flag: Diego Garcia
+1f1e9-1f1ef                                       flag: Djibouti
+1f1e9-1f1f0                                       flag: Denmark
+1f1e9-1f1f2                                       flag: Dominica
+1f1e9-1f1f4                                       flag: Dominican Republic
+1f1e9-1f1ff                                       flag: Algeria
+1f1ea-1f1e6                                       flag: Ceuta & Melilla
+1f1ea-1f1e8                                       flag: Ecuador
+1f1ea-1f1ea                                       flag: Estonia
+1f1ea-1f1ec                                       flag: Egypt
+1f1ea-1f1ed                                       flag: Western Sahara
+1f1ea-1f1f7                                       flag: Eritrea
+1f1ea-1f1f8                                       flag: Spain
+1f1ea-1f1f9                                       flag: Ethiopia
+1f1ea-1f1fa                                       flag: European Union
+1f1eb-1f1ee                                       flag: Finland
+1f1eb-1f1ef                                       flag: Fiji
+1f1eb-1f1f0                                       flag: Falkland Islands
+1f1eb-1f1f2                                       flag: Micronesia
+1f1eb-1f1f4                                       flag: Faroe Islands
+1f1eb-1f1f7                                       flag: France
+1f1ec-1f1e6                                       flag: Gabon
+1f1ec-1f1e7                                       flag: United Kingdom
+1f1ec-1f1e9                                       flag: Grenada
+1f1ec-1f1ea                                       flag: Georgia
+1f1ec-1f1eb                                       flag: French Guiana
+1f1ec-1f1ec                                       flag: Guernsey
+1f1ec-1f1ed                                       flag: Ghana
+1f1ec-1f1ee                                       flag: Gibraltar
+1f1ec-1f1f1                                       flag: Greenland
+1f1ec-1f1f2                                       flag: Gambia
+1f1ec-1f1f3                                       flag: Guinea
+1f1ec-1f1f5                                       flag: Guadeloupe
+1f1ec-1f1f6                                       flag: Equatorial Guinea
+1f1ec-1f1f7                                       flag: Greece
+1f1ec-1f1f8                                       flag: South Georgia & South Sandwich Islands
+1f1ec-1f1f9                                       flag: Guatemala
+1f1ec-1f1fa                                       flag: Guam
+1f1ec-1f1fc                                       flag: Guinea-Bissau
+1f1ec-1f1fe                                       flag: Guyana
+1f1ed-1f1f0                                       flag: Hong Kong SAR China
+1f1ed-1f1f2                                       flag: Heard & McDonald Islands
+1f1ed-1f1f3                                       flag: Honduras
+1f1ed-1f1f7                                       flag: Croatia
+1f1ed-1f1f9                                       flag: Haiti
+1f1ed-1f1fa                                       flag: Hungary
+1f1ee-1f1e8                                       flag: Canary Islands
+1f1ee-1f1e9                                       flag: Indonesia
+1f1ee-1f1ea                                       flag: Ireland
+1f1ee-1f1f1                                       flag: Israel
+1f1ee-1f1f2                                       flag: Isle of Man
+1f1ee-1f1f3                                       flag: India
+1f1ee-1f1f4                                       flag: British Indian Ocean Territory
+1f1ee-1f1f6                                       flag: Iraq
+1f1ee-1f1f7                                       flag: Iran
+1f1ee-1f1f8                                       flag: Iceland
+1f1ee-1f1f9                                       flag: Italy
+1f1ef-1f1ea                                       flag: Jersey
+1f1ef-1f1f2                                       flag: Jamaica
+1f1ef-1f1f4                                       flag: Jordan
+1f1ef-1f1f5                                       flag: Japan
+1f1f0-1f1ea                                       flag: Kenya
+1f1f0-1f1ec                                       flag: Kyrgyzstan
+1f1f0-1f1ed                                       flag: Cambodia
+1f1f0-1f1ee                                       flag: Kiribati
+1f1f0-1f1f2                                       flag: Comoros
+1f1f0-1f1f3                                       flag: St. Kitts & Nevis
+1f1f0-1f1f5                                       flag: North Korea
+1f1f0-1f1f7                                       flag: South Korea
+1f1f0-1f1fc                                       flag: Kuwait
+1f1f0-1f1fe                                       flag: Cayman Islands
+1f1f0-1f1ff                                       flag: Kazakhstan
+1f1f1-1f1e6                                       flag: Laos
+1f1f1-1f1e7                                       flag: Lebanon
+1f1f1-1f1e8                                       flag: St. Lucia
+1f1f1-1f1ee                                       flag: Liechtenstein
+1f1f1-1f1f0                                       flag: Sri Lanka
+1f1f1-1f1f7                                       flag: Liberia
+1f1f1-1f1f8                                       flag: Lesotho
+1f1f1-1f1f9                                       flag: Lithuania
+1f1f1-1f1fa                                       flag: Luxembourg
+1f1f1-1f1fb                                       flag: Latvia
+1f1f1-1f1fe                                       flag: Libya
+1f1f2-1f1e6                                       flag: Morocco
+1f1f2-1f1e8                                       flag: Monaco
+1f1f2-1f1e9                                       flag: Moldova
+1f1f2-1f1ea                                       flag: Montenegro
+1f1f2-1f1eb                                       flag: St. Martin
+1f1f2-1f1ec                                       flag: Madagascar
+1f1f2-1f1ed                                       flag: Marshall Islands
+1f1f2-1f1f0                                       flag: North Macedonia
+1f1f2-1f1f1                                       flag: Mali
+1f1f2-1f1f3                                       flag: Mongolia
+1f1f2-1f1f4                                       flag: Macao SAR China
+1f1f2-1f1f5                                       flag: Northern Mariana Islands
+1f1f2-1f1f6                                       flag: Martinique
+1f1f2-1f1f7                                       flag: Mauritania
+1f1f2-1f1f8                                       flag: Montserrat
+1f1f2-1f1f9                                       flag: Malta
+1f1f2-1f1fa                                       flag: Mauritius
+1f1f2-1f1fb                                       flag: Maldives
+1f1f2-1f1fc                                       flag: Malawi
+1f1f2-1f1fd                                       flag: Mexico
+1f1f2-1f1fe                                       flag: Malaysia
+1f1f2-1f1ff                                       flag: Mozambique
+1f1f3-1f1e6                                       flag: Namibia
+1f1f3-1f1e8                                       flag: New Caledonia
+1f1f3-1f1ea                                       flag: Niger
+1f1f3-1f1eb                                       flag: Norfolk Island
+1f1f3-1f1ec                                       flag: Nigeria
+1f1f3-1f1ee                                       flag: Nicaragua
+1f1f3-1f1f1                                       flag: Netherlands
+1f1f3-1f1f4                                       flag: Norway
+1f1f3-1f1f5                                       flag: Nepal
+1f1f3-1f1f7                                       flag: Nauru
+1f1f3-1f1fa                                       flag: Niue
+1f1f3-1f1ff                                       flag: New Zealand
+1f1f4-1f1f2                                       flag: Oman
+1f1f5-1f1e6                                       flag: Panama
+1f1f5-1f1ea                                       flag: Peru
+1f1f5-1f1eb                                       flag: French Polynesia
+1f1f5-1f1ec                                       flag: Papua New Guinea
+1f1f5-1f1ed                                       flag: Philippines
+1f1f5-1f1f0                                       flag: Pakistan
+1f1f5-1f1f1                                       flag: Poland
+1f1f5-1f1f2                                       flag: St. Pierre & Miquelon
+1f1f5-1f1f3                                       flag: Pitcairn Islands
+1f1f5-1f1f7                                       flag: Puerto Rico
+1f1f5-1f1f8                                       flag: Palestinian Territories
+1f1f5-1f1f9                                       flag: Portugal
+1f1f5-1f1fc                                       flag: Palau
+1f1f5-1f1fe                                       flag: Paraguay
+1f1f6-1f1e6                                       flag: Qatar
+1f1f7-1f1f4                                       flag: Romania
+1f1f7-1f1f8                                       flag: Serbia
+1f1f7-1f1fa                                       flag: Russia
+1f1f7-1f1fc                                       flag: Rwanda
+1f1f8-1f1e6                                       flag: Saudi Arabia
+1f1f8-1f1e7                                       flag: Solomon Islands
+1f1f8-1f1e8                                       flag: Seychelles
+1f1f8-1f1e9                                       flag: Sudan
+1f1f8-1f1ea                                       flag: Sweden
+1f1f8-1f1ec                                       flag: Singapore
+1f1f8-1f1ed                                       flag: St. Helena
+1f1f8-1f1ee                                       flag: Slovenia
+1f1f8-1f1ef                                       flag: Svalbard & Jan Mayen
+1f1f8-1f1f0                                       flag: Slovakia
+1f1f8-1f1f1                                       flag: Sierra Leone
+1f1f8-1f1f2                                       flag: San Marino
+1f1f8-1f1f3                                       flag: Senegal
+1f1f8-1f1f4                                       flag: Somalia
+1f1f8-1f1f7                                       flag: Suriname
+1f1f8-1f1f8                                       flag: South Sudan
+1f1f8-1f1fb                                       flag: El Salvador
+1f1f8-1f1fd                                       flag: Sint Maarten
+1f1f8-1f1fe                                       flag: Syria
+1f1f8-1f1ff                                       flag: Eswatini
+1f1f9-1f1e6                                       flag: Tristan da Cunha
+1f1f9-1f1e8                                       flag: Turks & Caicos Islands
+1f1f9-1f1e9                                       flag: Chad
+1f1f9-1f1eb                                       flag: French Southern Territories
+1f1f9-1f1ec                                       flag: Togo
+1f1f9-1f1ed                                       flag: Thailand
+1f1f9-1f1ef                                       flag: Tajikistan
+1f1f9-1f1f0                                       flag: Tokelau
+1f1f9-1f1f1                                       flag: Timor-Leste
+1f1f9-1f1f2                                       flag: Turkmenistan
+1f1f9-1f1f3                                       flag: Tunisia
+1f1f9-1f1f4                                       flag: Tonga
+1f1f9-1f1f7                                       flag: Turkey
+1f1f9-1f1f9                                       flag: Trinidad & Tobago
+1f1f9-1f1fb                                       flag: Tuvalu
+1f1f9-1f1fc                                       flag: Taiwan
+1f1f9-1f1ff                                       flag: Tanzania
+1f1fa-1f1e6                                       flag: Ukraine
+1f1fa-1f1ec                                       flag: Uganda
+1f1fa-1f1f2                                       flag: U.S. Outlying Islands
+1f1fa-1f1f3                                       flag: United Nations
+1f1fa-1f1f8                                       flag: United States
+1f1fa-1f1fe                                       flag: Uruguay
+1f1fa-1f1ff                                       flag: Uzbekistan
+1f1fb-1f1e6                                       flag: Vatican City
+1f1fb-1f1e8                                       flag: St. Vincent & Grenadines
+1f1fb-1f1ea                                       flag: Venezuela
+1f1fb-1f1ec                                       flag: British Virgin Islands
+1f1fb-1f1ee                                       flag: U.S. Virgin Islands
+1f1fb-1f1f3                                       flag: Vietnam
+1f1fb-1f1fa                                       flag: Vanuatu
+1f1fc-1f1eb                                       flag: Wallis & Futuna
+1f1fc-1f1f8                                       flag: Samoa
+1f1fd-1f1f0                                       flag: Kosovo
+1f1fe-1f1ea                                       flag: Yemen
+1f1fe-1f1f9                                       flag: Mayotte
+1f1ff-1f1e6                                       flag: South Africa
+1f1ff-1f1f2                                       flag: Zambia
+1f1ff-1f1fc                                       flag: Zimbabwe
+1f3f4-e0067-e0062-e0065-e006e-e0067-e007f         flag: England
+1f3f4-e0067-e0062-e0073-e0063-e0074-e007f         flag: Scotland
+1f3f4-e0067-e0062-e0077-e006c-e0073-e007f         flag: Wales

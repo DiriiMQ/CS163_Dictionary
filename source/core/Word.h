@@ -40,9 +40,15 @@ struct Word {
         imagePath = "Null";
         IsType = false;
     }
+<<<<<<< Updated upstream
 
     // some parameters might be empty strings, so please don't assign if it's empty
     void setData(std::wstring type, std::wstring definition, std::wstring example, std::wstring phrase);
+=======
+    void setData(std::wstring word, std::wstring definition, std::wstring example, std::wstring phrase,std::wstring type);
+
+
+>>>>>>> Stashed changes
 };
 
 void writeStringVectorToFile(const std::vector<std::wstring>& strings, ofstream& outputFile);
