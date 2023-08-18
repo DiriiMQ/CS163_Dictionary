@@ -213,6 +213,8 @@ void Window::update() {
             }
             this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
             this->frameBoard.reset();
+            this->wordAdd = "";
+            this->definitionAdd = "";
             break;
         }
     }
@@ -259,6 +261,8 @@ void Window::reset() {
     // For Quiz and DataSwitch
     this->DataSwitchButton.changeIndex(0);
     this->QuizButton.changeIndex(0);
+    this->wordAdd = "";
+    this->definitionAdd = "";
 }
 
 void Window::updateOperationButtons() {
@@ -286,6 +290,8 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
         if (this->operationButtons[i].isClicked()) {
             std::cout << "LOG: Operation button " << i << " is clicked" << std::endl;
             this->frameBoard.reset();
+            this->wordAdd = "";
+            this->definitionAdd = "";
             this->isShowingWord = false;
             if (i == (int)Constants::Screen::operationBtn::ADD) {
                 this->frameBoard.setBlocks({
@@ -373,6 +379,10 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
         std::cout << "LOG: Search box choice: " << choice << std::endl;
         // get tu list ra lay result show nguoc ra frameBoard
         this->isShowingWord = true;
+        this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
+        for (int i = 0; i < 3; ++i) {
+            this->operationButtons[i].setChosen(false);
+        }
         this->frameBoard.reset();
         this->currentWord = this->api->apiWord.getWord(this->currentDict, this->_wordList[choice]);
         std::wcout << "LOG: currentWord: " << this->currentWord.word << std::endl;
