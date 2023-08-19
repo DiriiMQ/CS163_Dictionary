@@ -100,6 +100,7 @@ void Window::init() {
             Constants::Directories::DMQ::StarPress.end()),
         Star
     );
+    this->quizScene = QuizScene(&font, api, &currentDict, &activeMenu);
   //  this->firstCheck = true;
 }
 
@@ -125,23 +126,30 @@ void Window::draw() {
         DrawRectangleRounded(this->mainInfoBG, CORNER_RADIUS, 0, WHITE);
         this->frameBoard.draw();
 
-        if (this->activeMenu != (int)Constants::Screen::menuBtn::FAVOURITE) {
-            for (auto& operationButton : this->operationButtons) {
-                operationButton.draw();
-            }
-            if (this->isShowingWord) {
-                // draw star here
-                this->StarButton.draw();
-            }
-            this->searchBox.draw();
-            if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
+        if (this->isShowingQuiz) {
+            // std::cout << "LOG: Draw quiz scene" << std::endl;
+            this->quizScene.draw();
+        } else switch (this->activeMenu) {
+            case (int)Constants::Screen::menuBtn::WORD:
+            case (int)Constants::Screen::menuBtn::DEFINITION:
+                for (auto& operationButton : this->operationButtons) {
+                    operationButton.draw();
+                }
+                if (this->isShowingWord) {
+                    // draw star here
+                    this->StarButton.draw();
+                }
+                this->searchBox.draw();
+                if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
+                    this->saveButton.draw();
+                }
+                break;
+
+            case (int)Constants::Screen::menuBtn::FAVOURITE:
+                // Draw favourite from DMQ
+                this->favourite.draw();
                 this->saveButton.draw();
-            }
-        }
-        else {
-            // Draw favourite from DMQ
-            this->favourite.draw();
-            this->saveButton.draw();
+                break;
         }
     }
 
@@ -150,6 +158,7 @@ void Window::draw() {
     this->QuizButton.draw();
 
     this->resetButton.draw();
+        // this->frameBoard.draw();
 
     // this->testButtonQuiz.draw();
 }
@@ -168,26 +177,33 @@ void Window::handleEvents() {
 
     if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
         this->frameBoard.handleEvents();
-        if (this->activeMenu != (int)Constants::Screen::menuBtn::FAVOURITE) {
-            for (auto& operationButton : this->operationButtons) {
-                operationButton.handleEvents();
-            }
 
-            if (this->isShowingWord) {
-                // handle star here
-                this->StarButton.handleEvents();
-            }
+        if (this->isShowingQuiz) {
+            this->quizScene.handleEvents();
+        } else switch (this->activeMenu) {
+            case (int)Constants::Screen::menuBtn::WORD:
+            case (int)Constants::Screen::menuBtn::DEFINITION:
+                for (auto& operationButton : this->operationButtons) {
+                    operationButton.handleEvents();
+                }
 
-            this->searchBox.handleEvents();
+                if (this->isShowingWord) {
+                    // handle star here
+                    this->StarButton.handleEvents();
+                }
 
-            if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
+                this->searchBox.handleEvents();
+
+                if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
+                    this->saveButton.handleEvents();
+                }
+                break;
+
+            case (int)Constants::Screen::menuBtn::FAVOURITE:
+                // Handle favourite from DMQ
+                this->favourite.handleEvents();
                 this->saveButton.handleEvents();
-            }
-        }
-        else {
-            // Handle favourite from DMQ
-            this->favourite.handleEvents();
-            this->saveButton.handleEvents();
+                break;
         }
     }
 
@@ -202,14 +218,18 @@ void Window::update() {
     for (auto& menuButton : this->menuButtons) {
         menuButton.update();
     }
+    
+    this->resetButton.update();
+
+    this->updateMenuMode();
 
     // For Quiz & Type of Dict (remember to set this->activeMenu to NONE when click on Quiz)
     this->DataSwitchButton.update();
     this->QuizButton.update();
-
-    this->resetButton.update();
-
-    this->updateMenuMode();
+    if (this->QuizButton.getClicked() != this->isShowingQuiz) {
+        this->resetMenuMode();
+        this->isShowingQuiz = !this->isShowingQuiz;
+    }
 
     switch (this->activeMenu) {
         case (int)Constants::Screen::menuBtn::WORD:
@@ -219,10 +239,6 @@ void Window::update() {
         
         case (int)Constants::Screen::menuBtn::FAVOURITE:
             this->updateModeFavorite();
-            break;
-
-        case (int)Constants::Screen::menuBtn::QUIZ:
-            
             break;
     }
 
@@ -244,6 +260,8 @@ void Window::updateMenuMode() {
             this->resetMenuMode();
             this->menuButtons[i].setChosen(true);
             this->activeMenu = i;
+            if (this->isShowingQuiz)
+                this->quizScene.restart();
             break;
         }
     }
@@ -326,6 +344,11 @@ void Window::updateOperationButtons() {
 }
 
 void Window::updateModeNonFavorite() { // Update for Search Mode
+    if (this->isShowingQuiz) {
+        this->quizScene.update();
+        return;
+    }
+
     for (auto& operationButton : this->operationButtons)
         operationButton.update();
     if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
@@ -363,6 +386,7 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
     this->updateSearchBoxEvent();
 
     this->updateOperationButtons();
+    this->frameBoard.update(); //?
 }
 
 void Window::updateModeFavorite() {
@@ -458,6 +482,7 @@ void Window::createLines() {
     for (auto& i : this->lines) {
         _blocks.emplace_back("", &i.first);
     }
+    // std::cout << "LOG: first of _blocks: " << *_blocks[1].second << std::endl;
     this->frameBoard.setBlocks(_blocks);
 }
 
@@ -467,10 +492,17 @@ void Window::saveFrameBoard() {
         std::cout << "LOG: WordAdd: " << this->wordAdd << std::endl;
         std::cout << "LOG: DefinitionAdd: " << this->definitionAdd << std::endl;
         Word newWord;
-        newWord.word = Utils::UTF8ToWString(this->wordAdd);
-        newWord.worddef.resize(1);
-        newWord.worddef[0].definition.resize(1);
-        newWord.worddef[0].definition[0].meaning = Utils::UTF8ToWString(this->definitionAdd);
+        newWord.setData(
+            Utils::UTF8ToWString(this->wordAdd), 
+            Utils::UTF8ToWString(this->definitionAdd), 
+            std::wstring(L""), 
+            std::wstring(L""), 
+            std::wstring(L"")
+        );
+        // newWord.word = Utils::UTF8ToWString(this->wordAdd);
+        // newWord.worddef.resize(1);
+        // newWord.worddef[0].definition.resize(1);
+        // newWord.worddef[0].definition[0].meaning = Utils::UTF8ToWString(this->definitionAdd);
 
         this->api->apiWord.addWord(this->currentDict, newWord);
     }
@@ -523,8 +555,8 @@ void Window::resetMenuMode() {
     this->frameBoard.reset();
     for (int i = 0; i < 3; ++i) 
         this->menuButtons[i].setChosen(false);
-    this->resetOperationMode();
     this->searchBox.reset();
+    this->resetOperationMode();
 }
 
 void Window::resetOperationMode() {

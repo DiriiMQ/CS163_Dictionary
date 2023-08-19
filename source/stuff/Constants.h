@@ -30,7 +30,6 @@ namespace Constants {
             WORD,
             DEFINITION,
             FAVOURITE,
-            QUIZ,
             NONE
         };
 

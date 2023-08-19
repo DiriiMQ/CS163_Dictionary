@@ -20,6 +20,7 @@ void Line::draw() {
                    FONT_SIZE,
                    SPACING,
                    BLACK);
+        // std::cout << "LOG: FrameBoard: Line: buffers[" << i << "]: " << this->buffers[i] << "\n";
     }
 }
 
@@ -182,7 +183,7 @@ FrameBoard::FrameBoard(Rectangle infoFrame, Font *font) {
 
 void FrameBoard::draw() {
     if (this->blocks.empty()) return;
-//    std::cout << "LOG: FrameBoard: currentBlock: " << currentBlock << "\n";
+    // std::cout << "LOG: FrameBoard: size of blocks: " << this->blocks.size() << "\n";
     for (auto& i : this->blocks) {
         i.draw();
     }

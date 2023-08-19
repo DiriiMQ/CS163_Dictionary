@@ -13,7 +13,8 @@
 #include "stuff/SearchBox.h"
 #include "stuff/FrameBoard.h"
 #include "core/Api.h"
-#include <draw/Favorite.h>
+#include "draw/Favorite.h"
+#include "draw/QuizScene.h"
 
 class Window {
 private:
@@ -40,6 +41,8 @@ private:
     bool isQuizActived = false;
     Constants::TypeDict currentDict = (Constants::TypeDict)0;
     ButtonImage DataSwitchButton, QuizButton, StarButton;
+    QuizScene quizScene;
+    bool isShowingQuiz = false;
     // For Star Button (in search)
     // bool firstCheck;
 
