@@ -168,6 +168,7 @@ bool ApiFavorite::removeFavorite(Constants::TypeDict typeDict, std::wstring word
     return false;
 }
 std::vector<wstring> ApiFavorite::getFavorite(Constants::TypeDict typeDict) {
+    if (MainDictionary.dicts[static_cast<int>(typeDict)].FavoriteList.size()==1) return vector<wstring>();
     return MainDictionary.dicts[static_cast<int>(typeDict)].FavoriteList;
 }
 
@@ -175,12 +176,22 @@ void ApiFavorite::resetFavorite(Constants::TypeDict typeDict) {
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     dictionary.FavoriteList.clear();
 }
+bool ApiWord::isFavorite(Constants::TypeDict typeDict, std::wstring word){
+    Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
+    for (int i = 0; i < dictionary.FavoriteList.size(); i++) {
+        if (dictionary.FavoriteList[i] == word) {
+            return true;
+        }
+    }
+    return false;
+}
 Word ApiWord::getWord(Constants::TypeDict typeDict, std::wstring word) {
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     if (dictionary.Map.find(word)) {
         int index = dictionary.Map[word];
         return dictionary.words[index];
     }
+    dictionary.HistoryList.push_back(word);
     return Word();
 }
 
@@ -256,6 +267,7 @@ std::vector<wstring> ApiSearch::getAutoCompleteListForDefinition(Constants::Type
     return move(result);
 }
 std::vector<wstring> ApiSearch::getHistory(Constants::TypeDict typeDict) {
+    if (MainDictionary.dicts[static_cast<int>(typeDict)].HistoryList.size()==1) return vector<wstring>();
     return MainDictionary.dicts[static_cast<int>(typeDict)].HistoryList;
 }
 
@@ -307,8 +319,8 @@ void Api::resetDict(Constants::TypeDict typeDict) {
     if (typeDict == Constants::TypeDict::EN_VI) {
         filename = "../assets/data/Anh_Viet_Original.dat";
     }
-    else if (typeDict == Constants::TypeDict::En_En) {
-        filename = "../assets/data/Anh_Anh_Original.dat";
+    else if (typeDict == Constants::TypeDict::EN_EN) {
+        filename = "..\\assets\\data\\Anh_Anh_Original.dat";
     }
     else {
         filename = "../assets/data/Viet_Anh_Original.dat";
@@ -319,8 +331,8 @@ void Api::resetDict(Constants::TypeDict typeDict) {
     if (typeDict == Constants::TypeDict::EN_VI) {
         newfilename = "../assets/data/Anh_Viet.dat";
     }
-    else if (typeDict == Constants::TypeDict::En_En) {
-        newfilename = "../assets/data/Anh_Anh.dat";
+    else if (typeDict == Constants::TypeDict::EN_EN) {
+        newfilename = "..\\assets\\data\\Anh_Anh.dat";
     }
     else {
         newfilename = "../assets/data/Viet_Anh.dat";

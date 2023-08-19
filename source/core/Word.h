@@ -32,15 +32,17 @@ struct Type {
 struct Word {
     wstring word;
     wstring pronounce;
+    string imagePath;
     vector<Type> worddef;
     bool IsType;
     Word() {
         pronounce = L"Null";
+        imagePath = "Null";
         IsType = false;
     }
 
-
-
+    // some parameters might be empty strings, so please don't assign if it's empty
+    void setData(std::wstring type, std::wstring definition, std::wstring example, std::wstring phrase);
 };
 
 void writeStringVectorToFile(const std::vector<std::wstring>& strings, ofstream& outputFile);

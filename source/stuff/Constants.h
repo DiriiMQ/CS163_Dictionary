@@ -15,7 +15,8 @@ namespace Constants {
     enum class TypeDict {
         EN_VI,
         VI_EN,
-        En_En
+        EN_EN,
+        EN_EMOJI
     };
 
     namespace Screen {
