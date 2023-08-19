@@ -29,8 +29,9 @@ private:
     static constexpr int SPACING = 1;
     std::vector<std::wstring> FavouriteList;
     int tmpmode;
-    ButtonImage* Starr;
+    vector <ButtonImage> Starr;
     Api* api;
+    ButtonImage form;
 
 public:
     Favourite() = default;

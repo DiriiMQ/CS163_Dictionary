@@ -267,6 +267,7 @@ void Window::reset() {
     this->resetButton.setChosen(false);
     this->searchBox.reset();
     this->frameBoard.reset();
+    this->favourite.reset();
     this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
     this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
     // For Quiz and DataSwitch
