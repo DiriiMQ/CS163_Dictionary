@@ -209,43 +209,21 @@ void Window::update() {
 
     this->resetButton.update();
 
-    for (int i = 0; i < 3; ++i) {
-        if (this->menuButtons[i].isClicked()) {
-            std::cout << "LOG: Menu button " << i << " is clicked" << std::endl;
-            this->menuButtons[i].setChosen(true);
-            this->activeMenu = i;
-            this->isShowingWord = false;
-            for (int j = 0; j < 3; ++j) {
-                if (j != i) {
-                    this->menuButtons[j].setChosen(false);
-                }
-                this->operationButtons[j].setChosen(false);
-            }
-            this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
-            this->frameBoard.reset();
-            this->wordAdd = "";
-            this->definitionAdd = "";
-            break;
-        }
-    }
+    this->updateMenuMode();
 
-    if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
-        if (this->activeMenu != (int)Constants::Screen::menuBtn::FAVOURITE) {
+    switch (this->activeMenu) {
+        case (int)Constants::Screen::menuBtn::WORD:
+        case (int)Constants::Screen::menuBtn::DEFINITION:
             this->updateModeNonFavorite();
-            
-        }
-        else {
-            // Update favourite from DMQ
-            //  this->favourite.update();
+            break;
+        
+        case (int)Constants::Screen::menuBtn::FAVOURITE:
+            this->updateModeFavorite();
+            break;
 
-            this->saveButton.update();
-            if (this->saveButton.isClicked()) {
-                //                this->saveFrameBoard();
-                this->favourite.removeWhenSave();
-                this->favourite.update();
-            }
-        }
-        this->frameBoard.update();
+        case (int)Constants::Screen::menuBtn::QUIZ:
+            
+            break;
     }
 
     if (this->resetButton.isClicked()) {
@@ -259,7 +237,65 @@ void Window::update() {
 //     }
 }
 
-void Window::reset() {
+void Window::updateMenuMode() {
+    for (int i = 0; i < 3; ++i) {
+        if (this->menuButtons[i].isClicked()) {
+            std::cout << "LOG: Menu button " << i << " is clicked" << std::endl;
+            this->resetMenuMode();
+            this->menuButtons[i].setChosen(true);
+            this->activeMenu = i;
+            break;
+        }
+    }
+}
+
+void Window::updateOperationMode() {
+    for (int i = 0; i < 3; ++i) {
+        if (this->operationButtons[i].isClicked()) {
+            std::cout << "LOG: Operation button " << i << " is clicked" << std::endl;
+            this->resetOperationMode();
+
+            this->operationButtons[i].setChosen(true);
+            this->activeOperation = i;
+
+            if (i == (int)Constants::Screen::operationBtn::ADD) {
+                this->frameBoard.setBlocks({
+                    {"Word: ", &this->wordAdd},
+                    {"Definition: ", &this->definitionAdd}
+                    });
+                this->frameBoard.setEditLines({ 0, 1 });
+            }
+            else if (i == (int)Constants::Screen::operationBtn::EDIT) {
+                // set perm edit
+                std::vector<std::pair<std::string, std::string*>> _blocks;
+                for (auto& i : this->lines) {
+                    _blocks.emplace_back("", &i.first);
+                }
+                this->frameBoard.setBlocks(_blocks);
+
+                std::vector<int> editLines;
+                for (int j = 0; j < this->lines.size(); ++j) {
+                    if (this->lines[j].second) {
+                        editLines.push_back(j);
+                    }
+                }
+                this->frameBoard.setEditLines(editLines);
+
+            }
+            else if (i == (int)Constants::Screen::operationBtn::REMOVE) {
+                this->frameBoard.setBlocks({
+                    {"", &this->REMOVE_NOTICE}
+                    });
+                this->api->apiWord.removeWord(this->currentDict, this->currentWord.word);
+                this->currentWord = Word();
+            }
+            break;
+        }
+    }
+}
+
+void Window::reset()
+{
     for (int i = 0; i < 3; ++i) {
         this->menuButtons[i].setChosen(false);
         this->operationButtons[i].setChosen(false);
@@ -299,54 +335,7 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
         }
     }
 
-    for (int i = 0; i < 3; ++i) {
-        if (this->operationButtons[i].isClicked()) {
-            std::cout << "LOG: Operation button " << i << " is clicked" << std::endl;
-            this->frameBoard.reset();
-            this->wordAdd = "";
-            this->definitionAdd = "";
-            this->isShowingWord = false;
-            if (i == (int)Constants::Screen::operationBtn::ADD) {
-                this->frameBoard.setBlocks({
-                    {"Word: ", &this->wordAdd},
-                    {"Definition: ", &this->definitionAdd}
-                    });
-                this->frameBoard.setEditLines({ 0, 1 });
-            }
-            else if (i == (int)Constants::Screen::operationBtn::EDIT) {
-                // set perm edit
-                std::vector<std::pair<std::string, std::string*>> _blocks;
-                for (auto& i : this->lines) {
-                    _blocks.emplace_back("", &i.first);
-                }
-                this->frameBoard.setBlocks(_blocks);
-
-                std::vector<int> editLines;
-                for (int j = 0; j < this->lines.size(); ++j) {
-                    if (this->lines[j].second) {
-                        editLines.push_back(j);
-                    }
-                }
-                this->frameBoard.setEditLines(editLines);
-
-            }
-            else if (i == (int)Constants::Screen::operationBtn::REMOVE) {
-                this->frameBoard.setBlocks({
-                    {"", &this->REMOVE_NOTICE}
-                    });
-                this->api->apiWord.removeWord(this->currentDict, this->currentWord.word);
-                this->currentWord = Word();
-            }
-            this->operationButtons[i].setChosen(true);
-            this->activeOperation = i;
-            for (int j = 0; j < 3; ++j) {
-                if (j != i) {
-                    this->operationButtons[j].setChosen(false);
-                }
-            }
-            break;
-        }
-    }
+    this->updateOperationMode();
 
     // for Star
     if (this->isShowingWord) {
@@ -370,7 +359,23 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
 
     // Search Box
     this->searchBox.update();
+    this->updateSearchBoxEvent();
 
+    this->updateOperationButtons();
+}
+
+void Window::updateModeFavorite() {
+    // Update favourite from DMQ
+    //  this->favourite.update();
+
+    this->saveButton.update();
+    if (this->saveButton.isClicked()) {
+        this->favourite.removeWhenSave();
+        this->favourite.update();
+    }
+}
+
+void Window::updateSearchBoxEvent() {
     // update searchBox
     std::string _searchText = this->searchBox.getText();
     if (_searchText != this->currentSearch) {
@@ -419,8 +424,6 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
         std::wcout << "LOG: currentWord: " << this->currentWord.word << std::endl;
         this->createLines();
     }
-
-    this->updateOperationButtons();
 }
 
 void Window::createLines() {
@@ -512,4 +515,24 @@ void Window::saveFrameBoard() {
         }
         this->api->apiWord.addWord(this->currentDict, this->currentWord);
     }
+}
+
+void Window::resetMenuMode() {
+    this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
+    this->frameBoard.reset();
+    for (int i = 0; i < 3; ++i) 
+        this->menuButtons[i].setChosen(false);
+    this->resetOperationMode();
+    this->searchBox.reset();
+}
+
+void Window::resetOperationMode() {
+    this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
+    this->isShowingWord = false;
+
+    this->wordAdd = "";
+    this->definitionAdd = "";
+
+    for (int i = 0; i < 3; ++i) 
+        this->operationButtons[i].setChosen(false);
 }

@@ -34,16 +34,16 @@ void MakeDef(const Word &curWord, Dict& dicts, int del){
         }
 }
 Dicts::Dicts() {
-    string filename1 = "../../../assets/data/Anh_Viet.dat";
-    string filename1_favorite = "../../../assets/data/Anh_Viet_favorite.dat";
-    string filename1_history = "../../../assets/data/Anh_Viet_history.dat";
-    string filename2 = "../../../assets/data/Viet_Anh.dat";
-    string filename2_favorite = "../../../assets/data/Viet_Anh_favorite.dat";
-    string filename2_history = "../../../assets/data/Viet_Anh_history.dat";
-    string filename3 = "../../../assets/data/Anh_Anh.dat";
-    string filename3_favorite = "../../../assets/data/Anh_Anh_favorite.dat";
-    string filename3_history = "../../../assets/data/Anh_Anh_history.dat";
-    string filename4 = "../../../assets/data/emoji.dat";
+    string filename1 = "../assets/data/Anh_Viet.dat";
+    string filename1_favorite = "../assets/data/Anh_Viet_favorite.dat";
+    string filename1_history = "../assets/data/Anh_Viet_history.dat";
+    string filename2 = "../assets/data/Viet_Anh.dat";
+    string filename2_favorite = "../assets/data/Viet_Anh_favorite.dat";
+    string filename2_history = "../assets/data/Viet_Anh_history.dat";
+    string filename3 = "../assets/data/Anh_Anh.dat";
+    string filename3_favorite = "../assets/data/Anh_Anh_favorite.dat";
+    string filename3_history = "../assets/data/Anh_Anh_history.dat";
+    string filename4 = "../assets/data/emoji.dat";
     ifstream wfin;
 
     readbinaryfile(dicts[0].words, filename1);
@@ -121,16 +121,16 @@ Dicts::Dicts() {
     }
 }
 Dicts::~Dicts(){
-    string filename1 = "../../../assets/data/Anh_Viet.dat";
-    string filename1_favorite = "../../../assets/data/Anh_Viet_favorite.dat";
-    string filename1_history = "../../../assets/data/Anh_Viet_history.dat";
-    string filename2 = "../../../assets/data/Viet_Anh.dat";
-    string filename2_favorite = "../../../assets/data/Viet_Anh_favorite.dat";
-    string filename2_history = "../../../assets/data/Viet_Anh_history.dat";
-    string filename3 = "../../../assets/data/Anh_Anh.dat";
-    string filename3_favorite = "../../../assets/data/Anh_Anh_favorite.dat";
-    string filename3_history = "../../../assets/data/Anh_Anh_history.dat";
-    string filename4 = "../../../assets/data/emoji.dat";
+    string filename1 = "../assets/data/Anh_Viet.dat";
+    string filename1_favorite = "../assets/data/Anh_Viet_favorite.dat";
+    string filename1_history = "../assets/data/Anh_Viet_history.dat";
+    string filename2 = "../assets/data/Viet_Anh.dat";
+    string filename2_favorite = "../assets/data/Viet_Anh_favorite.dat";
+    string filename2_history = "../assets/data/Viet_Anh_history.dat";
+    string filename3 = "../assets/data/Anh_Anh.dat";
+    string filename3_favorite = "../assets/data/Anh_Anh_favorite.dat";
+    string filename3_history = "../assets/data/Anh_Anh_history.dat";
+    string filename4 = "../assets/data/emoji.dat";
     writetobinaryfile(dicts[0].words, filename1);
     writetobinaryfile(dicts[1].words, filename2);
     writetobinaryfile(dicts[2].words, filename3);
@@ -324,25 +324,25 @@ void Api::resetDict(Constants::TypeDict typeDict) {
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     string filename;
     if (typeDict == Constants::TypeDict::EN_VI) {
-        filename = "../../../assets/data/Anh_Viet_Original.dat";
+        filename = "../assets/data/Anh_Viet_Original.dat";
     }
     else if (typeDict == Constants::TypeDict::EN_EN) {
         filename = "..\\assets\\data\\Anh_Anh_Original.dat";
     }
     else {
-        filename = "../../../assets/data/Viet_Anh_Original.dat";
+        filename = "../assets/data/Viet_Anh_Original.dat";
     }
     vector<Word> ddictionary;
     readbinaryfile(ddictionary, filename);
     string newfilename;
     if (typeDict == Constants::TypeDict::EN_VI) {
-        newfilename = "../../../assets/data/Anh_Viet.dat";
+        newfilename = "../assets/data/Anh_Viet.dat";
     }
     else if (typeDict == Constants::TypeDict::EN_EN) {
         newfilename = "..\\assets\\data\\Anh_Anh.dat";
     }
     else {
-        newfilename = "../../../assets/data/Viet_Anh.dat";
+        newfilename = "../assets/data/Viet_Anh.dat";
     }
     writetobinaryfile(ddictionary, newfilename);
     

@@ -79,13 +79,19 @@ public:
     void handleEvents();
     void update();
 
+    void updateMenuMode();
+    void updateOperationMode();
+
     void updateOperationButtons();
     void updateModeNonFavorite();
+    void updateModeFavorite();
+    void updateSearchBoxEvent();
 
     void createLines();
-
     void saveFrameBoard();
 
+    void resetMenuMode();
+    void resetOperationMode();
     void reset();
 
     void run();
