@@ -93,6 +93,14 @@ void Window::init() {
             Constants::Directories::DMQ::QuizzPress.end()),
         Quiz
     );
+    this->StarButton = ButtonImage(std::vector<std::string>(Constants::Directories::DMQ::Star.begin(),
+        Constants::Directories::DMQ::Star.end()),
+        std::vector<std::string>(
+            Constants::Directories::DMQ::StarPress.begin(),
+            Constants::Directories::DMQ::StarPress.end()),
+        Star
+    );
+  //  this->firstCheck = true;
 }
 
 void Window::run() {
@@ -123,7 +131,7 @@ void Window::draw() {
             }
             if (this->isShowingWord) {
                 // draw star here
-
+                this->StarButton.draw();
             }
             this->searchBox.draw();
             if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
@@ -167,7 +175,7 @@ void Window::handleEvents() {
 
             if (this->isShowingWord) {
                 // handle star here
-
+                this->StarButton.handleEvents();
             }
 
             this->searchBox.handleEvents();
@@ -224,11 +232,11 @@ void Window::update() {
     if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
         if (this->activeMenu != (int)Constants::Screen::menuBtn::FAVOURITE) {
             this->updateModeNonFavorite();
+            
         }
         else {
             // Update favourite from DMQ
             //  this->favourite.update();
-
 
             this->saveButton.update();
             if (this->saveButton.isClicked()) {
@@ -342,7 +350,22 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
 
     // for Star
     if (this->isShowingWord) {
-
+            if (api->apiWord.isFavorite((Constants::TypeDict)currentDict, this->currentWord.word))
+                this->StarButton.changeIndex(1);
+            else
+                this->StarButton.changeIndex(0);
+        this->StarButton.update();
+        if (this->StarButton.getClicked() == 1)
+        {
+            if(!api->apiWord.isFavorite((Constants::TypeDict)currentDict, this->currentWord.word))
+                this->api->apiFavorite.addFavorite((Constants::TypeDict)currentDict, this->currentWord.word);
+        }
+        else
+        {
+            if (api->apiWord.isFavorite((Constants::TypeDict)currentDict, this->currentWord.word))
+                this->api->apiFavorite.removeFavorite((Constants::TypeDict)currentDict, this->currentWord.word);
+        }
+        this->favourite.update();
     }
 
     // Search Box

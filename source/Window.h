@@ -39,7 +39,9 @@ private:
     // For Quiz & Type of Dict
     bool isQuizActived = false;
     Constants::TypeDict currentDict = (Constants::TypeDict)0;
-    ButtonImage DataSwitchButton, QuizButton;
+    ButtonImage DataSwitchButton, QuizButton, StarButton;
+    // For Star Button (in search)
+    // bool firstCheck;
 
 
     // For Add
