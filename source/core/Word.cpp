@@ -193,7 +193,7 @@ void Word::setData(std::wstring word, std::wstring definition, std::wstring exam
 vector<wstring> loadimagepath(vector<Word> dic){
     vector<wstring> final;
     for(int i=0;i<dic.size();i++){
-        wstring b= dic[i].word+L".png";
+        wstring b= L"../../../assets/components/"+dic[i].word + L".png";
         final.push_back(b);
 
     }
