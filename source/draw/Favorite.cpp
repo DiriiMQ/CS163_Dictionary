@@ -23,17 +23,26 @@ Favourite::Favourite(Font* font, int tmpmode, Api* api)
     this->FavouriteList.push_back(L"Helloo2");
     this->FavouriteList.push_back(L"Helloo3");*/
     // test end
-    this->size = FavouriteList.size();
-    Starr = new ButtonImage[this->size];
+    this->size = this->FavouriteList.size();
+   // Starr.resize(this->size);
+    std::vector <std::string> pathh(2);
+    pathh[1] = Constants::Directories::DMQ::Star[0];
+    pathh[0] = Constants::Directories::DMQ::Star[1];
+    std::vector <std::string> pathhPress(2);
+    pathhPress[1] = Constants::Directories::DMQ::StarPress[0];
+    pathhPress[0] = Constants::Directories::DMQ::StarPress[1];
+    this->form = ButtonImage(pathh, pathhPress, { 791.3 ,(float)278.4 + 45 * 0 ,47.5 ,45.2 });
     for (int i = 0; i < this->size; i++)
     {
-        std::vector <std::string> pathh(2);
+        /*std::vector <std::string> pathh(2);
         pathh[1] = Constants::Directories::DMQ::Star[0];
         pathh[0] = Constants::Directories::DMQ::Star[1];
         std::vector <std::string> pathhPress(2);
         pathhPress[1] = Constants::Directories::DMQ::StarPress[0];
         pathhPress[0] = Constants::Directories::DMQ::StarPress[1];
-        Starr[i] = ButtonImage(pathh, pathhPress, { 791.3 ,(float)278.4 + 45 * i ,47.5 ,45.2 });
+        Starr[i] = ButtonImage(pathh, pathhPress, { 791.3 ,(float)278.4 + 45 * i ,47.5 ,45.2 });*/
+        form.changePosition({ 791.3 ,(float)278.4 + 45 * i ,47.5 ,45.2 });
+        Starr.push_back(this->form);
     }
     this->index_unFavourite.resize(this->size);
     for (int i = 0; i < this->size; i++)
@@ -43,11 +52,14 @@ Favourite::Favourite(Font* font, int tmpmode, Api* api)
 }
 void Favourite::draw()
 {
-    this->FavouriteList = api->apiFavorite.getFavorite((Constants::TypeDict)tmpmode);
+   /* this->FavouriteList = api->apiFavorite.getFavorite((Constants::TypeDict)tmpmode);
+    this->size=this->F*/
+    //this->Starr.resize(this->size, this->form);
     MAX_SUGGESTIONS = min(size, 9);
     // if (Starr.empty())
     for (int j = 0; j < MAX_SUGGESTIONS; j++)
     {
+       
         Starr[j - mouse].changePosition({ 791.3 ,(float)278.4 + 45 * j ,47.5 ,45.2 });
         Starr[j - mouse].draw();
         // Test
@@ -79,7 +91,7 @@ void Favourite::handleEvents()
         Starr[j - mouse].changePosition({ 791.3 ,(float)278.4 + 45 * j ,47.5 ,45.2 });
         Starr[j - mouse].handleEvents();
         Starr[j - mouse].update();
-        if (Starr[j - mouse].getClicked() % 2 == 1)
+        if (Starr[j - mouse].getClicked() == 1)
             index_unFavourite[j - mouse] = 1;
         else
             index_unFavourite[j - mouse] = 0;
@@ -111,44 +123,45 @@ void Favourite::handleEvents()
 }
 void Favourite::update()
 {
-    this->FavouriteList = api->apiFavorite.getFavorite((Constants::TypeDict)tmpmode);
-    if (this->size + FavouriteList.size() > 0) {
-        this->size = FavouriteList.size();
-        delete[]Starr;
-        if (size > 0) {
-            Starr = new ButtonImage[size];
-            this->size = FavouriteList.size();
-            for (int i = 0; i < this->size; i++)
-            {
-                std::vector <std::string> pathh(2);
-                pathh[1] = Constants::Directories::DMQ::Star[0];
-                pathh[0] = Constants::Directories::DMQ::Star[1];
-                std::vector <std::string> pathhPress(2);
-                pathhPress[1] = Constants::Directories::DMQ::StarPress[0];
-                pathhPress[0] = Constants::Directories::DMQ::StarPress[1];
-                Starr[i] = ButtonImage(pathh, pathhPress, { 791.3 ,(float)278.4 + 45 * i ,47.5 ,45.2 });
-            }
-        }
-    }
+    this->FavouriteList = api->apiFavorite.getFavorite((Constants::TypeDict) this->tmpmode);
+    this->size = FavouriteList.size();
     this->index_unFavourite.resize(size);
+    this->Starr.resize(this->size);
+    for (int i = 0; i < this->size; i++)
+    {
+        this->Starr[i] = form;
+        this->Starr[i].changeIndex(0);
+    }
 }
 void Favourite::removeWhenSave()
 {
+    std::vector<std::wstring> tmp = this->api->apiFavorite.getFavorite((Constants::TypeDict)this->tmpmode);
+    for (int i = 0; i < tmp.size(); i++)
+        std::wcout << tmp[i] << " ";
+    wcout << endl;
     std::vector<std::wstring> unlike;
-    for (int i = 0; i < index_unFavourite.size(); i++)
+    for (int i = 0; i < this->index_unFavourite.size(); i++)
     {
         if (index_unFavourite[i])
-            unlike.push_back(FavouriteList[i]);
+            unlike.push_back(this->FavouriteList[i]);
     }
     for (int i = 0; i < unlike.size(); i++)
     {
         //remove function
         // ApiFavorite::removeFavorite((Constants::TypeDict)tmpmode,unlike[i]);
-        this->api->apiFavorite.removeFavorite((Constants::TypeDict)tmpmode, unlike[i]);
+        this->api->apiFavorite.removeFavorite((Constants::TypeDict) this->tmpmode, unlike[i]);
     }
+   tmp = this->api->apiFavorite.getFavorite((Constants::TypeDict)this->tmpmode);
+    for (int i = 0; i < tmp.size(); i++)
+        std::wcout << tmp[i] << " ";
+    wcout << endl;
 }
 void Favourite::reset()
 {
+    this->size = 0;
+    this->mouse = 0;
+    MAX_SUGGESTIONS = 0;
+    this->api->apiFavorite.resetFavorite((Constants::TypeDict)tmpmode);
 }
 int Favourite::getClicked()
 {
