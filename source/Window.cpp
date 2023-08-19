@@ -10,6 +10,14 @@ Window::Window(Api* api) {
 
     this->api = api;
     this->init();
+
+    // this->testButtonQuiz = ButtonQuiz(
+    //     &this->font, 
+    //     "abc dcm xyz eheh usb sjsja ud fde eruefue euyhe ekee fif grr wetrt ret ret rtre ret rg t e rg reg rg udu shshs ahahu hwhuw ssus sfs",
+    //     18, 
+    //     BLUE,
+    //     { 50,500,300, 100 }
+    // );
 }
 
 void Window::init() {
@@ -29,8 +37,6 @@ void Window::init() {
             Constants::Screen::RECT_MENU_BTN[i]
         );
     }
-
-
 
     for (int i = (int)Constants::Screen::operationBtn::REMOVE; i != (int)Constants::Screen::operationBtn::NONE; ++i) {
         this->operationButtons[i] = Button(
@@ -136,6 +142,8 @@ void Window::draw() {
     this->QuizButton.draw();
 
     this->resetButton.draw();
+
+    // this->testButtonQuiz.draw();
 }
 
 void Window::handleEvents() {
@@ -174,6 +182,8 @@ void Window::handleEvents() {
             this->saveButton.handleEvents();
         }
     }
+
+    // this->testButtonQuiz.handleEvents();
 }
 
 void Window::update() {
@@ -205,6 +215,8 @@ void Window::update() {
             }
             this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
             this->frameBoard.reset();
+            this->wordAdd = "";
+            this->definitionAdd = "";
             break;
         }
     }
@@ -231,6 +243,12 @@ void Window::update() {
     if (this->resetButton.isClicked()) {
         this->reset();
     }
+
+//     this->testButtonQuiz.update();
+
+//     if (this->testButtonQuiz.isClicked()) {
+//         this->testButtonQuiz.setStatusAnswer(true);
+//     }
 }
 
 void Window::reset() {
@@ -246,6 +264,8 @@ void Window::reset() {
     // For Quiz and DataSwitch
     this->DataSwitchButton.changeIndex(0);
     this->QuizButton.changeIndex(0);
+    this->wordAdd = "";
+    this->definitionAdd = "";
 }
 
 void Window::updateOperationButtons() {
@@ -275,6 +295,8 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
         if (this->operationButtons[i].isClicked()) {
             std::cout << "LOG: Operation button " << i << " is clicked" << std::endl;
             this->frameBoard.reset();
+            this->wordAdd = "";
+            this->definitionAdd = "";
             this->isShowingWord = false;
             if (i == (int)Constants::Screen::operationBtn::ADD) {
                 this->frameBoard.setBlocks({
@@ -365,6 +387,10 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
         std::cout << "LOG: Search box choice: " << choice << std::endl;
         // get tu list ra lay result show nguoc ra frameBoard
         this->isShowingWord = true;
+        this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
+        for (int i = 0; i < 3; ++i) {
+            this->operationButtons[i].setChosen(false);
+        }
         this->frameBoard.reset();
         this->currentWord = this->api->apiWord.getWord(this->currentDict, this->_wordList[choice]);
         std::wcout << "LOG: currentWord: " << this->currentWord.word << std::endl;

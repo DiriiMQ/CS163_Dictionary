@@ -8,6 +8,8 @@
 #include "raylib.h"
 #include "raygui.h"
 #include "Constants.h"
+#include "Utils.h"
+
 #include <vector>
 #include <string>
 #include <iostream>
@@ -41,6 +43,7 @@ public:
 
     void setChosen(bool isChosen);
     void setIsSuggest();
+    void setBG(Color colorBG);
 };
 
 class ButtonImage
@@ -77,6 +80,32 @@ public:
     int getClicked();
 };
 
+class ButtonQuiz{
+private:
+    static constexpr int SPACING = 1,
+                            MARGIN = 10;
 
+    std::string rawAnswer;
+    Button button;
+    Rectangle info;
+    Font *font;
+    Vector2 positionText;
+    Color colorBG;
+    int fontSize;
+
+public:
+    ButtonQuiz() = default;
+    ButtonQuiz(Font *font, std::string text, int fontSize, Color color, Rectangle rectangle);
+
+    void draw();
+    void handleEvents();
+    void update();
+    
+    [[nodiscard]] bool isClicked() const;
+    [[nodiscard]] bool isPressing() const;
+
+    void initSeparatedAnswer(std::string text);
+    void setStatusAnswer(bool isCorrect);
+};
 
 #endif //CS163_GROUP9_BUTTON_H
