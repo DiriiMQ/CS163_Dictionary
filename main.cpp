@@ -14,8 +14,8 @@ int main() {
 
        Dicts dicts;
        
-       vector<wstring> a= loadimagepath(dicts.dicts[3].words);
-       wcout<<a[0]<<endl;
+    //    vector<wstring> a= loadimagepath(dicts.dicts[3].words);
+    //    wcout<<a[0]<<endl;
 //     Api api(dicts);
 //     wcout<<dicts.dicts[0].words.size()<<endl;
 //     wcout << dicts.dicts[0].Map.size() << endl;
@@ -25,6 +25,12 @@ int main() {
 //     wcout << dicts.dicts[2].Map.size() << endl;
 //     wcout << "load in " << 1.0*clock()/CLOCKS_PER_SEC << "s" << endl;
 //    // wcout<<dicts.dicts[0].words[1].word;
+    Word cur;
+    cur.setData(L"SI",L"Dep Trai",L"",L"",L"");
+    wcout<<cur.word<<endl;
+    wcout<<cur.worddef[0].definition[0].meaning<<endl;
+    wcout<<cur.worddef[0].phrase<<endl;
+    wcout<<cur.worddef[0].type<<endl;
     
     return 0;
 }
