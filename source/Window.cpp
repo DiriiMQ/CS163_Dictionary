@@ -317,21 +317,23 @@ void Window::updateOperationMode() {
 
 void Window::reset()
 {
-    for (int i = 0; i < 3; ++i) {
-        this->menuButtons[i].setChosen(false);
-        this->operationButtons[i].setChosen(false);
-    }
-    this->resetButton.setChosen(false);
-    this->searchBox.reset();
-    this->frameBoard.reset();
-    this->favourite.reset();
-    this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
-    this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
-    // For Quiz and DataSwitch
-    this->DataSwitchButton.changeIndex(0);
-    this->QuizButton.changeIndex(0);
-    this->wordAdd = "";
-    this->definitionAdd = "";
+    // for (int i = 0; i < 3; ++i) {
+    //     this->menuButtons[i].setChosen(false);
+    //     this->operationButtons[i].setChosen(false);
+    // }
+    // this->resetButton.setChosen(false);
+    // this->searchBox.reset();
+    // this->frameBoard.reset();
+    // this->favourite.reset();
+    // this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
+    // this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
+    // // For Quiz and DataSwitch
+    // this->DataSwitchButton.changeIndex(0);
+    // this->QuizButton.changeIndex(0);
+    // this->wordAdd = "";
+    // this->definitionAdd = "";
+    this->resetMenuMode();
+    this->api->resetDict(this->currentDict);
 }
 
 void Window::updateOperationButtons() {
