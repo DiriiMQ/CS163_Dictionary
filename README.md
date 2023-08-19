@@ -54,7 +54,7 @@ Our project provide a customize dictionary using some algorithms and data struct
 <!-- Brief all features with those pics? is it necessary? -->
 
 ## Data structures and algorithms
-<!-- Write the DSAs and Algorithms in details and calculate the time and space complexity with the real time measurement -->
+<!-- Write the DSAs and Algorithms IN DETAILS and calculate the time and space complexity with the real time measurement -->
 
 ## License
 
