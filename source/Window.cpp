@@ -101,6 +101,7 @@ void Window::init() {
         Star
     );
     this->quizScene = QuizScene(&font, api, &currentDict, &activeMenu);
+    this->randWordBtn = ButtonQuiz(&font, Utils::WStringToUTF8(L"Rand"), 18, BLUE, {789, 155.3, 66.1, 66.1});
   //  this->firstCheck = true;
 }
 
@@ -140,6 +141,7 @@ void Window::draw() {
                     this->StarButton.draw();
                 }
                 this->searchBox.draw();
+                this->randWordBtn.draw();
                 if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
                     this->saveButton.draw();
                 }
@@ -193,6 +195,7 @@ void Window::handleEvents() {
                 }
 
                 this->searchBox.handleEvents();
+                this->randWordBtn.handleEvents();
 
                 if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
                     this->saveButton.handleEvents();
@@ -383,6 +386,7 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
 
     // Search Box
     this->searchBox.update();
+    this->randWordBtn.update();
     this->updateSearchBoxEvent();
 
     this->updateOperationButtons();
@@ -403,6 +407,9 @@ void Window::updateModeFavorite() {
 void Window::updateSearchBoxEvent() {
     // update searchBox
     std::string _searchText = this->searchBox.getText();
+    // if (this->randWordBtn.isClicked()) {
+    //     string text = Utils::WStringToUTF8(this->api->apiWord.getRandomWord(this->currentDict).word);
+    // }
     if (_searchText != this->currentSearch) {
         this->currentSearch = _searchText;
         std::cout << "LOG: Search text: " << _searchText << std::endl;
@@ -436,16 +443,21 @@ void Window::updateSearchBoxEvent() {
 
     // get click searchBox
     int choice = this->searchBox.getChoseId();
-    if (choice != -1) {
+    bool isRandBtnClicked = this->randWordBtn.isClicked();
+    if (choice != -1 || isRandBtnClicked) {
         std::cout << "LOG: Search box choice: " << choice << std::endl;
+        this->resetOperationMode();
         // get tu list ra lay result show nguoc ra frameBoard
         this->isShowingWord = true;
-        this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
-        for (int i = 0; i < 3; ++i) {
-            this->operationButtons[i].setChosen(false);
-        }
-        this->frameBoard.reset();
-        this->currentWord = this->api->apiWord.getWord(this->currentDict, this->_wordList[choice]);
+        // this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
+        // for (int i = 0; i < 3; ++i) {
+        //     this->operationButtons[i].setChosen(false);
+        // }
+        // this->frameBoard.reset();
+        if (isRandBtnClicked)
+            this->currentWord = this->api->apiWord.getRandomWord(this->currentDict);
+        else
+            this->currentWord = this->api->apiWord.getWord(this->currentDict, this->_wordList[choice]);
         std::wcout << "LOG: currentWord: " << this->currentWord.word << std::endl;
         this->createLines();
     }
@@ -552,7 +564,6 @@ void Window::saveFrameBoard() {
 
 void Window::resetMenuMode() {
     this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
-    this->frameBoard.reset();
     for (int i = 0; i < 3; ++i) 
         this->menuButtons[i].setChosen(false);
     this->searchBox.reset();
@@ -560,6 +571,7 @@ void Window::resetMenuMode() {
 }
 
 void Window::resetOperationMode() {
+    this->frameBoard.reset();
     this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
     this->isShowingWord = false;
 

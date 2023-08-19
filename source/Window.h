@@ -59,6 +59,7 @@ private:
     std::vector<std::wstring> _wordList;
     std::vector<std::pair<std::string, std::string>> suggestListText;
     FrameBoard frameBoard;
+    ButtonQuiz randWordBtn;
 
     // For Favourite
     Favourite favourite;
