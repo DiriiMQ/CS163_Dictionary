@@ -47,7 +47,7 @@ Favourite::Favourite(Font* font, int tmpmode, Api* api)
     this->index_unFavourite.resize(this->size);
     for (int i = 0; i < this->size; i++)
         index_unFavourite[i] = false;
-    MAX_SUGGESTIONS = min(size, 9);
+    MAX_SUGGESTIONS = min(size - 1 , 9);
 
 }
 void Favourite::draw()
@@ -55,7 +55,7 @@ void Favourite::draw()
    /* this->FavouriteList = api->apiFavorite.getFavorite((Constants::TypeDict)tmpmode);
     this->size=this->F*/
     //this->Starr.resize(this->size, this->form);
-    MAX_SUGGESTIONS = min(size, 9);
+    MAX_SUGGESTIONS = min(size - 1, 9);
     // if (Starr.empty())
     for (int j = 0; j < MAX_SUGGESTIONS; j++)
     {
@@ -64,7 +64,7 @@ void Favourite::draw()
         Starr[j - mouse].draw();
         // Test
         // DrawTextEx(*font, TextFormat("SCORE: %i", j-mouse), { position.x + 25, position.y + 15 + 45 * j }, fontSize,SPACING, BLACK);
-        DrawTextEx(*font, Utils::WStringToUTF8(FavouriteList[j - mouse]).c_str(), { position.x + 25, position.y + 15 + 45 * j }, fontSize, SPACING, BLACK);
+        DrawTextEx(*font, Utils::WStringToUTF8(FavouriteList[j - mouse + 1]).c_str(), { position.x + 25, position.y + 15 + 45 * j }, fontSize, SPACING, BLACK);
         Starr[j - mouse].changePosition({ 791.3 ,(float)278.4 + 45 * (j - mouse) ,47.5 ,45.2 });
     }
     if (currentMouse != -1)
@@ -85,16 +85,16 @@ void Favourite::draw()
 void Favourite::handleEvents()
 {
     this->FavouriteList = api->apiFavorite.getFavorite((Constants::TypeDict)tmpmode);
-    MAX_SUGGESTIONS = min(size, 9);
+    MAX_SUGGESTIONS = min(size - 1, 9);
     for (int j = 0; j < MAX_SUGGESTIONS; j++)
     {
         Starr[j - mouse].changePosition({ 791.3 ,(float)278.4 + 45 * j ,47.5 ,45.2 });
         Starr[j - mouse].handleEvents();
         Starr[j - mouse].update();
         if (Starr[j - mouse].getClicked() == 1)
-            index_unFavourite[j - mouse] = 1;
+            index_unFavourite[j + 1 - mouse] = 1;
         else
-            index_unFavourite[j - mouse] = 0;
+            index_unFavourite[j + 1 - mouse] = 0;
         Starr[j - mouse].changePosition({ 791.3 ,(float)278.4 + 45 * (j - mouse) ,47.5 ,45.2 });
     }
     if (GetMouseWheelMove() > 0 && mouse < 0)   // scroll up
