@@ -32,14 +32,15 @@ struct Type {
 struct Word {
     wstring word;
     wstring pronounce;
+    string imagePath;
     vector<Type> worddef;
     bool IsType;
     Word() {
         pronounce = L"Null";
+        imagePath = "Null";
         IsType = false;
     }
-
-
+    void setData(std::wstring word, std::wstring definition, std::wstring example, std::wstring phrase,std::wstring type);
 
 };
 
@@ -47,4 +48,5 @@ void writeStringVectorToFile(const std::vector<std::wstring>& strings, ofstream&
 void readStringVectorFromFile(vector<wstring>& strings, ifstream& inputFile);
 void writetobinaryfile(vector<Word> &Vdictionary, const string &filename);
 void readbinaryfile(vector<Word>& Vdictionary, const string &filename);
+vector<wstring> loadimagepath(vector<Word> dic);
 #endif //CS163_GROUP9_WORD_H

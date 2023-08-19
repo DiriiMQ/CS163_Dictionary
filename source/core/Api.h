@@ -14,7 +14,7 @@
 
 class Dicts {
 public:
-    Dict dicts[3]; // use Constants::TypeDict to index
+    Dict dicts[4]; // use Constants::TypeDict to index
     Dicts(); // load Dicts
     ~Dicts(); // save Dicts
 };
@@ -45,12 +45,13 @@ class ApiWord : public BaseApi {
 public:
     explicit ApiWord(Dicts& dicts) : BaseApi(dicts) {};
 
-
     Word getWord(Constants::TypeDict typeDict, std::wstring word);
     void addWord(Constants::TypeDict typeDict, Word word);
     bool removeWord(Constants::TypeDict typeDict, std::wstring word); // return true if success, false if not found
     void editWord(Constants::TypeDict typeDict, Word& replace);
     Word getRandomWord(Constants::TypeDict typeDict);
+    bool isFavorite(Constants::TypeDict typeDict, std::wstring word);
+    string getImage(Constants::TypeDict typeDict, std::wstring word); // typeDicts is awlays EN_EMOJI
 };
 
 class ApiSearch : public BaseApi {
