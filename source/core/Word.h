@@ -40,13 +40,13 @@ struct Word {
         imagePath = "Null";
         IsType = false;
     }
+    void setData(std::wstring word, std::wstring definition, std::wstring example, std::wstring phrase,std::wstring type);
 
-    // some parameters might be empty strings, so please don't assign if it's empty
-    void setData(std::wstring type, std::wstring definition, std::wstring example, std::wstring phrase);
 };
 
 void writeStringVectorToFile(const std::vector<std::wstring>& strings, ofstream& outputFile);
 void readStringVectorFromFile(vector<wstring>& strings, ifstream& inputFile);
 void writetobinaryfile(vector<Word> &Vdictionary, const string &filename);
 void readbinaryfile(vector<Word>& Vdictionary, const string &filename);
+vector<wstring> loadimagepath(vector<Word> dic);
 #endif //CS163_GROUP9_WORD_H

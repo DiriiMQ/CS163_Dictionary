@@ -43,6 +43,7 @@ Favourite::Favourite(Font* font, int tmpmode, Api* api)
 }
 void Favourite::draw()
 {
+    this->FavouriteList = api->apiFavorite.getFavorite((Constants::TypeDict)tmpmode);
     MAX_SUGGESTIONS = min(size, 9);
     // if (Starr.empty())
     for (int j = 0; j < MAX_SUGGESTIONS; j++)
@@ -71,6 +72,7 @@ void Favourite::draw()
 }
 void Favourite::handleEvents()
 {
+    this->FavouriteList = api->apiFavorite.getFavorite((Constants::TypeDict)tmpmode);
     MAX_SUGGESTIONS = min(size, 9);
     for (int j = 0; j < MAX_SUGGESTIONS; j++)
     {
