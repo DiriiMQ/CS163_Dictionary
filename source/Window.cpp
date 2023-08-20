@@ -120,11 +120,12 @@ void Window::draw() {
     for (auto& menuButton : this->menuButtons) {
         menuButton.draw();
     }
-
+    
     if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
         DrawRectangleRounded(this->mainInfoBG, CORNER_RADIUS, 0, WHITE);
         this->frameBoard.draw();
-
+        if (currentDict == (Constants::TypeDict)3)
+            DrawTexture(this->emoji, Description.x + 50, Description.y + 50, WHITE);
         if (this->activeMenu != (int)Constants::Screen::menuBtn::FAVOURITE) {
             for (auto& operationButton : this->operationButtons) {
                 operationButton.draw();
@@ -144,7 +145,7 @@ void Window::draw() {
             this->saveButton.draw();
         }
     }
-
+  
     // For Quiz & Type of Dict
     this->DataSwitchButton.draw();
     this->QuizButton.draw();
@@ -425,37 +426,46 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
 }
 
 void Window::createLines() {
-    this->lines.clear();
+    if (currentDict != (Constants::TypeDict)3) {
+        this->lines.clear();
 
-    Word& cur = this->currentWord;
-    this->lines.push_back({
-        Utils::WStringToUTF8(cur.word) + (cur.pronounce != L"Null" ? ("  /" + Utils::WStringToUTF8(cur.pronounce) + "/") : ""),
-        false
-        });
+        Word& cur = this->currentWord;
+        this->lines.push_back({
+            Utils::WStringToUTF8(cur.word) + (cur.pronounce != L"Null" ? ("  /" + Utils::WStringToUTF8(cur.pronounce) + "/") : ""),
+            false
+            });
 
-    for (auto& i : cur.worddef) {
-        this->lines.push_back({ "________", false });
-        if (i.type != L"Null")
-            this->lines.push_back({ Utils::WStringToUTF8(i.type), true });
+        for (auto& i : cur.worddef) {
+            this->lines.push_back({ "________", false });
+            if (i.type != L"Null")
+                this->lines.push_back({ Utils::WStringToUTF8(i.type), true });
 
-        for (auto& j : i.definition) {
-            this->lines.push_back({ Utils::WStringToUTF8(j.meaning), true });
-            if (j.Isexample) {
-                for (auto& k : j.examples) {
-                    this->lines.push_back({ Utils::WStringToUTF8(k), true });
+            for (auto& j : i.definition) {
+                this->lines.push_back({ Utils::WStringToUTF8(j.meaning), true });
+                if (j.Isexample) {
+                    for (auto& k : j.examples) {
+                        this->lines.push_back({ Utils::WStringToUTF8(k), true });
+                    }
                 }
             }
+
+            if (i.phrase != L"Null")
+                this->lines.push_back({ Utils::WStringToUTF8(i.phrase), true });
         }
 
-        if (i.phrase != L"Null")
-            this->lines.push_back({ Utils::WStringToUTF8(i.phrase), true });
+        std::vector<std::pair<std::string, std::string*>> _blocks;
+        for (auto& i : this->lines) {
+            _blocks.emplace_back("", &i.first);
+        }
+        this->frameBoard.setBlocks(_blocks);
     }
-
-    std::vector<std::pair<std::string, std::string*>> _blocks;
-    for (auto& i : this->lines) {
-        _blocks.emplace_back("", &i.first);
+    else
+    {
+        // wstring b= L"../../../assets/components/"+dic[i].word + L".png";
+        wstring ws = L"../../../assets/components/images/" + this->currentWord.worddef[0].definition[0].meaning + L".png";
+        string s(ws.begin(), ws.end());
+        this->emoji = LoadTextureFromImage(LoadImage(s.c_str()));
     }
-    this->frameBoard.setBlocks(_blocks);
 }
 
 void Window::saveFrameBoard() {

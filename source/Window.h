@@ -70,6 +70,9 @@ private:
     Rectangle SwitchDataSet = { 870,160,150,40 };
     Rectangle Quiz = { 1064.1,160,240.4,56 };
 
+    // For emoji
+    Texture emoji;
+
 public:
     Window(Api *api);
     void init();
