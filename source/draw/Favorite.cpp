@@ -84,7 +84,9 @@ void Favourite::draw()
 }
 void Favourite::handleEvents()
 {
+    
     this->FavouriteList = api->apiFavorite.getFavorite((Constants::TypeDict)tmpmode);
+    this->size = this->FavouriteList.size();
     MAX_SUGGESTIONS = min(size - 1, 9);
     for (int j = 0; j < MAX_SUGGESTIONS; j++)
     {
@@ -132,6 +134,10 @@ void Favourite::update()
         this->Starr[i] = form;
         this->Starr[i].changeIndex(0);
     }
+}
+void Favourite::changeMode(int newmode)
+{
+    this->tmpmode = newmode;
 }
 void Favourite::removeWhenSave()
 {

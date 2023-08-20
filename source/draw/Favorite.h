@@ -40,6 +40,7 @@ public:
     void handleEvents();
     void update();
 
+    void changeMode(int newmode);
     void removeWhenSave();
     void reset();
     int getClicked();

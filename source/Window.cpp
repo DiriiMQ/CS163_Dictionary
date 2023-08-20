@@ -101,7 +101,7 @@ void Window::init() {
         Star
     );
     this->quizScene = QuizScene(&font, api, &currentDict, &activeMenu);
-    this->randWordBtn = ButtonQuiz(&font, Utils::WStringToUTF8(L"Rand"), 18, BLUE, {789, 155.3, 66.1, 66.1});
+    this->randWordBtn = ButtonQuiz(&font, Utils::WStringToUTF8(L"Rand"), 18, BLUE, {789, 155.3, 66, 66});
   //  this->firstCheck = true;
 }
 
@@ -126,8 +126,7 @@ void Window::draw() {
     if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
         DrawRectangleRounded(this->mainInfoBG, CORNER_RADIUS, 0, WHITE);
         this->frameBoard.draw();
-    if (currentDict == (Constants::TypeDict)3)
-        DrawTexture(this->emoji, Description.x + 50, Description.y + 50, WHITE);
+    // Draw Emoji (in testing)
         if (this->isShowingQuiz) {
             // std::cout << "LOG: Draw quiz scene" << std::endl;
             this->quizScene.draw();
@@ -138,6 +137,8 @@ void Window::draw() {
                     operationButton.draw();
                 }
                 if (this->isShowingWord) {
+                    if (currentDict == Constants::TypeDict::EN_EMOJI)
+                        DrawTexture(this->emoji, Description.x + 50, Description.y + 50, WHITE);
                     // draw star here
                     this->StarButton.draw();
                 }
@@ -170,11 +171,11 @@ void Window::handleEvents() {
     for (auto& menuButton : this->menuButtons) {
         menuButton.handleEvents();
     }
-
+    currentDict = (Constants::TypeDict)this->DataSwitchButton.getClicked();
+    this->favourite.changeMode((int)currentDict);
     // For Quiz & Type of Dict 
     this->DataSwitchButton.handleEvents();
     this->QuizButton.handleEvents();
-    currentDict = (Constants::TypeDict)this->DataSwitchButton.getClicked();
 
     this->resetButton.handleEvents();
 
@@ -218,7 +219,9 @@ void Window::update() {
     //    std::cout << "Active menu: " << this->activeMenu << std::endl;
     //    std::cout << "Active operation: " << this->activeOperation << std::endl;
     this->handleEvents();
-
+    currentDict = (Constants::TypeDict)this->DataSwitchButton.getClicked();
+    this->favourite.changeMode(this->DataSwitchButton.getClicked());
+    
     for (auto& menuButton : this->menuButtons) {
         menuButton.update();
     }
@@ -507,8 +510,12 @@ void Window::createLines() {
         string s(ws.begin(), ws.end());
         this->emoji = LoadTextureFromImage(LoadImage(s.c_str()));
     }
-    // std::cout << "LOG: first of _blocks: " << *_blocks[1].second << std::endl;
-    this->frameBoard.setBlocks(_blocks);
+    //std::vector<std::pair<std::string, std::string*>> _blocks;
+    //for (auto& i : this->lines) {
+    //    _blocks.emplace_back("", &i.first);
+    //}
+    //// std::cout << "LOG: first of _blocks: " << *_blocks[1].second << std::endl;
+    //this->frameBoard.setBlocks(_blocks);
 }
 
 void Window::saveFrameBoard() {
