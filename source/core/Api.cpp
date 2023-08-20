@@ -182,6 +182,7 @@ std::vector<wstring> ApiFavorite::getFavorite(Constants::TypeDict typeDict) {
 void ApiFavorite::resetFavorite(Constants::TypeDict typeDict) {
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     dictionary.FavoriteList.clear();
+    dictionary.FavoriteList.push_back(L"Null");
 }
 bool ApiWord::isFavorite(Constants::TypeDict typeDict, std::wstring word){
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
@@ -194,11 +195,11 @@ bool ApiWord::isFavorite(Constants::TypeDict typeDict, std::wstring word){
 }
 Word ApiWord::getWord(Constants::TypeDict typeDict, std::wstring word) {
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
+    dictionary.HistoryList.push_back(word);
     if (dictionary.Map.find(word)) {
         int index = dictionary.Map[word];
         return dictionary.words[index];
     }
-    dictionary.HistoryList.push_back(word);
     return Word();
 }
 
