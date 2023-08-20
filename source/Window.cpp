@@ -286,9 +286,11 @@ void Window::updateOperationMode() {
             if (i == (int)Constants::Screen::operationBtn::ADD) {
                 this->frameBoard.setBlocks({
                     {"Word: ", &this->wordAdd},
-                    {"Definition: ", &this->definitionAdd}
+                    {"Type: ", &this->typeAdd},
+                    {"Definition: ", &this->definitionAdd},
+                    {"Example: ", &this->exampleAdd}
                     });
-                this->frameBoard.setEditLines({ 0, 1 });
+                this->frameBoard.setEditLines({ 0, 1, 2, 3 });
             }
             else if (i == (int)Constants::Screen::operationBtn::EDIT) {
                 // set perm edit
@@ -522,14 +524,17 @@ void Window::saveFrameBoard() {
     std::cout << "LOG: Save frame board" << std::endl;
     if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD) {
         std::cout << "LOG: WordAdd: " << this->wordAdd << std::endl;
+        std::cout << "LOG: TypeAdd: " << this->typeAdd << std::endl;
         std::cout << "LOG: DefinitionAdd: " << this->definitionAdd << std::endl;
+        std::cout << "LOG: ExampleAdd: " << this->exampleAdd << std::endl;
+        if (this->wordAdd.empty() || this->definitionAdd.empty()) return;
         Word newWord;
         newWord.setData(
             Utils::UTF8ToWString(this->wordAdd), 
             Utils::UTF8ToWString(this->definitionAdd), 
+            Utils::UTF8ToWString(this->exampleAdd), 
             std::wstring(L""), 
-            std::wstring(L""), 
-            std::wstring(L"")
+            Utils::UTF8ToWString(this->typeAdd)
         );
         // newWord.word = Utils::UTF8ToWString(this->wordAdd);
         // newWord.worddef.resize(1);
@@ -537,6 +542,9 @@ void Window::saveFrameBoard() {
         // newWord.worddef[0].definition[0].meaning = Utils::UTF8ToWString(this->definitionAdd);
 
         this->api->apiWord.addWord(this->currentDict, newWord);
+        this->frameBoard.setBlocks({
+            {"", &this->ADD_NOTICE}
+        });
     }
     if (this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
         std::cout << "LOG: Edit" << std::endl;
@@ -597,6 +605,8 @@ void Window::resetOperationMode() {
 
     this->wordAdd = "";
     this->definitionAdd = "";
+    this->typeAdd = "";
+    this->exampleAdd = "";
 
     for (int i = 0; i < 3; ++i) 
         this->operationButtons[i].setChosen(false);
