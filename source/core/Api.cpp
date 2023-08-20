@@ -219,6 +219,11 @@ bool ApiWord::removeWord(Constants::TypeDict typeDict, std::wstring word) {
         MakeDef(dictionary.words.back(),dictionary,-1);
         dictionary.words.pop_back();
         dictionary.Map.remove(word);
+        for (int i = 0; i < dictionary.FavoriteList.size(); i++)
+            if (dictionary.FavoriteList[i] == word) {
+                swap(dictionary.FavoriteList[i], dictionary.FavoriteList.back());
+                dictionary.FavoriteList.pop_back();
+            }
         return true;
     }
     return false;
@@ -290,21 +295,15 @@ Quiz ApiQuiz::getQuiz(Constants::TypeDict typeDict, bool IsAskWordToDef) {
                 temp = (temp << 8) | (rand() % 256);
             }
             Word *cur = &dictionary.words[temp % dictionary.words.size()];
-            int Min_Length_Of_Definition = 100000;
-            for (int j=0; j<cur->worddef.size(); j++){
-                for (int k=0; k<cur->worddef[j].definition.size(); k++){
-                    if (Min_Length_Of_Definition > cur->worddef[j].definition[k].meaning.size()){
-                        Min_Length_Of_Definition = cur->worddef[j].definition[k].meaning.size();
-                    }
-                }
-            }
+            if (cur->worddef.empty() || cur->worddef[0].definition.empty()) continue;
+            int Min_Length_Of_Definition = cur->worddef[0].definition[0].meaning.size();
             if (IsAskWordToDef){
-                if (cur->word.size()<MAX_LENGTH_OF_QUESTION && Min_Length_Of_Definition<MAX_LENGTH_OF_ANSWER){
+                if (cur->word.size() < MAX_LENGTH_OF_QUESTION && Min_Length_Of_Definition < MAX_LENGTH_OF_ANSWER){
                     quiz.options.push_back(cur);
                     break;
                 }
             } else {
-                if (cur->word.size()<MAX_LENGTH_OF_ANSWER && Min_Length_Of_Definition<MAX_LENGTH_OF_QUESTION){
+                if (cur->word.size() < MAX_LENGTH_OF_ANSWER && Min_Length_Of_Definition < MAX_LENGTH_OF_QUESTION){
                     quiz.options.push_back(cur);
                     break;
                 }
