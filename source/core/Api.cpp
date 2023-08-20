@@ -176,10 +176,8 @@ bool ApiFavorite::removeFavorite(Constants::TypeDict typeDict, std::wstring word
     return false;
 }
 std::vector<wstring> ApiFavorite::getFavorite(Constants::TypeDict typeDict) {
-    vector<wstring> result = MainDictionary.dicts[static_cast<int>(typeDict)].FavoriteList;
-    reverse(result.begin(), result.end());
-    result.pop_back();
-    return result;
+    if (MainDictionary.dicts[static_cast<int>(typeDict)].FavoriteList.size() == 1) return vector<wstring>();
+    return MainDictionary.dicts[static_cast<int>(typeDict)].FavoriteList;
 }
 
 void ApiFavorite::resetFavorite(Constants::TypeDict typeDict) {
