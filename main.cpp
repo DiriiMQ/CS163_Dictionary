@@ -25,12 +25,21 @@ int main() {
 //     wcout << dicts.dicts[2].Map.size() << endl;
 //     wcout << "load in " << 1.0*clock()/CLOCKS_PER_SEC << "s" << endl;
 //    // wcout<<dicts.dicts[0].words[1].word;
-    Word cur;
-    cur.setData(L"SI",L"Dep Trai",L"",L"",L"");
-    wcout<<cur.word<<endl;
-    wcout<<cur.worddef[0].definition[0].meaning<<endl;
-    wcout<<cur.worddef[0].phrase<<endl;
-    wcout<<cur.worddef[0].type<<endl;
-    
+        Api api (dicts);
+        //Word a= api.apiWord.getWord(Constants::TypeDict::EN_VI,L"myxoedema");
+        for( auto &a : dicts.dicts[0].words)
+        {
+        wcout<<a.word<<endl;
+        wcout<<a.pronounce<<endl;
+        for(auto & i: a.worddef){
+            wcout<<i.type<<endl;
+            for(auto&y : i.definition){
+                wcout<<y.meaning<<endl;
+                for(auto & z: y.examples){
+                    wcout<<z<<endl;
+                }
+            }
+        }
+        }
     return 0;
 }
