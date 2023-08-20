@@ -20,6 +20,7 @@ class Window {
 private:
     static constexpr float CORNER_RADIUS = 0.1f;
     string REMOVE_NOTICE = "This word has been removed!";
+    string ADD_NOTICE = "This word has been added to your dictionary!";
 
     // FOR TESTING
 //    std::string testLarge;
@@ -48,7 +49,7 @@ private:
 
 
     // For Add
-    std::string wordAdd, definitionAdd;
+    std::string wordAdd, typeAdd, definitionAdd, exampleAdd;
 
     // For Search and Edit
     bool isShowingWord = false;
