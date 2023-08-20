@@ -100,6 +100,8 @@ void Window::init() {
             Constants::Directories::DMQ::StarPress.end()),
         Star
     );
+    this->quizScene = QuizScene(&font, api, &currentDict, &activeMenu);
+    this->randWordBtn = ButtonQuiz(&font, Utils::WStringToUTF8(L"Rand"), 18, BLUE, {789, 155.3, 66.1, 66.1});
   //  this->firstCheck = true;
 }
 
@@ -124,25 +126,33 @@ void Window::draw() {
     if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
         DrawRectangleRounded(this->mainInfoBG, CORNER_RADIUS, 0, WHITE);
         this->frameBoard.draw();
-        if (currentDict == (Constants::TypeDict)3)
-            DrawTexture(this->emoji, Description.x + 50, Description.y + 50, WHITE);
-        if (this->activeMenu != (int)Constants::Screen::menuBtn::FAVOURITE) {
-            for (auto& operationButton : this->operationButtons) {
-                operationButton.draw();
-            }
-            if (this->isShowingWord) {
-                // draw star here
-                this->StarButton.draw();
-            }
-            this->searchBox.draw();
-            if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
+    if (currentDict == (Constants::TypeDict)3)
+        DrawTexture(this->emoji, Description.x + 50, Description.y + 50, WHITE);
+        if (this->isShowingQuiz) {
+            // std::cout << "LOG: Draw quiz scene" << std::endl;
+            this->quizScene.draw();
+        } else switch (this->activeMenu) {
+            case (int)Constants::Screen::menuBtn::WORD:
+            case (int)Constants::Screen::menuBtn::DEFINITION:
+                for (auto& operationButton : this->operationButtons) {
+                    operationButton.draw();
+                }
+                if (this->isShowingWord) {
+                    // draw star here
+                    this->StarButton.draw();
+                }
+                this->searchBox.draw();
+                this->randWordBtn.draw();
+                if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
+                    this->saveButton.draw();
+                }
+                break;
+
+            case (int)Constants::Screen::menuBtn::FAVOURITE:
+                // Draw favourite from DMQ
+                this->favourite.draw();
                 this->saveButton.draw();
-            }
-        }
-        else {
-            // Draw favourite from DMQ
-            this->favourite.draw();
-            this->saveButton.draw();
+                break;
         }
     }
   
@@ -151,6 +161,7 @@ void Window::draw() {
     this->QuizButton.draw();
 
     this->resetButton.draw();
+        // this->frameBoard.draw();
 
     // this->testButtonQuiz.draw();
 }
@@ -169,26 +180,34 @@ void Window::handleEvents() {
 
     if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
         this->frameBoard.handleEvents();
-        if (this->activeMenu != (int)Constants::Screen::menuBtn::FAVOURITE) {
-            for (auto& operationButton : this->operationButtons) {
-                operationButton.handleEvents();
-            }
 
-            if (this->isShowingWord) {
-                // handle star here
-                this->StarButton.handleEvents();
-            }
+        if (this->isShowingQuiz) {
+            this->quizScene.handleEvents();
+        } else switch (this->activeMenu) {
+            case (int)Constants::Screen::menuBtn::WORD:
+            case (int)Constants::Screen::menuBtn::DEFINITION:
+                for (auto& operationButton : this->operationButtons) {
+                    operationButton.handleEvents();
+                }
 
-            this->searchBox.handleEvents();
+                if (this->isShowingWord) {
+                    // handle star here
+                    this->StarButton.handleEvents();
+                }
 
-            if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
+                this->searchBox.handleEvents();
+                this->randWordBtn.handleEvents();
+
+                if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
+                    this->saveButton.handleEvents();
+                }
+                break;
+
+            case (int)Constants::Screen::menuBtn::FAVOURITE:
+                // Handle favourite from DMQ
+                this->favourite.handleEvents();
                 this->saveButton.handleEvents();
-            }
-        }
-        else {
-            // Handle favourite from DMQ
-            this->favourite.handleEvents();
-            this->saveButton.handleEvents();
+                break;
         }
     }
 
@@ -203,50 +222,28 @@ void Window::update() {
     for (auto& menuButton : this->menuButtons) {
         menuButton.update();
     }
+    
+    this->resetButton.update();
+
+    this->updateMenuMode();
 
     // For Quiz & Type of Dict (remember to set this->activeMenu to NONE when click on Quiz)
     this->DataSwitchButton.update();
     this->QuizButton.update();
-
-    this->resetButton.update();
-
-    for (int i = 0; i < 3; ++i) {
-        if (this->menuButtons[i].isClicked()) {
-            std::cout << "LOG: Menu button " << i << " is clicked" << std::endl;
-            this->menuButtons[i].setChosen(true);
-            this->activeMenu = i;
-            this->isShowingWord = false;
-            for (int j = 0; j < 3; ++j) {
-                if (j != i) {
-                    this->menuButtons[j].setChosen(false);
-                }
-                this->operationButtons[j].setChosen(false);
-            }
-            this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
-            this->frameBoard.reset();
-            this->wordAdd = "";
-            this->definitionAdd = "";
-            break;
-        }
+    if (this->QuizButton.getClicked() != this->isShowingQuiz) {
+        this->resetMenuMode();
+        this->isShowingQuiz = !this->isShowingQuiz;
     }
 
-    if (this->activeMenu != (int)Constants::Screen::menuBtn::NONE) {
-        if (this->activeMenu != (int)Constants::Screen::menuBtn::FAVOURITE) {
+    switch (this->activeMenu) {
+        case (int)Constants::Screen::menuBtn::WORD:
+        case (int)Constants::Screen::menuBtn::DEFINITION:
             this->updateModeNonFavorite();
-            
-        }
-        else {
-            // Update favourite from DMQ
-            //  this->favourite.update();
-
-            this->saveButton.update();
-            if (this->saveButton.isClicked()) {
-                //                this->saveFrameBoard();
-                this->favourite.removeWhenSave();
-                this->favourite.update();
-            }
-        }
-        this->frameBoard.update();
+            break;
+        
+        case (int)Constants::Screen::menuBtn::FAVOURITE:
+            this->updateModeFavorite();
+            break;
     }
 
     if (this->resetButton.isClicked()) {
@@ -260,54 +257,29 @@ void Window::update() {
 //     }
 }
 
-void Window::reset() {
+void Window::updateMenuMode() {
     for (int i = 0; i < 3; ++i) {
-        this->menuButtons[i].setChosen(false);
-        this->operationButtons[i].setChosen(false);
-    }
-    this->resetButton.setChosen(false);
-    this->searchBox.reset();
-    this->frameBoard.reset();
-    this->favourite.reset();
-    this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
-    this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
-    // For Quiz and DataSwitch
-    this->DataSwitchButton.changeIndex(0);
-    this->QuizButton.changeIndex(0);
-    this->wordAdd = "";
-    this->definitionAdd = "";
-}
-
-void Window::updateOperationButtons() {
-    if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD) {
-        //        std::cout << "LOG: WordAdd: " << this->wordAdd << std::endl;
-    }
-    else if (this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
-
-    }
-    else if (this->activeOperation == (int)Constants::Screen::operationBtn::REMOVE) {
-
-    }
-}
-
-void Window::updateModeNonFavorite() { // Update for Search Mode
-    for (auto& operationButton : this->operationButtons)
-        operationButton.update();
-    if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
-        this->saveButton.update();
-
-        if (this->saveButton.isClicked()) {
-            this->saveFrameBoard();
+        if (this->menuButtons[i].isClicked()) {
+            std::cout << "LOG: Menu button " << i << " is clicked" << std::endl;
+            this->resetMenuMode();
+            this->menuButtons[i].setChosen(true);
+            this->activeMenu = i;
+            if (this->isShowingQuiz)
+                this->quizScene.restart();
+            break;
         }
     }
+}
 
+void Window::updateOperationMode() {
     for (int i = 0; i < 3; ++i) {
         if (this->operationButtons[i].isClicked()) {
             std::cout << "LOG: Operation button " << i << " is clicked" << std::endl;
-            this->frameBoard.reset();
-            this->wordAdd = "";
-            this->definitionAdd = "";
-            this->isShowingWord = false;
+            this->resetOperationMode();
+
+            this->operationButtons[i].setChosen(true);
+            this->activeOperation = i;
+
             if (i == (int)Constants::Screen::operationBtn::ADD) {
                 this->frameBoard.setBlocks({
                     {"Word: ", &this->wordAdd},
@@ -339,16 +311,61 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
                 this->api->apiWord.removeWord(this->currentDict, this->currentWord.word);
                 this->currentWord = Word();
             }
-            this->operationButtons[i].setChosen(true);
-            this->activeOperation = i;
-            for (int j = 0; j < 3; ++j) {
-                if (j != i) {
-                    this->operationButtons[j].setChosen(false);
-                }
-            }
             break;
         }
     }
+}
+
+void Window::reset()
+{
+    // for (int i = 0; i < 3; ++i) {
+    //     this->menuButtons[i].setChosen(false);
+    //     this->operationButtons[i].setChosen(false);
+    // }
+    // this->resetButton.setChosen(false);
+    // this->searchBox.reset();
+    // this->frameBoard.reset();
+    // this->favourite.reset();
+    // this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
+    // this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
+    // // For Quiz and DataSwitch
+    // this->DataSwitchButton.changeIndex(0);
+    // this->QuizButton.changeIndex(0);
+    // this->wordAdd = "";
+    // this->definitionAdd = "";
+    this->resetMenuMode();
+    this->api->resetDict(this->currentDict);
+}
+
+void Window::updateOperationButtons() {
+    if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD) {
+        //        std::cout << "LOG: WordAdd: " << this->wordAdd << std::endl;
+    }
+    else if (this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
+
+    }
+    else if (this->activeOperation == (int)Constants::Screen::operationBtn::REMOVE) {
+
+    }
+}
+
+void Window::updateModeNonFavorite() { // Update for Search Mode
+    if (this->isShowingQuiz) {
+        this->quizScene.update();
+        return;
+    }
+
+    for (auto& operationButton : this->operationButtons)
+        operationButton.update();
+    if (this->activeOperation == (int)Constants::Screen::operationBtn::ADD || this->activeOperation == (int)Constants::Screen::operationBtn::EDIT) {
+        this->saveButton.update();
+
+        if (this->saveButton.isClicked()) {
+            this->saveFrameBoard();
+        }
+    }
+
+    this->updateOperationMode();
 
     // for Star
     if (this->isShowingWord) {
@@ -372,9 +389,30 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
 
     // Search Box
     this->searchBox.update();
+    this->randWordBtn.update();
+    this->updateSearchBoxEvent();
 
+    this->updateOperationButtons();
+    this->frameBoard.update(); //?
+}
+
+void Window::updateModeFavorite() {
+    // Update favourite from DMQ
+    //  this->favourite.update();
+
+    this->saveButton.update();
+    if (this->saveButton.isClicked()) {
+        this->favourite.removeWhenSave();
+        this->favourite.update();
+    }
+}
+
+void Window::updateSearchBoxEvent() {
     // update searchBox
     std::string _searchText = this->searchBox.getText();
+    // if (this->randWordBtn.isClicked()) {
+    //     string text = Utils::WStringToUTF8(this->api->apiWord.getRandomWord(this->currentDict).word);
+    // }
     if (_searchText != this->currentSearch) {
         this->currentSearch = _searchText;
         std::cout << "LOG: Search text: " << _searchText << std::endl;
@@ -408,21 +446,24 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
 
     // get click searchBox
     int choice = this->searchBox.getChoseId();
-    if (choice != -1) {
+    bool isRandBtnClicked = this->randWordBtn.isClicked();
+    if (choice != -1 || isRandBtnClicked) {
         std::cout << "LOG: Search box choice: " << choice << std::endl;
+        this->resetOperationMode();
         // get tu list ra lay result show nguoc ra frameBoard
         this->isShowingWord = true;
-        this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
-        for (int i = 0; i < 3; ++i) {
-            this->operationButtons[i].setChosen(false);
-        }
-        this->frameBoard.reset();
-        this->currentWord = this->api->apiWord.getWord(this->currentDict, this->_wordList[choice]);
+        // this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
+        // for (int i = 0; i < 3; ++i) {
+        //     this->operationButtons[i].setChosen(false);
+        // }
+        // this->frameBoard.reset();
+        if (isRandBtnClicked)
+            this->currentWord = this->api->apiWord.getRandomWord(this->currentDict);
+        else
+            this->currentWord = this->api->apiWord.getWord(this->currentDict, this->_wordList[choice]);
         std::wcout << "LOG: currentWord: " << this->currentWord.word << std::endl;
         this->createLines();
     }
-
-    this->updateOperationButtons();
 }
 
 void Window::createLines() {
@@ -466,6 +507,8 @@ void Window::createLines() {
         string s(ws.begin(), ws.end());
         this->emoji = LoadTextureFromImage(LoadImage(s.c_str()));
     }
+    // std::cout << "LOG: first of _blocks: " << *_blocks[1].second << std::endl;
+    this->frameBoard.setBlocks(_blocks);
 }
 
 void Window::saveFrameBoard() {
@@ -474,10 +517,17 @@ void Window::saveFrameBoard() {
         std::cout << "LOG: WordAdd: " << this->wordAdd << std::endl;
         std::cout << "LOG: DefinitionAdd: " << this->definitionAdd << std::endl;
         Word newWord;
-        newWord.word = Utils::UTF8ToWString(this->wordAdd);
-        newWord.worddef.resize(1);
-        newWord.worddef[0].definition.resize(1);
-        newWord.worddef[0].definition[0].meaning = Utils::UTF8ToWString(this->definitionAdd);
+        newWord.setData(
+            Utils::UTF8ToWString(this->wordAdd), 
+            Utils::UTF8ToWString(this->definitionAdd), 
+            std::wstring(L""), 
+            std::wstring(L""), 
+            std::wstring(L"")
+        );
+        // newWord.word = Utils::UTF8ToWString(this->wordAdd);
+        // newWord.worddef.resize(1);
+        // newWord.worddef[0].definition.resize(1);
+        // newWord.worddef[0].definition[0].meaning = Utils::UTF8ToWString(this->definitionAdd);
 
         this->api->apiWord.addWord(this->currentDict, newWord);
     }
@@ -523,4 +573,24 @@ void Window::saveFrameBoard() {
         }
         this->api->apiWord.addWord(this->currentDict, this->currentWord);
     }
+}
+
+void Window::resetMenuMode() {
+    this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
+    for (int i = 0; i < 3; ++i) 
+        this->menuButtons[i].setChosen(false);
+    this->searchBox.reset();
+    this->resetOperationMode();
+}
+
+void Window::resetOperationMode() {
+    this->frameBoard.reset();
+    this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
+    this->isShowingWord = false;
+
+    this->wordAdd = "";
+    this->definitionAdd = "";
+
+    for (int i = 0; i < 3; ++i) 
+        this->operationButtons[i].setChosen(false);
 }

@@ -64,5 +64,7 @@ add_executable(CS163_Group9 main.cpp
         source/stuff/FrameBoard.h
         source/draw/Favorite.cpp
         source/draw/Favorite.h
+        source/draw/QuizScene.cpp
+        source/draw/QuizScene.h
 )
 target_link_libraries(${PROJECT_NAME} raylib)

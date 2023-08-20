@@ -13,7 +13,8 @@
 #include "stuff/SearchBox.h"
 #include "stuff/FrameBoard.h"
 #include "core/Api.h"
-#include <draw/Favorite.h>
+#include "draw/Favorite.h"
+#include "draw/QuizScene.h"
 
 class Window {
 private:
@@ -40,6 +41,8 @@ private:
     bool isQuizActived = false;
     Constants::TypeDict currentDict = (Constants::TypeDict)0;
     ButtonImage DataSwitchButton, QuizButton, StarButton;
+    QuizScene quizScene;
+    bool isShowingQuiz = false;
     // For Star Button (in search)
     // bool firstCheck;
 
@@ -56,6 +59,7 @@ private:
     std::vector<std::wstring> _wordList;
     std::vector<std::pair<std::string, std::string>> suggestListText;
     FrameBoard frameBoard;
+    ButtonQuiz randWordBtn;
 
     // For Favourite
     Favourite favourite;
@@ -82,13 +86,19 @@ public:
     void handleEvents();
     void update();
 
+    void updateMenuMode();
+    void updateOperationMode();
+
     void updateOperationButtons();
     void updateModeNonFavorite();
+    void updateModeFavorite();
+    void updateSearchBoxEvent();
 
     void createLines();
-
     void saveFrameBoard();
 
+    void resetMenuMode();
+    void resetOperationMode();
     void reset();
 
     void run();

@@ -70,44 +70,41 @@ namespace Constants {
         constexpr char NAME_RESET_BTN[] = "Reset";
         constexpr Rectangle RECT_RESET_BTN = { 1096.9,678.5,230.4,63.3 };
 
-        constexpr char FONT[] = "../../../assets/fonts/OpenSans.ttf";
+        constexpr char FONT[] = "../assets/fonts/OpenSans.ttf";
     };
 
     namespace Directories {
         namespace DMQ {
-            constexpr char BG[] = "../../../assets/components/Image_UI/BackGr.png";
-            constexpr char SearchWord[] = "../../../assets/components/Image_UI/SearchWord.png";
-            constexpr char SearchDef[] = "../../../assets/components/Image_UI/SearchDef.png";
-            constexpr char Favourite[] = "../../../assets/components/Image_UI/Favourite.png";
-            constexpr char Blank[] = "../../../assets/components/Image_UI/Blank.png";
-            constexpr std::array<std::string_view, 4>  switchData = {
-                "../../../assets/components/Image_UI/ENtoVI.png",
-                "../../../assets/components/Image_UI/VItoEN.png",
-                "../../../assets/components/Image_UI/ENtoEN.png",
-                "../../../assets/components/Image_UI/Emoji.png"
+            constexpr char BG[] = "../assets/components/Image_UI/BackGr.png";
+            constexpr char SearchWord[] = "../assets/components/Image_UI/SearchWord.png";
+            constexpr char SearchDef[] = "../assets/components/Image_UI/SearchDef.png";
+            constexpr char Favourite[] = "../assets/components/Image_UI/Favourite.png";
+            constexpr char Blank[] = "../assets/components/Image_UI/Blank.png";
+            constexpr std::array<std::string_view, 3>  switchData = {
+                "../assets/components/Image_UI/ENtoVI.png",
+                "../assets/components/Image_UI/VItoEN.png",
+                "../assets/components/Image_UI/ENtoEN.png"
             };
             constexpr std::array<std::string_view, 2>  Star = {
-                 "../../../assets/components/Image_UI/Star.png",
-                 "../../../assets/components/Image_UI/StarFavourite.png"
+                 "../assets/components/Image_UI/Star.png",
+                 "../assets/components/Image_UI/StarFavourite.png"
             };
-            constexpr std::array<std::string_view, 4>  switchDataPress = {
-                "../../../assets/components/Image_UI/ENtoVIPress.png",
-                "../../../assets/components/Image_UI/VItoENPress.png",
-                "../../../assets/components/Image_UI/ENtoENPress.png",
-                "../../../assets/components/Image_UI/EmojiPress.png"
-
+            constexpr std::array<std::string_view, 3>  switchDataPress = {
+                "../assets/components/Image_UI/ENtoVIPress.png",
+                "../assets/components/Image_UI/VItoENPress.png",
+                "../assets/components/Image_UI/ENtoENPress.png"
             };
             constexpr std::array<std::string_view, 2>  StarPress = {
-                 "../../../assets/components/Image_UI/StarPress.png",
-                 "../../../assets/components/Image_UI/StarFavouritePress.png"
+                 "../assets/components/Image_UI/StarPress.png",
+                 "../assets/components/Image_UI/StarFavouritePress.png"
             };
             constexpr std::array<std::string_view, 2>  Quizz = {
-                "../../../assets/components/Image_UI/SearchMode.png",
-                "../../../assets/components/Image_UI/QuizMode.png"
+                "../assets/components/Image_UI/SearchMode.png",
+                "../assets/components/Image_UI/QuizMode.png"
             };
             constexpr std::array<std::string_view, 2>  QuizzPress = {
-                "../../../assets/components/Image_UI/SearchModePress.png",
-                "../../../assets/components/Image_UI/QuizModePress.png"
+                "../assets/components/Image_UI/SearchModePress.png",
+                "../assets/components/Image_UI/QuizModePress.png"
             };
         }
 

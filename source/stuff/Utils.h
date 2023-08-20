@@ -26,9 +26,10 @@ namespace Utils {
     static void formatString(Font *font, float spacing, std::string s, float size, float fontSize, std::vector <std::string>& result) {
         if (s.empty()) return;
         std::string currentLines, currentWord;
-        while(s.size() && (s.back() == ' ' || s.back() == '\n')) s.pop_back();
-        if (s.empty()) return;
-        s.push_back('\n');
+        // while(s.size() && (s.back() == ' ' || s.back() == '\n')) s.pop_back();
+        // if (s.empty()) return;
+        if (s.back() != '\n')
+            s.push_back('\n');
         for (auto i : s) {
             if (i == '\n') {
                 if (MeasureTextEx(*font, currentLines.c_str(), fontSize, spacing).x +

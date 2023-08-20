@@ -178,13 +178,20 @@ void Word::setData(std::wstring word, std::wstring definition, std::wstring exam
     this->IsType=true;
     Type type1;
     Definition def;
-    def.Isexample= true;
+    
     type1.Isdefinition=true;
 
-    type1.type=type;
-    type1.phrase=phrase;
+    if(type.size()>0)
+        type1.type=type;
+    if(phrase.size()>0)
+        type1.phrase=phrase;
+        
     def.meaning= definition;
-    def.examples.push_back(example);
+    if(example.size()>0)
+    {
+        def.Isexample= true;
+        def.examples.push_back(example);
+    }
     type1.definition.push_back(def);
     this->worddef.push_back(type1);
 }
