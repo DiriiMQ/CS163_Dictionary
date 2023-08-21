@@ -1,26 +1,39 @@
-A : The first letter of the English and of many other alphabets. The capital A of the alphabets of Middle and Western Europe, as also the small letter (a), besides the forms in Italic, black letter, etc., are all descended from the old Latin A, which was borrowed from the Greek Alpha, of the same form; and this was made from the first letter (/) of the Phoenician alphabet, the equivalent of the Hebrew Aleph, and itself from the Egyptian origin. The Aleph was a consonant letter, with a guttural breath sound that was not an element of Greek articulation; and the Greeks took it to represent their vowel Alpha with the a sound, the Phoenician alphabet having no vowel symbols.
-A : The name of the sixth tone in the model major scale (that in C), or the first tone of the minor scale, which is named after it the scale in A minor. The second string of the violin is tuned to the A in the treble staff. -- A sharp (A/) is the name of a musical tone intermediate between A and B. -- A flat (A/) is the name of a tone intermediate between A and G.
-A : An adjective, commonly called the indefinite article, and signifying one or any, but less emphatically.
-A : "In each; to or for each; as, ""twenty leagues a day"", ""a hundred pounds a year"", ""a dollar a yard"", etc."
-A : In; on; at; by.
-A : In process of; in the act of; into; to; -- used with verbal substantives in -ing which begin with a consonant. This is a shortened form of the preposition an (which was used before the vowel sound); as in a hunting, a building, a begging.
-A : Of.
-A : A barbarous corruption of have, of he, and sometimes of it and of they.
-A : An expletive, void of sense, to fill up the meter
-A- : A, as a prefix to English words, is derived from various sources. (1) It frequently signifies on or in (from an, a forms of AS. on), denoting a state, as in afoot, on foot, abed, amiss, asleep, aground, aloft, away (AS. onweg), and analogically, ablaze, atremble, etc. (2) AS. of off, from, as in adown (AS. ofd/ne off the dun or hill). (3) AS. a- (Goth. us-, ur-, Ger. er-), usually giving an intensive force, and sometimes the sense of away, on, back, as in arise, abide, ago. (4) Old English y- or i- (corrupted from the AS. inseparable particle ge-, cognate with OHG. ga-, gi-, Goth. ga-), which, as a prefix, made no essential addition to the meaning, as in aware. (5) French a (L. ad to), as in abase, achieve. (6) L. a, ab, abs, from, as in avert. (7) Greek insep. prefix / without, or privative, not, as in abyss, atheist; akin to E. un-.
-A : A registry mark given by underwriters (as at Lloyd's) to ships in first-class condition. Inferior grades are indicated by A 2 and A 3.
-Aam : A Dutch and German measure of liquids, varying in different cities, being at Amsterdam about 41 wine gallons, at Antwerp 36 1/2, at Hamburg 38 1/4.
-Aard-vark : An edentate mammal, of the genus Orycteropus, somewhat resembling a pig, common in some parts of Southern Africa. It burrows in the ground, and feeds entirely on ants, which it catches with its long, slimy tongue.
-Aard-wolf : A carnivorous quadruped (Proteles Lalandii), of South Africa, resembling the fox and hyena. See Proteles.
-Aaronic : Alt. of Aaronical
-Aaronical : Pertaining to Aaron, the first high priest of the Jews.
-A : The first letter of the English and of many other alphabets. The capital A of the alphabets of Middle and Western Europe, as also the small letter (a), besides the forms in Italic, black letter, etc., are all descended from the old Latin A, which was borrowed from the Greek Alpha, of the same form; and this was made from the first letter (/) of the Phoenician alphabet, the equivalent of the Hebrew Aleph, and itself from the Egyptian origin. The Aleph was a consonant letter, with a guttural breath sound that was not an element of Greek articulation; and the Greeks took it to represent their vowel Alpha with the a sound, the Phoenician alphabet having no vowel symbols.
-A : The name of the sixth tone in the model major scale (that in C), or the first tone of the minor scale, which is named after it the scale in A minor. The second string of the violin is tuned to the A in the treble staff. -- A sharp (A/) is the name of a musical tone intermediate between A and B. -- A flat (A/) is the name of a tone intermediate between A and G.
-A : An adjective, commonly called the indefinite article, and signifying one or any, but less emphatically.
-A : "In each; to or for each; as, ""twenty leagues a day"", ""a hundred pounds a year"", ""a dollar a yard"", etc."
-A : In; on; at; by.
-A : In process of; in the act of; into; to; -- used with verbal substantives in -ing which begin with a consonant. This is a shortened form of the preposition an (which was used before the vowel sound); as in a hunting, a building, a begging.
-A : Of.
-A : A barbarous corruption of have, of he, and sometimes of it and of they.
-A : An expletive, void of sense, to fill up the meter
-A- : A, as a prefix to English words, is derived from various sources. (1) It frequently signifies on or in (from an, a forms of AS. on), denoting a state, as in afoot, on foot, abed, amiss, asleep, aground, aloft, away (AS. onweg), and analogically, ablaze, atremble, etc. (2) AS. of off, from, as in adown (AS. ofd/ne off the dun or hill). (3) AS. a- (Goth. us-, ur-, Ger. er-), usually giving an intensive force, and sometimes the sense of away, on, back, as in arise, abide, ago. (4) Old English y- or i- (corrupted from the AS. inseparable particle ge-, cognate with OHG. ga-, gi-, Goth. ga-), which, as a prefix, made no essential addition to the meaning, as in aware. (5) French a (L. ad to), as in abase, achieve. (6) L. a, ab, abs, from, as in avert. (7) Greek insep. prefix / without, or privative, not, as in abyss, atheist; akin to E. un-.
+@abeyance /ə'beiəns/
+*  danh từ
+- sự đọng lại
+=work in abeyance+ công việc còn đọng lại
+- sự đình chỉ, sự hoãn lại, sự tạm thời không áp dụng (đạo luật...)
+=to be in abeyance; to fall into abeyance+ bị đình chỉ, bị hoãn lại, tạm thời không được áp dụng
+- (pháp lý) tình trạng tạm thời không có người nhận; tình trạng tạm thời vô chủ
+=lands in abeyance+ đất vô thừa nhận, đất vô chủ
+- tình trạng trống, tình trạng khuyết (một chức vị)
+
+@mercenariness /'mə:sinərinis/
+*  danh từ
+- tính chất làm thuê, tính chất đánh thuê
+- tính vụ lợi
+
+@mercenary /'mə:sinəri/
+*  tính từ
+- làm thuê, làm công
+- hám lợi, vụ lợi
+=to act from mercenary motives+ hành động vì động cơ vụ lợi
+*  danh từ
+- lính đánh thuê; tay sai
+
+@scabbed
+* tính từ
+- đóng vảy (vết thương)
+- ti tiện; hèn hạ
+@scag
+* danh từ
+- xì ke (ma túy)
+@scala
+* danh từ
+- ống thang; rãnh thang
+@scalable
+* tính từ
+- có thể leo bằng thang
+@scalary
+* tính từ
+- dạng thang
