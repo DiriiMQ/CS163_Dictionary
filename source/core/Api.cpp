@@ -328,7 +328,7 @@ void Api::resetDict(Constants::TypeDict typeDict) {
         filename = "../../../assets/data/Anh_Viet_Original.dat";
     }
     else if (typeDict == Constants::TypeDict::EN_EN) {
-        filename = "..\\assets\\data\\Anh_Anh_Original.dat";
+        filename = "../../../assets/data/Anh_Anh_Original.dat";
     }
     else {
         filename = "../../../assets/data/Viet_Anh_Original.dat";
@@ -340,7 +340,7 @@ void Api::resetDict(Constants::TypeDict typeDict) {
         newfilename = "../../../assets/data/Anh_Viet.dat";
     }
     else if (typeDict == Constants::TypeDict::EN_EN) {
-        newfilename = "..\\assets\\data\\Anh_Anh.dat";
+        newfilename = "../../../assets\\data\\Anh_Anh.dat";
     }
     else {
         newfilename = "../../../assets/data/Viet_Anh.dat";
