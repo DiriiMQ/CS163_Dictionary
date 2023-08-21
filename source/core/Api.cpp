@@ -44,6 +44,8 @@ Dicts::Dicts() {
     string filename3_favorite = "../assets/data/Anh_Anh_favorite.dat";
     string filename3_history = "../assets/data/Anh_Anh_history.dat";
     string filename4 = "../assets/data/emoji.dat";
+    string filename4_favorite = "../assets/data/emoji_favorite.dat";
+    string filename4_history = "../assets/data/emoji_history.dat";
     ifstream wfin;
 
     readbinaryfile(dicts[0].words, filename1);
@@ -114,6 +116,22 @@ Dicts::Dicts() {
         dicts[2].Map[dicts[2].words[i].word] = i;
         MakeDef(dicts[2].words[i],dicts[2],1);
     }
+    wfin.open(filename4_favorite, ios::binary | ios::in);
+    if (!wfin) {
+        cout << "Can't open file Favorite" << endl;
+        wcout << "Can't open file Favorite" << endl;
+        return;
+    }
+    readStringVectorFromFile(dicts[3].FavoriteList, wfin);
+    wfin.close();
+    wfin.open(filename4_history, ios::binary | ios::in);
+    if (!wfin) {
+        cout << "Can't open file Favorite" << endl;
+        wcout << "Can't open file Favorite" << endl;
+        return;
+    }
+    readStringVectorFromFile(dicts[3].HistoryList, wfin);
+    wfin.close();
     readbinaryfile(dicts[3].words,filename4);
     for (int i = 0; i < dicts[3].words.size(); i++) {
         dicts[3].Map[dicts[3].words[i].word] = i;
@@ -131,6 +149,8 @@ Dicts::~Dicts(){
     string filename3_favorite = "../assets/data/Anh_Anh_favorite.dat";
     string filename3_history = "../assets/data/Anh_Anh_history.dat";
     string filename4 = "../assets/data/emoji.dat";
+    string filename4_favorite = "../assets/data/emoji_favorite.dat";
+    string filename4_history = "../assets/data/emoji_history.dat";
     writetobinaryfile(dicts[0].words, filename1);
     writetobinaryfile(dicts[1].words, filename2);
     writetobinaryfile(dicts[2].words, filename3);
@@ -146,6 +166,9 @@ Dicts::~Dicts(){
     wfout.open(filename3_favorite, ios::binary | ios::out);
     writeStringVectorToFile(dicts[2].FavoriteList, wfout);
     wfout.close();
+    wfout.open(filename4_favorite, ios::binary | ios::out);
+    writeStringVectorToFile(dicts[3].FavoriteList, wfout);
+    wfout.close();
     //Save history
     wfout.open(filename1_history, ios::binary | ios::out);
     writeStringVectorToFile(dicts[0].HistoryList, wfout);
@@ -155,6 +178,9 @@ Dicts::~Dicts(){
     wfout.close();
     wfout.open(filename3_history, ios::binary | ios::out);
     writeStringVectorToFile(dicts[2].HistoryList, wfout);
+    wfout.close();
+    wfout.open(filename4_history, ios::binary | ios::out);
+    writeStringVectorToFile(dicts[3].HistoryList, wfout);
     wfout.close();
     wcout << "Done in " << 1.0*clock()/CLOCKS_PER_SEC << endl;
 }
@@ -231,7 +257,6 @@ void ApiWord::editWord(Constants::TypeDict typeDict, Word& replace) {
 }
 
 Word ApiWord::getRandomWord(Constants::TypeDict typeDict) {
-    
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     pair<wstring,int> WordRand = dictionary.Map.getRandom();
     return dictionary.words[WordRand.second];
@@ -330,8 +355,10 @@ void Api::resetDict(Constants::TypeDict typeDict) {
     else if (typeDict == Constants::TypeDict::EN_EN) {
         filename = "..\\assets\\data\\Anh_Anh_Original.dat";
     }
-    else {
+    else if (typeDict == Constants::TypeDict::VI_EN) {
         filename = "../assets/data/Viet_Anh_Original.dat";
+    } else {
+        filename = "../assets/data/emoji_Original.dat";
     }
     vector<Word> ddictionary;
     readbinaryfile(ddictionary, filename);
@@ -342,8 +369,10 @@ void Api::resetDict(Constants::TypeDict typeDict) {
     else if (typeDict == Constants::TypeDict::EN_EN) {
         newfilename = "..\\assets\\data\\Anh_Anh.dat";
     }
-    else {
+    else if (typeDict == Constants::TypeDict::VI_EN) {
         newfilename = "../assets/data/Viet_Anh.dat";
+    } else {
+        newfilename = "../assets/data/emoji.dat";
     }
     writetobinaryfile(ddictionary, newfilename);
     
