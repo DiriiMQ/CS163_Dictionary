@@ -20,6 +20,7 @@ class Window {
 private:
     static constexpr float CORNER_RADIUS = 0.1f;
     string REMOVE_NOTICE = "This word has been removed!";
+    string ADD_NOTICE = "This word has been added to your dictionary!";
 
     // FOR TESTING
 //    std::string testLarge;
@@ -27,14 +28,14 @@ private:
     ButtonQuiz testButtonQuiz;
     // END TESTING
 
-    Api *api;
+    Api* api;
     Font font;
     Texture background;
     Rectangle mainInfoBG;
     Button menuButtons[3],
-            operationButtons[3],
-            saveButton,
-            resetButton;
+        operationButtons[3],
+        saveButton,
+        resetButton;
     int activeMenu, activeOperation;
 
     // For Quiz & Type of Dict
@@ -48,7 +49,7 @@ private:
 
 
     // For Add
-    std::string wordAdd, definitionAdd;
+    std::string wordAdd, typeAdd, definitionAdd, exampleAdd;
 
     // For Search and Edit
     bool isShowingWord = false;
@@ -78,7 +79,7 @@ private:
     Texture emoji;
 
 public:
-    Window(Api *api);
+    Window(Api* api);
     void init();
 
     // main
