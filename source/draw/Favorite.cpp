@@ -101,7 +101,7 @@ void Favourite::handleEvents()
     }
     if (GetMouseWheelMove() > 0 && mouse < 0)   // scroll up
         mouse += 1;
-    else if (GetMouseWheelMove() < 0 && mouse > MAX_SUGGESTIONS - size) //scroll down
+    else if (GetMouseWheelMove() < 0 && mouse > MAX_SUGGESTIONS - (size-1)) //scroll down
         mouse -= 1;
     for (int i = 0; i < MAX_SUGGESTIONS; i++)
     {

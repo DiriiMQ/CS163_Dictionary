@@ -332,8 +332,8 @@ void Window::reset()
     // this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
     // this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
     // // For Quiz and DataSwitch
-    // this->DataSwitchButton.changeIndex(0);
-    // this->QuizButton.changeIndex(0);
+     this->DataSwitchButton.changeIndex(0);
+     this->QuizButton.changeIndex(0);
     // this->wordAdd = "";
     // this->definitionAdd = "";
     this->resetMenuMode();
