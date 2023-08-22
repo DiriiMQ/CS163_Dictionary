@@ -507,8 +507,8 @@ void Window::createLines() {
     }
     else
     {
-        // wstring b= L"../../../assets/components/"+dic[i].word + L".png";
-        wstring ws = L"../../../assets/components/images/" + this->currentWord.worddef[0].definition[0].meaning + L".png";
+        // wstring b= L"../assets/components/"+dic[i].word + L".png";
+        wstring ws = L"../assets/components/images/" + this->currentWord.worddef[0].definition[0].meaning + L".png";
         string s(ws.begin(), ws.end());
         this->emoji = LoadTextureFromImage(LoadImage(s.c_str()));
     }
