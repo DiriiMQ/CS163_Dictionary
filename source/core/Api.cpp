@@ -34,16 +34,18 @@ void MakeDef(const Word &curWord, Dict& dicts, int del){
         }
 }
 Dicts::Dicts() {
-    string filename1 = "../../../assets/data/Anh_Viet.dat";
-    string filename1_favorite = "../../../assets/data/Anh_Viet_favorite.dat";
-    string filename1_history = "../../../assets/data/Anh_Viet_history.dat";
-    string filename2 = "../../../assets/data/Viet_Anh.dat";
-    string filename2_favorite = "../../../assets/data/Viet_Anh_favorite.dat";
-    string filename2_history = "../../../assets/data/Viet_Anh_history.dat";
-    string filename3 = "../../../assets/data/Anh_Anh.dat";
-    string filename3_favorite = "../../../assets/data/Anh_Anh_favorite.dat";
-    string filename3_history = "../../../assets/data/Anh_Anh_history.dat";
-    string filename4 = "../../../assets/data/emoji.dat";
+     string filename1 = "../assets/data/Anh_Viet.dat";
+    string filename1_favorite = "../assets/data/Anh_Viet_favorite.dat";
+    string filename1_history = "../assets/data/Anh_Viet_history.dat";
+    string filename2 = "../assets/data/Viet_Anh.dat";
+    string filename2_favorite = "../assets/data/Viet_Anh_favorite.dat";
+    string filename2_history = "../assets/data/Viet_Anh_history.dat";
+    string filename3 = "../assets/data/Anh_Anh.dat";
+    string filename3_favorite = "../assets/data/Anh_Anh_favorite.dat";
+    string filename3_history = "../assets/data/Anh_Anh_history.dat";
+    string filename4 = "../assets/data/emoji.dat";
+    string filename4_favorite = "../assets/data/emoji_favorite.dat";
+    string filename4_history = "../assets/data/emoji_history.dat";
     ifstream wfin;
 
     readbinaryfile(dicts[0].words, filename1);
@@ -114,6 +116,22 @@ Dicts::Dicts() {
         dicts[2].Map[dicts[2].words[i].word] = i;
         MakeDef(dicts[2].words[i],dicts[2],1);
     }
+    wfin.open(filename4_favorite, ios::binary | ios::in);
+    if (!wfin) {
+        cout << "Can't open file Favorite" << endl;
+        wcout << "Can't open file Favorite" << endl;
+        return;
+    }
+    readStringVectorFromFile(dicts[3].FavoriteList, wfin);
+    wfin.close();
+    wfin.open(filename4_history, ios::binary | ios::in);
+    if (!wfin) {
+        cout << "Can't open file Favorite" << endl;
+        wcout << "Can't open file Favorite" << endl;
+        return;
+    }
+    readStringVectorFromFile(dicts[3].HistoryList, wfin);
+    wfin.close();
     readbinaryfile(dicts[3].words,filename4);
     for (int i = 0; i < dicts[3].words.size(); i++) {
         dicts[3].Map[dicts[3].words[i].word] = i;
@@ -121,16 +139,18 @@ Dicts::Dicts() {
     }
 }
 Dicts::~Dicts(){
-    string filename1 = "../../../assets/data/Anh_Viet.dat";
-    string filename1_favorite = "../../../assets/data/Anh_Viet_favorite.dat";
-    string filename1_history = "../../../assets/data/Anh_Viet_history.dat";
-    string filename2 = "../../../assets/data/Viet_Anh.dat";
-    string filename2_favorite = "../../../assets/data/Viet_Anh_favorite.dat";
-    string filename2_history = "../../../assets/data/Viet_Anh_history.dat";
-    string filename3 = "../../../assets/data/Anh_Anh.dat";
-    string filename3_favorite = "../../../assets/data/Anh_Anh_favorite.dat";
-    string filename3_history = "../../../assets/data/Anh_Anh_history.dat";
-    string filename4 = "../../../assets/data/emoji.dat";
+    string filename1 = "../assets/data/Anh_Viet.dat";
+    string filename1_favorite = "../assets/data/Anh_Viet_favorite.dat";
+    string filename1_history = "../assets/data/Anh_Viet_history.dat";
+    string filename2 = "../assets/data/Viet_Anh.dat";
+    string filename2_favorite = "../assets/data/Viet_Anh_favorite.dat";
+    string filename2_history = "../assets/data/Viet_Anh_history.dat";
+    string filename3 = "../assets/data/Anh_Anh.dat";
+    string filename3_favorite = "../assets/data/Anh_Anh_favorite.dat";
+    string filename3_history = "../assets/data/Anh_Anh_history.dat";
+    string filename4 = "../assets/data/emoji.dat";
+    string filename4_favorite = "../assets/data/emoji_favorite.dat";
+    string filename4_history = "../assets/data/emoji_history.dat";
     writetobinaryfile(dicts[0].words, filename1);
     writetobinaryfile(dicts[1].words, filename2);
     writetobinaryfile(dicts[2].words, filename3);
@@ -146,6 +166,9 @@ Dicts::~Dicts(){
     wfout.open(filename3_favorite, ios::binary | ios::out);
     writeStringVectorToFile(dicts[2].FavoriteList, wfout);
     wfout.close();
+    wfout.open(filename4_favorite, ios::binary | ios::out);
+    writeStringVectorToFile(dicts[3].FavoriteList, wfout);
+    wfout.close();
     //Save history
     wfout.open(filename1_history, ios::binary | ios::out);
     writeStringVectorToFile(dicts[0].HistoryList, wfout);
@@ -155,6 +178,9 @@ Dicts::~Dicts(){
     wfout.close();
     wfout.open(filename3_history, ios::binary | ios::out);
     writeStringVectorToFile(dicts[2].HistoryList, wfout);
+    wfout.close();
+    wfout.open(filename4_history, ios::binary | ios::out);
+    writeStringVectorToFile(dicts[3].HistoryList, wfout);
     wfout.close();
     wcout << "Done in " << 1.0*clock()/CLOCKS_PER_SEC << endl;
 }
@@ -218,6 +244,11 @@ bool ApiWord::removeWord(Constants::TypeDict typeDict, std::wstring word) {
         MakeDef(dictionary.words.back(),dictionary,-1);
         dictionary.words.pop_back();
         dictionary.Map.remove(word);
+        for (int i = 0; i < dictionary.FavoriteList.size(); i++)
+            if (dictionary.FavoriteList[i] == word) {
+                swap(dictionary.FavoriteList[i], dictionary.FavoriteList.back());
+                dictionary.FavoriteList.pop_back();
+            }
         return true;
     }
     return false;
@@ -231,7 +262,6 @@ void ApiWord::editWord(Constants::TypeDict typeDict, Word& replace) {
 }
 
 Word ApiWord::getRandomWord(Constants::TypeDict typeDict) {
-    
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     pair<wstring,int> WordRand = dictionary.Map.getRandom();
     return dictionary.words[WordRand.second];
@@ -275,8 +305,10 @@ std::vector<wstring> ApiSearch::getAutoCompleteListForDefinition(Constants::Type
     return move(result);
 }
 std::vector<wstring> ApiSearch::getHistory(Constants::TypeDict typeDict) {
-    if (MainDictionary.dicts[static_cast<int>(typeDict)].HistoryList.size()==1) return vector<wstring>();
-    return MainDictionary.dicts[static_cast<int>(typeDict)].HistoryList;
+    vector<wstring> result = MainDictionary.dicts[static_cast<int>(typeDict)].HistoryList;
+    reverse(result.begin(), result.end());
+    result.pop_back();
+    return result;
 }
 
 Quiz ApiQuiz::getQuiz(Constants::TypeDict typeDict, bool IsAskWordToDef) {
@@ -291,21 +323,15 @@ Quiz ApiQuiz::getQuiz(Constants::TypeDict typeDict, bool IsAskWordToDef) {
                 temp = (temp << 8) | (rand() % 256);
             }
             Word *cur = &dictionary.words[temp % dictionary.words.size()];
-            int Min_Length_Of_Definition = 100000;
-            for (int j=0; j<cur->worddef.size(); j++){
-                for (int k=0; k<cur->worddef[j].definition.size(); k++){
-                    if (Min_Length_Of_Definition > cur->worddef[j].definition[k].meaning.size()){
-                        Min_Length_Of_Definition = cur->worddef[j].definition[k].meaning.size();
-                    }
-                }
-            }
+            if (cur->worddef.empty() || cur->worddef[0].definition.empty()) continue;
+            int Min_Length_Of_Definition = cur->worddef[0].definition[0].meaning.size();
             if (IsAskWordToDef){
-                if (cur->word.size()<MAX_LENGTH_OF_QUESTION && Min_Length_Of_Definition<MAX_LENGTH_OF_ANSWER){
+                if (cur->word.size() < MAX_LENGTH_OF_QUESTION && Min_Length_Of_Definition < MAX_LENGTH_OF_ANSWER){
                     quiz.options.push_back(cur);
                     break;
                 }
             } else {
-                if (cur->word.size()<MAX_LENGTH_OF_ANSWER && Min_Length_Of_Definition<MAX_LENGTH_OF_QUESTION){
+                if (cur->word.size() < MAX_LENGTH_OF_ANSWER && Min_Length_Of_Definition < MAX_LENGTH_OF_QUESTION){
                     quiz.options.push_back(cur);
                     break;
                 }
@@ -324,26 +350,30 @@ bool ApiQuiz::submitQuiz(Constants::TypeDict typeDict, QuizResponse response) {
 void Api::resetDict(Constants::TypeDict typeDict) {
     Dict& dictionary = MainDictionary.dicts[static_cast<int>(typeDict)];
     string filename;
-    if (typeDict == Constants::TypeDict::EN_VI) {
-        filename = "../../../assets/data/Anh_Viet_Original.dat";
+   if (typeDict == Constants::TypeDict::EN_VI) {
+        filename = "../assets/data/Anh_Viet_Original.dat";
     }
     else if (typeDict == Constants::TypeDict::EN_EN) {
         filename = "..\\assets\\data\\Anh_Anh_Original.dat";
     }
-    else {
-        filename = "../../../assets/data/Viet_Anh_Original.dat";
+    else if (typeDict == Constants::TypeDict::VI_EN) {
+        filename = "../assets/data/Viet_Anh_Original.dat";
+    } else {
+        filename = "../assets/data/emoji_Original.dat";
     }
     vector<Word> ddictionary;
     readbinaryfile(ddictionary, filename);
     string newfilename;
     if (typeDict == Constants::TypeDict::EN_VI) {
-        newfilename = "../../../assets/data/Anh_Viet.dat";
+        newfilename = "../assets/data/Anh_Viet.dat";
     }
     else if (typeDict == Constants::TypeDict::EN_EN) {
         newfilename = "..\\assets\\data\\Anh_Anh.dat";
     }
-    else {
-        newfilename = "../../../assets/data/Viet_Anh.dat";
+    else if (typeDict == Constants::TypeDict::VI_EN) {
+        newfilename = "../assets/data/Viet_Anh.dat";
+    } else {
+        newfilename = "../assets/data/emoji.dat";
     }
     writetobinaryfile(ddictionary, newfilename);
     
