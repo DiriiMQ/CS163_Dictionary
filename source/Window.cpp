@@ -10,14 +10,6 @@ Window::Window(Api* api) {
 
     this->api = api;
     this->init();
-
-    // this->testButtonQuiz = ButtonQuiz(
-    //     &this->font, 
-    //     "abc dcm xyz eheh usb sjsja ud fde eruefue euyhe ekee fif grr wetrt ret ret rtre ret rg t e rg reg rg udu shshs ahahu hwhuw ssus sfs",
-    //     18, 
-    //     BLUE,
-    //     { 50,500,300, 100 }
-    // );
 }
 
 void Window::init() {
@@ -325,21 +317,6 @@ void Window::updateOperationMode() {
 
 void Window::reset()
 {
-    // for (int i = 0; i < 3; ++i) {
-    //     this->menuButtons[i].setChosen(false);
-    //     this->operationButtons[i].setChosen(false);
-    // }
-    // this->resetButton.setChosen(false);
-    // this->searchBox.reset();
-    // this->frameBoard.reset();
-    // this->favourite.reset();
-    // this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
-    // this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
-    // // For Quiz and DataSwitch
-    // this->DataSwitchButton.changeIndex(0);
-    // this->QuizButton.changeIndex(0);
-    // this->wordAdd = "";
-    // this->definitionAdd = "";
     this->resetMenuMode();
     this->api->resetDict(this->currentDict);
 }
@@ -509,17 +486,11 @@ void Window::createLines() {
     }
     else
     {
-        // wstring b= L"../../../assets/components/"+dic[i].word + L".png";
-        wstring ws = L"../../../assets/components/images/" + this->currentWord.worddef[0].definition[0].meaning + L".png";
+        // wstring b= L"../assets/components/"+dic[i].word + L".png";
+        wstring ws = L"../assets/components/images/" + this->currentWord.worddef[0].definition[0].meaning + L".png";
         string s(ws.begin(), ws.end());
         this->emoji = LoadTextureFromImage(LoadImage(s.c_str()));
     }
-    //std::vector<std::pair<std::string, std::string*>> _blocks;
-    //for (auto& i : this->lines) {
-    //    _blocks.emplace_back("", &i.first);
-    //}
-    //// std::cout << "LOG: first of _blocks: " << *_blocks[1].second << std::endl;
-    //this->frameBoard.setBlocks(_blocks);
 }
 
 void Window::saveFrameBoard() {

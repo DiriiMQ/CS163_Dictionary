@@ -5,38 +5,7 @@
 int main() {
     Dicts dicts;
     Api api(dicts);
-   /* Constants::TypeDict typedict = (Constants::TypeDict) 0;
-    api.apiFavorite.resetFavorite(typedict);
-    api.apiFavorite.addFavorite(typedict, L"Hi");
-    api.apiFavorite.addFavorite(typedict, L"Hello");
-    api.apiFavorite.removeFavorite(typedict, L"Hi");
-    vector<wstring>tmp = api.apiFavorite.getFavorite(typedict);
-    for (int i = 0; i < tmp.size(); i++)
-        wcout << tmp[i];*/
     Window window(&api);
-   // vector <wstring> s = api.apiSearch.getAutoCompleteListForWord((Constants::TypeDict)3, L"f");
-    //wcout << s.size();
     window.run();
-    // std::vector<std::wstring> wordList = api.apiSearch.getAutoCompleteListForWord(Constants::TypeDict::EN_VI, L"haa");
-    // for (auto &i : wordList) {
-    //     std::wcout << i << std::endl;
-    // }
-
-    // Word word = api.apiWord.getWord(Constants::TypeDict::EN_VI, L"d-ration");
-    // std::cout << Utils::WStringToUTF8(word.word) << std::endl;
-    // std::cout << Utils::WStringToUTF8(word.pronounce) << std::endl;
-    // for (auto &i : word.worddef) {
-    //     std::cout << "______\n";
-    //     std::cout << '\t' << Utils::WStringToUTF8(i.type) << std::endl;
-
-    //     for (auto &j : i.definition) {
-    //         std::cout << "\t\t" << Utils::WStringToUTF8(j.meaning) << std::endl;
-    //         for (auto &k : j.examples) {
-    //             std::cout << "\t\t\t" << Utils::WStringToUTF8(k) << std::endl;
-    //         }
-    //     }
-
-    //     std::cout << '\t' << Utils::WStringToUTF8(i.type) << std::endl;
-    // }
     return 0;
 }

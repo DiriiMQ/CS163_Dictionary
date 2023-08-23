@@ -251,6 +251,7 @@ void FrameBoard::setEditLines(std::vector<int> lines) {
 
 void FrameBoard::setBlocks(std::vector<std::pair<std::string, std::string*>> _blocks) {
     this->reset();
+    if (_blocks.empty()) return;
     for (auto& i : _blocks) {
         this->blocks.push_back(Line(
                 this->font,
