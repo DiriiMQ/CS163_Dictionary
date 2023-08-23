@@ -10,14 +10,6 @@ Window::Window(Api* api) {
 
     this->api = api;
     this->init();
-
-    // this->testButtonQuiz = ButtonQuiz(
-    //     &this->font, 
-    //     "abc dcm xyz eheh usb sjsja ud fde eruefue euyhe ekee fif grr wetrt ret ret rtre ret rg t e rg reg rg udu shshs ahahu hwhuw ssus sfs",
-    //     18, 
-    //     BLUE,
-    //     { 50,500,300, 100 }
-    // );
 }
 
 void Window::init() {
@@ -254,12 +246,6 @@ void Window::update() {
     if (this->resetButton.isClicked()) {
         this->reset();
     }
-
-//     this->testButtonQuiz.update();
-
-//     if (this->testButtonQuiz.isClicked()) {
-//         this->testButtonQuiz.setStatusAnswer(true);
-//     }
 }
 
 void Window::updateMenuMode() {
@@ -325,21 +311,6 @@ void Window::updateOperationMode() {
 
 void Window::reset()
 {
-    // for (int i = 0; i < 3; ++i) {
-    //     this->menuButtons[i].setChosen(false);
-    //     this->operationButtons[i].setChosen(false);
-    // }
-    // this->resetButton.setChosen(false);
-    // this->searchBox.reset();
-    // this->frameBoard.reset();
-    // this->favourite.reset();
-    // this->activeMenu = (int)Constants::Screen::menuBtn::NONE;
-    // this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
-    // // For Quiz and DataSwitch
-    // this->DataSwitchButton.changeIndex(0);
-    // this->QuizButton.changeIndex(0);
-    // this->wordAdd = "";
-    // this->definitionAdd = "";
     this->resetMenuMode();
     this->api->resetDict(this->currentDict);
 }
@@ -404,9 +375,6 @@ void Window::updateModeNonFavorite() { // Update for Search Mode
 }
 
 void Window::updateModeFavorite() {
-    // Update favourite from DMQ
-    //  this->favourite.update();
-
     this->saveButton.update();
     if (this->saveButton.isClicked()) {
         this->favourite.removeWhenSave();
@@ -417,9 +385,6 @@ void Window::updateModeFavorite() {
 void Window::updateSearchBoxEvent() {
     // update searchBox
     std::string _searchText = this->searchBox.getText();
-    // if (this->randWordBtn.isClicked()) {
-    //     string text = Utils::WStringToUTF8(this->api->apiWord.getRandomWord(this->currentDict).word);
-    // }
     if (_searchText != this->currentSearch) {
         this->currentSearch = _searchText;
         std::cout << "LOG: Search text: " << _searchText << std::endl;
@@ -459,11 +424,6 @@ void Window::updateSearchBoxEvent() {
         this->resetOperationMode();
         // get tu list ra lay result show nguoc ra frameBoard
         this->isShowingWord = true;
-        // this->activeOperation = (int)Constants::Screen::operationBtn::NONE;
-        // for (int i = 0; i < 3; ++i) {
-        //     this->operationButtons[i].setChosen(false);
-        // }
-        // this->frameBoard.reset();
         if (isRandBtnClicked)
             this->currentWord = this->api->apiWord.getRandomWord(this->currentDict);
         else
@@ -509,17 +469,10 @@ void Window::createLines() {
     }
     else
     {
-        // wstring b= L"../../../assets/components/"+dic[i].word + L".png";
-        wstring ws = L"../../../assets/components/images/" + this->currentWord.worddef[0].definition[0].meaning + L".png";
+        wstring ws = L"../assets/components/images/" + this->currentWord.worddef[0].definition[0].meaning + L".png";
         string s(ws.begin(), ws.end());
         this->emoji = LoadTextureFromImage(LoadImage(s.c_str()));
     }
-    //std::vector<std::pair<std::string, std::string*>> _blocks;
-    //for (auto& i : this->lines) {
-    //    _blocks.emplace_back("", &i.first);
-    //}
-    //// std::cout << "LOG: first of _blocks: " << *_blocks[1].second << std::endl;
-    //this->frameBoard.setBlocks(_blocks);
 }
 
 void Window::saveFrameBoard() {
@@ -538,10 +491,6 @@ void Window::saveFrameBoard() {
             std::wstring(L""), 
             Utils::UTF8ToWString(this->typeAdd)
         );
-        // newWord.word = Utils::UTF8ToWString(this->wordAdd);
-        // newWord.worddef.resize(1);
-        // newWord.worddef[0].definition.resize(1);
-        // newWord.worddef[0].definition[0].meaning = Utils::UTF8ToWString(this->definitionAdd);
 
         this->api->apiWord.addWord(this->currentDict, newWord);
         this->frameBoard.setBlocks({
@@ -553,18 +502,12 @@ void Window::saveFrameBoard() {
 
         Word& cur = this->currentWord;
         this->api->apiWord.removeWord(this->currentDict, cur.word);
-        // this->lines.push_back({
-        //     Utils::WStringToUTF8(cur.word) + (cur.pronounce != L"Null" ? ("  /" + Utils::WStringToUTF8(cur.pronounce) + "/") : ""), 
-        //     false
-        // });
         int counter = 0;
 
         for (auto& i : cur.worddef) {
-            // this->lines.push_back({"________", false});
             ++counter;
 
             if (i.type != L"Null") {
-                // this->lines.push_back({Utils::WStringToUTF8(i.type), true});
                 ++counter;
                 i.type = Utils::UTF8ToWString(this->lines[counter].first);
             }
@@ -583,7 +526,6 @@ void Window::saveFrameBoard() {
             }
 
             if (i.phrase != L"Null") {
-                // this->lines.push_back({Utils::WStringToUTF8(i.phrase), true});
                 ++counter;
                 i.phrase = Utils::UTF8ToWString(this->lines[counter].first);
             }
