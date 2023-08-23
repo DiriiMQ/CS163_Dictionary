@@ -49,7 +49,22 @@ add_executable(CS163_Group9 main.cpp
         source/core/Quiz.cpp
         source/core/Quiz.h
         source/stuff/Utils.h
+        source/core/Trie.cpp
+        source/core/Trie.h
+        source/core/Map.hpp
+        source/core/CompareString.h
         source/_raygui.h
+        source/stuff/Button.cpp
+        source/stuff/Button.h
+        source/stuff/SearchBox.cpp
+        source/stuff/SearchBox.h
+        source/stuff/SuggestionLine.cpp
+        source/stuff/SuggestionLine.h
+        source/stuff/FrameBoard.cpp
+        source/stuff/FrameBoard.h
+        source/draw/Favorite.cpp
+        source/draw/Favorite.h
+        source/draw/QuizScene.cpp
+        source/draw/QuizScene.h
 )
-
 target_link_libraries(${PROJECT_NAME} raylib)
