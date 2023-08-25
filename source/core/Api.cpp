@@ -5,7 +5,10 @@
 #include "Api.h"
 #include "Dict.h"
 #include "Word.h"
-#include "CompareString.h"
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <sstream>
 void MakeDef(const Word &curWord, Dict& dicts, int del){
     for (int j=0; j<curWord.worddef.size(); j++){
             for (int k=0; k<curWord.worddef[j].definition.size(); k++){

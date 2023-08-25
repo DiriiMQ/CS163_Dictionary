@@ -1,0 +1,378 @@
+\doxysection{Search\+Box Class Reference}
+\hypertarget{class_search_box}{}\label{class_search_box}\index{SearchBox@{SearchBox}}
+
+
+{\ttfamily \#include $<$Search\+Box.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_search_box_a4fe25d6dda07e14dc837daa4706654c3}{Search\+Box}} ()=default
+\item 
+\mbox{\hyperlink{class_search_box_abab6813f1be2f135ba460153f5710c6b}{Search\+Box}} (int font\+Size, Rectangle position, Font \texorpdfstring{$\ast$}{*}font)
+\item 
+void \mbox{\hyperlink{class_search_box_af00fb42ed18e62fcb0eac9c5f2fbbf3a}{draw}} ()
+\item 
+void \mbox{\hyperlink{class_search_box_acf6c400959345d4217f46530c67e782b}{handle\+Events}} ()
+\item 
+void \mbox{\hyperlink{class_search_box_aaafb84acddeaf0b8ce29f8d83a38f647}{update}} ()
+\item 
+void \mbox{\hyperlink{class_search_box_a2c6d572e06e5e581177810c09a6dee02}{update\+Text}} ()
+\item 
+void \mbox{\hyperlink{class_search_box_a8ecb6f265e545cfd48ff2d6837f2cdc9}{set\+List}} (std\+::vector$<$ std\+::pair$<$ std\+::string, std\+::string $>$ $>$ list)
+\item 
+int \mbox{\hyperlink{class_search_box_a307487a0156db2826ed8ff3ec9b4d269}{get\+Chose\+Id}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_search_box_a9f260cbeb3e95c963585557647b01cb9}{get\+Text}} ()
+\item 
+void \mbox{\hyperlink{class_search_box_aade20ff3b87216b7529b61f4dbadadca}{reset}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_search_box_8h_source_l00023}{23}} of file \mbox{\hyperlink{_search_box_8h_source}{Search\+Box.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_search_box_a4fe25d6dda07e14dc837daa4706654c3}\label{class_search_box_a4fe25d6dda07e14dc837daa4706654c3} 
+\index{SearchBox@{SearchBox}!SearchBox@{SearchBox}}
+\index{SearchBox@{SearchBox}!SearchBox@{SearchBox}}
+\doxysubsubsection{\texorpdfstring{SearchBox()}{SearchBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Search\+Box\+::\+Search\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_search_box_abab6813f1be2f135ba460153f5710c6b}\label{class_search_box_abab6813f1be2f135ba460153f5710c6b} 
+\index{SearchBox@{SearchBox}!SearchBox@{SearchBox}}
+\index{SearchBox@{SearchBox}!SearchBox@{SearchBox}}
+\doxysubsubsection{\texorpdfstring{SearchBox()}{SearchBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Search\+Box\+::\+Search\+Box (\begin{DoxyParamCaption}\item[{int}]{font\+Size,  }\item[{Rectangle}]{position,  }\item[{Font \texorpdfstring{$\ast$}{*}}]{font }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_search_box_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_search_box_8cpp_source}{Search\+Box.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ \ \ this-\/>text\ =\ this-\/>rawText\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00009\ \ \ \ \ this-\/>fontSize\ =\ fontSize;}
+\DoxyCodeLine{00010\ \ \ \ \ this-\/>position\ =\ position;}
+\DoxyCodeLine{00011\ \ \ \ \ this-\/>frameCount\ =\ 0;}
+\DoxyCodeLine{00012\ \ \ \ \ this-\/>textureBlank\ =\ LoadTextureFromImage(LoadImage(\mbox{\hyperlink{namespace_constants_1_1_directories_1_1_d_m_q_a6d2886ebb5fb7bf7caea495dab047305}{Constants::Directories::DMQ::Blank}}));}
+\DoxyCodeLine{00013\ \ \ \ \ this-\/>isActivated\ =\ this-\/>isFlicked\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00014\ \ \ \ \ this-\/>font\ =\ font;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ this-\/>rectangleSuggest\ =\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>position.x\ +\ 10,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>position.y\ +\ 65,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(this-\/>textureBlank.width)\ -\/\ 20,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(textureBlank.height\ /\ 2.0)}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_search_box_af00fb42ed18e62fcb0eac9c5f2fbbf3a}\label{class_search_box_af00fb42ed18e62fcb0eac9c5f2fbbf3a} 
+\index{SearchBox@{SearchBox}!draw@{draw}}
+\index{draw@{draw}!SearchBox@{SearchBox}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Search\+Box\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_search_box_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_search_box_8cpp_source}{Search\+Box.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ DrawTextEx(*this-\/>font,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>text.c\_str(),}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{this-\/>position.x\ +\ 55,\ this-\/>position.y\ +\ 20\},}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>fontSize,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BLACK);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>isActivated)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&i\ :\ this-\/>suggestList)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ i.draw();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_search_box_a307487a0156db2826ed8ff3ec9b4d269}\label{class_search_box_a307487a0156db2826ed8ff3ec9b4d269} 
+\index{SearchBox@{SearchBox}!getChoseId@{getChoseId}}
+\index{getChoseId@{getChoseId}!SearchBox@{SearchBox}}
+\doxysubsubsection{\texorpdfstring{getChoseId()}{getChoseId()}}
+{\footnotesize\ttfamily int Search\+Box\+::get\+Chose\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_search_box_8cpp_source_l00204}{204}} of file \mbox{\hyperlink{_search_box_8cpp_source}{Search\+Box.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{int}\ temp\ =\ this-\/>choseId;}
+\DoxyCodeLine{00206\ \ \ \ \ this-\/>choseId\ =\ -\/1;}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{00208\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_search_box_a9f260cbeb3e95c963585557647b01cb9}\label{class_search_box_a9f260cbeb3e95c963585557647b01cb9} 
+\index{SearchBox@{SearchBox}!getText@{getText}}
+\index{getText@{getText}!SearchBox@{SearchBox}}
+\doxysubsubsection{\texorpdfstring{getText()}{getText()}}
+{\footnotesize\ttfamily std\+::string Search\+Box\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_search_box_8cpp_source_l00210}{210}} of file \mbox{\hyperlink{_search_box_8cpp_source}{Search\+Box.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>rawText;}
+\DoxyCodeLine{00212\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_search_box_acf6c400959345d4217f46530c67e782b}\label{class_search_box_acf6c400959345d4217f46530c67e782b} 
+\index{SearchBox@{SearchBox}!handleEvents@{handleEvents}}
+\index{handleEvents@{handleEvents}!SearchBox@{SearchBox}}
+\doxysubsubsection{\texorpdfstring{handleEvents()}{handleEvents()}}
+{\footnotesize\ttfamily void Search\+Box\+::handle\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_search_box_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_search_box_8cpp_source}{Search\+Box.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>isActivated)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (GetMouseWheelMove()\ <\ 0)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>currentId\ +\ 1\ <=\ (\textcolor{keywordtype}{int})this-\/>suggestListText.size()\ -\/\ MAX\_SUGGESTIONS)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>currentId++;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (GetMouseWheelMove()\ >\ 0)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>currentId\ -\/\ 1\ >=\ 0)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>currentId-\/-\/;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&i\ :\ this-\/>suggestList)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ i.handleEvents();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>suggestList.size();\ i++)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>suggestList[i].getClicked())\ \{}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ "{}LOG:\ SearchBox:\ Option\ "{}\ <<\ i\ +\ this-\/>currentId\ <<\ \ "{}\ is\ clicked\(\backslash\)n"{};}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>choseId\ =\ i\ +\ this-\/>currentId;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{if}\ (IsMouseButtonPressed(MOUSE\_LEFT\_BUTTON))\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CheckCollisionPointRec(GetMousePosition(),\ this-\/>position))\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>isActivated\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>isActivated\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>isActivated)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsKeyPressed(KEY\_BACKSPACE))\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>rawText.length()\ >\ 0)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ prevCodepointSize\ =\ 0;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GetCodepointPrevious(this-\/>rawText.c\_str()\ +\ this-\/>rawText.length(),\ \&prevCodepointSize);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (prevCodepointSize-\/-\/)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>rawText.pop\_back();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (IsKeyPressed(KEY\_DELETE))\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>rawText.length()\ >\ 0)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ prevCodepointSize\ =\ 0;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GetCodepointPrevious(this-\/>rawText.c\_str()\ +\ this-\/>rawText.length(),\ \&prevCodepointSize);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>rawText.length()\ >\ prevCodepointSize)\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ doublePrevSize\ =\ 0;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GetCodepointPrevious(this-\/>rawText.c\_str()\ +\ this-\/>rawText.length()\ -\/\ prevCodepointSize,\ \&doublePrevSize);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sumSize\ =\ prevCodepointSize\ +\ doublePrevSize;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ prevCodepointSize;\ i++)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>rawText[this-\/>rawText.length()\ -\/\ sumSize\ +\ i]\ =\ this-\/>rawText[this-\/>rawText.length()\ -\/\ prevCodepointSize\ +\ i];}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (doublePrevSize-\/-\/)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>rawText.pop\_back();}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (IsKeyPressed(KEY\_ENTER))\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>isActivated\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>rawText.length()\ <\ MAX\_LENGTH)\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ NOTE:\ This\ handle\ is\ followed\ by\ instructions\ of\ Raygui}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ codepoint\ =\ GetCharPressed(),\ codepointSize\ =\ 0;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (codepoint\ !=\ 0)\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *charEncoded\ =\ CodepointToUTF8(codepoint,\ \&codepointSize);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (codepointSize\ >\ 1)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>rawText.length()\ >\ 0)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ prevCodepointSize\ =\ 0;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GetCodepointPrevious(this-\/>rawText.c\_str()\ +\ this-\/>rawText.length(),\ \&prevCodepointSize);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (prevCodepointSize-\/-\/)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>rawText.pop\_back();}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ codepointSize;\ i++)\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>rawText\ +=\ charEncoded[i];}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_search_box_aade20ff3b87216b7529b61f4dbadadca}\label{class_search_box_aade20ff3b87216b7529b61f4dbadadca} 
+\index{SearchBox@{SearchBox}!reset@{reset}}
+\index{reset@{reset}!SearchBox@{SearchBox}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Search\+Box\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_search_box_8cpp_source_l00157}{157}} of file \mbox{\hyperlink{_search_box_8cpp_source}{Search\+Box.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ this-\/>text\ =\ this-\/>rawText\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00159\ \ \ \ \ this-\/>isActivated\ =\ this-\/>isFlicked\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00160\ \ \ \ \ this-\/>frameCount\ =\ 0;}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ this-\/>suggestListText.clear();}
+\DoxyCodeLine{00163\ \ \ \ \ this-\/>suggestList.clear();}
+\DoxyCodeLine{00164\ \ \ \ \ this-\/>currentId\ =\ 0;}
+\DoxyCodeLine{00165\ \ \ \ \ this-\/>choseId\ =\ -\/1;}
+\DoxyCodeLine{00166\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_search_box_a8ecb6f265e545cfd48ff2d6837f2cdc9}\label{class_search_box_a8ecb6f265e545cfd48ff2d6837f2cdc9} 
+\index{SearchBox@{SearchBox}!setList@{setList}}
+\index{setList@{setList}!SearchBox@{SearchBox}}
+\doxysubsubsection{\texorpdfstring{setList()}{setList()}}
+{\footnotesize\ttfamily void Search\+Box\+::set\+List (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ std\+::string, std\+::string $>$ $>$}]{list }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_search_box_8cpp_source_l00184}{184}} of file \mbox{\hyperlink{_search_box_8cpp_source}{Search\+Box.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ this-\/>suggestListText\ =\ std::move(list);}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ std::min(}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})this-\/>suggestListText.size(),}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ MAX\_SUGGESTIONS}
+\DoxyCodeLine{00189\ \ \ \ \ );}
+\DoxyCodeLine{00190\ \ \ \ \ this-\/>suggestList.clear();}
+\DoxyCodeLine{00191\ \ \ \ \ Rectangle\ rec\ =\ this-\/>rectangleSuggest;}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ this-\/>suggestList.emplace\_back(}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>suggestListText[i].first,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>suggestListText[i].second,}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>font,}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rec}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ rec.y\ +=\ rec.height;}
+\DoxyCodeLine{00200\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ \ \ \ \ this-\/>currentId\ =\ 0;}
+\DoxyCodeLine{00202\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_search_box_aaafb84acddeaf0b8ce29f8d83a38f647}\label{class_search_box_aaafb84acddeaf0b8ce29f8d83a38f647} 
+\index{SearchBox@{SearchBox}!update@{update}}
+\index{update@{update}!SearchBox@{SearchBox}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Search\+Box\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_search_box_8cpp_source_l00132}{132}} of file \mbox{\hyperlink{_search_box_8cpp_source}{Search\+Box.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ this-\/>\mbox{\hyperlink{class_search_box_a2c6d572e06e5e581177810c09a6dee02}{updateText}}();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordflow}{if}\ (++frameCount\ >=\ \mbox{\hyperlink{namespace_constants_1_1_screen_a44b19f28a576e5e63c7e9bd84b3d889e}{Constants::Screen::FRAMES\_PER\_SECOND}}\ /\ 2)\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ frameCount\ =\ 0;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>isActivated)}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>isFlicked\ =\ !this-\/>isFlicked;}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>isFlicked\ \&\&\ this-\/>isActivated)\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ this-\/>text\ +=\ \textcolor{charliteral}{'|'};}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>isActivated)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>suggestList.size();\ ++i)\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>suggestList[i].setText(this-\/>suggestListText[i\ +\ this-\/>currentId].first);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>suggestList[i].setDefinition(this-\/>suggestListText[i\ +\ this-\/>currentId].second);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&i\ :\ this-\/>suggestList)\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ i.update();}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_search_box_a2c6d572e06e5e581177810c09a6dee02}\label{class_search_box_a2c6d572e06e5e581177810c09a6dee02} 
+\index{SearchBox@{SearchBox}!updateText@{updateText}}
+\index{updateText@{updateText}!SearchBox@{SearchBox}}
+\doxysubsubsection{\texorpdfstring{updateText()}{updateText()}}
+{\footnotesize\ttfamily void Search\+Box\+::update\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_search_box_8cpp_source_l00168}{168}} of file \mbox{\hyperlink{_search_box_8cpp_source}{Search\+Box.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{int}\ codepointSize\ =\ 0,\ totalCodepointSize\ =\ 0,\ charCounter\ =\ 0,\ last\ =\ (int)this-\/>rawText.length();}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *raw\ =\ this-\/>rawText.c\_str();}
+\DoxyCodeLine{00171\ \ \ \ \ std::vector<std::string>\ result;}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ last;\ last\ -\/=\ codepointSize,\ totalCodepointSize\ +=\ codepointSize,\ charCounter++)\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ result.clear();}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ Utils::formatString(this-\/>font,\ 1,\ this-\/>rawText.substr(last,\ totalCodepointSize),\ MAX\_LENGTH\_PIXEL,\ this-\/>fontSize,\ result);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result.size()\ >\ 1)\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ codepointSize\ =\ 0;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ GetCodepointPrevious(raw\ +\ last,\ \&codepointSize);}
+\DoxyCodeLine{00180\ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \ \ \ \ this-\/>text\ =\ this-\/>rawText.substr(last,\ totalCodepointSize);}
+\DoxyCodeLine{00182\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/stuff/\mbox{\hyperlink{_search_box_8h}{Search\+Box.\+h}}\item 
+source/stuff/\mbox{\hyperlink{_search_box_8cpp}{Search\+Box.\+cpp}}\end{DoxyCompactItemize}

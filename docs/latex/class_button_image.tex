@@ -1,0 +1,243 @@
+\doxysection{Button\+Image Class Reference}
+\hypertarget{class_button_image}{}\label{class_button_image}\index{ButtonImage@{ButtonImage}}
+
+
+{\ttfamily \#include $<$Button.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_button_image_a239b1a72a98b09aeeb8d0f20072ded28}{Button\+Image}} (std\+::vector$<$ std\+::string $>$ path, std\+::vector$<$ std\+::string $>$ path\+Press, Rectangle rectangle)
+\item 
+\mbox{\hyperlink{class_button_image_a502ec656ecfa78d61b01a0e39b3392d4}{Button\+Image}} ()=default
+\item 
+void \mbox{\hyperlink{class_button_image_a68e6463f48504d130cb9107c4a6168c6}{draw}} ()
+\item 
+void \mbox{\hyperlink{class_button_image_af524924877342bdc9799a8edfb9d11f1}{handle\+Events}} ()
+\item 
+void \mbox{\hyperlink{class_button_image_a77ae31f289cef14cb2c6028d09703ca9}{update}} ()
+\item 
+void \mbox{\hyperlink{class_button_image_a03ef3a61bb18f43bc674e17c5c976581}{change\+Index}} (int newindex)
+\item 
+void \mbox{\hyperlink{class_button_image_ab100753e1794e2f27318ffb28bc675a1}{change\+Position}} (Rectangle change)
+\item 
+bool \mbox{\hyperlink{class_button_image_a4be3314cbc7d6d91c0035c501ce0449a}{is\+Clicked}} () const
+\item 
+bool \mbox{\hyperlink{class_button_image_ad1705c703f92148d8d6347a044cdda20}{is\+Pressing}} () const
+\item 
+int \mbox{\hyperlink{class_button_image_a35a65ba2e7792d0b02d8a44a9f329377}{get\+Clicked}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_button_8h_source_l00049}{49}} of file \mbox{\hyperlink{_button_8h_source}{Button.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_button_image_a239b1a72a98b09aeeb8d0f20072ded28}\label{class_button_image_a239b1a72a98b09aeeb8d0f20072ded28} 
+\index{ButtonImage@{ButtonImage}!ButtonImage@{ButtonImage}}
+\index{ButtonImage@{ButtonImage}!ButtonImage@{ButtonImage}}
+\doxysubsubsection{\texorpdfstring{ButtonImage()}{ButtonImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Button\+Image\+::\+Button\+Image (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{path,  }\item[{std\+::vector$<$ std\+::string $>$}]{path\+Press,  }\item[{Rectangle}]{rectangle }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ this-\/>path\ =\ path;}
+\DoxyCodeLine{00104\ \ \ \ \ this-\/>pathPress\ =\ pathPress;}
+\DoxyCodeLine{00105\ \ \ \ \ this-\/>rectangle\ =\ rectangle;}
+\DoxyCodeLine{00106\ \ \ \ \ this-\/>numpath\ =\ path.size();}
+\DoxyCodeLine{00107\ \ \ \ \ this-\/>tmpPath\ =\ 0;}
+\DoxyCodeLine{00108\ \ \ \ \ this-\/>color\ =\ WHITE;}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numpath;\ i++)}
+\DoxyCodeLine{00110\ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ Texture\ tmp\ =\ LoadTextureFromImage(LoadImage(path[i].c\_str()));}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ this-\/>texture.push\_back(tmp);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ Texture\ tmpPress\ =\ LoadTextureFromImage(LoadImage(pathPress[i].c\_str()));}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ this-\/>texturePress.push\_back(tmpPress);}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_image_a502ec656ecfa78d61b01a0e39b3392d4}\label{class_button_image_a502ec656ecfa78d61b01a0e39b3392d4} 
+\index{ButtonImage@{ButtonImage}!ButtonImage@{ButtonImage}}
+\index{ButtonImage@{ButtonImage}!ButtonImage@{ButtonImage}}
+\doxysubsubsection{\texorpdfstring{ButtonImage()}{ButtonImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Button\+Image\+::\+Button\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_button_image_a03ef3a61bb18f43bc674e17c5c976581}\label{class_button_image_a03ef3a61bb18f43bc674e17c5c976581} 
+\index{ButtonImage@{ButtonImage}!changeIndex@{changeIndex}}
+\index{changeIndex@{changeIndex}!ButtonImage@{ButtonImage}}
+\doxysubsubsection{\texorpdfstring{changeIndex()}{changeIndex()}}
+{\footnotesize\ttfamily void Button\+Image\+::change\+Index (\begin{DoxyParamCaption}\item[{int}]{newindex }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00155\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ tmpPath\ =\ newindex;}
+\DoxyCodeLine{00157\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_image_ab100753e1794e2f27318ffb28bc675a1}\label{class_button_image_ab100753e1794e2f27318ffb28bc675a1} 
+\index{ButtonImage@{ButtonImage}!changePosition@{changePosition}}
+\index{changePosition@{changePosition}!ButtonImage@{ButtonImage}}
+\doxysubsubsection{\texorpdfstring{changePosition()}{changePosition()}}
+{\footnotesize\ttfamily void Button\+Image\+::change\+Position (\begin{DoxyParamCaption}\item[{Rectangle}]{change }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ this-\/>rectangle\ =\ change;}
+\DoxyCodeLine{00162\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_image_a68e6463f48504d130cb9107c4a6168c6}\label{class_button_image_a68e6463f48504d130cb9107c4a6168c6} 
+\index{ButtonImage@{ButtonImage}!draw@{draw}}
+\index{draw@{draw}!ButtonImage@{ButtonImage}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Button\+Image\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00118}{118}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{if}\ (!this-\/>isSuggest)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ DrawTexture(texture[tmpPath],\ rectangle.x,\ rectangle.y,\ WHITE);}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ DrawTexture(texturePress[tmpPath],\ rectangle.x,\ rectangle.y,\ WHITE);}
+\DoxyCodeLine{00123\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_image_a35a65ba2e7792d0b02d8a44a9f329377}\label{class_button_image_a35a65ba2e7792d0b02d8a44a9f329377} 
+\index{ButtonImage@{ButtonImage}!getClicked@{getClicked}}
+\index{getClicked@{getClicked}!ButtonImage@{ButtonImage}}
+\doxysubsubsection{\texorpdfstring{getClicked()}{getClicked()}}
+{\footnotesize\ttfamily int Button\+Image\+::get\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00168}{168}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00169\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordflow}{return}\ tmpPath;}
+\DoxyCodeLine{00171\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_image_af524924877342bdc9799a8edfb9d11f1}\label{class_button_image_af524924877342bdc9799a8edfb9d11f1} 
+\index{ButtonImage@{ButtonImage}!handleEvents@{handleEvents}}
+\index{handleEvents@{handleEvents}!ButtonImage@{ButtonImage}}
+\doxysubsubsection{\texorpdfstring{handleEvents()}{handleEvents()}}
+{\footnotesize\ttfamily void Button\+Image\+::handle\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00125}{125}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ this-\/>clicked\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{if}\ (CheckCollisionPointRec(GetMousePosition(),\ this-\/>rectangle))\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ this-\/>isSuggest\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsMouseButtonDown(MOUSE\_LEFT\_BUTTON))\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>pressing\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this-\/>pressing)\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>pressing\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>clicked\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ this-\/>color\ =\ WHITE;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ this-\/>pressing\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ this-\/>isSuggest\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_image_a4be3314cbc7d6d91c0035c501ce0449a}\label{class_button_image_a4be3314cbc7d6d91c0035c501ce0449a} 
+\index{ButtonImage@{ButtonImage}!isClicked@{isClicked}}
+\index{isClicked@{isClicked}!ButtonImage@{ButtonImage}}
+\doxysubsubsection{\texorpdfstring{isClicked()}{isClicked()}}
+{\footnotesize\ttfamily bool Button\+Image\+::is\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>clicked;}
+\DoxyCodeLine{00166\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_image_ad1705c703f92148d8d6347a044cdda20}\label{class_button_image_ad1705c703f92148d8d6347a044cdda20} 
+\index{ButtonImage@{ButtonImage}!isPressing@{isPressing}}
+\index{isPressing@{isPressing}!ButtonImage@{ButtonImage}}
+\doxysubsubsection{\texorpdfstring{isPressing()}{isPressing()}}
+{\footnotesize\ttfamily bool Button\+Image\+::is\+Pressing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00173}{173}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>pressing;}
+\DoxyCodeLine{00175\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_image_a77ae31f289cef14cb2c6028d09703ca9}\label{class_button_image_a77ae31f289cef14cb2c6028d09703ca9} 
+\index{ButtonImage@{ButtonImage}!update@{update}}
+\index{update@{update}!ButtonImage@{ButtonImage}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Button\+Image\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00147}{147}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_button_image_a4be3314cbc7d6d91c0035c501ce0449a}{isClicked}}())}
+\DoxyCodeLine{00149\ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ this-\/>tmpPath\ =\ (this-\/>tmpPath\ +\ 1)\ \%\ numpath;}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/stuff/\mbox{\hyperlink{_button_8h}{Button.\+h}}\item 
+source/stuff/\mbox{\hyperlink{_button_8cpp}{Button.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,264 @@
+\doxysection{Button Class Reference}
+\hypertarget{class_button}{}\label{class_button}\index{Button@{Button}}
+
+
+{\ttfamily \#include $<$Button.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_button_a29d67b81d803e588ebf4c4c2075262bf}{Button}} ()=default
+\item 
+\mbox{\hyperlink{class_button_a9c5e70fd4ea13b59cca4c6e82730e769}{Button}} (std\+::string text, int font\+Size, Color color, Rectangle rectangle)
+\item 
+void \mbox{\hyperlink{class_button_a0380207dc9e4edcd0272207a39c7cdeb}{draw}} ()
+\item 
+void \mbox{\hyperlink{class_button_af09125ee745c3afe10a8e6d8ffc28fc1}{handle\+Events}} ()
+\item 
+void \mbox{\hyperlink{class_button_ad8e030c1c8846d43f3126047d4a3667f}{update}} ()
+\item 
+bool \mbox{\hyperlink{class_button_aab1ad2d49a14280058ef02b8940ef857}{is\+Clicked}} () const
+\item 
+bool \mbox{\hyperlink{class_button_a3727c0ebd9cc8040d5d7fe8c7cb1741f}{is\+Pressing}} () const
+\item 
+void \mbox{\hyperlink{class_button_a139d64153380002a32ff2232029cf702}{set\+Chosen}} (bool is\+Chosen)
+\item 
+void \mbox{\hyperlink{class_button_a2e15e13b687af530f9b42e2dbe4531d2}{set\+Is\+Suggest}} ()
+\item 
+void \mbox{\hyperlink{class_button_a34d685d2b404634fdcd261f71f2605c1}{set\+BG}} (Color color\+BG)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_button_8h_source_l00018}{18}} of file \mbox{\hyperlink{_button_8h_source}{Button.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_button_a29d67b81d803e588ebf4c4c2075262bf}\label{class_button_a29d67b81d803e588ebf4c4c2075262bf} 
+\index{Button@{Button}!Button@{Button}}
+\index{Button@{Button}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{Button()}{Button()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Button\+::\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_button_a9c5e70fd4ea13b59cca4c6e82730e769}\label{class_button_a9c5e70fd4ea13b59cca4c6e82730e769} 
+\index{Button@{Button}!Button@{Button}}
+\index{Button@{Button}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{Button()}{Button()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Button\+::\+Button (\begin{DoxyParamCaption}\item[{std\+::string}]{text,  }\item[{int}]{font\+Size,  }\item[{Color}]{color,  }\item[{Rectangle}]{rectangle }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ this-\/>text\ =\ std::move(text);}
+\DoxyCodeLine{00011\ \ \ \ \ this-\/>fontSize\ =\ fontSize;}
+\DoxyCodeLine{00012\ \ \ \ \ this-\/>color\ =\ color;}
+\DoxyCodeLine{00013\ \ \ \ \ this-\/>rectangle\ =\ rectangle;}
+\DoxyCodeLine{00014\ \ \ \ \ this-\/>colorBG\ =\ WHITE;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Calculate\ text\ width\ and\ height}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ textWidth\ =\ MeasureText(this-\/>text.c\_str(),\ fontSize);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ textHeight\ =\ fontSize;\ \textcolor{comment}{//\ Assuming\ font\ size\ is\ 20,\ you\ can\ change\ this\ accordingly}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ position\ to\ center\ the\ text\ in\ the\ rectangle}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ posX\ =\ rectangle.x\ +\ (rectangle.width\ -\/\ textWidth)\ /\ 2.0;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ posY\ =\ rectangle.y\ +\ (rectangle.height\ -\/\ textHeight)\ /\ 2.0;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ this-\/>positionText\ =\ \{posX,\ posY\};}
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_button_a0380207dc9e4edcd0272207a39c7cdeb}\label{class_button_a0380207dc9e4edcd0272207a39c7cdeb} 
+\index{Button@{Button}!draw@{draw}}
+\index{draw@{draw}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Button\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ DrawRectangleRoundedLines(}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>rectangle.x\ +\ 1,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>rectangle.y\ +\ 1,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>rectangle.width\ -\/\ 2,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>rectangle.height\ -\/\ 2}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>isSuggest\ ?\ 0\ :\ CORNER\_RADIUS,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ DPI,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ 3,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>color}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ DrawRectangleRounded(}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>rectangle,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ CORNER\_RADIUS,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ DPI,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>colorBG}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ DrawText(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>text.c\_str(),}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>positionText.x,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>positionText.y,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>fontSize,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>color}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_af09125ee745c3afe10a8e6d8ffc28fc1}\label{class_button_af09125ee745c3afe10a8e6d8ffc28fc1} 
+\index{Button@{Button}!handleEvents@{handleEvents}}
+\index{handleEvents@{handleEvents}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{handleEvents()}{handleEvents()}}
+{\footnotesize\ttfamily void Button\+::handle\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ this-\/>clicked\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00059\ \ \ \ \ this-\/>colorBG\ =\ isSuggest\ ?\ WHITE\ :\ \mbox{\hyperlink{_constants_8h_a6c54e72c6142d317114a29adbcbb24b6}{TRANSPARENT}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (CheckCollisionPointRec(GetMousePosition(),\ this-\/>rectangle))\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ this-\/>colorBG\ =\ LIGHTGRAY;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsMouseButtonDown(MOUSE\_LEFT\_BUTTON))\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>pressing\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>colorBG\ =\ GRAY;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this-\/>pressing)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>pressing\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>clicked\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ this-\/>colorBG\ =\ isSuggest\ ?\ WHITE\ :\ \mbox{\hyperlink{_constants_8h_a6c54e72c6142d317114a29adbcbb24b6}{TRANSPARENT}};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ this-\/>pressing\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_aab1ad2d49a14280058ef02b8940ef857}\label{class_button_aab1ad2d49a14280058ef02b8940ef857} 
+\index{Button@{Button}!isClicked@{isClicked}}
+\index{isClicked@{isClicked}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{isClicked()}{isClicked()}}
+{\footnotesize\ttfamily bool Button\+::is\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00082}{82}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>clicked;}
+\DoxyCodeLine{00084\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_a3727c0ebd9cc8040d5d7fe8c7cb1741f}\label{class_button_a3727c0ebd9cc8040d5d7fe8c7cb1741f} 
+\index{Button@{Button}!isPressing@{isPressing}}
+\index{isPressing@{isPressing}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{isPressing()}{isPressing()}}
+{\footnotesize\ttfamily bool Button\+::is\+Pressing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>pressing;}
+\DoxyCodeLine{00099\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_a34d685d2b404634fdcd261f71f2605c1}\label{class_button_a34d685d2b404634fdcd261f71f2605c1} 
+\index{Button@{Button}!setBG@{setBG}}
+\index{setBG@{setBG}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setBG()}{setBG()}}
+{\footnotesize\ttfamily void Button\+::set\+BG (\begin{DoxyParamCaption}\item[{Color}]{color\+BG }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ this-\/>colorBG\ =\ \_colorBG;}
+\DoxyCodeLine{00095\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_a139d64153380002a32ff2232029cf702}\label{class_button_a139d64153380002a32ff2232029cf702} 
+\index{Button@{Button}!setChosen@{setChosen}}
+\index{setChosen@{setChosen}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setChosen()}{setChosen()}}
+{\footnotesize\ttfamily void Button\+::set\+Chosen (\begin{DoxyParamCaption}\item[{bool}]{is\+Chosen }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ this-\/>isChosen\ =\ \_isChosen;}
+\DoxyCodeLine{00088\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_a2e15e13b687af530f9b42e2dbe4531d2}\label{class_button_a2e15e13b687af530f9b42e2dbe4531d2} 
+\index{Button@{Button}!setIsSuggest@{setIsSuggest}}
+\index{setIsSuggest@{setIsSuggest}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setIsSuggest()}{setIsSuggest()}}
+{\footnotesize\ttfamily void Button\+::set\+Is\+Suggest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ this-\/>isSuggest\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00091\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_button_ad8e030c1c8846d43f3126047d4a3667f}\label{class_button_ad8e030c1c8846d43f3126047d4a3667f} 
+\index{Button@{Button}!update@{update}}
+\index{update@{update}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Button\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{_button_8cpp_source}{Button.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>isChosen)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ this-\/>colorBG\ =\ GRAY;}
+\DoxyCodeLine{00080\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/stuff/\mbox{\hyperlink{_button_8h}{Button.\+h}}\item 
+source/stuff/\mbox{\hyperlink{_button_8cpp}{Button.\+cpp}}\end{DoxyCompactItemize}

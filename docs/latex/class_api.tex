@@ -1,0 +1,176 @@
+\doxysection{Api Class Reference}
+\hypertarget{class_api}{}\label{class_api}\index{Api@{Api}}
+
+
+{\ttfamily \#include $<$Api.\+h$>$}
+
+Inheritance diagram for Api\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_api}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_api_a095a0deb96cf0421a71cc4f3da1d2837}{Api}} (\mbox{\hyperlink{class_dicts}{Dicts}} \&dicts)
+\item 
+void \mbox{\hyperlink{class_api_ac14c7e534a44fb5de71cf8a797f808e0}{reset\+Dict}} (\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants\+::\+Type\+Dict}} type\+Dict)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_base_api}{Base\+Api}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_base_api_a29516a2c3d264c263cade4f30e2519d0}{Base\+Api}} (\mbox{\hyperlink{class_dicts}{Dicts}} \&dicts)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_api_favorite}{Api\+Favorite}} \mbox{\hyperlink{class_api_a7949c3847578f944ee5269734685b0f2}{api\+Favorite}}
+\item 
+\mbox{\hyperlink{class_api_word}{Api\+Word}} \mbox{\hyperlink{class_api_a7c749a0d0509df49f1ec6a1e074bdc18}{api\+Word}}
+\item 
+\mbox{\hyperlink{class_api_search}{Api\+Search}} \mbox{\hyperlink{class_api_a9fa73930d1a85444b80600c4a733394c}{api\+Search}}
+\item 
+\mbox{\hyperlink{class_api_quiz}{Api\+Quiz}} \mbox{\hyperlink{class_api_a2cf48e32c994d22c74634213ae7fc854}{api\+Quiz}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_base_api}{Base\+Api}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dicts}{Dicts}} \& \mbox{\hyperlink{class_base_api_af1f2220dfbab8a81db838bfef883f0a0}{Main\+Dictionary}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_api_8h_source_l00078}{78}} of file \mbox{\hyperlink{_api_8h_source}{Api.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_api_a095a0deb96cf0421a71cc4f3da1d2837}\label{class_api_a095a0deb96cf0421a71cc4f3da1d2837} 
+\index{Api@{Api}!Api@{Api}}
+\index{Api@{Api}!Api@{Api}}
+\doxysubsubsection{\texorpdfstring{Api()}{Api()}}
+{\footnotesize\ttfamily Api\+::\+Api (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dicts}{Dicts}} \&}]{dicts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{_api_8h_source_l00085}{85}} of file \mbox{\hyperlink{_api_8h_source}{Api.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085\ :\ \mbox{\hyperlink{class_base_api}{BaseApi}}(dicts),\ \mbox{\hyperlink{class_api_a7949c3847578f944ee5269734685b0f2}{apiFavorite}}(dicts),\ \mbox{\hyperlink{class_api_a7c749a0d0509df49f1ec6a1e074bdc18}{apiWord}}(dicts),\ \mbox{\hyperlink{class_api_a9fa73930d1a85444b80600c4a733394c}{apiSearch}}(dicts),\ \mbox{\hyperlink{class_api_a2cf48e32c994d22c74634213ae7fc854}{apiQuiz}}(dicts)\ \{\};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_api_ac14c7e534a44fb5de71cf8a797f808e0}\label{class_api_ac14c7e534a44fb5de71cf8a797f808e0} 
+\index{Api@{Api}!resetDict@{resetDict}}
+\index{resetDict@{resetDict}!Api@{Api}}
+\doxysubsubsection{\texorpdfstring{resetDict()}{resetDict()}}
+{\footnotesize\ttfamily void Api\+::reset\+Dict (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants\+::\+Type\+Dict}}}]{type\+Dict }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_api_8cpp_source_l00353}{353}} of file \mbox{\hyperlink{_api_8cpp_source}{Api.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \mbox{\hyperlink{class_dict}{Dict}}\&\ dictionary\ =\ \mbox{\hyperlink{class_base_api_af1f2220dfbab8a81db838bfef883f0a0}{MainDictionary}}.\mbox{\hyperlink{class_dicts_a02454e1219e6899bbedd6148c80672f7}{dicts}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(typeDict)];}
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keywordtype}{string}\ filename;}
+\DoxyCodeLine{00356\ \ \ \ \textcolor{keywordflow}{if}\ (typeDict\ ==\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965a2a8e155fdf831061c892888f73dcccc3}{Constants::TypeDict::EN\_VI}})\ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ filename\ =\ \textcolor{stringliteral}{"{}../assets/data/Anh\_Viet\_Original.dat"{}};}
+\DoxyCodeLine{00358\ \ \ \ \ \}}
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (typeDict\ ==\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965a2a29155b2a144edddc3611b0d77c7c56}{Constants::TypeDict::EN\_EN}})\ \{}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ filename\ =\ \textcolor{stringliteral}{"{}..\(\backslash\)\(\backslash\)assets\(\backslash\)\(\backslash\)data\(\backslash\)\(\backslash\)Anh\_Anh\_Original.dat"{}};}
+\DoxyCodeLine{00361\ \ \ \ \ \}}
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (typeDict\ ==\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965a9f81a2e5a1bca4467b92f3ed0ab0ef02}{Constants::TypeDict::VI\_EN}})\ \{}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ filename\ =\ \textcolor{stringliteral}{"{}../assets/data/Viet\_Anh\_Original.dat"{}};}
+\DoxyCodeLine{00364\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ filename\ =\ \textcolor{stringliteral}{"{}../assets/data/emoji\_Original.dat"{}};}
+\DoxyCodeLine{00366\ \ \ \ \ \}}
+\DoxyCodeLine{00367\ \ \ \ \ vector<Word>\ ddictionary;}
+\DoxyCodeLine{00368\ \ \ \ \ \mbox{\hyperlink{_word_8cpp_af9e142b17ab01001acd25d4c62228a6a}{readbinaryfile}}(ddictionary,\ filename);}
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordtype}{string}\ newfilename;}
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeDict\ ==\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965a2a8e155fdf831061c892888f73dcccc3}{Constants::TypeDict::EN\_VI}})\ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ newfilename\ =\ \textcolor{stringliteral}{"{}../assets/data/Anh\_Viet.dat"{}};}
+\DoxyCodeLine{00372\ \ \ \ \ \}}
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (typeDict\ ==\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965a2a29155b2a144edddc3611b0d77c7c56}{Constants::TypeDict::EN\_EN}})\ \{}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ newfilename\ =\ \textcolor{stringliteral}{"{}..\(\backslash\)\(\backslash\)assets\(\backslash\)\(\backslash\)data\(\backslash\)\(\backslash\)Anh\_Anh.dat"{}};}
+\DoxyCodeLine{00375\ \ \ \ \ \}}
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (typeDict\ ==\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965a9f81a2e5a1bca4467b92f3ed0ab0ef02}{Constants::TypeDict::VI\_EN}})\ \{}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ newfilename\ =\ \textcolor{stringliteral}{"{}../assets/data/Viet\_Anh.dat"{}};}
+\DoxyCodeLine{00378\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ newfilename\ =\ \textcolor{stringliteral}{"{}../assets/data/emoji.dat"{}};}
+\DoxyCodeLine{00380\ \ \ \ \ \}}
+\DoxyCodeLine{00381\ \ \ \ \ \mbox{\hyperlink{_word_8cpp_a41b6c005b8361a5d97bd7158a2f01516}{writetobinaryfile}}(ddictionary,\ newfilename);}
+\DoxyCodeLine{00382\ \ \ \ \ }
+\DoxyCodeLine{00383\ \ \ \ \ dictionary.\mbox{\hyperlink{class_dict_aff4d150f25570f8dd024e58da8782d5e}{words}}.clear();}
+\DoxyCodeLine{00384\ \ \ \ \ dictionary.\mbox{\hyperlink{class_dict_af33bbf98523ea12f1985d63ed413c375}{Map}}.\mbox{\hyperlink{struct_trie_af4e813ab9425bffffbb77efaf6e4e065}{clear}}();}
+\DoxyCodeLine{00385\ \ \ \ \ dictionary.\mbox{\hyperlink{class_dict_a18a1fe8c9f61458d914ce27211deb9a8}{FavoriteList}}.clear();}
+\DoxyCodeLine{00386\ \ \ \ \ dictionary.\mbox{\hyperlink{class_dict_a7135fdb8fd22597855e9d3e863fdff04}{HistoryList}}.clear();}
+\DoxyCodeLine{00387\ \ \ \ \ dictionary.\mbox{\hyperlink{class_dict_aa8f0334eaeaedaa5ffd78a4febeb6633}{WordsOfDef}}.\mbox{\hyperlink{struct_trie_af4e813ab9425bffffbb77efaf6e4e065}{clear}}();}
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ddictionary.size();\ i++)\ \{}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ dictionary.\mbox{\hyperlink{class_dict_af33bbf98523ea12f1985d63ed413c375}{Map}}[ddictionary[i].word]\ =\ i;}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_api_8cpp_a862e28b9c0730869f51659dd13a4d9f8}{MakeDef}}(ddictionary[i],dictionary,1);}
+\DoxyCodeLine{00391\ \ \ \ \ \}}
+\DoxyCodeLine{00392\ \ \ \ \ }
+\DoxyCodeLine{00393\ \ \ \ \ dictionary.\mbox{\hyperlink{class_dict_a18a1fe8c9f61458d914ce27211deb9a8}{FavoriteList}}.push\_back(L\textcolor{stringliteral}{"{}Null"{}});}
+\DoxyCodeLine{00394\ \ \ \ \ dictionary.\mbox{\hyperlink{class_dict_a7135fdb8fd22597855e9d3e863fdff04}{HistoryList}}.push\_back(L\textcolor{stringliteral}{"{}Null"{}});}
+\DoxyCodeLine{00395\ \ \ \ \ dictionary.\mbox{\hyperlink{class_dict_aff4d150f25570f8dd024e58da8782d5e}{words}}\ =\ move(ddictionary);}
+\DoxyCodeLine{00396\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_api_a7949c3847578f944ee5269734685b0f2}\label{class_api_a7949c3847578f944ee5269734685b0f2} 
+\index{Api@{Api}!apiFavorite@{apiFavorite}}
+\index{apiFavorite@{apiFavorite}!Api@{Api}}
+\doxysubsubsection{\texorpdfstring{apiFavorite}{apiFavorite}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_api_favorite}{Api\+Favorite}} Api\+::api\+Favorite}
+
+
+
+Definition at line \mbox{\hyperlink{_api_8h_source_l00080}{80}} of file \mbox{\hyperlink{_api_8h_source}{Api.\+h}}.
+
+\Hypertarget{class_api_a2cf48e32c994d22c74634213ae7fc854}\label{class_api_a2cf48e32c994d22c74634213ae7fc854} 
+\index{Api@{Api}!apiQuiz@{apiQuiz}}
+\index{apiQuiz@{apiQuiz}!Api@{Api}}
+\doxysubsubsection{\texorpdfstring{apiQuiz}{apiQuiz}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_api_quiz}{Api\+Quiz}} Api\+::api\+Quiz}
+
+
+
+Definition at line \mbox{\hyperlink{_api_8h_source_l00083}{83}} of file \mbox{\hyperlink{_api_8h_source}{Api.\+h}}.
+
+\Hypertarget{class_api_a9fa73930d1a85444b80600c4a733394c}\label{class_api_a9fa73930d1a85444b80600c4a733394c} 
+\index{Api@{Api}!apiSearch@{apiSearch}}
+\index{apiSearch@{apiSearch}!Api@{Api}}
+\doxysubsubsection{\texorpdfstring{apiSearch}{apiSearch}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_api_search}{Api\+Search}} Api\+::api\+Search}
+
+
+
+Definition at line \mbox{\hyperlink{_api_8h_source_l00082}{82}} of file \mbox{\hyperlink{_api_8h_source}{Api.\+h}}.
+
+\Hypertarget{class_api_a7c749a0d0509df49f1ec6a1e074bdc18}\label{class_api_a7c749a0d0509df49f1ec6a1e074bdc18} 
+\index{Api@{Api}!apiWord@{apiWord}}
+\index{apiWord@{apiWord}!Api@{Api}}
+\doxysubsubsection{\texorpdfstring{apiWord}{apiWord}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_api_word}{Api\+Word}} Api\+::api\+Word}
+
+
+
+Definition at line \mbox{\hyperlink{_api_8h_source_l00081}{81}} of file \mbox{\hyperlink{_api_8h_source}{Api.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/core/\mbox{\hyperlink{_api_8h}{Api.\+h}}\item 
+source/core/\mbox{\hyperlink{_api_8cpp}{Api.\+cpp}}\end{DoxyCompactItemize}

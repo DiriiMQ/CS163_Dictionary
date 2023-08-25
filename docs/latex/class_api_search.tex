@@ -1,0 +1,153 @@
+\doxysection{Api\+Search Class Reference}
+\hypertarget{class_api_search}{}\label{class_api_search}\index{ApiSearch@{ApiSearch}}
+
+
+{\ttfamily \#include $<$Api.\+h$>$}
+
+Inheritance diagram for Api\+Search\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_api_search}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_api_search_a8deadaeb5a1daa219314e3d85cc5297d}{Api\+Search}} (\mbox{\hyperlink{class_dicts}{Dicts}} \&dicts)
+\item 
+std\+::vector$<$ wstring $>$ \mbox{\hyperlink{class_api_search_a6f91e392d2843cd944a25b8a69630370}{get\+Auto\+Complete\+List\+For\+Word}} (\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants\+::\+Type\+Dict}} type\+Dict, std\+::wstring word)
+\item 
+std\+::vector$<$ wstring $>$ \mbox{\hyperlink{class_api_search_aba8d33b1baf142ec83014da0598218e3}{get\+Auto\+Complete\+List\+For\+Definition}} (\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants\+::\+Type\+Dict}} type\+Dict, std\+::wstring definition)
+\item 
+std\+::vector$<$ wstring $>$ \mbox{\hyperlink{class_api_search_ab3a7a501e49c5c263e576c9facfa2409}{get\+History}} (\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants\+::\+Type\+Dict}} type\+Dict)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_base_api}{Base\+Api}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_base_api_a29516a2c3d264c263cade4f30e2519d0}{Base\+Api}} (\mbox{\hyperlink{class_dicts}{Dicts}} \&dicts)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_base_api}{Base\+Api}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dicts}{Dicts}} \& \mbox{\hyperlink{class_base_api_af1f2220dfbab8a81db838bfef883f0a0}{Main\+Dictionary}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_api_8h_source_l00057}{57}} of file \mbox{\hyperlink{_api_8h_source}{Api.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_api_search_a8deadaeb5a1daa219314e3d85cc5297d}\label{class_api_search_a8deadaeb5a1daa219314e3d85cc5297d} 
+\index{ApiSearch@{ApiSearch}!ApiSearch@{ApiSearch}}
+\index{ApiSearch@{ApiSearch}!ApiSearch@{ApiSearch}}
+\doxysubsubsection{\texorpdfstring{ApiSearch()}{ApiSearch()}}
+{\footnotesize\ttfamily Api\+Search\+::\+Api\+Search (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dicts}{Dicts}} \&}]{dicts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{_api_8h_source_l00059}{59}} of file \mbox{\hyperlink{_api_8h_source}{Api.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ :\ \mbox{\hyperlink{class_base_api}{BaseApi}}(dicts)\ \{\};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_api_search_aba8d33b1baf142ec83014da0598218e3}\label{class_api_search_aba8d33b1baf142ec83014da0598218e3} 
+\index{ApiSearch@{ApiSearch}!getAutoCompleteListForDefinition@{getAutoCompleteListForDefinition}}
+\index{getAutoCompleteListForDefinition@{getAutoCompleteListForDefinition}!ApiSearch@{ApiSearch}}
+\doxysubsubsection{\texorpdfstring{getAutoCompleteListForDefinition()}{getAutoCompleteListForDefinition()}}
+{\footnotesize\ttfamily std\+::vector$<$ wstring $>$ Api\+Search\+::get\+Auto\+Complete\+List\+For\+Definition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants\+::\+Type\+Dict}}}]{type\+Dict,  }\item[{std\+::wstring}]{definition }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_api_8cpp_source_l00280}{280}} of file \mbox{\hyperlink{_api_8cpp_source}{Api.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \mbox{\hyperlink{class_dict}{Dict}}\&\ dictionary\ =\ \mbox{\hyperlink{class_base_api_af1f2220dfbab8a81db838bfef883f0a0}{MainDictionary}}.\mbox{\hyperlink{class_dicts_a02454e1219e6899bbedd6148c80672f7}{dicts}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(typeDict)];}
+\DoxyCodeLine{00282\ \ \ \ \ wstringstream\ ss(definition);}
+\DoxyCodeLine{00283\ \ \ \ \ wstring\ token;}
+\DoxyCodeLine{00284\ \ \ \ \ vector<wstring>\ result;}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordtype}{bool}\ check=\textcolor{keyword}{false};}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordflow}{while}\ (ss\ >>\ token)\{}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!dictionary.\mbox{\hyperlink{class_dict_aa8f0334eaeaedaa5ffd78a4febeb6633}{WordsOfDef}}.\mbox{\hyperlink{struct_trie_ad76243f13d025b826cfb8ecf226eda30}{find}}(token))\{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ result.clear();}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ temp\ =\ dictionary.\mbox{\hyperlink{class_dict_aa8f0334eaeaedaa5ffd78a4febeb6633}{WordsOfDef}}[token].\mbox{\hyperlink{struct_trie_a98f7e79d2caccdd94c0897dd788d025e}{getAllConstRef}}();}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!check)\{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i<temp.size();\ i++)\{}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(temp[i].first);}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ check=\textcolor{keyword}{true};}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ vector<wstring>\ temp2;}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i<temp.size();\ i++)\{}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (find(result.begin(),\ result.end(),\ temp[i].first)\ !=\ result.end())\{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp2.push\_back(temp[i].first);}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ temp2;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result.size()==0)\ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00307\ \ \ \ \ \}}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordflow}{return}\ move(result);}
+\DoxyCodeLine{00309\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_api_search_a6f91e392d2843cd944a25b8a69630370}\label{class_api_search_a6f91e392d2843cd944a25b8a69630370} 
+\index{ApiSearch@{ApiSearch}!getAutoCompleteListForWord@{getAutoCompleteListForWord}}
+\index{getAutoCompleteListForWord@{getAutoCompleteListForWord}!ApiSearch@{ApiSearch}}
+\doxysubsubsection{\texorpdfstring{getAutoCompleteListForWord()}{getAutoCompleteListForWord()}}
+{\footnotesize\ttfamily std\+::vector$<$ wstring $>$ Api\+Search\+::get\+Auto\+Complete\+List\+For\+Word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants\+::\+Type\+Dict}}}]{type\+Dict,  }\item[{std\+::wstring}]{word }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_api_8cpp_source_l00273}{273}} of file \mbox{\hyperlink{_api_8cpp_source}{Api.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00274\ \ \ \ \ vector<wstring>\ AutoCompleteList;}
+\DoxyCodeLine{00275\ \ \ \ \ \mbox{\hyperlink{class_dict}{Dict}}\&\ dictionary\ =\ \mbox{\hyperlink{class_base_api_af1f2220dfbab8a81db838bfef883f0a0}{MainDictionary}}.\mbox{\hyperlink{class_dicts_a02454e1219e6899bbedd6148c80672f7}{dicts}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(typeDict)];}
+\DoxyCodeLine{00276\ \ \ \ \ dictionary.\mbox{\hyperlink{class_dict_af33bbf98523ea12f1985d63ed413c375}{Map}}.\mbox{\hyperlink{struct_trie_aa450af4d65eb86082c3ea3bfa19ef2d4}{getAutoComplete}}(word,\ AutoCompleteList);}
+\DoxyCodeLine{00277\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}LOG:\ Api:\ ApiSearch:\ size\ of\ AutoCompleteList:\ "{}}\ <<\ AutoCompleteList.size()\ <<\ std::endl;}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordflow}{return}\ move(AutoCompleteList);}
+\DoxyCodeLine{00279\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_api_search_ab3a7a501e49c5c263e576c9facfa2409}\label{class_api_search_ab3a7a501e49c5c263e576c9facfa2409} 
+\index{ApiSearch@{ApiSearch}!getHistory@{getHistory}}
+\index{getHistory@{getHistory}!ApiSearch@{ApiSearch}}
+\doxysubsubsection{\texorpdfstring{getHistory()}{getHistory()}}
+{\footnotesize\ttfamily std\+::vector$<$ wstring $>$ Api\+Search\+::get\+History (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants\+::\+Type\+Dict}}}]{type\+Dict }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_api_8cpp_source_l00310}{310}} of file \mbox{\hyperlink{_api_8cpp_source}{Api.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00311\ \ \ \ \ vector<wstring>\ result\ =\ \mbox{\hyperlink{class_base_api_af1f2220dfbab8a81db838bfef883f0a0}{MainDictionary}}.\mbox{\hyperlink{class_dicts_a02454e1219e6899bbedd6148c80672f7}{dicts}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(typeDict)].HistoryList;}
+\DoxyCodeLine{00312\ \ \ \ \ reverse(result.begin(),\ result.end());}
+\DoxyCodeLine{00313\ \ \ \ \ result.pop\_back();}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00315\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/core/\mbox{\hyperlink{_api_8h}{Api.\+h}}\item 
+source/core/\mbox{\hyperlink{_api_8cpp}{Api.\+cpp}}\end{DoxyCompactItemize}
