@@ -1,0 +1,129 @@
+\doxysection{Api\+Quiz Class Reference}
+\hypertarget{class_api_quiz}{}\label{class_api_quiz}\index{ApiQuiz@{ApiQuiz}}
+
+
+{\ttfamily \#include $<$Api.\+h$>$}
+
+Inheritance diagram for Api\+Quiz\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_api_quiz}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_api_quiz_a0d835ae5bff5c3c26452f50fae9bb616}{Api\+Quiz}} (\mbox{\hyperlink{class_dicts}{Dicts}} \&dicts)
+\item 
+\mbox{\hyperlink{class_quiz}{Quiz}} \mbox{\hyperlink{class_api_quiz_a9cfbc3a70f38f9a7f250e9ffb851cdb1}{get\+Quiz}} (\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants\+::\+Type\+Dict}} type\+Dict, bool Is\+Ask\+Word\+To\+Def)
+\item 
+bool \mbox{\hyperlink{class_api_quiz_aba83301df25318c1773c34c8491690c6}{submit\+Quiz}} (\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants\+::\+Type\+Dict}} type\+Dict, \mbox{\hyperlink{_quiz_8h_a05edfe308d3ebf5d574759a633e0b030}{Quiz\+Response}} response)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_base_api}{Base\+Api}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_base_api_a29516a2c3d264c263cade4f30e2519d0}{Base\+Api}} (\mbox{\hyperlink{class_dicts}{Dicts}} \&dicts)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_base_api}{Base\+Api}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dicts}{Dicts}} \& \mbox{\hyperlink{class_base_api_af1f2220dfbab8a81db838bfef883f0a0}{Main\+Dictionary}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_api_8h_source_l00068}{68}} of file \mbox{\hyperlink{_api_8h_source}{Api.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_api_quiz_a0d835ae5bff5c3c26452f50fae9bb616}\label{class_api_quiz_a0d835ae5bff5c3c26452f50fae9bb616} 
+\index{ApiQuiz@{ApiQuiz}!ApiQuiz@{ApiQuiz}}
+\index{ApiQuiz@{ApiQuiz}!ApiQuiz@{ApiQuiz}}
+\doxysubsubsection{\texorpdfstring{ApiQuiz()}{ApiQuiz()}}
+{\footnotesize\ttfamily Api\+Quiz\+::\+Api\+Quiz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dicts}{Dicts}} \&}]{dicts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{_api_8h_source_l00072}{72}} of file \mbox{\hyperlink{_api_8h_source}{Api.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ :\ \mbox{\hyperlink{class_base_api}{BaseApi}}(dicts)\ \{\};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_api_quiz_a9cfbc3a70f38f9a7f250e9ffb851cdb1}\label{class_api_quiz_a9cfbc3a70f38f9a7f250e9ffb851cdb1} 
+\index{ApiQuiz@{ApiQuiz}!getQuiz@{getQuiz}}
+\index{getQuiz@{getQuiz}!ApiQuiz@{ApiQuiz}}
+\doxysubsubsection{\texorpdfstring{getQuiz()}{getQuiz()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_quiz}{Quiz}} Api\+Quiz\+::get\+Quiz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants\+::\+Type\+Dict}}}]{type\+Dict,  }\item[{bool}]{Is\+Ask\+Word\+To\+Def }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_api_8cpp_source_l00317}{317}} of file \mbox{\hyperlink{_api_8cpp_source}{Api.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \mbox{\hyperlink{class_dict}{Dict}}\&\ dictionary\ =\ \mbox{\hyperlink{class_base_api_af1f2220dfbab8a81db838bfef883f0a0}{MainDictionary}}.\mbox{\hyperlink{class_dicts_a02454e1219e6899bbedd6148c80672f7}{dicts}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(typeDict)];}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ MAX\_LENGTH\_OF\_QUESTION\ =\ 50;}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ MAX\_LENGTH\_OF\_ANSWER\ =\ 20;}
+\DoxyCodeLine{00321\ \ \ \ \ quiz.\mbox{\hyperlink{class_quiz_a85beb60cba66bc78de9e20175ec4a5ad}{options}}.clear();}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i<4;\ i++)\{}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\{}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ temp\ =\ 0;}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ ++i)\{}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ (temp\ <<\ 8)\ |\ (rand()\ \%\ 256);}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_word}{Word}}\ *cur\ =\ \&dictionary.\mbox{\hyperlink{class_dict_aff4d150f25570f8dd024e58da8782d5e}{words}}[temp\ \%\ dictionary.\mbox{\hyperlink{class_dict_aff4d150f25570f8dd024e58da8782d5e}{words}}.size()];}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cur-\/>\mbox{\hyperlink{struct_word_aca564fd49af9843aa43e66c99d31fe3b}{worddef}}.empty()\ ||\ cur-\/>\mbox{\hyperlink{struct_word_aca564fd49af9843aa43e66c99d31fe3b}{worddef}}[0].definition.empty())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Min\_Length\_Of\_Definition\ =\ cur-\/>\mbox{\hyperlink{struct_word_aca564fd49af9843aa43e66c99d31fe3b}{worddef}}[0].definition[0].meaning.size();}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsAskWordToDef)\{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cur-\/>\mbox{\hyperlink{struct_word_abf659503a55c86038ce35530cbb0eaeb}{word}}.size()\ <\ MAX\_LENGTH\_OF\_QUESTION\ \&\&\ Min\_Length\_Of\_Definition\ <\ MAX\_LENGTH\_OF\_ANSWER)\{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quiz.\mbox{\hyperlink{class_quiz_a85beb60cba66bc78de9e20175ec4a5ad}{options}}.push\_back(cur);}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cur-\/>\mbox{\hyperlink{struct_word_abf659503a55c86038ce35530cbb0eaeb}{word}}.size()\ <\ MAX\_LENGTH\_OF\_ANSWER\ \&\&\ Min\_Length\_Of\_Definition\ <\ MAX\_LENGTH\_OF\_QUESTION)\{}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quiz.\mbox{\hyperlink{class_quiz_a85beb60cba66bc78de9e20175ec4a5ad}{options}}.push\_back(cur);}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00343\ \ \ \ \ \}\ \ \ \ }
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordtype}{int}\ temp\ =\ rand()\ \%\ 4;}
+\DoxyCodeLine{00345\ \ \ \ \ quiz.\mbox{\hyperlink{class_quiz_aef3927272026519929e26be882392760}{word}}\ =\ quiz.\mbox{\hyperlink{class_quiz_a85beb60cba66bc78de9e20175ec4a5ad}{options}}[temp];}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordflow}{return}\ quiz;}
+\DoxyCodeLine{00347\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_api_quiz_aba83301df25318c1773c34c8491690c6}\label{class_api_quiz_aba83301df25318c1773c34c8491690c6} 
+\index{ApiQuiz@{ApiQuiz}!submitQuiz@{submitQuiz}}
+\index{submitQuiz@{submitQuiz}!ApiQuiz@{ApiQuiz}}
+\doxysubsubsection{\texorpdfstring{submitQuiz()}{submitQuiz()}}
+{\footnotesize\ttfamily bool Api\+Quiz\+::submit\+Quiz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants\+::\+Type\+Dict}}}]{type\+Dict,  }\item[{\mbox{\hyperlink{_quiz_8h_a05edfe308d3ebf5d574759a633e0b030}{Quiz\+Response}}}]{response }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_api_8cpp_source_l00348}{348}} of file \mbox{\hyperlink{_api_8cpp_source}{Api.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keywordflow}{if}\ (quiz.\mbox{\hyperlink{class_quiz_a85beb60cba66bc78de9e20175ec4a5ad}{options}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(response)]\ ==\ quiz.\mbox{\hyperlink{class_quiz_aef3927272026519929e26be882392760}{word}})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00351\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/core/\mbox{\hyperlink{_api_8h}{Api.\+h}}\item 
+source/core/\mbox{\hyperlink{_api_8cpp}{Api.\+cpp}}\end{DoxyCompactItemize}

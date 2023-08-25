@@ -1,0 +1,155 @@
+\doxysection{Quiz\+Scene.\+cpp}
+\hypertarget{_quiz_scene_8cpp_source}{}\label{_quiz_scene_8cpp_source}\index{source/draw/QuizScene.cpp@{source/draw/QuizScene.cpp}}
+\mbox{\hyperlink{_quiz_scene_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ dirii\ on\ 20/8/23.}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_quiz_scene_8h}{QuizScene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00007}\mbox{\hyperlink{class_quiz_scene_a42fd9cf5877f0e8cc3e75ba6e7c48672}{00007}}\ \mbox{\hyperlink{class_quiz_scene_a81499da3246023564316df6de86df7a5}{QuizScene::QuizScene}}(Font\ *font,\ \mbox{\hyperlink{class_api}{Api}}\ *api,\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants::TypeDict}}\ *\_currentDict,\ \textcolor{keywordtype}{int}\ *\_currentMenuBtn)\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00008}00008\ \ \ \ \ this-\/>font\ =\ font;}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00009}00009\ \ \ \ \ this-\/>api\ =\ api;}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00010}00010\ \ \ \ \ this-\/>currentDict\ =\ \_currentDict;}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00011}00011\ \ \ \ \ this-\/>currentMenuBtn\ =\ \_currentMenuBtn;}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{comment}{//\ \{\ 47,259,810,420\ \}}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00014}00014\ \ \ \ \ this-\/>buttonSize\ =\ \{390,\ 100\};}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00015}00015\ \ \ \ \ this-\/>buttonRect[0]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ 57,}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ 679\ -\/\ (buttonSize.y\ +\ \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}})\ *\ 2,\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ buttonSize.x,\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ buttonSize.y}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00020}00020\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00022}00022\ \ \ \ \ this-\/>buttonRect[1]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ 57\ +\ buttonSize.x\ +\ \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}},}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ 679\ -\/\ (buttonSize.y\ +\ \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}})\ *\ 2,\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ buttonSize.x,\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ buttonSize.y}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00027}00027\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00029}00029\ \ \ \ \ this-\/>buttonRect[2]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ 57,}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ 679\ -\/\ (buttonSize.y\ +\ \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}}),\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ buttonSize.x,\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ buttonSize.y}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00034}00034\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00036}00036\ \ \ \ \ this-\/>buttonRect[3]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ 57\ +\ buttonSize.x\ +\ \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}},}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ 679\ -\/\ (buttonSize.y\ +\ \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}}),\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ buttonSize.x,\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ buttonSize.y}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00041}00041\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00043}00043\ \ \ \ \ this-\/>\mbox{\hyperlink{class_quiz_scene_a0fab3586ed175167de51b0eb77e039bf}{restart}}();}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00046}\mbox{\hyperlink{class_quiz_scene_a341fdd20bfd49afd367295e9cf1f3766}{00046}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quiz_scene_a341fdd20bfd49afd367295e9cf1f3766}{QuizScene::draw}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ *this-\/>currentDict\ ==\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965adc60ab866120d099e912052024efc66a}{Constants::TypeDict::EN\_EMOJI}}\ ||\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03a54769981e91da1ef7e066c4a15665f93}{Constants::Screen::menuBtn::FAVOURITE}}\ ||}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03ab50339a10e1de285ac99d4c3990b8693}{Constants::Screen::menuBtn::NONE}}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00051}00051\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}LOG:\ QuizScene:\ draw:\ question:\ "{}\ <<\ this-\/>question\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00056}00056\ \ \ \ \ DrawTextEx(}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ *this-\/>font,}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ this-\/>question.c\_str(),}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ 47\ +\ (810\ -\/\ MeasureTextEx(*this-\/>font,\ this-\/>question.c\_str(),\ 20,\ SPACING).x)\ /\ 2,}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ 259\ +\ GAP}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ 25,}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quiz_scene_ac2f3126ccd839f33f5913a1f089cacd4}{SPACING}},}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ BLACK}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00066}00066\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ this-\/>btnQuiz[i].\mbox{\hyperlink{class_button_quiz_acc639ec46d7a26debb6a87e71cdf6374}{draw}}();}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00071}00071\ \}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00073}\mbox{\hyperlink{class_quiz_scene_a3a94cbe99e532e1d0ded5cd807870281}{00073}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quiz_scene_a3a94cbe99e532e1d0ded5cd807870281}{QuizScene::handleEvents}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ *this-\/>currentDict\ ==\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965adc60ab866120d099e912052024efc66a}{Constants::TypeDict::EN\_EMOJI}}\ ||\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03a54769981e91da1ef7e066c4a15665f93}{Constants::Screen::menuBtn::FAVOURITE}}\ ||}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03ab50339a10e1de285ac99d4c3990b8693}{Constants::Screen::menuBtn::NONE}}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00078}00078\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ this-\/>btnQuiz[i].\mbox{\hyperlink{class_button_quiz_ab237fa3de440832ee8e6d258e6b27481}{handleEvents}}();}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00086}\mbox{\hyperlink{class_quiz_scene_a3f960cdd9fbb7b5e41966f602c260f44}{00086}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quiz_scene_a3f960cdd9fbb7b5e41966f602c260f44}{QuizScene::update}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ *this-\/>currentDict\ ==\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965adc60ab866120d099e912052024efc66a}{Constants::TypeDict::EN\_EMOJI}}\ ||\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03a54769981e91da1ef7e066c4a15665f93}{Constants::Screen::menuBtn::FAVOURITE}}\ ||}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03ab50339a10e1de285ac99d4c3990b8693}{Constants::Screen::menuBtn::NONE}}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00091}00091\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ this-\/>btnQuiz[i].\mbox{\hyperlink{class_button_quiz_a7df5f8cd21daea1847c37071b1c70959}{update}}();}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>btnQuiz[i].isClicked())\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>api-\/>\mbox{\hyperlink{class_api_a2cf48e32c994d22c74634213ae7fc854}{apiQuiz}}.\mbox{\hyperlink{class_api_quiz_aba83301df25318c1773c34c8491690c6}{submitQuiz}}(*this-\/>currentDict,\ (\mbox{\hyperlink{_quiz_8h_a05edfe308d3ebf5d574759a633e0b030}{QuizResponse}})i))\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>btnQuiz[i].\mbox{\hyperlink{class_button_quiz_a571c114980eea06bc3c59c53b732be11}{setStatusAnswer}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>btnQuiz[i].\mbox{\hyperlink{class_button_quiz_a571c114980eea06bc3c59c53b732be11}{setStatusAnswer}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00106}\mbox{\hyperlink{class_quiz_scene_a0fab3586ed175167de51b0eb77e039bf}{00106}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quiz_scene_a0fab3586ed175167de51b0eb77e039bf}{QuizScene::restart}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ *this-\/>currentDict\ ==\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965adc60ab866120d099e912052024efc66a}{Constants::TypeDict::EN\_EMOJI}}\ ||\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03a54769981e91da1ef7e066c4a15665f93}{Constants::Screen::menuBtn::FAVOURITE}}\ ||}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03ab50339a10e1de285ac99d4c3990b8693}{Constants::Screen::menuBtn::NONE}}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00111}00111\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{if}\ (*this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03abdde29e3c0fe7b687d69a696bbaf71ac}{Constants::Screen::menuBtn::WORD}})\{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}LOG:\ QuizScene:\ restart:\ start\ getQuiz\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ this-\/>currentQuiz\ =\ this-\/>api-\/>\mbox{\hyperlink{class_api_a2cf48e32c994d22c74634213ae7fc854}{apiQuiz}}.\mbox{\hyperlink{class_api_quiz_a9cfbc3a70f38f9a7f250e9ffb851cdb1}{getQuiz}}(*this-\/>currentDict,\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ ?}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ this-\/>question\ =\ Utils::WStringToUTF8(this-\/>currentQuiz.\mbox{\hyperlink{class_quiz_aef3927272026519929e26be882392760}{word}}-\/>\mbox{\hyperlink{struct_word_abf659503a55c86038ce35530cbb0eaeb}{word}});}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ ++i)\{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>btnQuiz[i]\ =\ \mbox{\hyperlink{class_button_quiz}{ButtonQuiz}}(}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>font,\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Utils::WStringToUTF8(this-\/>currentQuiz.\mbox{\hyperlink{class_quiz_a85beb60cba66bc78de9e20175ec4a5ad}{options}}[i]-\/>worddef[0].definition[0].meaning),\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 25,\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BLUE,\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>buttonRect[i]}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}LOG:\ QuizScene:\ restart:\ question:\ "{}}\ <<\ this-\/>question\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{if}\ (*this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03a52f90e03a4ea208d52475028ad0250ef}{Constants::Screen::menuBtn::DEFINITION}})\{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ this-\/>currentQuiz\ =\ this-\/>api-\/>\mbox{\hyperlink{class_api_a2cf48e32c994d22c74634213ae7fc854}{apiQuiz}}.\mbox{\hyperlink{class_api_quiz_a9cfbc3a70f38f9a7f250e9ffb851cdb1}{getQuiz}}(*this-\/>currentDict,\ \textcolor{keyword}{false});\ \textcolor{comment}{//\ ?}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ this-\/>question\ =\ Utils::WStringToUTF8(this-\/>currentQuiz.\mbox{\hyperlink{class_quiz_aef3927272026519929e26be882392760}{word}}-\/>\mbox{\hyperlink{struct_word_aca564fd49af9843aa43e66c99d31fe3b}{worddef}}[0].definition[0].meaning);}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ ++i)\{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>btnQuiz[i]\ =\ \mbox{\hyperlink{class_button_quiz}{ButtonQuiz}}(}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>font,\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Utils::WStringToUTF8(this-\/>currentQuiz.\mbox{\hyperlink{class_quiz_a85beb60cba66bc78de9e20175ec4a5ad}{options}}[i]-\/>word),\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 20,\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BLUE,\ }
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>buttonRect[i]}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>question.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ std::vector<std::string>\ lines;}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ Utils::formatString(this-\/>font,\ \mbox{\hyperlink{class_quiz_scene_ac2f3126ccd839f33f5913a1f089cacd4}{SPACING}},\ this-\/>question,\ 810\ -\/\ 2\ *\ \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}},\ 20,\ lines);}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ this-\/>question\ =\ lines[0];}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ lines.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>question\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +\ lines[i];}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_quiz_scene_8cpp_source_l00149}00149\ \}}
+
+\end{DoxyCode}

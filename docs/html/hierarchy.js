@@ -1,0 +1,36 @@
+var hierarchy =
+[
+    [ "BaseApi", "class_base_api.html", [
+      [ "Api", "class_api.html", null ],
+      [ "ApiFavorite", "class_api_favorite.html", null ],
+      [ "ApiQuiz", "class_api_quiz.html", null ],
+      [ "ApiSearch", "class_api_search.html", null ],
+      [ "ApiWord", "class_api_word.html", null ]
+    ] ],
+    [ "Button", "class_button.html", null ],
+    [ "ButtonImage", "class_button_image.html", null ],
+    [ "ButtonQuiz", "class_button_quiz.html", null ],
+    [ "Definition", "struct_definition.html", null ],
+    [ "Dict", "class_dict.html", null ],
+    [ "Dicts", "class_dicts.html", null ],
+    [ "Favourite", "class_favourite.html", null ],
+    [ "FrameBoard", "class_frame_board.html", null ],
+    [ "Line", "class_line.html", null ],
+    [ "MainMenu", "class_main_menu.html", null ],
+    [ "Map< keyType, valueType >", "struct_map.html", null ],
+    [ "Map< wchar_t, TrieNode * >", "struct_map.html", null ],
+    [ "Map< keyType, valueType >::Node", "struct_map_1_1_node.html", null ],
+    [ "Quiz", "class_quiz.html", null ],
+    [ "QuizScene", "class_quiz_scene.html", null ],
+    [ "SearchBox", "class_search_box.html", null ],
+    [ "SuggestionLine", "class_suggestion_line.html", null ],
+    [ "Trie< ValueType >", "struct_trie.html", null ],
+    [ "Trie< int >", "struct_trie.html", null ],
+    [ "Trie< Trie< int > >", "struct_trie.html", null ],
+    [ "TrieNode< ValueType >", "struct_trie_node.html", null ],
+    [ "TrieNode< int >", "struct_trie_node.html", null ],
+    [ "TrieNode< Trie< int > >", "struct_trie_node.html", null ],
+    [ "Type", "struct_type.html", null ],
+    [ "Window", "class_window.html", null ],
+    [ "Word", "struct_word.html", null ]
+];

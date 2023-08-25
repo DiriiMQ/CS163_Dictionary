@@ -1,0 +1,285 @@
+\doxysection{Quiz\+Scene Class Reference}
+\hypertarget{class_quiz_scene}{}\label{class_quiz_scene}\index{QuizScene@{QuizScene}}
+
+
+{\ttfamily \#include $<$Quiz\+Scene.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_quiz_scene_a81499da3246023564316df6de86df7a5}{Quiz\+Scene}} ()=default
+\item 
+\mbox{\hyperlink{class_quiz_scene_a42fd9cf5877f0e8cc3e75ba6e7c48672}{Quiz\+Scene}} (Font \texorpdfstring{$\ast$}{*}font, \mbox{\hyperlink{class_api}{Api}} \texorpdfstring{$\ast$}{*}api, \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants\+::\+Type\+Dict}} \texorpdfstring{$\ast$}{*}current\+Dict, int \texorpdfstring{$\ast$}{*}current\+Menu\+Btn)
+\item 
+void \mbox{\hyperlink{class_quiz_scene_a341fdd20bfd49afd367295e9cf1f3766}{draw}} ()
+\item 
+void \mbox{\hyperlink{class_quiz_scene_a3a94cbe99e532e1d0ded5cd807870281}{handle\+Events}} ()
+\item 
+void \mbox{\hyperlink{class_quiz_scene_a3f960cdd9fbb7b5e41966f602c260f44}{update}} ()
+\item 
+void \mbox{\hyperlink{class_quiz_scene_a0fab3586ed175167de51b0eb77e039bf}{restart}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}} = 10
+\item 
+static constexpr int \mbox{\hyperlink{class_quiz_scene_ac2f3126ccd839f33f5913a1f089cacd4}{SPACING}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_quiz_scene_8h_source_l00012}{12}} of file \mbox{\hyperlink{_quiz_scene_8h_source}{Quiz\+Scene.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_quiz_scene_a81499da3246023564316df6de86df7a5}\label{class_quiz_scene_a81499da3246023564316df6de86df7a5} 
+\index{QuizScene@{QuizScene}!QuizScene@{QuizScene}}
+\index{QuizScene@{QuizScene}!QuizScene@{QuizScene}}
+\doxysubsubsection{\texorpdfstring{QuizScene()}{QuizScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Quiz\+Scene\+::\+Quiz\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_quiz_scene_a42fd9cf5877f0e8cc3e75ba6e7c48672}\label{class_quiz_scene_a42fd9cf5877f0e8cc3e75ba6e7c48672} 
+\index{QuizScene@{QuizScene}!QuizScene@{QuizScene}}
+\index{QuizScene@{QuizScene}!QuizScene@{QuizScene}}
+\doxysubsubsection{\texorpdfstring{QuizScene()}{QuizScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Quiz\+Scene\+::\+Quiz\+Scene (\begin{DoxyParamCaption}\item[{Font \texorpdfstring{$\ast$}{*}}]{font,  }\item[{\mbox{\hyperlink{class_api}{Api}} \texorpdfstring{$\ast$}{*}}]{api,  }\item[{\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants\+::\+Type\+Dict}} \texorpdfstring{$\ast$}{*}}]{current\+Dict,  }\item[{int \texorpdfstring{$\ast$}{*}}]{current\+Menu\+Btn }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_quiz_scene_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_quiz_scene_8cpp_source}{Quiz\+Scene.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ \ \ this-\/>font\ =\ font;}
+\DoxyCodeLine{00009\ \ \ \ \ this-\/>api\ =\ api;}
+\DoxyCodeLine{00010\ \ \ \ \ this-\/>currentDict\ =\ \_currentDict;}
+\DoxyCodeLine{00011\ \ \ \ \ this-\/>currentMenuBtn\ =\ \_currentMenuBtn;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ \{\ 47,259,810,420\ \}}}
+\DoxyCodeLine{00014\ \ \ \ \ this-\/>buttonSize\ =\ \{390,\ 100\};}
+\DoxyCodeLine{00015\ \ \ \ \ this-\/>buttonRect[0]\ =\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ 57,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ 679\ -\/\ (buttonSize.y\ +\ \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}})\ *\ 2,\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ buttonSize.x,\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ buttonSize.y}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ this-\/>buttonRect[1]\ =\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ 57\ +\ buttonSize.x\ +\ \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ 679\ -\/\ (buttonSize.y\ +\ \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}})\ *\ 2,\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ buttonSize.x,\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ buttonSize.y}
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ this-\/>buttonRect[2]\ =\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ 57,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ 679\ -\/\ (buttonSize.y\ +\ \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}}),\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ buttonSize.x,\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ buttonSize.y}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ this-\/>buttonRect[3]\ =\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ 57\ +\ buttonSize.x\ +\ \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}},}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ 679\ -\/\ (buttonSize.y\ +\ \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}}),\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ buttonSize.x,\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ buttonSize.y}
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ this-\/>\mbox{\hyperlink{class_quiz_scene_a0fab3586ed175167de51b0eb77e039bf}{restart}}();}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_quiz_scene_a341fdd20bfd49afd367295e9cf1f3766}\label{class_quiz_scene_a341fdd20bfd49afd367295e9cf1f3766} 
+\index{QuizScene@{QuizScene}!draw@{draw}}
+\index{draw@{draw}!QuizScene@{QuizScene}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Quiz\+Scene\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_quiz_scene_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{_quiz_scene_8cpp_source}{Quiz\+Scene.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ *this-\/>currentDict\ ==\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965adc60ab866120d099e912052024efc66a}{Constants::TypeDict::EN\_EMOJI}}\ ||\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03a54769981e91da1ef7e066c4a15665f93}{Constants::Screen::menuBtn::FAVOURITE}}\ ||}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03ab50339a10e1de285ac99d4c3990b8693}{Constants::Screen::menuBtn::NONE}}}
+\DoxyCodeLine{00051\ \ \ \ \ )}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}LOG:\ QuizScene:\ draw:\ question:\ "{}\ <<\ this-\/>question\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ DrawTextEx(}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ *this-\/>font,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ this-\/>question.c\_str(),}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ 47\ +\ (810\ -\/\ MeasureTextEx(*this-\/>font,\ this-\/>question.c\_str(),\ 20,\ SPACING).x)\ /\ 2,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ 259\ +\ GAP}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ 25,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quiz_scene_ac2f3126ccd839f33f5913a1f089cacd4}{SPACING}},}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ BLACK}
+\DoxyCodeLine{00066\ \ \ \ \ );}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ ++i)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ this-\/>btnQuiz[i].\mbox{\hyperlink{class_button_quiz_acc639ec46d7a26debb6a87e71cdf6374}{draw}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_quiz_scene_a3a94cbe99e532e1d0ded5cd807870281}\label{class_quiz_scene_a3a94cbe99e532e1d0ded5cd807870281} 
+\index{QuizScene@{QuizScene}!handleEvents@{handleEvents}}
+\index{handleEvents@{handleEvents}!QuizScene@{QuizScene}}
+\doxysubsubsection{\texorpdfstring{handleEvents()}{handleEvents()}}
+{\footnotesize\ttfamily void Quiz\+Scene\+::handle\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_quiz_scene_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{_quiz_scene_8cpp_source}{Quiz\+Scene.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ *this-\/>currentDict\ ==\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965adc60ab866120d099e912052024efc66a}{Constants::TypeDict::EN\_EMOJI}}\ ||\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03a54769981e91da1ef7e066c4a15665f93}{Constants::Screen::menuBtn::FAVOURITE}}\ ||}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03ab50339a10e1de285ac99d4c3990b8693}{Constants::Screen::menuBtn::NONE}}}
+\DoxyCodeLine{00078\ \ \ \ \ )}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ ++i)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ this-\/>btnQuiz[i].\mbox{\hyperlink{class_button_quiz_ab237fa3de440832ee8e6d258e6b27481}{handleEvents}}();}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_quiz_scene_a0fab3586ed175167de51b0eb77e039bf}\label{class_quiz_scene_a0fab3586ed175167de51b0eb77e039bf} 
+\index{QuizScene@{QuizScene}!restart@{restart}}
+\index{restart@{restart}!QuizScene@{QuizScene}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}}
+{\footnotesize\ttfamily void Quiz\+Scene\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_quiz_scene_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{_quiz_scene_8cpp_source}{Quiz\+Scene.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ *this-\/>currentDict\ ==\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965adc60ab866120d099e912052024efc66a}{Constants::TypeDict::EN\_EMOJI}}\ ||\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03a54769981e91da1ef7e066c4a15665f93}{Constants::Screen::menuBtn::FAVOURITE}}\ ||}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03ab50339a10e1de285ac99d4c3990b8693}{Constants::Screen::menuBtn::NONE}}}
+\DoxyCodeLine{00111\ \ \ \ \ )}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{if}\ (*this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03abdde29e3c0fe7b687d69a696bbaf71ac}{Constants::Screen::menuBtn::WORD}})\{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}LOG:\ QuizScene:\ restart:\ start\ getQuiz\(\backslash\)n"{}};}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ this-\/>currentQuiz\ =\ this-\/>api-\/>\mbox{\hyperlink{class_api_a2cf48e32c994d22c74634213ae7fc854}{apiQuiz}}.\mbox{\hyperlink{class_api_quiz_a9cfbc3a70f38f9a7f250e9ffb851cdb1}{getQuiz}}(*this-\/>currentDict,\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ ?}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ this-\/>question\ =\ Utils::WStringToUTF8(this-\/>currentQuiz.\mbox{\hyperlink{class_quiz_aef3927272026519929e26be882392760}{word}}-\/>\mbox{\hyperlink{struct_word_abf659503a55c86038ce35530cbb0eaeb}{word}});}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ ++i)\{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>btnQuiz[i]\ =\ \mbox{\hyperlink{class_button_quiz}{ButtonQuiz}}(}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>font,\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Utils::WStringToUTF8(this-\/>currentQuiz.\mbox{\hyperlink{class_quiz_a85beb60cba66bc78de9e20175ec4a5ad}{options}}[i]-\/>worddef[0].definition[0].meaning),\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 25,\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BLUE,\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>buttonRect[i]}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}LOG:\ QuizScene:\ restart:\ question:\ "{}}\ <<\ this-\/>question\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{if}\ (*this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03a52f90e03a4ea208d52475028ad0250ef}{Constants::Screen::menuBtn::DEFINITION}})\{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ this-\/>currentQuiz\ =\ this-\/>api-\/>\mbox{\hyperlink{class_api_a2cf48e32c994d22c74634213ae7fc854}{apiQuiz}}.\mbox{\hyperlink{class_api_quiz_a9cfbc3a70f38f9a7f250e9ffb851cdb1}{getQuiz}}(*this-\/>currentDict,\ \textcolor{keyword}{false});\ \textcolor{comment}{//\ ?}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ this-\/>question\ =\ Utils::WStringToUTF8(this-\/>currentQuiz.\mbox{\hyperlink{class_quiz_aef3927272026519929e26be882392760}{word}}-\/>\mbox{\hyperlink{struct_word_aca564fd49af9843aa43e66c99d31fe3b}{worddef}}[0].definition[0].meaning);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ ++i)\{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>btnQuiz[i]\ =\ \mbox{\hyperlink{class_button_quiz}{ButtonQuiz}}(}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>font,\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Utils::WStringToUTF8(this-\/>currentQuiz.\mbox{\hyperlink{class_quiz_a85beb60cba66bc78de9e20175ec4a5ad}{options}}[i]-\/>word),\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 20,\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BLUE,\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>buttonRect[i]}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>question.size())\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ std::vector<std::string>\ lines;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ Utils::formatString(this-\/>font,\ \mbox{\hyperlink{class_quiz_scene_ac2f3126ccd839f33f5913a1f089cacd4}{SPACING}},\ this-\/>question,\ 810\ -\/\ 2\ *\ \mbox{\hyperlink{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}{GAP}},\ 20,\ lines);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ this-\/>question\ =\ lines[0];}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ lines.size();\ i++)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>question\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +\ lines[i];}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_quiz_scene_a3f960cdd9fbb7b5e41966f602c260f44}\label{class_quiz_scene_a3f960cdd9fbb7b5e41966f602c260f44} 
+\index{QuizScene@{QuizScene}!update@{update}}
+\index{update@{update}!QuizScene@{QuizScene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Quiz\+Scene\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_quiz_scene_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{_quiz_scene_8cpp_source}{Quiz\+Scene.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ *this-\/>currentDict\ ==\ \mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965adc60ab866120d099e912052024efc66a}{Constants::TypeDict::EN\_EMOJI}}\ ||\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03a54769981e91da1ef7e066c4a15665f93}{Constants::Screen::menuBtn::FAVOURITE}}\ ||}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ *this-\/>currentMenuBtn\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_constants_1_1_screen_aad8887ffa4691dfc2c39aed9df5b9e03ab50339a10e1de285ac99d4c3990b8693}{Constants::Screen::menuBtn::NONE}}}
+\DoxyCodeLine{00091\ \ \ \ \ )}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ ++i)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ this-\/>btnQuiz[i].\mbox{\hyperlink{class_button_quiz_a7df5f8cd21daea1847c37071b1c70959}{update}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>btnQuiz[i].isClicked())\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>api-\/>\mbox{\hyperlink{class_api_a2cf48e32c994d22c74634213ae7fc854}{apiQuiz}}.\mbox{\hyperlink{class_api_quiz_aba83301df25318c1773c34c8491690c6}{submitQuiz}}(*this-\/>currentDict,\ (\mbox{\hyperlink{_quiz_8h_a05edfe308d3ebf5d574759a633e0b030}{QuizResponse}})i))\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>btnQuiz[i].\mbox{\hyperlink{class_button_quiz_a571c114980eea06bc3c59c53b732be11}{setStatusAnswer}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>btnQuiz[i].\mbox{\hyperlink{class_button_quiz_a571c114980eea06bc3c59c53b732be11}{setStatusAnswer}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee}\label{class_quiz_scene_af652b50f4c9b7e3fb8322f039bcfbfee} 
+\index{QuizScene@{QuizScene}!GAP@{GAP}}
+\index{GAP@{GAP}!QuizScene@{QuizScene}}
+\doxysubsubsection{\texorpdfstring{GAP}{GAP}}
+{\footnotesize\ttfamily constexpr int Quiz\+Scene\+::\+GAP = 10\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{_quiz_scene_8h_source_l00029}{29}} of file \mbox{\hyperlink{_quiz_scene_8h_source}{Quiz\+Scene.\+h}}.
+
+\Hypertarget{class_quiz_scene_ac2f3126ccd839f33f5913a1f089cacd4}\label{class_quiz_scene_ac2f3126ccd839f33f5913a1f089cacd4} 
+\index{QuizScene@{QuizScene}!SPACING@{SPACING}}
+\index{SPACING@{SPACING}!QuizScene@{QuizScene}}
+\doxysubsubsection{\texorpdfstring{SPACING}{SPACING}}
+{\footnotesize\ttfamily constexpr int Quiz\+Scene\+::\+SPACING = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_quiz_scene_8h_source_l00030}{30}} of file \mbox{\hyperlink{_quiz_scene_8h_source}{Quiz\+Scene.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/draw/\mbox{\hyperlink{_quiz_scene_8h}{Quiz\+Scene.\+h}}\item 
+source/draw/\mbox{\hyperlink{_quiz_scene_8cpp}{Quiz\+Scene.\+cpp}}\end{DoxyCompactItemize}

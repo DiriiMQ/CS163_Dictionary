@@ -1,0 +1,69 @@
+\doxysection{Suggestion\+Line.\+cpp}
+\hypertarget{_suggestion_line_8cpp_source}{}\label{_suggestion_line_8cpp_source}\index{source/stuff/SuggestionLine.cpp@{source/stuff/SuggestionLine.cpp}}
+\mbox{\hyperlink{_suggestion_line_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ dirii\ on\ 8/8/23.}}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_suggestion_line_8h}{SuggestionLine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00007}\mbox{\hyperlink{class_suggestion_line_a240eaa7cf5f973ede8fda389d00a158a}{00007}}\ \mbox{\hyperlink{class_suggestion_line_a3a2e49dcf89be1ff1d5b3771a554b882}{SuggestionLine::SuggestionLine}}(std::string\ text,\ std::string\ def,\ Font\ *font,\ Rectangle\ rec)\ \{}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00008}00008\ \ \ \ \ this-\/>text\ =\ std::move(text);}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00009}00009\ \ \ \ \ this-\/>definition\ =\ std::move(def);}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00010}00010\ \ \ \ \ this-\/>font\ =\ font;}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00011}00011\ \ \ \ \ this-\/>rectangle\ =\ rec;}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00012}00012\ \ \ \ \ this-\/>fontSize\ =\ 20;}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00013}00013\ \ \ \ \ this-\/>isActivated\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00014}00014\ \ \ \ \ this-\/>textDraw\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00016}00016\ \ \ \ \ this-\/>button\ =\ \mbox{\hyperlink{class_button}{Button}}(}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ 1,}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ WHITE,}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>rectangle}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00022}00022\ \ \ \ \ this-\/>button.\mbox{\hyperlink{class_button_a2e15e13b687af530f9b42e2dbe4531d2}{setIsSuggest}}();}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00025}\mbox{\hyperlink{class_suggestion_line_aaa199b6936f49a6576540a87ffa47882}{00025}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_suggestion_line_aaa199b6936f49a6576540a87ffa47882}{SuggestionLine::draw}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00026}00026\ \ \ \ \ this-\/>button.\mbox{\hyperlink{class_button_a0380207dc9e4edcd0272207a39c7cdeb}{draw}}();}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00027}00027\ \ \ \ \ DrawTextEx(*this-\/>font,}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>textDraw.c\_str(),}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{this-\/>rectangle.x\ +\ 55,\ this-\/>rectangle.y\ +\ 6\},}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>fontSize,}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1,}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BLACK);}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00035}\mbox{\hyperlink{class_suggestion_line_a42abd8909707a92372fc5f73a23815ea}{00035}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_suggestion_line_a42abd8909707a92372fc5f73a23815ea}{SuggestionLine::handleEvents}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00036}00036\ \ \ \ \ this-\/>isClicked\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00037}00037\ \ \ \ \ this-\/>button.\mbox{\hyperlink{class_button_af09125ee745c3afe10a8e6d8ffc28fc1}{handleEvents}}();}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>button.\mbox{\hyperlink{class_button_a3727c0ebd9cc8040d5d7fe8c7cb1741f}{isPressing}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00040}00040\ \textcolor{comment}{//\ \ \ \ \ \ \ \ std::cout\ <<\ "{}LOG:\ Clicked\(\backslash\)n"{};}}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ this-\/>isClicked\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00045}\mbox{\hyperlink{class_suggestion_line_a6c72619a487386c7d9bbc3d849dacb90}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_suggestion_line_a6c72619a487386c7d9bbc3d849dacb90}{SuggestionLine::update}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>definition.length()\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ this-\/>textDraw\ =\ this-\/>text\ +\ \textcolor{stringliteral}{"{}\ ||\ "{}}\ +\ this-\/>definition;}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ this-\/>textDraw\ =\ this-\/>text;}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00050}00050\ \ \ \ \ this-\/>button.\mbox{\hyperlink{class_button_ad8e030c1c8846d43f3126047d4a3667f}{update}}();}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00053}\mbox{\hyperlink{class_suggestion_line_ab7c3d44b0f359cbe02d5f5d67b558ba9}{00053}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_suggestion_line_ab7c3d44b0f359cbe02d5f5d67b558ba9}{SuggestionLine::setText}}(std::string\ \_text)\ \{}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00054}00054\ \ \ \ \ this-\/>text\ =\ std::move(\_text);}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00057}\mbox{\hyperlink{class_suggestion_line_ac4bfeadcd967ac1b81dc83a75f4459ac}{00057}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_suggestion_line_ac4bfeadcd967ac1b81dc83a75f4459ac}{SuggestionLine::setDefinition}}(std::string\ def)\ \{}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00058}00058\ \ \ \ \ this-\/>definition\ =\ std::move(def);}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00061}\mbox{\hyperlink{class_suggestion_line_ab0f5522aeff9412c18f6a046b9e070d1}{00061}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_suggestion_line_ab0f5522aeff9412c18f6a046b9e070d1}{SuggestionLine::getClicked}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>isClicked;}
+\DoxyCodeLine{\Hypertarget{_suggestion_line_8cpp_source_l00063}00063\ \}}
+
+\end{DoxyCode}

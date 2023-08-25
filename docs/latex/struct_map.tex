@@ -1,0 +1,587 @@
+\doxysection{Map\texorpdfstring{$<$}{<} key\+Type, value\+Type \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_map}{}\label{struct_map}\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+
+
+{\ttfamily \#include $<$Map.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_map_1_1_node}{Node}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_map_a0d5aab5b2d8864a6d13c16863edbdf20}{Map}} ()
+\item 
+void \mbox{\hyperlink{struct_map_a97acba032aaaff1ff54204e33ff65c7c}{Copy}} (\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}\&\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}, const \mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}\&Other)
+\item 
+\mbox{\hyperlink{struct_map_aee9bfa6e4da020ff3085bf8929f32edf}{Map}} (const \mbox{\hyperlink{struct_map}{Map}} \&Other)
+\item 
+\mbox{\hyperlink{struct_map_ab8360b5922be66382f907ac129a32c15}{Map}} (\mbox{\hyperlink{struct_map}{Map}} \&\&Other)
+\item 
+\mbox{\hyperlink{struct_map}{Map}} \& \mbox{\hyperlink{struct_map_a2aa5c47a09e75e7e670458a13382ab57}{operator=}} (const \mbox{\hyperlink{struct_map}{Map}} \&Other)
+\item 
+\mbox{\hyperlink{struct_map}{Map}} \& \mbox{\hyperlink{struct_map_a107717cf0ac7b8c5901361f3bc415ebc}{operator=}} (\mbox{\hyperlink{struct_map}{Map}} \&\&Other)
+\item 
+void \mbox{\hyperlink{struct_map_ae4de82c8a4dc8ee3ad61e6eb065e96ab}{Destructor}} (\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}})
+\item 
+\mbox{\hyperlink{struct_map_a8947918f2c6b59ab97f4381252b58696}{\texorpdfstring{$\sim$}{\string~}\+Map}} ()
+\item 
+int \mbox{\hyperlink{struct_map_a91a635b69094940b45401532048b83f2}{get\+Height}} (\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}node)
+\item 
+void \mbox{\hyperlink{struct_map_ae9910e3288f804b841f1504236e493ff}{update\+Height}} (\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}node)
+\item 
+\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_map_a84c612a0941d448805c0154942171c2b}{rotate\+Left}} (\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}node)
+\item 
+\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_map_a8ac4a59e52fdca7cab7b03521293aca0}{rotate\+Right}} (\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}node)
+\item 
+\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_map_abd47b7b01f55f6e0a21762a80812048d}{re\+Balance}} (\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}node)
+\item 
+\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_map_a365fbaf6bbf8539524709e707726c9cf}{insert\+Helper}} (\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}node, const key\+Type \&key, const value\+Type \&value)
+\item 
+void \mbox{\hyperlink{struct_map_aa37d595901604d9e74bcdb5bb0879064}{insert}} (const key\+Type \&key, const value\+Type \&value)
+\item 
+\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_map_a40387737b0b9ee4170be9d4161cd34e4}{remove\+Helper}} (\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}node, const key\+Type \&key)
+\item 
+void \mbox{\hyperlink{struct_map_a425ce3c7e3c0690f1213029241bca199}{remove}} (const key\+Type \&key)
+\item 
+bool \mbox{\hyperlink{struct_map_a4f55a2af04bb38c5ee5560dbcb132126}{find}} (const key\+Type \&key)
+\item 
+value\+Type \& \mbox{\hyperlink{struct_map_ac0d46998796a9146b149c64af5687cc6}{operator\mbox{[}$\,$\mbox{]}}} (const key\+Type \&key)
+\item 
+void \mbox{\hyperlink{struct_map_a9fd14b07d35f430d37b6bce05b34c9a0}{get\+All\+Helper}} (\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}node, vector$<$ pair$<$ key\+Type, value\+Type $>$ $>$ \&result)
+\item 
+vector$<$ pair$<$ key\+Type, value\+Type $>$ $>$ \mbox{\hyperlink{struct_map_ad9a0f3f4b17385c747b8b9fb694fab24}{get\+All}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename key\+Type, typename value\+Type$>$\newline
+struct Map$<$ key\+Type, value\+Type $>$}
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00007}{7}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_map_a0d5aab5b2d8864a6d13c16863edbdf20}\label{struct_map_a0d5aab5b2d8864a6d13c16863edbdf20} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!Map@{Map}}
+\index{Map@{Map}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+\mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\mbox{\hyperlink{struct_map}{\+::\+Map}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ :\ \mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}(\textcolor{keyword}{nullptr})\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_aee9bfa6e4da020ff3085bf8929f32edf}\label{struct_map_aee9bfa6e4da020ff3085bf8929f32edf} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!Map@{Map}}
+\index{Map@{Map}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+\mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\mbox{\hyperlink{struct_map}{\+::\+Map}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$ \&}]{Other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_a97acba032aaaff1ff54204e33ff65c7c}{Copy}}(\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}},Other.\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}});}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_ab8360b5922be66382f907ac129a32c15}\label{struct_map_ab8360b5922be66382f907ac129a32c15} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!Map@{Map}}
+\index{Map@{Map}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+\mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\mbox{\hyperlink{struct_map}{\+::\+Map}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$ \&\&}]{Other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00027}{27}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}\ =\ Other.\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ Other.\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_a8947918f2c6b59ab97f4381252b58696}\label{struct_map_a8947918f2c6b59ab97f4381252b58696} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!````~Map@{\texorpdfstring{$\sim$}{\string~}Map}}
+\index{````~Map@{\texorpdfstring{$\sim$}{\string~}Map}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Map()}{\string~Map()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+\mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{struct_map}{Map}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_ae4de82c8a4dc8ee3ad61e6eb065e96ab}{Destructor}}(\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_map_a97acba032aaaff1ff54204e33ff65c7c}\label{struct_map_a97acba032aaaff1ff54204e33ff65c7c} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!Copy@{Copy}}
+\index{Copy@{Copy}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{Copy()}{Copy()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+void \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::\+Copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}\&}]{root,  }\item[{const \mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}\&}]{Other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Other)\{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}\ =\ \textcolor{keyword}{new}\ Node(Other.key,Other.value);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_a97acba032aaaff1ff54204e33ff65c7c}{Copy}}(\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}-\/>\mbox{\hyperlink{struct_map_1_1_node_ae243de5166f4d35f8201412279743052}{left}},Other-\/>\mbox{\hyperlink{struct_map_1_1_node_ae243de5166f4d35f8201412279743052}{left}});}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_a97acba032aaaff1ff54204e33ff65c7c}{Copy}}(\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}-\/>\mbox{\hyperlink{struct_map_1_1_node_a85693b5f6bd9320c634af888d8e21dbb}{right}},Other-\/>\mbox{\hyperlink{struct_map_1_1_node_a85693b5f6bd9320c634af888d8e21dbb}{right}});}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_ae4de82c8a4dc8ee3ad61e6eb065e96ab}\label{struct_map_ae4de82c8a4dc8ee3ad61e6eb065e96ab} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!Destructor@{Destructor}}
+\index{Destructor@{Destructor}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{Destructor()}{Destructor()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+void \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::\+Destructor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}})\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_ae4de82c8a4dc8ee3ad61e6eb065e96ab}{Destructor}}(\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}-\/>\mbox{\hyperlink{struct_map_1_1_node_ae243de5166f4d35f8201412279743052}{left}});\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_ae4de82c8a4dc8ee3ad61e6eb065e96ab}{Destructor}}(\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}-\/>\mbox{\hyperlink{struct_map_1_1_node_a85693b5f6bd9320c634af888d8e21dbb}{right}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}};\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_a4f55a2af04bb38c5ee5560dbcb132126}\label{struct_map_a4f55a2af04bb38c5ee5560dbcb132126} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!find@{find}}
+\index{find@{find}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+bool \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::find (\begin{DoxyParamCaption}\item[{const key\+Type \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00152}{152}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ Node\ *temp\ =\ \mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}};}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (temp)\{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp-\/>key\ ==\ key)\{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ <\ temp-\/>key)\{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ temp-\/>\mbox{\hyperlink{struct_map_1_1_node_ae243de5166f4d35f8201412279743052}{left}};}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ temp-\/>\mbox{\hyperlink{struct_map_1_1_node_a85693b5f6bd9320c634af888d8e21dbb}{right}};}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_ad9a0f3f4b17385c747b8b9fb694fab24}\label{struct_map_ad9a0f3f4b17385c747b8b9fb694fab24} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!getAll@{getAll}}
+\index{getAll@{getAll}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{getAll()}{getAll()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+vector$<$ pair$<$ key\+Type, value\+Type $>$ $>$ \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00191}{191}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ vector\ <\ pair\ <\ keyType,\ valueType\ >\ >\ result;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_a9fd14b07d35f430d37b6bce05b34c9a0}{getAllHelper}}(\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}},\ result);}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ move(result);}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_a9fd14b07d35f430d37b6bce05b34c9a0}\label{struct_map_a9fd14b07d35f430d37b6bce05b34c9a0} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!getAllHelper@{getAllHelper}}
+\index{getAllHelper@{getAllHelper}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{getAllHelper()}{getAllHelper()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+void \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::get\+All\+Helper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node,  }\item[{vector$<$ pair$<$ key\+Type, value\+Type $>$ $>$ \&}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00184}{184}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!node)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_a9fd14b07d35f430d37b6bce05b34c9a0}{getAllHelper}}(node-\/>left,\ result);}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ result.push\_back(make\_pair(node-\/>key,\ node-\/>value));}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_a9fd14b07d35f430d37b6bce05b34c9a0}{getAllHelper}}(node-\/>right,\ result);}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_a91a635b69094940b45401532048b83f2}\label{struct_map_a91a635b69094940b45401532048b83f2} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+int \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::get\+Height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00057}{57}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ node\ ?\ node-\/>height\ :\ 0;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_aa37d595901604d9e74bcdb5bb0879064}\label{struct_map_aa37d595901604d9e74bcdb5bb0879064} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!insert@{insert}}
+\index{insert@{insert}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+void \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::insert (\begin{DoxyParamCaption}\item[{const key\+Type \&}]{key,  }\item[{const value\+Type \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00111}{111}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}\ =\ \mbox{\hyperlink{struct_map_a365fbaf6bbf8539524709e707726c9cf}{insertHelper}}(\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}},\ key,\ value);}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_a365fbaf6bbf8539524709e707726c9cf}\label{struct_map_a365fbaf6bbf8539524709e707726c9cf} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!insertHelper@{insertHelper}}
+\index{insertHelper@{insertHelper}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{insertHelper()}{insertHelper()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::insert\+Helper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node,  }\item[{const key\+Type \&}]{key,  }\item[{const value\+Type \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00098}{98}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!node)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Node(key,\ value);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (key\ <\ node-\/>key)\{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>left\ =\ \mbox{\hyperlink{struct_map_a365fbaf6bbf8539524709e707726c9cf}{insertHelper}}(node-\/>left,\ key,\ value);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ >\ node-\/>key)\{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>right\ =\ \mbox{\hyperlink{struct_map_a365fbaf6bbf8539524709e707726c9cf}{insertHelper}}(node-\/>right,\ key,\ value);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>value\ =\ value;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_map_abd47b7b01f55f6e0a21762a80812048d}{reBalance}}(node);}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_a2aa5c47a09e75e7e670458a13382ab57}\label{struct_map_a2aa5c47a09e75e7e670458a13382ab57} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+\mbox{\hyperlink{struct_map}{Map}} \& \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$ \&}]{Other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&Other)\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_ae4de82c8a4dc8ee3ad61e6eb065e96ab}{Destructor}}(\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_a97acba032aaaff1ff54204e33ff65c7c}{Copy}}(\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}},Other.\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}});}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_a107717cf0ac7b8c5901361f3bc415ebc}\label{struct_map_a107717cf0ac7b8c5901361f3bc415ebc} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+\mbox{\hyperlink{struct_map}{Map}} \& \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$ \&\&}]{Other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00038}{38}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&Other)\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_ae4de82c8a4dc8ee3ad61e6eb065e96ab}{Destructor}}(\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}\ =\ Other.\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ Other.\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_ac0d46998796a9146b149c64af5687cc6}\label{struct_map_ac0d46998796a9146b149c64af5687cc6} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+value\+Type \& \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const key\+Type \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00167}{167}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ Node\ *temp\ =\ \mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (temp)\{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp-\/>key\ ==\ key)\{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp-\/>\mbox{\hyperlink{struct_map_1_1_node_a1e752e06c9971443819c84e5435bc7b3}{value}};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ <\ temp-\/>key)\{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ temp-\/>left;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ temp-\/>right;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_aa37d595901604d9e74bcdb5bb0879064}{insert}}(key,\ valueType());}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_map_ac0d46998796a9146b149c64af5687cc6}{operator[]}}(key);}
+\DoxyCodeLine{00182\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_abd47b7b01f55f6e0a21762a80812048d}\label{struct_map_abd47b7b01f55f6e0a21762a80812048d} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!reBalance@{reBalance}}
+\index{reBalance@{reBalance}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{reBalance()}{reBalance()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::re\+Balance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00081}{81}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!node)\ \textcolor{keywordflow}{return}\ node;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_ae9910e3288f804b841f1504236e493ff}{updateHeight}}(node);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_map_a91a635b69094940b45401532048b83f2}{getHeight}}(node-\/>left)\ -\/\ \mbox{\hyperlink{struct_map_a91a635b69094940b45401532048b83f2}{getHeight}}(node-\/>right)\ >\ 1)\{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_map_a91a635b69094940b45401532048b83f2}{getHeight}}(node-\/>left-\/>left)\ <\ \mbox{\hyperlink{struct_map_a91a635b69094940b45401532048b83f2}{getHeight}}(node-\/>left-\/>right))\{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>left\ =\ \mbox{\hyperlink{struct_map_a84c612a0941d448805c0154942171c2b}{rotateLeft}}(node-\/>left);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ node\ =\ \mbox{\hyperlink{struct_map_a8ac4a59e52fdca7cab7b03521293aca0}{rotateRight}}(node);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_map_a91a635b69094940b45401532048b83f2}{getHeight}}(node-\/>right)\ -\/\ \mbox{\hyperlink{struct_map_a91a635b69094940b45401532048b83f2}{getHeight}}(node-\/>left)\ >\ 1)\{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_map_a91a635b69094940b45401532048b83f2}{getHeight}}(node-\/>right-\/>right)\ <\ \mbox{\hyperlink{struct_map_a91a635b69094940b45401532048b83f2}{getHeight}}(node-\/>right-\/>left))\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>right\ =\ \mbox{\hyperlink{struct_map_a8ac4a59e52fdca7cab7b03521293aca0}{rotateRight}}(node-\/>right);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ node\ =\ \mbox{\hyperlink{struct_map_a84c612a0941d448805c0154942171c2b}{rotateLeft}}(node);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ node;}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_a425ce3c7e3c0690f1213029241bca199}\label{struct_map_a425ce3c7e3c0690f1213029241bca199} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!remove@{remove}}
+\index{remove@{remove}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+void \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::remove (\begin{DoxyParamCaption}\item[{const key\+Type \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00149}{149}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}}\ =\ \mbox{\hyperlink{struct_map_a40387737b0b9ee4170be9d4161cd34e4}{removeHelper}}(\mbox{\hyperlink{struct_map_a137565ccce0feae988b101259e6c68fd}{root}},\ key);}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_a40387737b0b9ee4170be9d4161cd34e4}\label{struct_map_a40387737b0b9ee4170be9d4161cd34e4} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!removeHelper@{removeHelper}}
+\index{removeHelper@{removeHelper}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{removeHelper()}{removeHelper()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::remove\+Helper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node,  }\item[{const key\+Type \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00114}{114}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!node)\ \textcolor{keywordflow}{return}\ node;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node-\/>key\ ==\ key)\{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!node-\/>left\ \&\&\ !node-\/>right)\{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ node;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!node-\/>left)\{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Node\ *temp\ =\ node-\/>right;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ node;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!node-\/>right)\{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Node\ *temp\ =\ node-\/>left;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ node;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Node\ *temp\ =\ node-\/>right;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (temp-\/>left)\{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ temp-\/>left;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>key\ =\ temp-\/>key;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>value\ =\ temp-\/>value;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>right\ =\ \mbox{\hyperlink{struct_map_a40387737b0b9ee4170be9d4161cd34e4}{removeHelper}}(node-\/>right,\ temp-\/>key);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ <\ node-\/>key)\{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>left\ =\ \mbox{\hyperlink{struct_map_a40387737b0b9ee4170be9d4161cd34e4}{removeHelper}}(node-\/>left,\ key);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>right\ =\ \mbox{\hyperlink{struct_map_a40387737b0b9ee4170be9d4161cd34e4}{removeHelper}}(node-\/>right,\ key);}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_map_abd47b7b01f55f6e0a21762a80812048d}{reBalance}}(node);}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_a84c612a0941d448805c0154942171c2b}\label{struct_map_a84c612a0941d448805c0154942171c2b} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!rotateLeft@{rotateLeft}}
+\index{rotateLeft@{rotateLeft}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{rotateLeft()}{rotateLeft()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::rotate\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00065}{65}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Node\ *temp\ =\ node-\/>right;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ node-\/>right\ =\ temp-\/>left;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ temp-\/>left\ =\ node;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_ae9910e3288f804b841f1504236e493ff}{updateHeight}}(node);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_ae9910e3288f804b841f1504236e493ff}{updateHeight}}(temp);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_a8ac4a59e52fdca7cab7b03521293aca0}\label{struct_map_a8ac4a59e52fdca7cab7b03521293aca0} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!rotateRight@{rotateRight}}
+\index{rotateRight@{rotateRight}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{rotateRight()}{rotateRight()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::rotate\+Right (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00073}{73}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ Node\ *temp\ =\ node-\/>left;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ node-\/>left\ =\ temp-\/>right;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ temp-\/>right\ =\ node;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_ae9910e3288f804b841f1504236e493ff}{updateHeight}}(node);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_map_ae9910e3288f804b841f1504236e493ff}{updateHeight}}(temp);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_map_ae9910e3288f804b841f1504236e493ff}\label{struct_map_ae9910e3288f804b841f1504236e493ff} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!updateHeight@{updateHeight}}
+\index{updateHeight@{updateHeight}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{updateHeight()}{updateHeight()}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+void \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::update\+Height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_map_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node)\{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>height\ =\ max(\mbox{\hyperlink{struct_map_a91a635b69094940b45401532048b83f2}{getHeight}}(node-\/>left),\ \mbox{\hyperlink{struct_map_a91a635b69094940b45401532048b83f2}{getHeight}}(node-\/>right))\ +\ 1;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_map_a137565ccce0feae988b101259e6c68fd}\label{struct_map_a137565ccce0feae988b101259e6c68fd} 
+\index{Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}!root@{root}}
+\index{root@{root}!Map$<$ keyType, valueType $>$@{Map$<$ keyType, valueType $>$}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily template$<$typename key\+Type , typename value\+Type $>$ \\
+\mbox{\hyperlink{struct_map_1_1_node}{Node}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_map}{Map}}$<$ key\+Type, value\+Type $>$\+::root}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/core/\mbox{\hyperlink{_map_8hpp}{Map.\+hpp}}\end{DoxyCompactItemize}
