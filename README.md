@@ -50,12 +50,16 @@ Our project provide a customize dictionary using some algorithms and data struct
   - `draw` - contains the classes that draw objects structures
   - `stuff` - contains other classes that are used in the program
 
+## Documentation
+
+You can find the documentation of the project [here](https://diriimq.github.io/CS163_Group9/).
+
 ## Features
 - The program will show the main screen when it starts.
-![Main screen](./assets/preview/main_screen.png)
-1.	Users can switch between data sets
 
-There is a button: 
+![Main screen](./assets/preview/main_screen.png)
+
+1.	Users can switch between data sets. There are buttons: 
 
 - ![EN-VI](./assets/preview/SwitchButton1.png)
 
@@ -68,6 +72,7 @@ There is a button:
 It switches between these button when clicked.
 
 2.	Users can search with a keyword.
+
  ![Search Word](./assets/preview/SearchWord.png)
 
 - Choose Word mode, enter a word that you want to find in the search bar
