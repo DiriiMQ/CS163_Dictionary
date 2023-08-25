@@ -273,15 +273,15 @@ Class Map:
   Map is based on AVL tree
 
 - Insert: 
-  - Time complexity: O(log2W) (W : size of character user input)
+  - Time complexity: O(log2W) (W : number of characters user input)
   - Space complexity: O(1)
 - Search:
 	 
-	  - Time complexity: O(log2W)
-	  - Space complexity : O(1) 
+	- Time complexity: O(log2W)
+	- Space complexity : O(1) 
 - Remove
-    - Time complexity: (Olog2W) 
-    - Space complexity: O(1)
+  - Time complexity: (Olog2W) 
+  - Space complexity: O(1)
 
 5. Some function for some feature: 
 - Function auto complete: ( suggesting the entire word or definition when user searching)
