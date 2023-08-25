@@ -191,9 +191,11 @@ It switches between these button when clicked.
 
   - Anh_Anh dataset contains 116989 words, raw file is Anh-Anh.txt (13466KB), the file for using is Anh_Anh.dat. We  We save Anh_Viet_Origin.dat for reset the dict when needed
 
-  - Viet_Anh dataset contains 
+  - Viet_Anh dataset contains 54373 words, raw file is Viet_Anh.txt(2144KB), the file for using is 6393KB. We save Viet_Anh_Original.dat for reset the dict when needed)
+  - Emoji dataset contains 1717 icon, raw file emoji.txt(149KB) , file for using emoji.dat(200KB)
+  - For each type of data set we have files for save history and favourite words.
 
-  - Emoji dataset 
+
 4. Data structure and Algorithm
 
 - We use class Word among all dataset (Anh Viet, Anh Anh, Viet Anh, Emoji)
@@ -268,18 +270,19 @@ Average time consuming for insertion: 2 millisecond
 
 Class Map: 
 
-  Map is like AVL tree
+  Map is based on AVL tree
 
 - Insert: 
   - Time complexity: O(log2W) (W : size of character user input)
   - Space complexity: O(1)
 - Search:
-	  - Algorithm
+	 
 	  - Time complexity: O(log2W)
 	  - Space complexity : O(1) 
 - Remove
-  - Algorithm:
-  - Time complexity
+    - Time complexity: (Olog2W) 
+    - Space complexity: O(1)
+
 5. Some function for some feature: 
 - Function auto complete: ( suggesting the entire word or definition when user searching)
     - For word: 
