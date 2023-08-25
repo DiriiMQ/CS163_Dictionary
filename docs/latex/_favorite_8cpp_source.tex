@@ -1,0 +1,186 @@
+\doxysection{Favorite.\+cpp}
+\hypertarget{_favorite_8cpp_source}{}\label{_favorite_8cpp_source}\index{source/draw/Favorite.cpp@{source/draw/Favorite.cpp}}
+\mbox{\hyperlink{_favorite_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ dirii\ on\ 15/8/23.}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_favorite_8h}{Favorite.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00007}\mbox{\hyperlink{class_favourite_ae95772f2118206fc1ebf4fb9d6d74cce}{00007}}\ \mbox{\hyperlink{class_favourite_a9c8ff4dbb593d23f68a1d93ad644df9a}{Favourite::Favourite}}(Font*\ font,\ \textcolor{keywordtype}{int}\ tmpmode,\ \mbox{\hyperlink{class_api}{Api}}*\ api)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00009}00009\ \ \ \ \ this-\/>api\ =\ api;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00010}00010\ \ \ \ \ this-\/>position\ =\ \{\ 47,259,810,420\ \};}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00011}00011\ \ \ \ \ this-\/>fontSize\ =\ 25;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00012}00012\ \ \ \ \ this-\/>font\ =\ font;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00013}00013\ \ \ \ \ this-\/>frameCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00014}00014\ \ \ \ \ this-\/>currentClick\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00015}00015\ \ \ \ \ this-\/>currentMouse\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00016}00016\ \ \ \ \ this-\/>mouse\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00017}00017\ \ \ \ \ this-\/>tmpmode\ =\ tmpmode;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//Parameter\ will\ have\ Dicts\ d}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00019}00019\ \ \ \ \ this-\/>FavouriteList\ =\ this-\/>api-\/>\mbox{\hyperlink{class_api_a7949c3847578f944ee5269734685b0f2}{apiFavorite}}.\mbox{\hyperlink{class_api_favorite_ab0462356de03673d3b004ebb822c4e50}{getFavorite}}((\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants::TypeDict}})tmpmode);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ add\ to\ test}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{comment}{/*this-\/>FavouriteList.push\_back(L"{}Hello"{});}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00022}00022\ \textcolor{comment}{\ \ \ \ this-\/>FavouriteList.push\_back(L"{}Helloo1"{});}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00023}00023\ \textcolor{comment}{\ \ \ \ this-\/>FavouriteList.push\_back(L"{}Helloo2"{});}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00024}00024\ \textcolor{comment}{\ \ \ \ this-\/>FavouriteList.push\_back(L"{}Helloo3"{});*/}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ test\ end}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00026}00026\ \ \ \ \ this-\/>size\ =\ this-\/>FavouriteList.size();}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00027}00027\ \ \ \ \textcolor{comment}{//\ Starr.resize(this-\/>size);}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00028}00028\ \ \ \ \ std::vector\ <std::string>\ pathh(2);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00029}00029\ \ \ \ \ pathh[1]\ =\ \mbox{\hyperlink{namespace_constants_1_1_directories_1_1_d_m_q_af0749b254726d9a3bf2937dd9481ab80}{Constants::Directories::DMQ::Star}}[0];}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00030}00030\ \ \ \ \ pathh[0]\ =\ \mbox{\hyperlink{namespace_constants_1_1_directories_1_1_d_m_q_af0749b254726d9a3bf2937dd9481ab80}{Constants::Directories::DMQ::Star}}[1];}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00031}00031\ \ \ \ \ std::vector\ <std::string>\ pathhPress(2);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00032}00032\ \ \ \ \ pathhPress[1]\ =\ \mbox{\hyperlink{namespace_constants_1_1_directories_1_1_d_m_q_afb6181f17aa84627782eedd7f4baabdc}{Constants::Directories::DMQ::StarPress}}[0];}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00033}00033\ \ \ \ \ pathhPress[0]\ =\ \mbox{\hyperlink{namespace_constants_1_1_directories_1_1_d_m_q_afb6181f17aa84627782eedd7f4baabdc}{Constants::Directories::DMQ::StarPress}}[1];}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00034}00034\ \ \ \ \ this-\/>form\ =\ \mbox{\hyperlink{class_button_image}{ButtonImage}}(pathh,\ pathhPress,\ \{\ 791.3\ ,(float)278.4\ +\ 45\ *\ 0\ ,47.5\ ,45.2\ \});}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>size;\ i++)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*std::vector\ <std::string>\ pathh(2);}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00038}00038\ \textcolor{comment}{\ \ \ \ \ \ \ \ pathh[1]\ =\ Constants::Directories::DMQ::Star[0];}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00039}00039\ \textcolor{comment}{\ \ \ \ \ \ \ \ pathh[0]\ =\ Constants::Directories::DMQ::Star[1];}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00040}00040\ \textcolor{comment}{\ \ \ \ \ \ \ \ std::vector\ <std::string>\ pathhPress(2);}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00041}00041\ \textcolor{comment}{\ \ \ \ \ \ \ \ pathhPress[1]\ =\ Constants::Directories::DMQ::StarPress[0];}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00042}00042\ \textcolor{comment}{\ \ \ \ \ \ \ \ pathhPress[0]\ =\ Constants::Directories::DMQ::StarPress[1];}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00043}00043\ \textcolor{comment}{\ \ \ \ \ \ \ \ Starr[i]\ =\ ButtonImage(pathh,\ pathhPress,\ \{\ 791.3\ ,(float)278.4\ +\ 45\ *\ i\ ,47.5\ ,45.2\ \});*/}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ form.\mbox{\hyperlink{class_button_image_ab100753e1794e2f27318ffb28bc675a1}{changePosition}}(\{\ 791.3\ ,(float)278.4\ +\ 45\ *\ i\ ,47.5\ ,45.2\ \});}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ Starr.push\_back(this-\/>form);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00047}00047\ \ \ \ \ this-\/>index\_unFavourite.resize(this-\/>size);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>size;\ i++)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ index\_unFavourite[i]\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00050}00050\ \ \ \ \ MAX\_SUGGESTIONS\ =\ min(size\ -\/\ 1\ ,\ 9);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00053}\mbox{\hyperlink{class_favourite_acb85565958d5664ed0daee440184eddd}{00053}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_favourite_acb85565958d5664ed0daee440184eddd}{Favourite::draw}}()}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00054}00054\ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00055}00055\ \ \ \ \textcolor{comment}{/*\ this-\/>FavouriteList\ =\ api-\/>apiFavorite.getFavorite((Constants::TypeDict)tmpmode);}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00056}00056\ \textcolor{comment}{\ \ \ \ this-\/>size=this-\/>F*/}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//this-\/>Starr.resize(this-\/>size,\ this-\/>form);}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00058}00058\ \ \ \ \ MAX\_SUGGESTIONS\ =\ min(size\ -\/\ 1,\ 9);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//\ if\ (Starr.empty())}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ MAX\_SUGGESTIONS;\ j++)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ Starr[j\ -\/\ mouse].changePosition(\{\ 791.3\ ,(float)278.4\ +\ 45\ *\ j\ ,47.5\ ,45.2\ \});}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ Starr[j\ -\/\ mouse].draw();}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ DrawTextEx(*font,\ TextFormat("{}SCORE:\ \%i"{},\ j-\/mouse),\ \{\ position.x\ +\ 25,\ position.y\ +\ 15\ +\ 45\ *\ j\ \},\ fontSize,SPACING,\ BLACK);}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ DrawTextEx(*font,\ Utils::WStringToUTF8(FavouriteList[j\ -\/\ mouse\ +\ 1]).c\_str(),\ \{\ position.x\ +\ 25,\ position.y\ +\ 15\ +\ 45\ *\ j\ \},\ fontSize,\ SPACING,\ BLACK);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ Starr[j\ -\/\ mouse].changePosition(\{\ 791.3\ ,(float)278.4\ +\ 45\ *\ (j\ -\/\ mouse)\ ,47.5\ ,45.2\ \});}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (currentMouse\ !=\ -\/1)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ DrawRectangle(position.x,\ position.y\ +\ 15\ +\ 45\ *\ currentMouse,\ 810-\/70,\ 45,\ LIGHTGRAY);}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Starr[currentMouse\ -\/\ mouse].changePosition(\{\ 791.3\ ,(float)278.4\ +\ 45\ *\ currentMouse\ ,47.5\ ,45.2\ \});}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00074}00074\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ Starr[currentMouse\ -\/\ mouse].draw();}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00075}00075\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ DrawText(name[currentMouse\ -\/\ mouse],\ position.x\ +\ 25,\ position.y\ +\ 15\ +\ 45\ *\ currentMouse,\ fontSize,\ BLACK);}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00076}00076\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ Starr[currentMouse\ -\/\ mouse].changePosition(\{\ 791.3\ ,(float)278.4\ +\ 45\ *\ (currentMouse\ -\/\ mouse)\ ,47.5\ ,45.2\ \});*/}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{if}\ (currentClick\ !=\ -\/1)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ DrawRectangle(position.x,\ position.y\ +\ 15\ +\ 45\ *\ currentClick,\ 810\ -\/\ 70,\ 45,\ LIGHTGRAY);}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ DrawText(name[currentClick\ -\/\ mouse],\ 95,\ 155.3\ +\ 66.1\ /\ 2\ *\ (currentClick\ +\ 2),\ 20,\ BLACK);}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//DrawTextureRec(texture,\ sourceRect,\ \{\ 92.5,\ (float)(155.3\ +\ (66.1\ /\ 2)\ *\ (currentClick\ +\ 2))\ \},\ GRAY);}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00085}\mbox{\hyperlink{class_favourite_a86c68a19dd56e76d38e8d3447621fbf3}{00085}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_favourite_a86c68a19dd56e76d38e8d3447621fbf3}{Favourite::handleEvents}}()}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00086}00086\ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00087}00087\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00088}00088\ \ \ \ \ this-\/>FavouriteList\ =\ api-\/>\mbox{\hyperlink{class_api_a7949c3847578f944ee5269734685b0f2}{apiFavorite}}.\mbox{\hyperlink{class_api_favorite_ab0462356de03673d3b004ebb822c4e50}{getFavorite}}((\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants::TypeDict}})tmpmode);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00089}00089\ \ \ \ \ this-\/>size\ =\ this-\/>FavouriteList.size();}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00090}00090\ \ \ \ \ MAX\_SUGGESTIONS\ =\ min(size\ -\/\ 1,\ 9);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ MAX\_SUGGESTIONS;\ j++)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00092}00092\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ Starr[j\ -\/\ mouse].changePosition(\{\ 791.3\ ,(float)278.4\ +\ 45\ *\ j\ ,47.5\ ,45.2\ \});}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ Starr[j\ -\/\ mouse].handleEvents();}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ Starr[j\ -\/\ mouse].update();}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Starr[j\ -\/\ mouse].\mbox{\hyperlink{class_favourite_af20f7f8c862f2ada5843d8c3011b336b}{getClicked}}()\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ index\_unFavourite[j\ +\ 1\ -\/\ mouse]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ index\_unFavourite[j\ +\ 1\ -\/\ mouse]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ Starr[j\ -\/\ mouse].changePosition(\{\ 791.3\ ,(float)278.4\ +\ 45\ *\ (j\ -\/\ mouse)\ ,47.5\ ,45.2\ \});}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (GetMouseWheelMove()\ >\ 0\ \&\&\ mouse\ <\ 0)\ \ \ \textcolor{comment}{//\ scroll\ up}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ mouse\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (GetMouseWheelMove()\ <\ 0\ \&\&\ mouse\ >\ MAX\_SUGGESTIONS\ -\/\ size)\ \textcolor{comment}{//scroll\ down}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ mouse\ -\/=\ 1;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ MAX\_SUGGESTIONS;\ i++)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00107}00107\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CheckCollisionPointRec(GetMousePosition(),\ \{\ 47\ ,(float)278.4\ +\ 45\ *\ i\ ,810\ -\/\ 70\ ,45\ \}))}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Code\ to\ be\ executed\ when\ the\ button\ is\ clicked}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ currentMouse\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsMouseButtonReleased(MOUSE\_BUTTON\_LEFT))}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentClick\ !=\ i)\ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Code\ to\ be\ executed\ when\ the\ button\ is\ clicked}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentClick\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//DrawText(TextFormat(std::to\_string(currentclick).c\_str))}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentClick\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00123}00123\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00125}00125\ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00126}\mbox{\hyperlink{class_favourite_ac482f5617d4e9ceaa23dc045d2b00e52}{00126}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_favourite_ac482f5617d4e9ceaa23dc045d2b00e52}{Favourite::update}}()}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00127}00127\ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00128}00128\ \ \ \ \ this-\/>FavouriteList\ =\ api-\/>\mbox{\hyperlink{class_api_a7949c3847578f944ee5269734685b0f2}{apiFavorite}}.\mbox{\hyperlink{class_api_favorite_ab0462356de03673d3b004ebb822c4e50}{getFavorite}}((\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants::TypeDict}})\ this-\/>tmpmode);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00129}00129\ \ \ \ \ this-\/>size\ =\ FavouriteList.size();}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00130}00130\ \ \ \ \ this-\/>index\_unFavourite.resize(size);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00131}00131\ \ \ \ \ this-\/>Starr.resize(this-\/>size);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>size;\ i++)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00133}00133\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ this-\/>Starr[i]\ =\ form;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ this-\/>Starr[i].changeIndex(0);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00136}00136\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00137}00137\ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00138}\mbox{\hyperlink{class_favourite_af058196d2c8d0e551f1b417de0c1173f}{00138}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_favourite_af058196d2c8d0e551f1b417de0c1173f}{Favourite::changeMode}}(\textcolor{keywordtype}{int}\ newmode)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00139}00139\ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00140}00140\ \ \ \ \ this-\/>tmpmode\ =\ newmode;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00141}00141\ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00142}\mbox{\hyperlink{class_favourite_a842c20b97b4fc2e650c1d821b7030df8}{00142}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_favourite_a842c20b97b4fc2e650c1d821b7030df8}{Favourite::removeWhenSave}}()}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00143}00143\ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00144}00144\ \ \ \ \ std::vector<std::wstring>\ tmp\ =\ this-\/>api-\/>\mbox{\hyperlink{class_api_a7949c3847578f944ee5269734685b0f2}{apiFavorite}}.\mbox{\hyperlink{class_api_favorite_ab0462356de03673d3b004ebb822c4e50}{getFavorite}}((\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants::TypeDict}})this-\/>tmpmode);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ tmp.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ std::wcout\ <<\ tmp[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00147}00147\ \ \ \ \ wcout\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00148}00148\ \ \ \ \ std::vector<std::wstring>\ unlike;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00149}00149\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>index\_unFavourite.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00150}00150\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\_unFavourite[i])}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ unlike.push\_back(this-\/>FavouriteList[i]);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00153}00153\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00154}00154\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ unlike.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00155}00155\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{comment}{//remove\ function}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ApiFavorite::removeFavorite((Constants::TypeDict)tmpmode,unlike[i]);}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ this-\/>api-\/>\mbox{\hyperlink{class_api_a7949c3847578f944ee5269734685b0f2}{apiFavorite}}.\mbox{\hyperlink{class_api_favorite_a64015edf426f9ad07930afb28d1b5d88}{removeFavorite}}((\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants::TypeDict}})\ this-\/>tmpmode,\ unlike[i]);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00159}00159\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00160}00160\ \ \ \ tmp\ =\ this-\/>api-\/>\mbox{\hyperlink{class_api_a7949c3847578f944ee5269734685b0f2}{apiFavorite}}.\mbox{\hyperlink{class_api_favorite_ab0462356de03673d3b004ebb822c4e50}{getFavorite}}((\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants::TypeDict}})this-\/>tmpmode);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ tmp.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ std::wcout\ <<\ tmp[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00163}00163\ \ \ \ \ wcout\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00164}00164\ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00165}\mbox{\hyperlink{class_favourite_afdaa5e9337730b8c588d6ba9931df625}{00165}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_favourite_afdaa5e9337730b8c588d6ba9931df625}{Favourite::reset}}()}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00166}00166\ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00167}00167\ \ \ \ \ this-\/>size\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00168}00168\ \ \ \ \ this-\/>mouse\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00169}00169\ \ \ \ \ MAX\_SUGGESTIONS\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00170}00170\ \ \ \ \ this-\/>api-\/>\mbox{\hyperlink{class_api_a7949c3847578f944ee5269734685b0f2}{apiFavorite}}.\mbox{\hyperlink{class_api_favorite_a6b4cc06a3d911f02cc907c5cb2431a48}{resetFavorite}}((\mbox{\hyperlink{namespace_constants_a5e4378f7cdbc47bd60323535e9f6a965}{Constants::TypeDict}})tmpmode);}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00171}00171\ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00172}\mbox{\hyperlink{class_favourite_af20f7f8c862f2ada5843d8c3011b336b}{00172}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_favourite_af20f7f8c862f2ada5843d8c3011b336b}{Favourite::getClicked}}()}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00173}00173\ \{}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{keywordtype}{int}\ tmp\ =\ currentClick;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00175}00175\ \ \ \ \ currentClick\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00176}00176\ \ \ \ \ \textcolor{keywordflow}{if}\ (tmp\ !=\ -\/1)}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmp\ -\/\ mouse;\ \textcolor{comment}{//index\ of\ word\ in\ history\ (tmp\ is\ the\ \ in\ the\ screen)}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00179}00179\ \}}
+\DoxyCodeLine{\Hypertarget{_favorite_8cpp_source_l00180}00180\ }
+
+\end{DoxyCode}

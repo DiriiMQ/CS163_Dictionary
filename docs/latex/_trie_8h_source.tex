@@ -1,0 +1,67 @@
+\doxysection{Trie.\+h}
+\hypertarget{_trie_8h_source}{}\label{_trie_8h_source}\index{source/core/Trie.h@{source/core/Trie.h}}
+\mbox{\hyperlink{_trie_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ TRIE\_H}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ TRIE\_H}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <wchar.h>}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_8hpp}{Map.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00010}00010\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00011}00011\ \textcolor{comment}{//mapping\ a\ wstring\ to\ a\ ValueType\ using\ trie}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00012}00012\ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{typename}\ ValueType\ >}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00013}\mbox{\hyperlink{struct_trie_node}{00013}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_trie_node}{TrieNode}}\{}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00014}\mbox{\hyperlink{struct_trie_node_a75dd0227661348a6db75a2c126b8472a}{00014}}\ \ \ \ \ ValueType\ \mbox{\hyperlink{struct_trie_node_a75dd0227661348a6db75a2c126b8472a}{value}};}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00015}\mbox{\hyperlink{struct_trie_node_a6b604197d9515fd9130ca6155bc93568}{00015}}\ \ \ \ \ Map\ <\ wchar\_t\ ,\ TrieNode\ *\ >\ \mbox{\hyperlink{struct_trie_node_a6b604197d9515fd9130ca6155bc93568}{children}};}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00016}\mbox{\hyperlink{struct_trie_node_a6dffe48d6af05cc4c9ec3209430d9558}{00016}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_trie_node_a6dffe48d6af05cc4c9ec3209430d9558}{isEndOfWord}};}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00017}\mbox{\hyperlink{struct_trie_node_a2fcca00d043522d5afb2049def618432}{00017}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_trie_node_a2fcca00d043522d5afb2049def618432}{wordCount}};}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{struct_trie_node}{TrieNode}}\ (\textcolor{keyword}{const}\ ValueType\ \&\mbox{\hyperlink{struct_trie_node_a75dd0227661348a6db75a2c126b8472a}{value}}\ =\ ValueType());}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00019}00019\ \};}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00021}00021\ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{typename}\ ValueType\ >}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00022}\mbox{\hyperlink{struct_trie}{00022}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_trie}{Trie}}\{}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00023}00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{int}\ randomNumber(\textcolor{keywordtype}{int}\ range)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00025}00025\ \ \ \ \ TrieNode\ <\ ValueType\ >\ *root;}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_trie_a34667fcb750ac74057412c4b5fe87730}{getAll}}(TrieNode\ <\ ValueType\ >\ *current\ ,\ wstring\ \&key\ ,\ vector\ <\ pair\ <\ wstring\ ,\ ValueType\ >\ >\ \&result)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{int}\ WordCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{void}\ removeHelper(TrieNode\ <\ ValueType\ >\ *current);}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{void}\ getAllConstRefHelper(TrieNode\ <\ ValueType\ >\ *current\ ,\ wstring\ \&key\ ,\ vector\ <\ pair\ <\ const\ wstring\ ,\ const\ ValueType\&\ >\ >\ \&result)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{void}\ getAutoCompleteList(TrieNode\ <\ ValueType\ >\ *current\ ,\ wstring\ \&key\ ,\ vector\ <\ wstring\ >\ \&result);}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{int}\ getAutoCompleteHelper(wstring\ \&key\ ,\ TrieNode\ <\ ValueType\ >\ *root\ ,\ vector\ <\ wstring\ >\ \&result);}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{void}\ insert(\textcolor{keyword}{const}\ wstring\ \&key);}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00033}00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_trie_abb6bc8daf158ffb1de8622efa0d4fc44}{size}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{struct_trie_ad688a001b8d1d4861a5801bbd691a145}{Trie}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_trie}{Trie}}\ \&other);}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{struct_trie_ad688a001b8d1d4861a5801bbd691a145}{Trie}}();}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{struct_trie_ad688a001b8d1d4861a5801bbd691a145}{Trie}}(\mbox{\hyperlink{struct_trie}{Trie}}\ \&\&other);}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{struct_trie}{Trie}}\ \&\mbox{\hyperlink{struct_trie_a639ec7023705bb77a914d4934f850dde}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_trie}{Trie}}\ \&other);}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{struct_trie}{Trie}}\ \&\mbox{\hyperlink{struct_trie_a639ec7023705bb77a914d4934f850dde}{operator\ =\ }}(\mbox{\hyperlink{struct_trie}{Trie}}\ \&\&other);}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{struct_trie_af1fbdf552872e10406a6a7c0ffef3007}{\string~Trie}}();}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ nhận\ vào\ 1\ wstring\ key,\ return\ true\ nếu\ key\ có\ trong\ trie,\ false\ nếu\ ngược\ lại}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_trie_ad76243f13d025b826cfb8ecf226eda30}{find}}(\textcolor{keyword}{const}\ wstring\ \&key);}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ nhận\ vào\ 1\ wstring\ key,\ return\ value\ tương\ ứng\ với\ key\ đó}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00044}00044\ \ \ \ \ ValueType\ \&\mbox{\hyperlink{struct_trie_a4c984e233eadfa33934141f96bca13a6}{operator[]}}(\textcolor{keyword}{const}\ wstring\ \&key);}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//\ nhận\ vào\ 1\ wstring\ key,\ xóa\ key\ đó\ khỏi\ trie}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_trie_aef59331bc47c005f5622049474373c37}{remove}}(\textcolor{keyword}{const}\ wstring\ \&key);}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ return\ vector\ chứa\ tất\ cả\ các\ cặp\ <key,\ value>\ trong\ trie}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00048}00048\ \ \ \ \ vector\ <\ pair\ <\ wstring\ ,\ ValueType\ >\ >\ \mbox{\hyperlink{struct_trie_a34667fcb750ac74057412c4b5fe87730}{getAll}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{const}\ vector\ <\ pair\ <\ const\ wstring,\ const\ ValueType\&\ >\ >\ \mbox{\hyperlink{struct_trie_a98f7e79d2caccdd94c0897dd788d025e}{getAllConstRef}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ nhập\ vào\ 1\ key,\ return\ value\ (definition\ ở\ dạng\ set\ <wstring>))}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00051}00051\ \ \ \ \ ValueType\ \mbox{\hyperlink{struct_trie_a931d23258c9cc8ef01bdde3d60e90b1f}{search}}(\textcolor{keyword}{const}\ wstring\&\ searchedWord);}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_trie_a7048b3895c8297efa78e79ff496495b0}{empty}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{const}\ pair\ <\ wstring,\ const\ ValueType\&\ >\ \mbox{\hyperlink{struct_trie_ac192bf4e555994ad36dd8d36530fe5f5}{getRandom}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//\ 0\ mean\ no\ word\ found\ with\ that\ key}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//-\/1\ mean\ no\ word\ found\ with\ that\ key\ but\ there\ are\ words\ that\ start\ with\ that\ key}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//\ 1\ mean\ there\ is\ a\ word\ with\ that\ key}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_trie_aa450af4d65eb86082c3ea3bfa19ef2d4}{getAutoComplete}}(wstring\ \&key,\ vector\ <\ wstring\ >\ \&result);}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_trie_af4e813ab9425bffffbb77efaf6e4e065}{clear}}();}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00059}00059\ \};}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00060}00060\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_trie_8cpp}{Trie.cpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_trie_8h_source_l00061}00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TRIE\_H}}
+
+\end{DoxyCode}

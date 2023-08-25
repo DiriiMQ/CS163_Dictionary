@@ -1,0 +1,58 @@
+\doxysection{source/core/\+Api.cpp File Reference}
+\hypertarget{_api_8cpp}{}\label{_api_8cpp}\index{source/core/Api.cpp@{source/core/Api.cpp}}
+{\ttfamily \#include \"{}Api.\+h\"{}}\newline
+{\ttfamily \#include \"{}Dict.\+h\"{}}\newline
+{\ttfamily \#include \"{}Word.\+h\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_api_8cpp_a862e28b9c0730869f51659dd13a4d9f8}{Make\+Def}} (const \mbox{\hyperlink{struct_word}{Word}} \&cur\+Word, \mbox{\hyperlink{class_dict}{Dict}} \&dicts, int del)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_api_8cpp_a862e28b9c0730869f51659dd13a4d9f8}\label{_api_8cpp_a862e28b9c0730869f51659dd13a4d9f8} 
+\index{Api.cpp@{Api.cpp}!MakeDef@{MakeDef}}
+\index{MakeDef@{MakeDef}!Api.cpp@{Api.cpp}}
+\doxysubsubsection{\texorpdfstring{MakeDef()}{MakeDef()}}
+{\footnotesize\ttfamily void Make\+Def (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_word}{Word}} \&}]{cur\+Word,  }\item[{\mbox{\hyperlink{class_dict}{Dict}} \&}]{dicts,  }\item[{int}]{del }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_api_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_api_8cpp_source}{Api.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=0;\ j<curWord.\mbox{\hyperlink{struct_word_aca564fd49af9843aa43e66c99d31fe3b}{worddef}}.size();\ j++)\{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k=0;\ k<curWord.\mbox{\hyperlink{struct_word_aca564fd49af9843aa43e66c99d31fe3b}{worddef}}[j].definition.size();\ k++)\{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wistringstream\ ss(curWord.\mbox{\hyperlink{struct_word_aca564fd49af9843aa43e66c99d31fe3b}{worddef}}[j].definition[k].meaning);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wstring\ token;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ss\ >>\ token)\{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!dicts.\mbox{\hyperlink{class_dict_aa8f0334eaeaedaa5ffd78a4febeb6633}{WordsOfDef}}.\mbox{\hyperlink{struct_trie_ad76243f13d025b826cfb8ecf226eda30}{find}}(token))\{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_trie}{Trie<int>}}\ temp;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dicts.\mbox{\hyperlink{class_dict_aa8f0334eaeaedaa5ffd78a4febeb6633}{WordsOfDef}}[token]\ =\ move(temp);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_trie}{Trie<int>}}\ *temp\ =\ \&(dicts.\mbox{\hyperlink{class_dict_aa8f0334eaeaedaa5ffd78a4febeb6633}{WordsOfDef}}[token]);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (del==1)\{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(*temp).find(curWord.\mbox{\hyperlink{struct_word_abf659503a55c86038ce35530cbb0eaeb}{word}}))\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*temp)[curWord.\mbox{\hyperlink{struct_word_abf659503a55c86038ce35530cbb0eaeb}{word}}]\ =\ 1;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ (*temp)[curWord.\mbox{\hyperlink{struct_word_abf659503a55c86038ce35530cbb0eaeb}{word}}]\ +=\ 1;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*temp)[curWord.\mbox{\hyperlink{struct_word_abf659503a55c86038ce35530cbb0eaeb}{word}}]\ ==\ 1)\{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*temp).\mbox{\hyperlink{struct_trie_aef59331bc47c005f5622049474373c37}{remove}}(curWord.\mbox{\hyperlink{struct_word_abf659503a55c86038ce35530cbb0eaeb}{word}});}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ (*temp)[curWord.\mbox{\hyperlink{struct_word_abf659503a55c86038ce35530cbb0eaeb}{word}}]\ -\/=\ 1;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}

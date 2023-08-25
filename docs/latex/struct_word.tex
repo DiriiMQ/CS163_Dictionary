@@ -1,0 +1,153 @@
+\doxysection{Word Struct Reference}
+\hypertarget{struct_word}{}\label{struct_word}\index{Word@{Word}}
+
+
+{\ttfamily \#include $<$Word.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_word_a17baf7109d46beb48d5b469f3baedc48}{Word}} ()
+\item 
+void \mbox{\hyperlink{struct_word_a2d79d0e2717dda4a944b5667fdbc7ef8}{set\+Data}} (std\+::wstring \mbox{\hyperlink{struct_word_abf659503a55c86038ce35530cbb0eaeb}{word}}, std\+::wstring definition, std\+::wstring example, std\+::wstring phrase, std\+::wstring type)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wstring \mbox{\hyperlink{struct_word_abf659503a55c86038ce35530cbb0eaeb}{word}}
+\item 
+wstring \mbox{\hyperlink{struct_word_a0b038542a250c0b93e9f8aadc2e3a984}{pronounce}}
+\item 
+string \mbox{\hyperlink{struct_word_acd34d808dd5f4a740e3b4426ccf9b79b}{image\+Path}}
+\item 
+vector$<$ \mbox{\hyperlink{struct_type}{Type}} $>$ \mbox{\hyperlink{struct_word_aca564fd49af9843aa43e66c99d31fe3b}{worddef}}
+\item 
+bool \mbox{\hyperlink{struct_word_aea37e076a8e8c5a2fe3a8b40015f9898}{Is\+Type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_word_8h_source_l00032}{32}} of file \mbox{\hyperlink{_word_8h_source}{Word.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_word_a17baf7109d46beb48d5b469f3baedc48}\label{struct_word_a17baf7109d46beb48d5b469f3baedc48} 
+\index{Word@{Word}!Word@{Word}}
+\index{Word@{Word}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{Word()}{Word()}}
+{\footnotesize\ttfamily Word\+::\+Word (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_word_8h_source_l00038}{38}} of file \mbox{\hyperlink{_word_8h_source}{Word.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_word_a0b038542a250c0b93e9f8aadc2e3a984}{pronounce}}\ =\ L\textcolor{stringliteral}{"{}Null"{}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_word_acd34d808dd5f4a740e3b4426ccf9b79b}{imagePath}}\ =\ \textcolor{stringliteral}{"{}Null"{}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_word_aea37e076a8e8c5a2fe3a8b40015f9898}{IsType}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_word_a2d79d0e2717dda4a944b5667fdbc7ef8}\label{struct_word_a2d79d0e2717dda4a944b5667fdbc7ef8} 
+\index{Word@{Word}!setData@{setData}}
+\index{setData@{setData}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily void Word\+::set\+Data (\begin{DoxyParamCaption}\item[{std\+::wstring}]{word,  }\item[{std\+::wstring}]{definition,  }\item[{std\+::wstring}]{example,  }\item[{std\+::wstring}]{phrase,  }\item[{std\+::wstring}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_word_8cpp_source_l00175}{175}} of file \mbox{\hyperlink{_word_8cpp_source}{Word.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00176\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ this-\/>\mbox{\hyperlink{struct_word_abf659503a55c86038ce35530cbb0eaeb}{word}}=\mbox{\hyperlink{struct_word_abf659503a55c86038ce35530cbb0eaeb}{word}};}
+\DoxyCodeLine{00178\ \ \ \ \ this-\/>\mbox{\hyperlink{struct_word_aea37e076a8e8c5a2fe3a8b40015f9898}{IsType}}=\textcolor{keyword}{true};}
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{struct_type}{Type}}\ type1;}
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{struct_definition}{Definition}}\ def;}
+\DoxyCodeLine{00181\ \ \ \ \ }
+\DoxyCodeLine{00182\ \ \ \ \ type1.\mbox{\hyperlink{struct_type_a383b6cec81f43d3d35365eed8af4f7cc}{Isdefinition}}=\textcolor{keyword}{true};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordflow}{if}(type.size()>0)}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ type1.\mbox{\hyperlink{struct_type_a6df1ffd52c3ccebf8efe9a715bdf5b04}{type}}=type;}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordflow}{if}(phrase.size()>0)}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ type1.\mbox{\hyperlink{struct_type_a86444504f44e7cda4a7d5e69f45360f0}{phrase}}=phrase;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00189\ \ \ \ \ def.\mbox{\hyperlink{struct_definition_a49300d2e2177969aa0be714766162ac6}{meaning}}=\ definition;}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{if}(example.size()>0)}
+\DoxyCodeLine{00191\ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ def.\mbox{\hyperlink{struct_definition_ad338c0640d725de4236a277dcb4fb3a2}{Isexample}}=\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ def.\mbox{\hyperlink{struct_definition_aa95bc985a8aa61cb643e6e8a4bc000c7}{examples}}.push\_back(example);}
+\DoxyCodeLine{00194\ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ type1.\mbox{\hyperlink{struct_type_a87f090669243e11a733d9e1efa52e4f7}{definition}}.push\_back(def);}
+\DoxyCodeLine{00196\ \ \ \ \ this-\/>\mbox{\hyperlink{struct_word_aca564fd49af9843aa43e66c99d31fe3b}{worddef}}.push\_back(type1);}
+\DoxyCodeLine{00197\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_word_acd34d808dd5f4a740e3b4426ccf9b79b}\label{struct_word_acd34d808dd5f4a740e3b4426ccf9b79b} 
+\index{Word@{Word}!imagePath@{imagePath}}
+\index{imagePath@{imagePath}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{imagePath}{imagePath}}
+{\footnotesize\ttfamily string Word\+::image\+Path}
+
+
+
+Definition at line \mbox{\hyperlink{_word_8h_source_l00035}{35}} of file \mbox{\hyperlink{_word_8h_source}{Word.\+h}}.
+
+\Hypertarget{struct_word_aea37e076a8e8c5a2fe3a8b40015f9898}\label{struct_word_aea37e076a8e8c5a2fe3a8b40015f9898} 
+\index{Word@{Word}!IsType@{IsType}}
+\index{IsType@{IsType}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{IsType}{IsType}}
+{\footnotesize\ttfamily bool Word\+::\+Is\+Type}
+
+
+
+Definition at line \mbox{\hyperlink{_word_8h_source_l00037}{37}} of file \mbox{\hyperlink{_word_8h_source}{Word.\+h}}.
+
+\Hypertarget{struct_word_a0b038542a250c0b93e9f8aadc2e3a984}\label{struct_word_a0b038542a250c0b93e9f8aadc2e3a984} 
+\index{Word@{Word}!pronounce@{pronounce}}
+\index{pronounce@{pronounce}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{pronounce}{pronounce}}
+{\footnotesize\ttfamily wstring Word\+::pronounce}
+
+
+
+Definition at line \mbox{\hyperlink{_word_8h_source_l00034}{34}} of file \mbox{\hyperlink{_word_8h_source}{Word.\+h}}.
+
+\Hypertarget{struct_word_abf659503a55c86038ce35530cbb0eaeb}\label{struct_word_abf659503a55c86038ce35530cbb0eaeb} 
+\index{Word@{Word}!word@{word}}
+\index{word@{word}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{word}{word}}
+{\footnotesize\ttfamily wstring Word\+::word}
+
+
+
+Definition at line \mbox{\hyperlink{_word_8h_source_l00033}{33}} of file \mbox{\hyperlink{_word_8h_source}{Word.\+h}}.
+
+\Hypertarget{struct_word_aca564fd49af9843aa43e66c99d31fe3b}\label{struct_word_aca564fd49af9843aa43e66c99d31fe3b} 
+\index{Word@{Word}!worddef@{worddef}}
+\index{worddef@{worddef}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{worddef}{worddef}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{struct_type}{Type}}$>$ Word\+::worddef}
+
+
+
+Definition at line \mbox{\hyperlink{_word_8h_source_l00036}{36}} of file \mbox{\hyperlink{_word_8h_source}{Word.\+h}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/core/\mbox{\hyperlink{_word_8h}{Word.\+h}}\item 
+source/core/\mbox{\hyperlink{_word_8cpp}{Word.\+cpp}}\end{DoxyCompactItemize}
