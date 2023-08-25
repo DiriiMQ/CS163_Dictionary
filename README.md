@@ -4,8 +4,8 @@ Author:
 
 - 22125083 - Phan Minh Quang
 - 22125081 - Dương Minh Quang
-- ? - Nguyễn Quốc Nghĩa
-- ? - Ngô Trí Sĩ
+- 22125065 - Nguyễn Quốc Nghĩa
+- 22125086 - Ngô Trí Sĩ
 
 Our project provide a customize dictionary using some algorithms and data structures to improve the user experience.
 
